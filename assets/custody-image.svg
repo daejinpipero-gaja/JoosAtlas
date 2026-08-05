@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520">
+    <rect width="900" height="520" fill="#0b1118"/>
+    <g opacity=".18" stroke="#68d1c8"><path d="M0 100H900M0 200H900M0 300H900M0 400H900"/><path d="M100 0V520M200 0V520M300 0V520M400 0V520M500 0V520M600 0V520M700 0V520M800 0V520"/></g>
+    <circle cx="450" cy="270" r="150" fill="none" stroke="#32414b" stroke-width="22"/>
+    <circle cx="450" cy="270" r="90" fill="none" stroke="#e85d53" stroke-width="8"/>
+    <path d="M450 70V470M250 270H650" stroke="#f1b541" stroke-width="3" opacity=".6"/>
+    <g fill="#e85d53"><circle cx="450" cy="120" r="12"/><circle cx="600" cy="270" r="12"/><circle cx="450" cy="420" r="12"/><circle cx="300" cy="270" r="12"/></g>
+    <text x="50" y="70" fill="#e85d53" font-size="24" font-family="Arial" letter-spacing="5">OBSERVED RESPONSE</text>
+    </svg>

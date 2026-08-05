@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JoosAtlas — Field Proof 001</title>
+  <meta name="description" content="A public research experience about the difference between seeing a boundary and earning a measurement claim." />
+  <meta name="theme-color" content="#0c1117" />
+  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="JoosAtlas home">
+      <img src="assets/mark.svg" alt="" />
+      <span><strong>JoosAtlas</strong><small>FIELD PROOF / 001</small></span>
+    </a>
+    <div class="top-status">
+      <span class="status-light"></span>
+      <span>PUBLIC TEASER</span>
+      <button id="menuBtn" aria-expanded="false" aria-controls="siteNav">INDEX</button>
+    </div>
+  </header>
+
+  <nav id="siteNav" class="index-panel" aria-label="Section index">
+    <a href="#home"><b>00</b> Opening</a>
+    <a href="#question"><b>01</b> The Question</a>
+    <a href="#lens"><b>02</b> Evidence Lens</a>
+    <a href="#chain"><b>03</b> Chain of Custody</a>
+    <a href="#gate"><b>04</b> Claim Gate</a>
+    <a href="#failure"><b>05</b> Failure Atlas</a>
+    <a href="#release"><b>06</b> Release Ledger</a>
+  </nav>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-media">
+        <img src="assets/field-scene.svg" alt="Abstract field reconstruction with camera, survey instrument, and circular boundary." />
+        <div class="scanline"></div>
+      </div>
+
+      <div class="hero-copy">
+        <p class="eyebrow">CASE 001 / SPATIAL EVIDENCE</p>
+        <h1>
+          <span>The line is visible.</span>
+          <span>The claim is not yet earned.</span>
+        </h1>
+        <p class="lede">An oblique image can suggest a boundary. It cannot certify one on its own.</p>
+      </div>
+
+      <div class="hero-note">
+        <span>PUBLIC RECONSTRUCTION</span>
+        <span>NOT AN EVIDENTIARY FIGURE</span>
+      </div>
+
+      <a class="scroll-cue" href="#question">
+        <span>ENTER THE EVIDENCE CHAIN</span>
+        <i></i>
+      </a>
+    </section>
+
+    <section id="question" class="chapter chapter-light">
+      <div class="chapter-number">01</div>
+      <div class="chapter-title">
+        <p class="eyebrow dark">THE QUESTION</p>
+        <h2>When does an image become a measurement?</h2>
+      </div>
+      <div class="question-grid">
+        <div class="question-copy">
+          <p class="large-copy">
+            A projected line may look precise, even convincing. But visual agreement does not prove that the line is physically correct.
+          </p>
+          <p>
+            The work behind JoosAtlas separates what the camera observes from what the field establishes, what the model assumes, and what the audit is allowed to claim.
+          </p>
+        </div>
+        <figure class="question-figure">
+          <img src="assets/image-vs-proof.svg" alt="Two contrasting views: image appearance and independent proof." />
+          <figcaption>Appearance and evidence are not the same layer.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="lens" class="chapter lens-chapter">
+      <div class="chapter-number">02</div>
+      <div class="lens-layout">
+        <div class="lens-copy">
+          <p class="eyebrow">INTERACTIVE / EVIDENCE LENS</p>
+          <h2>Move the lens.<br />See what the image alone cannot prove.</h2>
+          <p>
+            Outside the lens: a plausible boundary.<br />
+            Inside the lens: independent reference structure.
+          </p>
+        </div>
+        <div id="lensStage" class="lens-stage" aria-label="Interactive audit lens">
+          <img class="lens-base" src="assets/field-image-layer.svg" alt="" />
+          <div id="auditLens" class="audit-lens">
+            <img src="assets/field-audit-layer.svg" alt="" />
+            <span class="lens-label">AUDIT LAYER</span>
+          </div>
+          <div class="lens-hint">MOVE POINTER / DRAG ON TOUCH</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="chain" class="chapter chain-chapter">
+      <div class="chapter-number">03</div>
+      <div class="chapter-title compact">
+        <p class="eyebrow">CHAIN OF CUSTODY</p>
+        <h2>A measurement is not a picture. It is a traceable sequence of roles.</h2>
+      </div>
+
+      <div class="custody-grid">
+        <button class="custody-card active" data-role="datum">
+          <span>01</span><strong>DATUM</strong><small>Reality is established.</small>
+        </button>
+        <button class="custody-card" data-role="image">
+          <span>02</span><strong>IMAGE</strong><small>A response is observed.</small>
+        </button>
+        <button class="custody-card" data-role="reference">
+          <span>03</span><strong>REFERENCE</strong><small>The answer is challenged.</small>
+        </button>
+        <button class="custody-card" data-role="audit">
+          <span>04</span><strong>AUDIT</strong><small>The claim is decided.</small>
+        </button>
+      </div>
+
+      <div class="custody-stage">
+        <img id="custodyGraphic" src="assets/custody-datum.svg" alt="" />
+        <div class="custody-text">
+          <span id="custodyIndex">01 / DATUM</span>
+          <h3 id="custodyTitle">The field comes first.</h3>
+          <p id="custodyBody">A boundary must originate from a physical reference before any image can evaluate it.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="gate" class="chapter gate-chapter">
+      <div class="chapter-number">04</div>
+      <div class="gate-head">
+        <div>
+          <p class="eyebrow">CLAIM GATE</p>
+          <h2>A system should know when not to speak.</h2>
+        </div>
+        <p>
+          Three conditions must survive before a measurement claim is permitted.
+        </p>
+      </div>
+
+      <div class="gate-machine">
+        <div class="gate-path">
+          <div class="source-node">OBSERVATION</div>
+          <div class="gate-beam"></div>
+          <div class="claim-node" id="claimNode">WITHHELD</div>
+        </div>
+        <div class="gate-switches">
+          <button class="gate-switch" data-gate="observable">
+            <span class="switch-led"></span>
+            <strong>OBSERVABLE</strong>
+            <small>The feature can be resolved.</small>
+          </button>
+          <button class="gate-switch" data-gate="consistent">
+            <span class="switch-led"></span>
+            <strong>GEOMETRICALLY CONSISTENT</strong>
+            <small>The response agrees with the model.</small>
+          </button>
+          <button class="gate-switch" data-gate="terminal">
+            <span class="switch-led"></span>
+            <strong>TERMINALLY VALID</strong>
+            <small>The final boundary survives propagation.</small>
+          </button>
+        </div>
+        <p class="gate-message" id="gateMessage">MEASUREMENT WITHHELD — 0 / 3 CONDITIONS MET</p>
+      </div>
+    </section>
+
+    <section id="failure" class="chapter failure-chapter">
+      <div class="chapter-number">05</div>
+      <div class="failure-head">
+        <p class="eyebrow dark">FAILURE ATLAS</p>
+        <h2>Failure is not noise around the result. It is part of the result.</h2>
+      </div>
+
+      <div class="failure-interface">
+        <div class="failure-tabs" role="tablist">
+          <button class="failure-tab active" data-failure="resolution">BELOW RESOLUTION</button>
+          <button class="failure-tab" data-failure="consistency">STRONG BUT INCONSISTENT</button>
+          <button class="failure-tab" data-failure="terminal">LOCAL FIT, TERMINAL BIAS</button>
+        </div>
+        <div class="failure-content">
+          <img id="failureGraphic" src="assets/failure-resolution.svg" alt="" />
+          <div>
+            <span id="failureCode">FAILURE 01</span>
+            <h3 id="failureTitle">The feature exists. The image cannot support it.</h3>
+            <p id="failureBody">When the visible structure falls below reliable observation, the correct output is not a number. It is a refusal.</p>
+            <blockquote id="failureQuote">Unverified is not zero.</blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="principle-chapter">
+      <div class="principle-wrap">
+        <span>RESEARCH PRINCIPLE</span>
+        <blockquote>Do not claim what the measurement chain cannot support.</blockquote>
+      </div>
+    </section>
+
+    <section id="release" class="chapter release-chapter">
+      <div class="chapter-number">06</div>
+      <div class="release-grid">
+        <div class="release-copy">
+          <p class="eyebrow">RELEASE LEDGER</p>
+          <h2>What is public.<br />What remains withheld.</h2>
+          <p>
+            This public experience communicates the research problem, qualitative findings, and evidentiary philosophy without disclosing unpublished implementation details.
+          </p>
+        </div>
+        <div class="ledger">
+          <div><span>Research question</span><strong class="released">RELEASED</strong></div>
+          <div><span>Qualitative findings</span><strong class="released">RELEASED</strong></div>
+          <div><span>Exact method and equations</span><strong>WITHHELD</strong></div>
+          <div><span>Experimental geometry</span><strong>WITHHELD</strong></div>
+          <div><span>Numerical results and data</span><strong>WITHHELD</strong></div>
+          <div><span>Paper status</span><strong class="review">UNDER REVIEW</strong></div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="footer-brand">
+          <img src="assets/mark.svg" alt="" />
+          <span><strong>JoosAtlas</strong><small>MEASURE / VERIFY / REVEAL</small></span>
+        </div>
+        <div class="footer-meta">
+          <span>FIELD PROOF / 001</span>
+          <span>PUBLIC EXPERIENCE</span>
+          <span>© 2026</span>
+        </div>
+      </footer>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 620">
+<rect width="1100" height="620" fill="#d8d6ce"/>
+<rect x="30" y="30" width="500" height="560" fill="#1a2530"/>
+<rect x="570" y="30" width="500" height="560" fill="#101821"/>
+<text x="60" y="75" fill="#8f9aa4" font-size="20" font-family="Arial" letter-spacing="4">IMAGE</text>
+<text x="600" y="75" fill="#8f9aa4" font-size="20" font-family="Arial" letter-spacing="4">PROOF</text>
+<ellipse cx="280" cy="355" rx="175" ry="90" fill="none" stroke="#e85d53" stroke-width="9"/>
+<ellipse cx="820" cy="355" rx="175" ry="90" fill="none" stroke="#68d1c8" stroke-width="7"/>
+<g fill="#f1b541" stroke="#101821" stroke-width="5">
+<circle cx="675" cy="348" r="10"/><circle cx="730" cy="313" r="10"/><circle cx="790" cy="294" r="10"/><circle cx="855" cy="299" r="10"/><circle cx="910" cy="327" r="10"/><circle cx="947" cy="365" r="10"/>
+</g>
+<path d="M280 165V520M105 355H455" stroke="#f1b541" opacity=".35"/>
+<path d="M820 165V520M645 355H995" stroke="#f1b541" opacity=".35"/>
+<text x="150" y="520" fill="#f3f0e7" font-size="28" font-family="Arial">PLAUSIBLE</text>
+<text x="718" y="520" fill="#f3f0e7" font-size="28" font-family="Arial">TRACEABLE</text>
+</svg>
