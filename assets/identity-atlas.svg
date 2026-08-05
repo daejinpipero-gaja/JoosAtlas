@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+<title id="title">Joo Yong-Hoe across research, industry, and community</title>
+<desc id="desc">A central identity block connects to a geospatial research field scene, an industrial pipe operation, and a professional community network.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b1118"/><stop offset="1" stop-color="#14222c"/></linearGradient>
+  <linearGradient id="teal" x1="0" x2="1"><stop stop-color="#68d1c8" stop-opacity=".15"/><stop offset="1" stop-color="#68d1c8" stop-opacity=".7"/></linearGradient>
+  <linearGradient id="amber" x1="0" x2="1"><stop stop-color="#f1b541" stop-opacity=".12"/><stop offset="1" stop-color="#f1b541" stop-opacity=".72"/></linearGradient>
+</defs>
+<rect width="1200" height="820" fill="url(#bg)"/>
+<g opacity=".15" stroke="#68d1c8"><path d="M0 100H1200M0 200H1200M0 300H1200M0 400H1200M0 500H1200M0 600H1200M0 700H1200"/><path d="M100 0V820M200 0V820M300 0V820M400 0V820M500 0V820M600 0V820M700 0V820M800 0V820M900 0V820M1000 0V820M1100 0V820"/></g>
+<!-- central identity -->
+<rect x="420" y="250" width="360" height="320" rx="8" fill="#0e1821" stroke="#f3f0e7" stroke-opacity=".35"/>
+<circle cx="600" cy="360" r="74" fill="none" stroke="#68d1c8" stroke-width="5"/>
+<path d="M600 270V450M510 360H690" stroke="#f1b541" stroke-width="3"/>
+<circle cx="600" cy="360" r="22" fill="#f3f0e7"/>
+<text x="600" y="500" fill="#f3f0e7" text-anchor="middle" font-family="Arial" font-size="34" font-weight="700" letter-spacing="5">JOO YONG-HOE</text>
+<text x="600" y="535" fill="#8e9aa6" text-anchor="middle" font-family="Arial" font-size="18" letter-spacing="4">RESEARCHER · OPERATOR · BUILDER</text>
+<!-- research -->
+<rect x="50" y="70" width="330" height="280" rx="8" fill="#0c151d" stroke="#68d1c8" stroke-opacity=".5"/>
+<text x="80" y="110" fill="#68d1c8" font-family="Arial" font-size="18" font-weight="700" letter-spacing="4">RESEARCH</text>
+<g transform="translate(108 135)">
+  <path d="M20 145L82 18L144 145M82 18V165" stroke="#e9ece6" stroke-width="8"/>
+  <rect x="42" y="0" width="82" height="48" rx="6" fill="#152a35" stroke="#f3f0e7" stroke-width="3"/>
+  <circle cx="112" cy="24" r="15" fill="#0b1118" stroke="#f1b541" stroke-width="5"/>
+  <path d="M188 145L234 65L280 145M234 65V160" stroke="#e9ece6" stroke-width="7"/>
+  <circle cx="234" cy="60" r="18" fill="#68d1c8"/>
+  <path d="M112 24L234 60" stroke="#f1b541" stroke-width="2" stroke-dasharray="6 6"/>
+</g>
+<text x="80" y="324" fill="#8e9aa6" font-family="Arial" font-size="16">Yonsei University · GRS Lab</text>
+<!-- industry -->
+<rect x="820" y="70" width="330" height="280" rx="8" fill="#0c151d" stroke="#f1b541" stroke-opacity=".55"/>
+<text x="850" y="110" fill="#f1b541" font-family="Arial" font-size="18" font-weight="700" letter-spacing="4">INDUSTRY</text>
+<g transform="translate(858 150)">
+  <g fill="none" stroke="#e9ece6" stroke-width="7"><circle cx="55" cy="40" r="36"/><circle cx="135" cy="40" r="36"/><circle cx="215" cy="40" r="36"/><circle cx="95" cy="112" r="36"/><circle cx="175" cy="112" r="36"/></g>
+  <g fill="#101b23"><circle cx="55" cy="40" r="18"/><circle cx="135" cy="40" r="18"/><circle cx="215" cy="40" r="18"/><circle cx="95" cy="112" r="18"/><circle cx="175" cy="112" r="18"/></g>
+  <path d="M18 166H260" stroke="#68d1c8" stroke-width="4"/>
+</g>
+<text x="850" y="324" fill="#8e9aa6" font-family="Arial" font-size="16">Daejin Pipe Co., Ltd.</text>
+<!-- community -->
+<rect x="230" y="620" width="740" height="150" rx="8" fill="#0c151d" stroke="#e85d53" stroke-opacity=".45"/>
+<text x="265" y="660" fill="#e85d53" font-family="Arial" font-size="18" font-weight="700" letter-spacing="4">COMMUNITY</text>
+<g transform="translate(520 690)">
+  <g stroke="#68d1c8" stroke-width="3"><path d="M-170 0H170"/><path d="M-110 -35L0 0L110 -35"/><path d="M-110 35L0 0L110 35"/></g>
+  <g fill="#f3f0e7"><circle cx="0" cy="0" r="17"/><circle cx="-170" cy="0" r="12"/><circle cx="170" cy="0" r="12"/><circle cx="-110" cy="-35" r="12"/><circle cx="110" cy="-35" r="12"/><circle cx="-110" cy="35" r="12"/><circle cx="110" cy="35" r="12"/></g>
+</g>
+<text x="840" y="735" fill="#8e9aa6" font-family="Arial" font-size="16" text-anchor="end">ACERS</text>
+<!-- connectors -->
+<path d="M380 240L455 310" stroke="url(#teal)" stroke-width="8"/>
+<path d="M820 240L745 310" stroke="url(#amber)" stroke-width="8"/>
+<path d="M600 570V620" stroke="#e85d53" stroke-width="7" opacity=".55"/>
+</svg>

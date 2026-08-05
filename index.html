@@ -4,21 +4,31 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>JoosAtlas — Field Proof 001</title>
-  <meta name="description" content="A public research experience about the difference between seeing a boundary and earning a measurement claim." />
-  <meta name="theme-color" content="#0c1117" />
-  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet" />
+  <meta name="description" content="JoosAtlas is an independent research experience by Joo Yong-Hoe, exploring the difference between seeing a boundary and earning a measurement claim." />
+  <meta name="theme-color" content="#0b1118" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://daejinpipero-gaja.github.io/JoosAtlas/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="JoosAtlas — Field Proof 001" />
+  <meta property="og:description" content="The line is visible. The claim is not yet earned." />
+  <meta property="og:url" content="https://daejinpipero-gaja.github.io/JoosAtlas/" />
+  <meta property="og:image" content="https://daejinpipero-gaja.github.io/JoosAtlas/assets/social-preview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="topbar">
     <a class="brand" href="#home" aria-label="JoosAtlas home">
       <img src="assets/mark.svg" alt="" />
       <span><strong>JoosAtlas</strong><small>FIELD PROOF / 001</small></span>
     </a>
     <div class="top-status">
-      <span class="status-light"></span>
-      <span>PUBLIC TEASER</span>
+      <span class="status-light" aria-hidden="true"></span>
+      <span>PUBLIC RESEARCH TEASER</span>
       <button id="menuBtn" aria-expanded="false" aria-controls="siteNav">INDEX</button>
     </div>
   </header>
@@ -30,14 +40,15 @@
     <a href="#chain"><b>03</b> Chain of Custody</a>
     <a href="#gate"><b>04</b> Claim Gate</a>
     <a href="#failure"><b>05</b> Failure Atlas</a>
-    <a href="#release"><b>06</b> Release Ledger</a>
+    <a href="#about"><b>06</b> About Joo</a>
+    <a href="#release"><b>07</b> Release Ledger</a>
   </nav>
 
-  <main>
+  <main id="main">
     <section id="home" class="hero">
       <div class="hero-media">
-        <img src="assets/field-scene.svg" alt="Abstract field reconstruction with camera, survey instrument, and circular boundary." />
-        <div class="scanline"></div>
+        <img src="assets/field-scene.svg" alt="Public field reconstruction showing a camera, survey instrument, ground reference, and candidate boundary." />
+        <div class="scanline" aria-hidden="true"></div>
       </div>
 
       <div class="hero-copy">
@@ -47,6 +58,7 @@
           <span>The claim is not yet earned.</span>
         </h1>
         <p class="lede">An oblique image can suggest a boundary. It cannot certify one on its own.</p>
+        <p class="hero-byline">An independent research experience by <strong>Joo Yong-Hoe</strong>.</p>
       </div>
 
       <div class="hero-note">
@@ -56,7 +68,7 @@
 
       <a class="scroll-cue" href="#question">
         <span>ENTER THE EVIDENCE CHAIN</span>
-        <i></i>
+        <i aria-hidden="true"></i>
       </a>
     </section>
 
@@ -68,16 +80,12 @@
       </div>
       <div class="question-grid">
         <div class="question-copy">
-          <p class="large-copy">
-            A projected line may look precise, even convincing. But visual agreement does not prove that the line is physically correct.
-          </p>
-          <p>
-            The work behind JoosAtlas separates what the camera observes from what the field establishes, what the model assumes, and what the audit is allowed to claim.
-          </p>
+          <p class="large-copy">A projected line may look precise, even convincing. But visual agreement does not prove that the line is physically correct.</p>
+          <p>The work behind JoosAtlas separates what the camera observes from what the field establishes, what the model assumes, and what the audit is allowed to claim.</p>
         </div>
         <figure class="question-figure">
-          <img src="assets/image-vs-proof.svg" alt="Two contrasting views: image appearance and independent proof." />
-          <figcaption>Appearance and evidence are not the same layer.</figcaption>
+          <img src="assets/image-vs-proof.svg" alt="Side-by-side explanation of a visually plausible line and a traceable line supported by independent evidence." />
+          <figcaption><span>IMAGE</span> Appearance can be plausible. <span>PROOF</span> A claim must remain traceable.</figcaption>
         </figure>
       </div>
     </section>
@@ -87,15 +95,12 @@
       <div class="lens-layout">
         <div class="lens-copy">
           <p class="eyebrow">INTERACTIVE / EVIDENCE LENS</p>
-          <h2>Move the lens.<br />See what the image alone cannot prove.</h2>
-          <p>
-            Outside the lens: a plausible boundary.<br />
-            Inside the lens: independent reference structure.
-          </p>
+          <h2>Move the lens.<br />Reveal the missing layer.</h2>
+          <p>Outside the lens: a plausible image boundary.<br />Inside the lens: independent reference structure.</p>
         </div>
-        <div id="lensStage" class="lens-stage" aria-label="Interactive audit lens">
-          <img class="lens-base" src="assets/field-image-layer.svg" alt="" />
-          <div id="auditLens" class="audit-lens">
+        <div id="lensStage" class="lens-stage" aria-label="Interactive audit lens. Move the pointer or drag to reveal the audit layer.">
+          <img class="lens-base" src="assets/field-image-layer.svg" alt="Image layer with a visually plausible boundary." />
+          <div id="auditLens" class="audit-lens" aria-hidden="true">
             <img src="assets/field-audit-layer.svg" alt="" />
             <span class="lens-label">AUDIT LAYER</span>
           </div>
@@ -126,8 +131,8 @@
         </button>
       </div>
 
-      <div class="custody-stage">
-        <img id="custodyGraphic" src="assets/custody-datum.svg" alt="" />
+      <div class="custody-stage" aria-live="polite">
+        <img id="custodyGraphic" src="assets/custody-datum.svg" alt="Diagram representing the physical datum role." />
         <div class="custody-text">
           <span id="custodyIndex">01 / DATUM</span>
           <h3 id="custodyTitle">The field comes first.</h3>
@@ -143,30 +148,28 @@
           <p class="eyebrow">CLAIM GATE</p>
           <h2>A system should know when not to speak.</h2>
         </div>
-        <p>
-          Three conditions must survive before a measurement claim is permitted.
-        </p>
+        <p>Three conditions must survive before a measurement claim is permitted. Try the gate.</p>
       </div>
 
       <div class="gate-machine">
-        <div class="gate-path">
+        <div class="gate-path" aria-live="polite">
           <div class="source-node">OBSERVATION</div>
-          <div class="gate-beam"></div>
+          <div class="gate-beam" aria-hidden="true"></div>
           <div class="claim-node" id="claimNode">WITHHELD</div>
         </div>
         <div class="gate-switches">
-          <button class="gate-switch" data-gate="observable">
-            <span class="switch-led"></span>
+          <button class="gate-switch" data-gate="observable" aria-pressed="false">
+            <span class="switch-led" aria-hidden="true"></span>
             <strong>OBSERVABLE</strong>
             <small>The feature can be resolved.</small>
           </button>
-          <button class="gate-switch" data-gate="consistent">
-            <span class="switch-led"></span>
+          <button class="gate-switch" data-gate="consistent" aria-pressed="false">
+            <span class="switch-led" aria-hidden="true"></span>
             <strong>GEOMETRICALLY CONSISTENT</strong>
             <small>The response agrees with the model.</small>
           </button>
-          <button class="gate-switch" data-gate="terminal">
-            <span class="switch-led"></span>
+          <button class="gate-switch" data-gate="terminal" aria-pressed="false">
+            <span class="switch-led" aria-hidden="true"></span>
             <strong>TERMINALLY VALID</strong>
             <small>The final boundary survives propagation.</small>
           </button>
@@ -183,13 +186,13 @@
       </div>
 
       <div class="failure-interface">
-        <div class="failure-tabs" role="tablist">
-          <button class="failure-tab active" data-failure="resolution">BELOW RESOLUTION</button>
-          <button class="failure-tab" data-failure="consistency">STRONG BUT INCONSISTENT</button>
-          <button class="failure-tab" data-failure="terminal">LOCAL FIT, TERMINAL BIAS</button>
+        <div class="failure-tabs" role="tablist" aria-label="Failure types">
+          <button class="failure-tab active" data-failure="resolution" role="tab" aria-selected="true">BELOW RESOLUTION</button>
+          <button class="failure-tab" data-failure="consistency" role="tab" aria-selected="false">STRONG BUT INCONSISTENT</button>
+          <button class="failure-tab" data-failure="terminal" role="tab" aria-selected="false">LOCAL FIT, TERMINAL BIAS</button>
         </div>
-        <div class="failure-content">
-          <img id="failureGraphic" src="assets/failure-resolution.svg" alt="" />
+        <div class="failure-content" aria-live="polite">
+          <img id="failureGraphic" src="assets/failure-resolution.svg" alt="A feature becoming too small to support a reliable observation." />
           <div>
             <span id="failureCode">FAILURE 01</span>
             <h3 id="failureTitle">The feature exists. The image cannot support it.</h3>
@@ -207,19 +210,65 @@
       </div>
     </section>
 
-    <section id="release" class="chapter release-chapter">
+    <section id="about" class="chapter about-chapter">
       <div class="chapter-number">06</div>
+      <div class="about-heading">
+        <p class="eyebrow">THE PERSON BEHIND THE ATLAS</p>
+        <h2>One person.<br />Three operating realities.</h2>
+        <p class="about-intro">Research asks whether a claim is defensible. Industry asks whether a system works. Community asks whether knowledge travels. JoosAtlas is built where those questions meet.</p>
+      </div>
+
+      <div class="identity-board">
+        <figure class="identity-visual">
+          <img src="assets/identity-atlas.svg" alt="Three-part diagram connecting geospatial research, industrial operations, and professional community leadership around Joo Yong-Hoe." />
+          <figcaption>RESEARCH · INDUSTRY · COMMUNITY</figcaption>
+        </figure>
+
+        <div class="identity-copy">
+          <div class="name-lockup">
+            <span>JOO YONG-HOE</span>
+            <small>주용회</small>
+          </div>
+          <p class="identity-lead">Researcher, industrial operator, and builder.</p>
+          <p>Joo Yong-Hoe is a Ph.D. Candidate at Yonsei University’s Geospatial Information &amp; Remote Sensing Laboratory, President of Daejin Pipe Co., Ltd., and President of ACERS.</p>
+          <p>His work connects rigorous spatial measurement with real operating environments, turning research questions into auditable methods, clear visual explanations, and deployable tools.</p>
+
+          <div class="identity-roles">
+            <article>
+              <span>RESEARCH</span>
+              <strong>Yonsei University · GRS Lab</strong>
+              <small>Ph.D. Candidate / Geospatial measurement and remote sensing</small>
+            </article>
+            <article>
+              <span>INDUSTRY</span>
+              <strong>Daejin Pipe Co., Ltd.</strong>
+              <small>President / Industrial operations and field implementation</small>
+            </article>
+            <article>
+              <span>COMMUNITY</span>
+              <strong>ACERS</strong>
+              <small>President / Professional exchange and community leadership</small>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <p class="affiliation-note">Affiliations are provided for biographical context. JoosAtlas is an independent personal research platform and does not represent the official views of the affiliated organizations.</p>
+    </section>
+
+    <section id="release" class="chapter release-chapter">
+      <div class="chapter-number">07</div>
       <div class="release-grid">
         <div class="release-copy">
           <p class="eyebrow">RELEASE LEDGER</p>
           <h2>What is public.<br />What remains withheld.</h2>
-          <p>
-            This public experience communicates the research problem, qualitative findings, and evidentiary philosophy without disclosing unpublished implementation details.
-          </p>
+          <p>This public experience communicates the research problem, qualitative findings, and evidentiary philosophy without disclosing unpublished implementation details.</p>
+          <a class="repo-link" href="https://github.com/daejinpipero-gaja/JoosAtlas" target="_blank" rel="noreferrer">VIEW THE PUBLIC REPOSITORY <span>↗</span></a>
         </div>
         <div class="ledger">
           <div><span>Research question</span><strong class="released">RELEASED</strong></div>
           <div><span>Qualitative findings</span><strong class="released">RELEASED</strong></div>
+          <div><span>Researcher profile</span><strong class="released">RELEASED</strong></div>
           <div><span>Exact method and equations</span><strong>WITHHELD</strong></div>
           <div><span>Experimental geometry</span><strong>WITHHELD</strong></div>
           <div><span>Numerical results and data</span><strong>WITHHELD</strong></div>
@@ -234,7 +283,7 @@
         </div>
         <div class="footer-meta">
           <span>FIELD PROOF / 001</span>
-          <span>PUBLIC EXPERIENCE</span>
+          <span>JOO YONG-HOE</span>
           <span>© 2026</span>
         </div>
       </footer>

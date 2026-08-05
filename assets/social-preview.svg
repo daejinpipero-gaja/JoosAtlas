@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640">
+<defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#091018"/><stop offset="1" stop-color="#18303b"/></linearGradient></defs>
+<rect width="1280" height="640" fill="url(#g)"/>
+<g opacity=".12" stroke="#68d1c8"><path d="M0 100H1280M0 200H1280M0 300H1280M0 400H1280M0 500H1280"/><path d="M100 0V640M200 0V640M300 0V640M400 0V640M500 0V640M600 0V640M700 0V640M800 0V640M900 0V640M1000 0V640M1100 0V640M1200 0V640"/></g>
+<circle cx="1030" cy="320" r="190" fill="none" stroke="#68d1c8" stroke-width="4" opacity=".7"/>
+<ellipse cx="1030" cy="350" rx="240" ry="90" fill="none" stroke="#e85d53" stroke-width="9" opacity=".9"/>
+<path d="M800 150L1030 350M800 150L1180 330" stroke="#f1b541" stroke-width="3" opacity=".7"/>
+<circle cx="1030" cy="350" r="18" fill="#f1b541"/>
+<text x="80" y="105" fill="#f1b541" font-size="24" font-family="Arial" font-weight="700" letter-spacing="6">JOOSATLAS / FIELD PROOF 001</text>
+<text x="80" y="255" fill="#f3f0e7" font-size="72" font-family="Arial" font-weight="700">The line is visible.</text>
+<text x="80" y="335" fill="#f3f0e7" fill-opacity=".52" font-size="72" font-family="Arial" font-weight="700">The claim is not yet earned.</text>
+<text x="80" y="445" fill="#9ca8b1" font-size="28" font-family="Arial">An independent research experience by Joo Yong-Hoe.</text>
+<text x="80" y="540" fill="#68d1c8" font-size="20" font-family="Arial" letter-spacing="4">MEASURE / VERIFY / REVEAL</text>
+</svg>

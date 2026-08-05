@@ -1,2 +1,3 @@
 User-agent: *
-Disallow: /
+Allow: /
+Sitemap: https://daejinpipero-gaja.github.io/JoosAtlas/sitemap.xml
