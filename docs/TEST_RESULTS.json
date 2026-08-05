@@ -1,0 +1,33 @@
+{
+  "pages": {
+    "home-desktop": {
+      "scrollWidth": 1600,
+      "clientWidth": 1600,
+      "scrollHeight": 5644,
+      "broken": []
+    },
+    "home-mobile": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "scrollHeight": 7034,
+      "broken": []
+    },
+    "case-desktop": {
+      "scrollWidth": 1600,
+      "clientWidth": 1600,
+      "scrollHeight": 9344,
+      "broken": []
+    },
+    "case-mobile": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "scrollHeight": 10968,
+      "broken": []
+    }
+  },
+  "errors": [],
+  "interaction": {
+    "condition": "R3",
+    "srcPrefix": "assets/images/r3-3d.webp"
+  }
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 660" role="img" aria-labelledby="mt md"><title id="mt">Measurement chain overview</title><desc id="md">A total station establishes a surveyed primitive, exact scaling generates a boundary, and a camera observation is projected back to object space for signed audit.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#bd8b32"/></marker><filter id="sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="15" flood-opacity=".13"/></filter></defs>
+<rect width="1400" height="660" rx="30" fill="#f1eee6"/>
+<g font-family="Arial, sans-serif">
+<text x="70" y="78" font-size="20" letter-spacing="4" fill="#6a737b">ONE-FRAME EXPLANATION</text>
+<text x="70" y="126" font-size="34" font-weight="700" fill="#121921">A physical origin. A declared camera. A terminal audit.</text>
+
+<g transform="translate(90 195)" filter="url(#sh)"><rect width="360" height="360" rx="22" fill="#fff"/><text x="28" y="42" font-size="16" letter-spacing="3" fill="#8b6a2e">01 / FIELD DATUM</text><circle cx="190" cy="205" r="84" fill="none" stroke="#163d5a" stroke-width="8"/><circle cx="190" cy="205" r="8" fill="#bd8b32"/><path d="M190 92v226M77 205h226" stroke="#bd8b32" stroke-width="2" opacity=".65"/><g transform="translate(38 92)"><path d="M24 160L72 26L120 160M72 26v148" stroke="#27333c" stroke-width="9"/><rect x="40" y="0" width="70" height="44" rx="8" fill="#163d5a"/><circle cx="98" cy="22" r="12" fill="#74c7c1"/></g><text x="30" y="324" font-size="24" font-weight="700" fill="#121921">Survey the primitive</text><text x="30" y="348" font-size="16" fill="#65717a">Object space is established first.</text></g>
+
+<path d="M475 375H545" stroke="#bd8b32" stroke-width="4" marker-end="url(#arr)"/>
+
+<g transform="translate(545 195)" filter="url(#sh)"><rect width="360" height="360" rx="22" fill="#fff"/><text x="28" y="42" font-size="16" letter-spacing="3" fill="#8b6a2e">02 / EXACT EXPANSION</text><circle cx="180" cy="195" r="60" fill="none" stroke="#163d5a" stroke-width="7"/><circle cx="180" cy="195" r="138" fill="none" stroke="#74c7c1" stroke-width="8"/><path d="M180 195L306 195" stroke="#bd8b32" stroke-width="4" marker-end="url(#arr)"/><text x="186" y="180" font-size="18" fill="#163d5a">rₚ</text><text x="245" y="185" font-size="18" fill="#2f8f86">Rᴮ</text><text x="30" y="324" font-size="24" font-weight="700" fill="#121921">Generate the boundary</text><text x="30" y="348" font-size="16" fill="#65717a">Scaling is geometric, not visual.</text></g>
+
+<path d="M930 375H1000" stroke="#bd8b32" stroke-width="4" marker-end="url(#arr)"/>
+
+<g transform="translate(1000 195)" filter="url(#sh)"><rect width="310" height="360" rx="22" fill="#fff"/><text x="28" y="42" font-size="16" letter-spacing="3" fill="#8b6a2e">03 / IMAGE AUDIT</text><g transform="translate(35 90)"><rect x="0" y="0" width="80" height="48" rx="7" fill="#163d5a"/><circle cx="68" cy="24" r="13" fill="#74c7c1"/><path d="M68 24L198 128M68 24L230 194" stroke="#bd8b32" stroke-width="3"/><ellipse cx="200" cy="180" rx="76" ry="34" fill="none" stroke="#74c7c1" stroke-width="7"/><circle cx="190" cy="172" r="7" fill="#b74b40"/><path d="M190 172L205 180" stroke="#b74b40" stroke-width="4"/></g><text x="30" y="324" font-size="24" font-weight="700" fill="#121921">Return to object space</text><text x="30" y="348" font-size="16" fill="#65717a">The observed pixel is audited last.</text></g>
+</g></svg>

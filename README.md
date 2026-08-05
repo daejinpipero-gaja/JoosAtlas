@@ -1,46 +1,38 @@
-<p align="center"><img src="assets/social-preview.png" alt="JoosAtlas — Field Proof 001" width="100%"></p>
-
 # JoosAtlas
 
-**The line is visible. The claim is not yet earned.**
+**Research that survives contact with the field.**
 
-JoosAtlas is an independent research experience created by **Joo Yong-Hoe**, exploring how surveying, photogrammetry, computer vision, and spatial evidence can be connected into traceable and auditable measurement.
+JoosAtlas is Joo Yong-Hoe's independent research and development platform connecting surveying, photogrammetry, computer vision and industrial operations.
 
-[Open the public experience →](https://daejinpipero-gaja.github.io/JoosAtlas/)
+## Live site
+
+https://daejinpipero-gaja.github.io/JoosAtlas/
+
+## Selected work
+
+### Case 001 — When an image becomes evidence
+
+A surveyed primitive generates a metric design boundary; a declared camera model carries that boundary into the image; the observed response is returned to object space and audited with its sign intact.
+
+The public companion includes:
+
+- field realization and observation-role diagram
+- theoretical equations for circle fitting, exact scaling, projection, inverse projection and signed audit
+- selected C3, R3 and D3 total-station boundary checks
+- explicit claim boundary and release status
 
 ## About Joo Yong-Hoe
 
-- **Research** — Ph.D. Candidate, Yonsei University · Geospatial Information & Remote Sensing Laboratory (GRS Lab)
-- **Industry** — President, Daejin Pipe Co., Ltd.
-- **Community** — President, ACERS
+Joo Yong-Hoe is a Ph.D. Candidate in the **School of Civil & Environmental Engineering at Yonsei University** and a researcher in the **GIS Remote Sensing and Surveying Laboratory**. He is also **President of Daejin Pipe Co., Ltd.** and **President of ACERS**.
 
-His work connects rigorous spatial measurement with real operating environments, turning research questions into auditable methods, clear visual explanations, and deployable tools.
+JoosAtlas is an independent personal research platform. Affiliations are provided for biographical context and do not imply institutional endorsement.
 
-## Field Proof / 001
+## Repository structure
 
-This public-safe research teaser communicates:
-
-- the difference between visual appearance and measurement evidence;
-- role separation across datum, image, reference, and audit;
-- the conditions required before a spatial claim is permitted;
-- failure as a first-class research outcome.
-
-## Disclosure boundary
-
-| Item | Status |
-|---|---|
-| Research question | Released |
-| Qualitative findings | Released |
-| Researcher profile | Released |
-| Exact method and equations | Withheld |
-| Experimental geometry | Withheld |
-| Numerical results and data | Withheld |
-| Paper | Under review |
-
-This repository does **not** contain raw data, unpublished numerical results, equipment settings, implementation details, or reviewer correspondence.
-
-## Rights
-
-Website content and visual assets are © 2026 Joo Yong-Hoe. All rights reserved unless explicitly stated otherwise.
-
-> Affiliations are provided for biographical context. JoosAtlas is an independent personal research platform and does not represent the official views of the affiliated organizations.
+- `index.html` — JoosAtlas home
+- `case-001.html` — interactive research companion
+- `styles.css` — shared design system
+- `app.js` — navigation, reveal behavior and evidence explorer
+- `assets/images` — optimized field records, plots and identity assets
+- `assets/figures` — JoosAtlas mark and method overview
+- `docs` — disclosure and deployment notes

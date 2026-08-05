@@ -2,294 +2,90 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>JoosAtlas — Field Proof 001</title>
-  <meta name="description" content="JoosAtlas is an independent research experience by Joo Yong-Hoe, exploring the difference between seeing a boundary and earning a measurement claim." />
-  <meta name="theme-color" content="#0b1118" />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
-  <link rel="canonical" href="https://daejinpipero-gaja.github.io/JoosAtlas/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JoosAtlas — Research that survives contact with the field</title>
+  <meta name="description" content="JoosAtlas is Joo Yong-Hoe's independent research and development platform connecting surveying, photogrammetry, computer vision and industrial operations." />
+  <meta name="author" content="Joo Yong-Hoe" />
+  <meta name="theme-color" content="#0b1b2a" />
+  <meta property="og:title" content="JoosAtlas" />
+  <meta property="og:description" content="Research that survives contact with the field." />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="JoosAtlas — Field Proof 001" />
-  <meta property="og:description" content="The line is visible. The claim is not yet earned." />
   <meta property="og:url" content="https://daejinpipero-gaja.github.io/JoosAtlas/" />
-  <meta property="og:image" content="https://daejinpipero-gaja.github.io/JoosAtlas/assets/social-preview.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" href="assets/mark.svg" type="image/svg+xml" />
+  <meta property="og:image" content="https://daejinpipero-gaja.github.io/JoosAtlas/assets/images/social-preview.jpg" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">{
+    "@context":"https://schema.org",
+    "@type":"ProfilePage",
+    "mainEntity":{"@type":"Person","name":"Joo Yong-Hoe","alternateName":"주용회","jobTitle":"Researcher, industrial operator and builder","affiliation":[{"@type":"Organization","name":"Yonsei University — GIS Remote Sensing and Surveying Laboratory"},{"@type":"Organization","name":"Daejin Pipe Co., Ltd."},{"@type":"Organization","name":"ACERS"}]}
+  }</script>
 </head>
-<body>
-  <div class="noise" aria-hidden="true"></div>
+<body class="home-page">
   <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="topbar">
-    <a class="brand" href="#home" aria-label="JoosAtlas home">
-      <img src="assets/mark.svg" alt="" />
-      <span><strong>JoosAtlas</strong><small>FIELD PROOF / 001</small></span>
+  <header class="site-header">
+    <a class="site-brand" href="index.html" aria-label="JoosAtlas home">
+      <img src="assets/figures/joosatlas-mark.svg" alt="" />
+      <span><strong>JoosAtlas</strong><small>RESEARCH · FIELD · SYSTEMS</small></span>
     </a>
-    <div class="top-status">
-      <span class="status-light" aria-hidden="true"></span>
-      <span>PUBLIC RESEARCH TEASER</span>
-      <button id="menuBtn" aria-expanded="false" aria-controls="siteNav">INDEX</button>
-    </div>
+    <button class="menu-button" aria-expanded="false" aria-controls="main-nav">MENU</button>
+    <nav id="main-nav" class="main-nav" aria-label="Primary navigation">
+      <a href="#work">Work</a><a href="#position">Position</a><a href="#about">About Joo</a><a href="#coordinates">Coordinates</a><a href="case-001.html">Case 001</a>
+    </nav>
   </header>
 
-  <nav id="siteNav" class="index-panel" aria-label="Section index">
-    <a href="#home"><b>00</b> Opening</a>
-    <a href="#question"><b>01</b> The Question</a>
-    <a href="#lens"><b>02</b> Evidence Lens</a>
-    <a href="#chain"><b>03</b> Chain of Custody</a>
-    <a href="#gate"><b>04</b> Claim Gate</a>
-    <a href="#failure"><b>05</b> Failure Atlas</a>
-    <a href="#about"><b>06</b> About Joo</a>
-    <a href="#release"><b>07</b> Release Ledger</a>
-  </nav>
-
   <main id="main">
-    <section id="home" class="hero">
-      <div class="hero-media">
-        <img src="assets/field-scene.svg" alt="Public field reconstruction showing a camera, survey instrument, ground reference, and candidate boundary." />
-        <div class="scanline" aria-hidden="true"></div>
+    <section class="home-hero">
+      <div class="home-hero-copy">
+        <p class="section-kicker">INDEPENDENT RESEARCH & DEVELOPMENT PLATFORM</p>
+        <h1>Research that survives<br />contact with the field.</h1>
+        <p class="hero-lead">JoosAtlas connects surveying, photogrammetry, computer vision and industrial operations to make spatial claims traceable, testable and explainable.</p>
+        <div class="hero-actions"><a class="button primary" href="case-001.html">Explore Case 001</a><a class="button text" href="#about">Meet Joo Yong-Hoe <span>↘</span></a></div>
+        <dl class="hero-meta"><div><dt>Research</dt><dd>Yonsei University · GRS Lab</dd></div><div><dt>Industry</dt><dd>Daejin Pipe Co., Ltd.</dd></div><div><dt>Community</dt><dd>ACERS</dd></div></dl>
       </div>
+      <figure class="home-hero-image">
+        <img src="assets/images/field-hero.webp" alt="A Leica total station installed over a surveyed circular primitive in an industrial field site." />
+        <figcaption><span>FIELD RECORD / CASE 001</span><span>Physical datum before image interpretation</span></figcaption>
+      </figure>
+    </section>
 
-      <div class="hero-copy">
-        <p class="eyebrow">CASE 001 / SPATIAL EVIDENCE</p>
-        <h1>
-          <span>The line is visible.</span>
-          <span>The claim is not yet earned.</span>
-        </h1>
-        <p class="lede">An oblique image can suggest a boundary. It cannot certify one on its own.</p>
-        <p class="hero-byline">An independent research experience by <strong>Joo Yong-Hoe</strong>.</p>
-      </div>
+    <section id="position" class="position-section editorial-section">
+      <div class="section-label">POSITION / 001</div>
+      <blockquote>A spatial claim is not earned by looking precise. It is earned by remaining traceable from field datum to final decision.</blockquote>
+      <p>JoosAtlas is built around a simple discipline: observation, reference and audit should not be asked to validate themselves.</p>
+    </section>
 
-      <div class="hero-note">
-        <span>PUBLIC RECONSTRUCTION</span>
-        <span>NOT AN EVIDENTIARY FIGURE</span>
-      </div>
-
-      <a class="scroll-cue" href="#question">
-        <span>ENTER THE EVIDENCE CHAIN</span>
-        <i aria-hidden="true"></i>
+    <section id="work" class="selected-work section-shell">
+      <div class="section-heading"><p class="section-kicker">SELECTED WORK</p><h2>Case 001 — When an image becomes evidence</h2><p>A surveyed primitive generates a design boundary; a declared camera model carries that boundary into the image; the observed response is returned to object space and audited with its sign intact.</p></div>
+      <a class="case-card" href="case-001.html">
+        <img src="assets/images/field-layout.webp" alt="Composite figure showing the surveyed field geometry, camera placements and overhead photographs." loading="lazy" />
+        <div class="case-card-overlay"><div><span class="status-pill">PAPER UNDER REVIEW</span><h3>From surveyed geometry to terminal audit</h3></div><span class="case-arrow">OPEN CASE ↗</span></div>
       </a>
     </section>
 
-    <section id="question" class="chapter chapter-light">
-      <div class="chapter-number">01</div>
-      <div class="chapter-title">
-        <p class="eyebrow dark">THE QUESTION</p>
-        <h2>When does an image become a measurement?</h2>
-      </div>
-      <div class="question-grid">
-        <div class="question-copy">
-          <p class="large-copy">A projected line may look precise, even convincing. But visual agreement does not prove that the line is physically correct.</p>
-          <p>The work behind JoosAtlas separates what the camera observes from what the field establishes, what the model assumes, and what the audit is allowed to claim.</p>
+    <section class="contexts-section" id="about">
+      <div class="section-shell">
+        <div class="about-intro"><p class="section-kicker">THE PERSON BEHIND THE ATLAS</p><h2>Joo Yong-Hoe <span>주용회</span></h2><p class="about-role">Researcher · Industrial operator · Builder</p><p>Joo Yong-Hoe is a Ph.D. Candidate in the School of Civil & Environmental Engineering at Yonsei University and a researcher in the GIS Remote Sensing and Surveying Laboratory. He is also President of Daejin Pipe Co., Ltd. and President of ACERS.</p><p>His work connects rigorous spatial measurement with real operating environments, turning research questions into auditable methods, visual explanations and deployable systems.</p></div>
+        <div class="context-grid">
+          <article class="context-card research-context"><img src="assets/images/instrument-close.webp" alt="Close view of a Leica total station above the field datum." loading="lazy" /><div class="context-copy"><span>RESEARCH</span><h3>Yonsei University</h3><p>Ph.D. Candidate<br />School of Civil & Environmental Engineering<br />GIS Remote Sensing and Surveying Laboratory</p></div></article>
+          <article class="context-card industry-context"><img src="assets/images/welding.webp" alt="Industrial welding activity with sparks in a dark workshop." loading="lazy" /><div class="context-copy"><span>INDUSTRY</span><img class="partner-logo daejin-logo" src="assets/images/daejinpipe.png" alt="Daejin Pipe" /><p>President<br />Daejin Pipe Co., Ltd.</p></div></article>
+          <article class="context-card community-context"><img src="assets/images/acers-card.webp" alt="ACERS identity on a navy background." loading="lazy" /><div class="context-copy"><span>COMMUNITY</span><h3>ACERS</h3><p>President<br />Alumni of Civil, Environmental Resilience Safety<br />Yonsei Graduate School of Engineering</p></div></article>
         </div>
-        <figure class="question-figure">
-          <img src="assets/image-vs-proof.svg" alt="Side-by-side explanation of a visually plausible line and a traceable line supported by independent evidence." />
-          <figcaption><span>IMAGE</span> Appearance can be plausible. <span>PROOF</span> A claim must remain traceable.</figcaption>
-        </figure>
+        <p class="affiliation-note">Affiliations are provided for biographical context. JoosAtlas is an independent personal research platform and does not represent the official views of the affiliated organizations.</p>
       </div>
     </section>
 
-    <section id="lens" class="chapter lens-chapter">
-      <div class="chapter-number">02</div>
-      <div class="lens-layout">
-        <div class="lens-copy">
-          <p class="eyebrow">INTERACTIVE / EVIDENCE LENS</p>
-          <h2>Move the lens.<br />Reveal the missing layer.</h2>
-          <p>Outside the lens: a plausible image boundary.<br />Inside the lens: independent reference structure.</p>
-        </div>
-        <div id="lensStage" class="lens-stage" aria-label="Interactive audit lens. Move the pointer or drag to reveal the audit layer.">
-          <img class="lens-base" src="assets/field-image-layer.svg" alt="Image layer with a visually plausible boundary." />
-          <div id="auditLens" class="audit-lens" aria-hidden="true">
-            <img src="assets/field-audit-layer.svg" alt="" />
-            <span class="lens-label">AUDIT LAYER</span>
-          </div>
-          <div class="lens-hint">MOVE POINTER / DRAG ON TOUCH</div>
-        </div>
+    <section id="coordinates" class="coordinates-section section-shell">
+      <div class="section-heading split-heading"><div><p class="section-kicker">CURRENT COORDINATES</p><h2>A growing atlas of research, field systems and public explanation.</h2></div><p>Each coordinate is labeled by maturity. Nothing is presented as finished before the evidence can support it.</p></div>
+      <div class="coordinate-list">
+        <a href="case-001.html"><span>001</span><strong>Spatial Evidence</strong><em>Paper under review</em></a>
+        <div><span>002</span><strong>Fixed-Camera Metrology</strong><em>In development</em></div>
+        <div><span>LAB</span><strong>Industrial Digital Twin</strong><em>Exploratory</em></div>
+        <div><span>TOOLS</span><strong>Interactive Measurement</strong><em>Planned</em></div>
       </div>
-    </section>
-
-    <section id="chain" class="chapter chain-chapter">
-      <div class="chapter-number">03</div>
-      <div class="chapter-title compact">
-        <p class="eyebrow">CHAIN OF CUSTODY</p>
-        <h2>A measurement is not a picture. It is a traceable sequence of roles.</h2>
-      </div>
-
-      <div class="custody-grid">
-        <button class="custody-card active" data-role="datum">
-          <span>01</span><strong>DATUM</strong><small>Reality is established.</small>
-        </button>
-        <button class="custody-card" data-role="image">
-          <span>02</span><strong>IMAGE</strong><small>A response is observed.</small>
-        </button>
-        <button class="custody-card" data-role="reference">
-          <span>03</span><strong>REFERENCE</strong><small>The answer is challenged.</small>
-        </button>
-        <button class="custody-card" data-role="audit">
-          <span>04</span><strong>AUDIT</strong><small>The claim is decided.</small>
-        </button>
-      </div>
-
-      <div class="custody-stage" aria-live="polite">
-        <img id="custodyGraphic" src="assets/custody-datum.svg" alt="Diagram representing the physical datum role." />
-        <div class="custody-text">
-          <span id="custodyIndex">01 / DATUM</span>
-          <h3 id="custodyTitle">The field comes first.</h3>
-          <p id="custodyBody">A boundary must originate from a physical reference before any image can evaluate it.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="gate" class="chapter gate-chapter">
-      <div class="chapter-number">04</div>
-      <div class="gate-head">
-        <div>
-          <p class="eyebrow">CLAIM GATE</p>
-          <h2>A system should know when not to speak.</h2>
-        </div>
-        <p>Three conditions must survive before a measurement claim is permitted. Try the gate.</p>
-      </div>
-
-      <div class="gate-machine">
-        <div class="gate-path" aria-live="polite">
-          <div class="source-node">OBSERVATION</div>
-          <div class="gate-beam" aria-hidden="true"></div>
-          <div class="claim-node" id="claimNode">WITHHELD</div>
-        </div>
-        <div class="gate-switches">
-          <button class="gate-switch" data-gate="observable" aria-pressed="false">
-            <span class="switch-led" aria-hidden="true"></span>
-            <strong>OBSERVABLE</strong>
-            <small>The feature can be resolved.</small>
-          </button>
-          <button class="gate-switch" data-gate="consistent" aria-pressed="false">
-            <span class="switch-led" aria-hidden="true"></span>
-            <strong>GEOMETRICALLY CONSISTENT</strong>
-            <small>The response agrees with the model.</small>
-          </button>
-          <button class="gate-switch" data-gate="terminal" aria-pressed="false">
-            <span class="switch-led" aria-hidden="true"></span>
-            <strong>TERMINALLY VALID</strong>
-            <small>The final boundary survives propagation.</small>
-          </button>
-        </div>
-        <p class="gate-message" id="gateMessage">MEASUREMENT WITHHELD — 0 / 3 CONDITIONS MET</p>
-      </div>
-    </section>
-
-    <section id="failure" class="chapter failure-chapter">
-      <div class="chapter-number">05</div>
-      <div class="failure-head">
-        <p class="eyebrow dark">FAILURE ATLAS</p>
-        <h2>Failure is not noise around the result. It is part of the result.</h2>
-      </div>
-
-      <div class="failure-interface">
-        <div class="failure-tabs" role="tablist" aria-label="Failure types">
-          <button class="failure-tab active" data-failure="resolution" role="tab" aria-selected="true">BELOW RESOLUTION</button>
-          <button class="failure-tab" data-failure="consistency" role="tab" aria-selected="false">STRONG BUT INCONSISTENT</button>
-          <button class="failure-tab" data-failure="terminal" role="tab" aria-selected="false">LOCAL FIT, TERMINAL BIAS</button>
-        </div>
-        <div class="failure-content" aria-live="polite">
-          <img id="failureGraphic" src="assets/failure-resolution.svg" alt="A feature becoming too small to support a reliable observation." />
-          <div>
-            <span id="failureCode">FAILURE 01</span>
-            <h3 id="failureTitle">The feature exists. The image cannot support it.</h3>
-            <p id="failureBody">When the visible structure falls below reliable observation, the correct output is not a number. It is a refusal.</p>
-            <blockquote id="failureQuote">Unverified is not zero.</blockquote>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="principle-chapter">
-      <div class="principle-wrap">
-        <span>RESEARCH PRINCIPLE</span>
-        <blockquote>Do not claim what the measurement chain cannot support.</blockquote>
-      </div>
-    </section>
-
-    <section id="about" class="chapter about-chapter">
-      <div class="chapter-number">06</div>
-      <div class="about-heading">
-        <p class="eyebrow">THE PERSON BEHIND THE ATLAS</p>
-        <h2>One person.<br />Three operating realities.</h2>
-        <p class="about-intro">Research asks whether a claim is defensible. Industry asks whether a system works. Community asks whether knowledge travels. JoosAtlas is built where those questions meet.</p>
-      </div>
-
-      <div class="identity-board">
-        <figure class="identity-visual">
-          <img src="assets/identity-atlas.svg" alt="Three-part diagram connecting geospatial research, industrial operations, and professional community leadership around Joo Yong-Hoe." />
-          <figcaption>RESEARCH · INDUSTRY · COMMUNITY</figcaption>
-        </figure>
-
-        <div class="identity-copy">
-          <div class="name-lockup">
-            <span>JOO YONG-HOE</span>
-            <small>주용회</small>
-          </div>
-          <p class="identity-lead">Researcher, industrial operator, and builder.</p>
-          <p>Joo Yong-Hoe is a Ph.D. Candidate at Yonsei University’s Geospatial Information &amp; Remote Sensing Laboratory, President of Daejin Pipe Co., Ltd., and President of ACERS.</p>
-          <p>His work connects rigorous spatial measurement with real operating environments, turning research questions into auditable methods, clear visual explanations, and deployable tools.</p>
-
-          <div class="identity-roles">
-            <article>
-              <span>RESEARCH</span>
-              <strong>Yonsei University · GRS Lab</strong>
-              <small>Ph.D. Candidate / Geospatial measurement and remote sensing</small>
-            </article>
-            <article>
-              <span>INDUSTRY</span>
-              <strong>Daejin Pipe Co., Ltd.</strong>
-              <small>President / Industrial operations and field implementation</small>
-            </article>
-            <article>
-              <span>COMMUNITY</span>
-              <strong>ACERS</strong>
-              <small>President / Professional exchange and community leadership</small>
-            </article>
-          </div>
-        </div>
-      </div>
-
-      <p class="affiliation-note">Affiliations are provided for biographical context. JoosAtlas is an independent personal research platform and does not represent the official views of the affiliated organizations.</p>
-    </section>
-
-    <section id="release" class="chapter release-chapter">
-      <div class="chapter-number">07</div>
-      <div class="release-grid">
-        <div class="release-copy">
-          <p class="eyebrow">RELEASE LEDGER</p>
-          <h2>What is public.<br />What remains withheld.</h2>
-          <p>This public experience communicates the research problem, qualitative findings, and evidentiary philosophy without disclosing unpublished implementation details.</p>
-          <a class="repo-link" href="https://github.com/daejinpipero-gaja/JoosAtlas" target="_blank" rel="noreferrer">VIEW THE PUBLIC REPOSITORY <span>↗</span></a>
-        </div>
-        <div class="ledger">
-          <div><span>Research question</span><strong class="released">RELEASED</strong></div>
-          <div><span>Qualitative findings</span><strong class="released">RELEASED</strong></div>
-          <div><span>Researcher profile</span><strong class="released">RELEASED</strong></div>
-          <div><span>Exact method and equations</span><strong>WITHHELD</strong></div>
-          <div><span>Experimental geometry</span><strong>WITHHELD</strong></div>
-          <div><span>Numerical results and data</span><strong>WITHHELD</strong></div>
-          <div><span>Paper status</span><strong class="review">UNDER REVIEW</strong></div>
-        </div>
-      </div>
-
-      <footer>
-        <div class="footer-brand">
-          <img src="assets/mark.svg" alt="" />
-          <span><strong>JoosAtlas</strong><small>MEASURE / VERIFY / REVEAL</small></span>
-        </div>
-        <div class="footer-meta">
-          <span>FIELD PROOF / 001</span>
-          <span>JOO YONG-HOE</span>
-          <span>© 2026</span>
-        </div>
-      </footer>
     </section>
   </main>
 
+  <footer class="site-footer"><div><img src="assets/figures/joosatlas-mark.svg" alt="" /><span><strong>JoosAtlas</strong><small>Measure · Verify · Explain</small></span></div><div><a href="https://github.com/daejinpipero-gaja/JoosAtlas">GitHub repository ↗</a><small>© 2026 Joo Yong-Hoe</small></div></footer>
   <script src="app.js"></script>
 </body>
 </html>
