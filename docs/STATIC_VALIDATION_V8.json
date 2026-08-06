@@ -1,0 +1,15 @@
+{
+  "index.html": {
+    "references": 24,
+    "missing": []
+  },
+  "case-001.html": {
+    "references": 13,
+    "missing": []
+  },
+  "about.html": {
+    "references": 16,
+    "missing": []
+  },
+  "node_check": "passed"
+}

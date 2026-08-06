@@ -1,0 +1,34 @@
+{
+  "home": {
+    "overflow": 0,
+    "broken": 6,
+    "errors": [],
+    "title": "JoosAtlas — Research, field systems and public evidence",
+    "quick_12m_effect": "12.4 cm",
+    "mobile_overflow": 0,
+    "mobile_broken": 6,
+    "mobile_errors": []
+  },
+  "case": {
+    "overflow": 0,
+    "broken": 1,
+    "errors": [],
+    "title": "Case 001 — From a surveyed primitive to an auditable boundary",
+    "lab_effect_12m_2px": "12.4 cm",
+    "lab_status": "BEYOND 5 CM",
+    "tolerance": "0.81 px",
+    "evidence_r3_3d": "R3 three-dimensional TS reconstruction.",
+    "mobile_overflow": 0,
+    "mobile_broken": 1,
+    "mobile_errors": []
+  },
+  "about": {
+    "overflow": 0,
+    "broken": 4,
+    "errors": [],
+    "title": "About Joo Yong-Hoe — JoosAtlas",
+    "mobile_overflow": 0,
+    "mobile_broken": 4,
+    "mobile_errors": []
+  }
+}

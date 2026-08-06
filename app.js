@@ -142,4 +142,350 @@
     lightbox.addEventListener('click', e => { if (e.target === lightbox) hide(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && lightbox.classList.contains('open')) hide(); });
   }
+
+  const localScales = {7:27.815, 9:41.079, 12:61.782};
+
+  const quickLab = document.querySelector('[data-quick-lab]');
+  if (quickLab) {
+    const effectEl = quickLab.querySelector('#quick-ground-effect');
+    const captionEl = quickLab.querySelector('#quick-lab-caption');
+    const observedCircle = quickLab.querySelector('.quick-circle.observed');
+    const observedLine = quickLab.querySelector('.quick-observed-line');
+    quickLab.querySelectorAll('[data-distance]').forEach(btn => btn.addEventListener('click', () => {
+      const distance = Number(btn.dataset.distance);
+      const scale = localScales[distance];
+      const effectCm = scale * 2 / 10;
+      quickLab.querySelectorAll('[data-distance]').forEach(b => b.classList.toggle('active', b === btn));
+      effectEl.textContent = `${effectCm.toFixed(1)} cm`;
+      captionEl.textContent = `At ${distance} m, the selected local scale is approximately ${scale.toFixed(1)} mm/px.`;
+      observedLine.style.transform = `translateX(${Math.min(34, effectCm*2.1)}px)`;
+      observedCircle.style.transform = `translate(-50%,-50%) scale(${1 + effectCm/110})`;
+    }));
+  }
+
+  const pixelLab = document.querySelector('[data-pixel-lab]');
+  if (pixelLab) {
+    let distance = 7;
+    let revealed = false;
+    let compareTimer = null;
+    const slider = pixelLab.querySelector('#pixel-shift');
+    const pxValue = pixelLab.querySelector('#pixel-shift-value');
+    const scaleEl = pixelLab.querySelector('#lab-scale');
+    const effectEl = pixelLab.querySelector('#lab-effect');
+    const toleranceEl = pixelLab.querySelector('#lab-tolerance');
+    const status = pixelLab.querySelector('#lab-status');
+    const meter = pixelLab.querySelector('#lab-meter-fill');
+    const imageBoundary = pixelLab.querySelector('#sim-image-boundary');
+    const groundBoundary = pixelLab.querySelector('#sim-ground-boundary');
+    const pixelLabel = pixelLab.querySelector('#sim-pixel-label');
+    const gapLabel = pixelLab.querySelector('#ground-gap-label');
+    const gap = pixelLab.querySelector('#ground-gap');
+    const revealBtn = pixelLab.querySelector('#reveal-tolerance');
+    const compareBtn = pixelLab.querySelector('#compare-two-pixels');
+
+    const renderLab = () => {
+      const px = Number(slider.value);
+      const scale = localScales[distance];
+      const effectMm = px * scale;
+      const effectCm = effectMm / 10;
+      const tolerancePx = 50 / scale;
+      const pass = effectMm <= 50 + 1e-6;
+      pxValue.textContent = `${px.toFixed(1)} px`;
+      scaleEl.textContent = `${scale.toFixed(1)} mm/px`;
+      effectEl.textContent = `${effectCm.toFixed(1)} cm`;
+      pixelLabel.textContent = `${px.toFixed(1)} px`;
+      gapLabel.textContent = `${effectCm.toFixed(1)} cm`;
+      toleranceEl.textContent = revealed ? `${tolerancePx.toFixed(2)} px` : 'Hidden';
+      const meterPct = Math.min(100, effectMm / 150 * 100);
+      meter.style.width = `${meterPct}%`;
+      meter.classList.toggle('over', !pass);
+      imageBoundary.style.transform = `translateX(${px * 12}px)`;
+      groundBoundary.style.transform = `translate(-50%,-50%) scale(${1 + effectCm/90})`;
+      gap.style.width = `${Math.max(24, Math.min(120, effectCm * 8))}px`;
+      status.classList.toggle('pass', pass);
+      status.classList.toggle('fail', !pass);
+      status.querySelector('strong').textContent = pass ? 'WITHIN 5 CM' : 'BEYOND 5 CM';
+      status.querySelector('p').textContent = pass ? 'The selected displacement remains inside the challenge threshold.' : `At ${distance} m, ${px.toFixed(1)} px produces approximately ${effectCm.toFixed(1)} cm in this selected local geometry.`;
+    };
+
+    pixelLab.querySelectorAll('[data-lab-distance]').forEach(btn => btn.addEventListener('click', () => {
+      distance = Number(btn.dataset.labDistance);
+      pixelLab.querySelectorAll('[data-lab-distance]').forEach(b => b.classList.toggle('active', b === btn));
+      renderLab();
+    }));
+    slider.addEventListener('input', renderLab);
+    revealBtn.addEventListener('click', () => {
+      revealed = !revealed;
+      revealBtn.textContent = revealed ? 'Hide tolerance' : 'Reveal tolerance';
+      renderLab();
+    });
+    compareBtn.addEventListener('click', () => {
+      if (compareTimer) { clearInterval(compareTimer); compareTimer = null; compareBtn.textContent='Compare 2 px across distances'; return; }
+      slider.value = 2;
+      const sequence=[7,9,12]; let i=0;
+      const step=()=>{
+        distance=sequence[i%sequence.length];
+        pixelLab.querySelectorAll('[data-lab-distance]').forEach(b=>b.classList.toggle('active', Number(b.dataset.labDistance)===distance));
+        renderLab(); i++;
+      };
+      step(); compareBtn.textContent='Stop comparison';
+      compareTimer=setInterval(step,1500);
+    });
+    renderLab();
+  }
+
+})();
+
+/* =========================================================
+   V8 interactions
+   ========================================================= */
+(() => {
+  const game = document.querySelector('[data-audit-game]');
+  if (game) {
+    const rounds = [
+      {
+        kicker:'A CLEAN OVERLAY',
+        question:'The projected line visually matches the field mark. Is the boundary verified?',
+        correct:'withhold',
+        explanation:'Not yet. Visual agreement is only an observation. The image cannot provide an independent reference for its own interpretation.',
+        status:'IMAGE ONLY',
+        stage:'stage-one'
+      },
+      {
+        kicker:'REFERENCE ENTERS',
+        question:'Independent reference points agree locally, but the final object-space discrepancy has not been checked. Permit the claim?',
+        correct:'withhold',
+        explanation:'Still not yet. Local agreement is useful, but it does not establish terminal validity after projection and back-projection.',
+        status:'LOCAL CHECK',
+        stage:'stage-two'
+      },
+      {
+        kicker:'TERMINAL AUDIT',
+        question:'Observability, geometric consistency and the signed terminal audit all pass the declared rule. Permit the claim?',
+        correct:'permit',
+        explanation:'Yes. The claim is now earned by the complete chain—not by appearance alone.',
+        status:'CLAIM READY',
+        stage:'stage-three'
+      }
+    ];
+    let index = 0;
+    let score = 0;
+    let locked = false;
+    const visual = game.querySelector('#game-visual');
+    const roundEl = game.querySelector('#game-round');
+    const bar = game.querySelector('#game-progress-bar');
+    const scoreEl = game.querySelector('#game-score');
+    const kicker = game.querySelector('#game-kicker');
+    const question = game.querySelector('#game-question');
+    const status = game.querySelector('#game-status-chip');
+    const feedback = game.querySelector('#game-feedback');
+    const next = game.querySelector('#game-next');
+    const replay = game.querySelector('#game-replay');
+    const caseLink = game.querySelector('#game-case-link');
+    const answerButtons = [...game.querySelectorAll('[data-answer]')];
+
+    const renderRound = () => {
+      const r = rounds[index];
+      locked = false;
+      visual.classList.remove('stage-one','stage-two','stage-three');
+      visual.classList.add(r.stage);
+      roundEl.textContent = `ROUND ${index + 1} / ${rounds.length}`;
+      bar.style.width = `${((index + 1) / rounds.length) * 100}%`;
+      scoreEl.textContent = `SCORE ${score}`;
+      kicker.textContent = r.kicker;
+      question.textContent = r.question;
+      status.textContent = r.status;
+      feedback.className = 'game-feedback';
+      feedback.innerHTML = '<strong>Choose a decision.</strong><p>The explanation will appear here.</p>';
+      answerButtons.forEach(b => { b.disabled = false; b.classList.remove('is-correct','is-wrong'); });
+      next.disabled = true;
+      next.hidden = false;
+      replay.hidden = true;
+      caseLink.hidden = true;
+      next.textContent = index === rounds.length - 1 ? 'SEE RESULT →' : 'NEXT ROUND →';
+    };
+
+    answerButtons.forEach(btn => btn.addEventListener('click', () => {
+      if (locked) return;
+      locked = true;
+      const answer = btn.dataset.answer;
+      const r = rounds[index];
+      const correct = answer === r.correct;
+      if (correct) score += 1;
+      scoreEl.textContent = `SCORE ${score}`;
+      answerButtons.forEach(b => {
+        b.disabled = true;
+        if (b.dataset.answer === r.correct) b.classList.add('is-correct');
+      });
+      if (!correct) btn.classList.add('is-wrong');
+      feedback.className = `game-feedback ${correct ? 'correct' : 'wrong'}`;
+      feedback.innerHTML = `<strong>${correct ? 'CORRECT DECISION' : 'VISUAL SHORTCUT DETECTED'}</strong><p>${r.explanation}</p>`;
+      next.disabled = false;
+    }));
+
+    next.addEventListener('click', () => {
+      if (!locked) return;
+      if (index < rounds.length - 1) {
+        index += 1;
+        renderRound();
+      } else {
+        roundEl.textContent = 'AUDIT COMPLETE';
+        bar.style.width = '100%';
+        kicker.textContent = score === rounds.length ? 'CLAIM DISCIPLINE / 3 OF 3' : `CLAIM DISCIPLINE / ${score} OF 3`;
+        question.textContent = score === rounds.length ? 'You resisted the visual shortcut.' : 'The evidence chain can be replayed.';
+        status.textContent = score === rounds.length ? 'CLAIM EARNED' : 'REVIEW NEEDED';
+        feedback.className = `game-feedback ${score === rounds.length ? 'correct' : 'wrong'}`;
+        feedback.innerHTML = `<strong>${score === rounds.length ? 'COMPLETE CHAIN RECOGNIZED' : 'PARTIAL CHAIN RECOGNIZED'}</strong><p>${score === rounds.length ? 'A measurement claim becomes defensible only after observation, independent reference and terminal audit remain distinct and all pass.' : 'The exercise is designed to make the tempting shortcut visible. Try again or open the full case.'}</p>`;
+        answerButtons.forEach(b => b.hidden = true);
+        next.hidden = true;
+        replay.hidden = false;
+        caseLink.hidden = false;
+      }
+    });
+
+    replay.addEventListener('click', () => {
+      index = 0; score = 0;
+      answerButtons.forEach(b => b.hidden = false);
+      renderRound();
+    });
+    renderRound();
+  }
+
+  const sandbox = document.querySelector('[data-projection-sandbox]');
+  if (sandbox) {
+    const distance = sandbox.querySelector('#distance-slider');
+    const pixel = sandbox.querySelector('#pixel-slider');
+    const angle = sandbox.querySelector('#angle-slider');
+    const distanceOut = sandbox.querySelector('#distance-output');
+    const pixelOut = sandbox.querySelector('#pixel-output');
+    const angleOut = sandbox.querySelector('#angle-output');
+    const resultOut = sandbox.querySelector('#projection-result-value');
+    const ellipse = sandbox.querySelector('#projection-footprint');
+    const rayA = sandbox.querySelector('#projection-ray-a');
+    const rayB = sandbox.querySelector('#projection-ray-b');
+    const normal = sandbox.querySelector('#projection-normal');
+
+    const update = () => {
+      const z = Number(distance.value);
+      const du = Number(pixel.value);
+      const theta = Number(angle.value) * Math.PI / 180;
+      const mm = (z * du / Math.max(.35, Math.cos(theta)));
+      distanceOut.value = `${z.toFixed(1)} m`;
+      pixelOut.value = `${du.toFixed(2).replace(/\.00$/,'')} px`;
+      angleOut.value = `${Math.round(Number(angle.value))}°`;
+      resultOut.textContent = `${mm.toFixed(1)} mm`;
+      const width = Math.max(22, Math.min(118, 18 + mm * 2.2));
+      const height = Math.max(8, Math.min(40, 7 + mm * .55));
+      ellipse.setAttribute('rx', width.toFixed(1));
+      ellipse.setAttribute('ry', height.toFixed(1));
+      const endX = 580 + z * 8;
+      const spread = 18 + du * 8 + Number(angle.value) * .35;
+      rayA.setAttribute('d', `M180 106L${(endX-spread).toFixed(1)} 350`);
+      rayB.setAttribute('d', `M180 106L${(endX+spread).toFixed(1)} 350`);
+      ellipse.setAttribute('cx', endX.toFixed(1));
+      normal.setAttribute('x1', endX.toFixed(1));
+      normal.setAttribute('x2', endX.toFixed(1));
+    };
+    [distance,pixel,angle].forEach(el => el.addEventListener('input', update));
+    sandbox.querySelectorAll('[data-projection-preset]').forEach(btn => btn.addEventListener('click', () => {
+      const p = btn.dataset.projectionPreset;
+      if (p === 'near') { distance.value=5; pixel.value=1; angle.value=10; }
+      if (p === 'field') { distance.value=9; pixel.value=2; angle.value=25; }
+      if (p === 'far') { distance.value=14; pixel.value=3; angle.value=55; }
+      update();
+    }));
+    update();
+  }
+
+  const localScales = {7:27.815, 9:41.079, 12:61.782};
+
+  const quickLab = document.querySelector('[data-quick-lab]');
+  if (quickLab) {
+    const effectEl = quickLab.querySelector('#quick-ground-effect');
+    const captionEl = quickLab.querySelector('#quick-lab-caption');
+    const observedCircle = quickLab.querySelector('.quick-circle.observed');
+    const observedLine = quickLab.querySelector('.quick-observed-line');
+    quickLab.querySelectorAll('[data-distance]').forEach(btn => btn.addEventListener('click', () => {
+      const distance = Number(btn.dataset.distance);
+      const scale = localScales[distance];
+      const effectCm = scale * 2 / 10;
+      quickLab.querySelectorAll('[data-distance]').forEach(b => b.classList.toggle('active', b === btn));
+      effectEl.textContent = `${effectCm.toFixed(1)} cm`;
+      captionEl.textContent = `At ${distance} m, the selected local scale is approximately ${scale.toFixed(1)} mm/px.`;
+      observedLine.style.transform = `translateX(${Math.min(34, effectCm*2.1)}px)`;
+      observedCircle.style.transform = `translate(-50%,-50%) scale(${1 + effectCm/110})`;
+    }));
+  }
+
+  const pixelLab = document.querySelector('[data-pixel-lab]');
+  if (pixelLab) {
+    let distance = 7;
+    let revealed = false;
+    let compareTimer = null;
+    const slider = pixelLab.querySelector('#pixel-shift');
+    const pxValue = pixelLab.querySelector('#pixel-shift-value');
+    const scaleEl = pixelLab.querySelector('#lab-scale');
+    const effectEl = pixelLab.querySelector('#lab-effect');
+    const toleranceEl = pixelLab.querySelector('#lab-tolerance');
+    const status = pixelLab.querySelector('#lab-status');
+    const meter = pixelLab.querySelector('#lab-meter-fill');
+    const imageBoundary = pixelLab.querySelector('#sim-image-boundary');
+    const groundBoundary = pixelLab.querySelector('#sim-ground-boundary');
+    const pixelLabel = pixelLab.querySelector('#sim-pixel-label');
+    const gapLabel = pixelLab.querySelector('#ground-gap-label');
+    const gap = pixelLab.querySelector('#ground-gap');
+    const revealBtn = pixelLab.querySelector('#reveal-tolerance');
+    const compareBtn = pixelLab.querySelector('#compare-two-pixels');
+
+    const renderLab = () => {
+      const px = Number(slider.value);
+      const scale = localScales[distance];
+      const effectMm = px * scale;
+      const effectCm = effectMm / 10;
+      const tolerancePx = 50 / scale;
+      const pass = effectMm <= 50 + 1e-6;
+      pxValue.textContent = `${px.toFixed(1)} px`;
+      scaleEl.textContent = `${scale.toFixed(1)} mm/px`;
+      effectEl.textContent = `${effectCm.toFixed(1)} cm`;
+      pixelLabel.textContent = `${px.toFixed(1)} px`;
+      gapLabel.textContent = `${effectCm.toFixed(1)} cm`;
+      toleranceEl.textContent = revealed ? `${tolerancePx.toFixed(2)} px` : 'Hidden';
+      const meterPct = Math.min(100, effectMm / 150 * 100);
+      meter.style.width = `${meterPct}%`;
+      meter.classList.toggle('over', !pass);
+      imageBoundary.style.transform = `translateX(${px * 12}px)`;
+      groundBoundary.style.transform = `translate(-50%,-50%) scale(${1 + effectCm/90})`;
+      gap.style.width = `${Math.max(24, Math.min(120, effectCm * 8))}px`;
+      status.classList.toggle('pass', pass);
+      status.classList.toggle('fail', !pass);
+      status.querySelector('strong').textContent = pass ? 'WITHIN 5 CM' : 'BEYOND 5 CM';
+      status.querySelector('p').textContent = pass ? 'The selected displacement remains inside the challenge threshold.' : `At ${distance} m, ${px.toFixed(1)} px produces approximately ${effectCm.toFixed(1)} cm in this selected local geometry.`;
+    };
+
+    pixelLab.querySelectorAll('[data-lab-distance]').forEach(btn => btn.addEventListener('click', () => {
+      distance = Number(btn.dataset.labDistance);
+      pixelLab.querySelectorAll('[data-lab-distance]').forEach(b => b.classList.toggle('active', b === btn));
+      renderLab();
+    }));
+    slider.addEventListener('input', renderLab);
+    revealBtn.addEventListener('click', () => {
+      revealed = !revealed;
+      revealBtn.textContent = revealed ? 'Hide tolerance' : 'Reveal tolerance';
+      renderLab();
+    });
+    compareBtn.addEventListener('click', () => {
+      if (compareTimer) { clearInterval(compareTimer); compareTimer = null; compareBtn.textContent='Compare 2 px across distances'; return; }
+      slider.value = 2;
+      const sequence=[7,9,12]; let i=0;
+      const step=()=>{
+        distance=sequence[i%sequence.length];
+        pixelLab.querySelectorAll('[data-lab-distance]').forEach(b=>b.classList.toggle('active', Number(b.dataset.labDistance)===distance));
+        renderLab(); i++;
+      };
+      step(); compareBtn.textContent='Stop comparison';
+      compareTimer=setInterval(step,1500);
+    });
+    renderLab();
+  }
+
 })();

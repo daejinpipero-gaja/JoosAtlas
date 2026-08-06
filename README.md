@@ -1,36 +1,23 @@
 # JoosAtlas
 
-> **Research that survives contact with the field.**
+**Research that survives contact with the field.**
 
-[Open the public site](https://daejinpipero-gaja.github.io/JoosAtlas/)
+JoosAtlas is the independent research platform of **Joo Yong-Hoe**, connecting surveying, photogrammetry, computer vision, industrial operations and professional community.
 
-JoosAtlas is the independent research platform of **Joo Yong-Hoe (주용회)**. It connects spatial measurement, image geometry, industrial operation and public explanation.
+## Public site
 
-## Joo Yong-Hoe
+https://daejinpipero-gaja.github.io/JoosAtlas/
 
-- **Research** — Ph.D. Candidate, School of Civil & Environmental Engineering, GIS Remote Sensing and Surveying Laboratory, Yonsei University
-- **Industry** — President, Daejin Pipe Co., Ltd.
-- **Community** — President, ACERS (Alumni of Civil, Environmental Resilience Safety, Yonsei Graduate School of Engineering)
+## Current structure
 
-## Public pages
+- `index.html` — JoosAtlas editorial home
+- `case-001.html` — public companion for Case 001, including theory, selected evidence and the Pixel Consequence Lab
+- `about.html` — Joo Yong-Hoe: research, hands-on operation, Daejin Pipe and ACERS
 
-- [`index.html`](https://daejinpipero-gaja.github.io/JoosAtlas/) — JoosAtlas home
-- [`case-001.html`](https://daejinpipero-gaja.github.io/JoosAtlas/case-001.html) — Case 001 research experience
-- [`about.html`](https://daejinpipero-gaja.github.io/JoosAtlas/about.html) — biographical and professional profile
+## Interactive learning
 
-## Case 001
+The Pixel Consequence Lab lets a visitor change distance and image displacement, then observe the selected local ground consequence. It is an educational comparison, not a global system-accuracy specification.
 
-The public case explains how a surveyed physical primitive, exact boundary generation, camera projection, inverse projection and signed terminal audit form a traceable measurement chain.
+## Public disclosure
 
-The complete terminal results, raw data, implementation package and reviewer correspondence remain governed by the paper’s release status.
-
-## Status
-
-| Coordinate | Status |
-|---|---|
-| Case 001 — Spatial Evidence | Paper under review |
-| Case 002 — Fixed-Camera Metrology | In development |
-| Industrial Digital Twin | Exploratory |
-| Interactive Measurement Tools | Planned |
-
-JoosAtlas is an independent personal research platform. Affiliations are provided for biographical context and do not imply that the site represents the official views of the affiliated organizations.
+The public site includes selected field records, theory and object-space evidence. Raw coordinates, complete terminal image results, calibration files and reviewer correspondence remain outside the public package.

@@ -21,7 +21,7 @@
     <a class="site-brand" href="index.html"><img src="assets/figures/joosatlas-mark.svg" alt="" /><span><strong>JoosAtlas</strong><small>CASE 001 · SPATIAL EVIDENCE</small></span></a>
     <button class="menu-button" aria-expanded="false" aria-controls="main-nav">INDEX</button>
     <nav id="main-nav" class="main-nav" aria-label="Primary navigation">
-      <a href="#question">Question</a><a href="#theory">Theory</a><a href="#field">Field</a><a href="#evidence">Evidence</a><a href="#claim">Claim boundary</a><a href="about.html">About Joo</a>
+      <a href="#question">Question</a><a href="#theory">Theory</a><a href="#sandbox">Try it</a><a href="#field">Field</a><a href="#evidence">Evidence</a><a href="#claim">Claim boundary</a><a href="about.html">About Joo</a>
     </nav>
   </header>
 
@@ -139,9 +139,56 @@
       </div>
     </section>
 
+    <section id="pixel-lab" class="pixel-lab-section paper-section" data-header-theme="light">
+      <div class="section-frame editorial-grid pixel-lab-heading">
+        <div class="section-index"><span>04</span><p>INTERACTIVE LAB</p></div>
+        <div><p class="overline dark">PIXEL CONSEQUENCE LAB</p><h2>What does one pixel cost on the ground?</h2><p class="lead-copy narrow">Move the image displacement and change the distance. The image error is measured in pixels; its local ground consequence is not constant.</p></div>
+      </div>
+
+      <div class="section-frame pixel-lab-shell" data-pixel-lab>
+        <div class="pixel-lab-visual">
+          <div class="lab-view-labels"><span>IMAGE PLANE</span><span>OBJECT SPACE</span></div>
+          <div class="lab-visual-grid">
+            <div class="image-simulator">
+              <div class="sim-grid"></div>
+              <div class="sim-boundary nominal"></div>
+              <div class="sim-boundary observed" id="sim-image-boundary"></div>
+              <div class="sim-pixel-ruler"><i></i><span id="sim-pixel-label">2.0 px</span></div>
+            </div>
+            <div class="sim-transfer"><span>BACK-PROJECT</span><b>→</b></div>
+            <div class="ground-simulator">
+              <div class="ground-grid"></div>
+              <div class="ground-circle nominal"></div>
+              <div class="ground-circle observed" id="sim-ground-boundary"></div>
+              <div class="ground-center">+</div>
+              <div class="ground-gap" id="ground-gap"><i></i><span id="ground-gap-label">5.6 cm</span></div>
+            </div>
+          </div>
+          <p class="lab-visual-note">Boundary displacement is magnified in the diagram for legibility.</p>
+        </div>
+
+        <aside class="pixel-lab-console">
+          <p class="console-kicker">CHALLENGE</p>
+          <h3>Keep the local ground effect below 5 cm.</h3>
+          <div class="distance-selector" role="tablist" aria-label="Viewing distance"><button class="active" data-lab-distance="7">7 m</button><button data-lab-distance="9">9 m</button><button data-lab-distance="12">12 m</button></div>
+          <label class="pixel-slider-label" for="pixel-shift"><span>Image displacement</span><strong id="pixel-shift-value">2.0 px</strong></label>
+          <input id="pixel-shift" class="pixel-slider" type="range" min="0" max="4" value="2" step="0.1" />
+          <div class="lab-meter"><i id="lab-meter-fill"></i><b class="threshold-mark" title="5 cm threshold"></b></div>
+          <div class="lab-readouts">
+            <div><span>Selected local scale</span><strong id="lab-scale">27.8 mm/px</strong></div>
+            <div><span>Estimated ground effect</span><strong id="lab-effect">5.6 cm</strong></div>
+            <div><span>5 cm pixel tolerance</span><strong id="lab-tolerance">Hidden</strong></div>
+          </div>
+          <div class="lab-status pass" id="lab-status"><span>STATUS</span><strong>WITHIN 5 CM</strong><p>The selected displacement remains inside the challenge threshold.</p></div>
+          <div class="lab-actions"><button id="reveal-tolerance" class="button button-dark">Reveal tolerance</button><button id="compare-two-pixels" class="text-button">Compare 2 px across distances</button></div>
+        </aside>
+      </div>
+      <p class="section-frame pixel-lab-caveat">Selected local inverse-Jacobian scales are used for an educational comparison: 27.8, 41.1 and 61.8 mm/px at the three displayed ranges. They illustrate local sensitivity, not a global accuracy specification for the complete system.</p>
+    </section>
+
     <section id="evidence" class="evidence-section dark-section" data-header-theme="dark">
       <div class="section-frame evidence-heading editorial-grid">
-        <div class="section-index section-index-light"><span>04</span><p>SELECTED EVIDENCE</p></div>
+        <div class="section-index section-index-light"><span>05</span><p>SELECTED EVIDENCE</p></div>
         <div><p class="overline light">OBJECT-SPACE VALIDATION</p><h2>Three placements. Two views. One metric frame.</h2><p>The explorer below shows selected TS boundary checks only. It does not substitute for the full terminal image audit.</p></div>
       </div>
 
@@ -173,7 +220,7 @@
 
     <section class="interpretation-section paper-section" data-header-theme="light">
       <div class="section-frame editorial-grid">
-        <div class="section-index"><span>05</span><p>INTERPRETATION</p></div>
+        <div class="section-index"><span>06</span><p>INTERPRETATION</p></div>
         <div>
           <h2>What the selected object-space checks do—and do not—establish.</h2>
           <div class="interpretation-grid">
