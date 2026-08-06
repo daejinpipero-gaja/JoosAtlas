@@ -3,63 +3,214 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Case 001 — When an image becomes evidence | JoosAtlas</title>
-  <meta name="description" content="An interactive research companion explaining the measurement chain from surveyed primitive to image-space audit." />
+  <title>Case 001 — From a surveyed primitive to an auditable boundary</title>
+  <meta name="description" content="A public research experience explaining how surveyed object-space geometry, image projection and signed audit form a traceable measurement chain." />
   <meta name="author" content="Joo Yong-Hoe" />
-  <meta name="theme-color" content="#0b1b2a" />
-  <meta property="og:title" content="Case 001 — When an image becomes evidence" />
-  <meta property="og:description" content="From surveyed geometry to terminal audit." />
+  <meta name="theme-color" content="#102330" />
+  <meta property="og:title" content="Case 001 — JoosAtlas" />
+  <meta property="og:description" content="From a surveyed primitive to an auditable boundary." />
   <meta property="og:image" content="https://daejinpipero-gaja.github.io/JoosAtlas/assets/images/social-preview.jpg" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="case-page">
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header dark-header">
-    <a class="site-brand" href="index.html" aria-label="JoosAtlas home"><img src="assets/figures/joosatlas-mark.svg" alt="" /><span><strong>JoosAtlas</strong><small>CASE 001 / SPATIAL EVIDENCE</small></span></a>
-    <button class="menu-button" aria-expanded="false" aria-controls="main-nav">MENU</button>
-    <nav id="main-nav" class="main-nav" aria-label="Case navigation"><a href="#question">Question</a><a href="#theory">Theory</a><a href="#field">Field</a><a href="#evidence">Evidence</a><a href="#limits">Claim boundary</a><a href="index.html">Home</a></nav>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <header class="site-header header-overlay">
+    <a class="site-brand" href="index.html"><img src="assets/figures/joosatlas-mark.svg" alt="" /><span><strong>JoosAtlas</strong><small>CASE 001 · SPATIAL EVIDENCE</small></span></a>
+    <button class="menu-button" aria-expanded="false" aria-controls="main-nav">INDEX</button>
+    <nav id="main-nav" class="main-nav" aria-label="Primary navigation">
+      <a href="#question">Question</a><a href="#theory">Theory</a><a href="#field">Field</a><a href="#evidence">Evidence</a><a href="#claim">Claim boundary</a><a href="about.html">About Joo</a>
+    </nav>
   </header>
 
   <main id="main">
-    <section class="case-hero">
-      <img src="assets/images/field-wide.webp" alt="A surveyed circular primitive and total station at the industrial field site." />
+    <section class="case-hero" data-header-theme="dark">
+      <div class="case-hero-image"><img src="assets/images/field-hero.webp" alt="A total station installed within the surveyed primitive at the field site." /></div>
       <div class="case-hero-shade"></div>
-      <div class="case-hero-copy"><p class="section-kicker">CASE 001 · PAPER UNDER REVIEW</p><h1>From a surveyed primitive<br />to an auditable boundary.</h1><p>Can a single oblique image test whether a field-generated design boundary has been preserved?</p><div class="case-hero-meta"><span>Object-space origin</span><span>Declared camera model</span><span>Signed terminal audit</span></div></div>
+      <div class="case-hero-copy section-frame">
+        <p class="overline light">CASE 001 / PAPER UNDER REVIEW</p>
+        <h1>From a surveyed primitive<br />to an auditable boundary.</h1>
+        <p>Can a single oblique image test whether a field-generated design boundary has been preserved?</p>
+        <div class="case-hero-tags"><span>Object-space datum</span><span>Image geometry</span><span>Signed terminal audit</span></div>
+      </div>
+      <div class="case-hero-caption"><span>FIELD RECORD</span><span>Physical reference before image interpretation</span></div>
     </section>
 
-    <section id="question" class="case-question section-shell"><div class="section-heading split-heading"><div><p class="section-kicker">THE RESEARCH QUESTION</p><h2>Seeing a boundary and measuring a boundary are different acts.</h2></div><p>The case separates the system into roles: the total station establishes object space, exact scaling generates the design boundary, the camera observes, and an independent audit decides what the final claim can support.</p></div><img class="method-overview" src="assets/figures/method-overview.svg" alt="Three-stage overview of field datum, exact expansion and image audit." loading="lazy" /></section>
-
-    <section id="theory" class="theory-section">
-      <div class="section-shell"><div class="section-heading split-heading"><div><p class="section-kicker">THEORETICAL CORE</p><h2>Five equations close the chain.</h2></div><p>The formulas are shown at the level needed to understand the metrology. Calibration values, implementation thresholds and full terminal results remain outside this public page.</p></div>
-      <div class="equation-stack">
-        <article class="equation-card"><div class="equation-index">01</div><div class="equation-copy"><span>Surveyed primitive</span><h3>Fit the physical generator in object space.</h3><math display="block" aria-label="Circle fitting equation"><mrow><mo>(</mo><mover><mi>O</mi><mo>^</mo></mover><mo>,</mo><msub><mover><mi>r</mi><mo>^</mo></mover><mi>P</mi></msub><mo>)</mo><mo>=</mo><munder><mo>arg min</mo><mrow><mi>O</mi><mo>,</mo><mi>r</mi></mrow></munder><mrow><mo>∑</mo><msup><mrow><mo>(</mo><mo>‖</mo><msub><mi>P</mi><mi>i</mi></msub><mo>−</mo><mi>O</mi><mo>‖</mo><mo>−</mo><mi>r</mi><mo>)</mo></mrow><mn>2</mn></msup></mrow></mrow></math><p>The boundary begins with surveyed points—not an image overlay.</p></div></article>
-        <article class="equation-card"><div class="equation-index">02</div><div class="equation-copy"><span>Exact boundary generation</span><h3>Expand the primitive by a fixed geometric ratio.</h3><math display="block" aria-label="Exact boundary scale"><mrow><msub><mi>R</mi><mi>B</mi></msub><mo>=</mo><mi>λ</mi><msub><mover><mi>r</mi><mo>^</mo></mover><mi>P</mi></msub><mo>,</mo><mspace width="1em"/><mi>λ</mi><mo>=</mo><mfrac><mn>5.5</mn><mn>1.5</mn></mfrac><mo>=</mo><mfrac><mn>11</mn><mn>3</mn></mfrac></mrow></math><p>The design boundary is generated in metric space before the image is consulted.</p></div></article>
-        <article class="equation-card"><div class="equation-index">03</div><div class="equation-copy"><span>Forward projection</span><h3>Declare how object space maps to the image.</h3><math display="block" aria-label="Collinearity projection"><mrow><mi>s</mi><mover><mi>u</mi><mo>~</mo></mover><mo>=</mo><mi>K</mi><mo>[</mo><mi>R</mi><mo>|</mo><mi>t</mi><mo>]</mo><mover><mi>X</mi><mo>~</mo></mover></mrow></math><p>The intrinsic mapping and exterior orientation are explicit parts of the evidence chain.</p></div></article>
-        <article class="equation-card"><div class="equation-index">04</div><div class="equation-copy"><span>Inverse projection</span><h3>Return the observed response to object space.</h3><math display="block" aria-label="Back projection ray"><mrow><mi>X</mi><mo>(</mo><mi>μ</mi><mo>)</mo><mo>=</mo><mi>C</mi><mo>+</mo><mi>μ</mi><msup><mi>R</mi><mi>T</mi></msup><msup><mi>K</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mover><mi>u</mi><mo>~</mo></mover></mrow></math><p>The selected pixel becomes a world ray; the declared support surface determines its 3D intersection.</p></div></article>
-        <article class="equation-card"><div class="equation-index">05</div><div class="equation-copy"><span>Signed terminal audit</span><h3>Preserve direction, not only magnitude.</h3><math display="block" aria-label="Signed radial discrepancy"><mrow><mi>Δ</mi><msub><mi>R</mi><mi>j</mi></msub><mo>=</mo><msub><mi>R</mi><mi>B</mi></msub><mo>−</mo><msub><mover><mi>R</mi><mo>^</mo></mover><mrow><mi>ref</mi><mo>,</mo><mi>j</mi></mrow></msub></mrow></math><p>The sign is retained so inward and outward deviations are not collapsed into a single absolute error. Interpretation follows the manuscript convention.</p></div></article>
-      </div>
-      <details class="notation"><summary>Notation used on this page</summary><dl><div><dt>Ô</dt><dd>surveyed generator centre</dd></div><div><dt>r̂P</dt><dd>fitted primitive radius</dd></div><div><dt>RB</dt><dd>generated design-boundary radius</dd></div><div><dt>K</dt><dd>camera intrinsic mapping</dd></div><div><dt>R, t</dt><dd>camera exterior orientation</dd></div><div><dt>C</dt><dd>camera centre</dd></div><div><dt>ΔR</dt><dd>signed radial discrepancy</dd></div></dl></details>
-      </div>
-    </section>
-
-    <section id="field" class="field-section section-shell"><div class="section-heading split-heading"><div><p class="section-kicker">FIELD REALIZATION</p><h2>The experimental geometry is physical, not illustrative.</h2></div><p>The composite below links the metric field frame, camera placements, total-station references and overhead records. It is included so visitors can see the system before reading its outputs.</p></div><figure class="field-layout-figure"><img src="assets/images/field-layout.webp" alt="Composite of the field coordinate design, overhead views, datum and total-station setup." loading="lazy" /><figcaption>Field layout and observation roles. Camera placements, control targets and total-station boundary references are shown in the same field logic.</figcaption></figure></section>
-
-    <section id="evidence" class="evidence-section">
-      <div class="section-shell"><div class="section-heading split-heading"><div><p class="section-kicker">SELECTED OBJECT-SPACE EVIDENCE</p><h2>Three placements. Two views. One metric frame.</h2></div><p>The explorer shows selected 3-cm sessions from central, lateral and depth placements. These figures concern total-station verification of the generated 5.5 m boundary; they do not disclose the full image-response pipeline or terminal audit table.</p></div>
-      <div class="evidence-explorer" data-condition="C3" data-view="plan">
-        <div class="evidence-controls"><div class="segmented" role="tablist" aria-label="Placement"><button class="condition-tab active" data-condition="C3">C3 <span>Central</span></button><button class="condition-tab" data-condition="R3">R3 <span>Lateral</span></button><button class="condition-tab" data-condition="D3">D3 <span>Depth</span></button></div><div class="segmented view-switch" role="tablist" aria-label="Figure view"><button class="view-tab active" data-view="plan">Plan view</button><button class="view-tab" data-view="3d">3D view</button></div></div>
-        <div class="evidence-body"><figure class="evidence-figure"><img id="evidence-image" src="assets/images/c3-plan.webp" alt="C3 plan-view total-station boundary verification." /><figcaption id="evidence-caption">C3 plan view — GoPro-view-aligned metric frame.</figcaption></figure><aside class="metric-panel"><div><span>Condition</span><strong id="metric-condition">C3</strong><small id="metric-placement">Central placement</small></div><div class="metric-grid"><article><span>RMSE</span><strong id="metric-rmse">3.8</strong><small>mm</small></article><article><span>Mean error</span><strong id="metric-mean">−0.4</strong><small>mm</small></article><article><span>Max |error|</span><strong id="metric-max">6.6</strong><small>mm</small></article><article><span>Boundary points</span><strong id="metric-n">17</strong><small>selected</small></article></div><p id="metric-note">Among the three selected sessions, C3 provides the densest shown boundary check and the smallest radial RMSE.</p></aside></div>
-      </div>
-      <div class="evidence-reading"><article><span>READING 01</span><h3>Object-space generation is measurable.</h3><p>The selected boundary checks remain close to the nominal radius, supporting the physical generator-to-boundary stage.</p></article><article><span>READING 02</span><h3>Placement changes completeness and fit.</h3><p>The number and distribution of visible TS checks vary across central, lateral and depth configurations.</p></article><article><span>READING 03</span><h3>3D context matters.</h3><p>Boundary points, camera-side sighting points and other control observations occupy different roles and heights.</p></article></div>
+    <section id="question" class="case-question paper-section" data-header-theme="light">
+      <div class="section-frame editorial-grid">
+        <div class="section-index"><span>01</span><p>QUESTION</p></div>
+        <div>
+          <h2>A projected boundary may look correct and still fail as a measurement.</h2>
+          <div class="question-columns">
+            <p class="lead-copy">Visual agreement answers a perceptual question. The paper asks a metric one.</p>
+            <div>
+              <p>The design boundary is first generated in object space from a surveyed primitive. The image is then used only as an observation channel. Its response is returned to object space and compared at the terminal quantity.</p>
+              <p>This separation prevents the image from defining the reference it is later asked to verify.</p>
+            </div>
+          </div>
+          <div class="question-contrast">
+            <article><span>IMAGE QUESTION</span><strong>Does the overlay look plausible?</strong><p>Useful for visualization, insufficient for certification.</p></article>
+            <div class="contrast-arrow">≠</div>
+            <article><span>MEASUREMENT QUESTION</span><strong>Does the observed response preserve the object-space boundary?</strong><p>Requires an independent datum, declared model and terminal comparison.</p></article>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="limits" class="claim-boundary section-shell"><div class="section-heading split-heading"><div><p class="section-kicker">CLAIM BOUNDARY</p><h2>What the public evidence supports—and what it does not.</h2></div><p>A credible research companion should make its limits visible. The paper remains the authoritative source for methods, full results and uncertainty.</p></div><div class="claim-grid"><article class="supported"><span>SUPPORTED HERE</span><ul><li>A physical datum and surveyed primitive precede image interpretation.</li><li>The 5.5 m boundary is generated by exact metric scaling.</li><li>Selected total-station checks verify the object-space boundary.</li><li>The image chain is expressed through explicit forward and inverse geometry.</li><li>Signed discrepancies preserve inward and outward meaning.</li></ul></article><article class="withheld"><span>NOT CLAIMED HERE</span><ul><li>Universal performance for arbitrary cameras or field sites.</li><li>A complete uncertainty budget or final GUM statement.</li><li>Full terminal image-audit results across all experimental conditions.</li><li>Release of raw coordinates, calibration files or reviewer correspondence.</li><li>That unverified observations represent zero error.</li></ul></article></div><blockquote class="research-principle">Do not claim what the measurement chain cannot support.</blockquote></section>
+    <section id="theory" class="theory-section dark-section" data-header-theme="dark">
+      <div class="section-frame">
+        <div class="theory-heading editorial-grid">
+          <div class="section-index section-index-light"><span>02</span><p>THEORY</p></div>
+          <div><p class="overline light">FIVE EQUATIONS CLOSE THE CHAIN</p><h2>Each equation performs one role—and no role validates itself.</h2></div>
+        </div>
+        <figure class="method-chain-figure reveal"><img src="assets/figures/method-chain.svg" alt="Five-stage measurement chain from surveyed primitive to signed audit." /><figcaption>Object-space generation precedes image observation; the terminal difference is evaluated last.</figcaption></figure>
 
-    <section class="release-section"><div class="section-shell release-inner"><div><p class="section-kicker">RELEASE STATUS</p><h2>Paper under review.</h2><p>Upon formal release, this page can add the DOI, reproducibility package, code and full supplementary crosswalk.</p></div><a class="button primary light-button" href="index.html">Return to JoosAtlas</a></div></section>
+        <div class="equation-ledger">
+          <article class="equation-card reveal">
+            <div class="equation-meta"><span>01</span><p>SURVEYED PRIMITIVE</p></div>
+            <div class="equation-body">
+              <h3>Fit the physical origin and primitive radius.</h3>
+              <math display="block" aria-label="Circle fit equation">
+                <mrow><mo>(</mo><mover><mi>O</mi><mo>^</mo></mover><mo>,</mo><msub><mover><mi>r</mi><mo>^</mo></mover><mi>P</mi></msub><mo>)</mo><mo>=</mo><munder><mi>argmin</mi><mrow><mi>O</mi><mo>,</mo><mi>r</mi></mrow></munder><mspace width=".4em"/><munder><mo>∑</mo><mi>i</mi></munder><msup><mrow><mo>(</mo><mo>‖</mo><msub><mi>P</mi><mi>i</mi></msub><mo>−</mo><mi>O</mi><mo>‖</mo><mo>−</mo><mi>r</mi><mo>)</mo></mrow><mn>2</mn></msup></mrow>
+              </math>
+              <p>The measured points establish the origin and scale before the camera contributes anything.</p>
+            </div>
+          </article>
+
+          <article class="equation-card reveal">
+            <div class="equation-meta"><span>02</span><p>EXACT GENERATION</p></div>
+            <div class="equation-body">
+              <h3>Generate the design boundary by declared metric scaling.</h3>
+              <math display="block" aria-label="Boundary scaling equation"><mrow><msub><mi>R</mi><mi>B</mi></msub><mo>=</mo><mi>λ</mi><msub><mover><mi>r</mi><mo>^</mo></mover><mi>P</mi></msub><mo>,</mo><mspace width="1em"/><mi>λ</mi><mo>=</mo><mfrac><mn>5.5</mn><mn>1.5</mn></mfrac><mo>=</mo><mfrac><mn>11</mn><mn>3</mn></mfrac></mrow></math>
+              <p>The boundary is a geometric consequence of the surveyed primitive, not a line chosen in the image.</p>
+            </div>
+          </article>
+
+          <article class="equation-card reveal">
+            <div class="equation-meta"><span>03</span><p>FORWARD PROJECTION</p></div>
+            <div class="equation-body">
+              <h3>Carry the object-space boundary into the image.</h3>
+              <math display="block" aria-label="Camera projection equation"><mrow><mi>s</mi><mover><mi>u</mi><mo>~</mo></mover><mo>=</mo><mi>K</mi><mo>[</mo><mi>R</mi><mo>|</mo><mi>t</mi><mo>]</mo><mover><mi>X</mi><mo>~</mo></mover></mrow></math>
+              <p>The camera model predicts where a known object-space point should appear. The prediction is a search address, not the final measurement.</p>
+            </div>
+          </article>
+
+          <article class="equation-card reveal">
+            <div class="equation-meta"><span>04</span><p>INVERSE PROJECTION</p></div>
+            <div class="equation-body">
+              <h3>Return the observed image response to object space.</h3>
+              <math display="block" aria-label="Back projection ray equation"><mrow><mi>X</mi><mo>(</mo><mi>μ</mi><mo>)</mo><mo>=</mo><mi>C</mi><mo>+</mo><mi>μ</mi><msup><mi>R</mi><mi>T</mi></msup><msup><mi>K</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mover><mi>u</mi><mo>~</mo></mover></mrow></math>
+              <p>The selected response pixel becomes a world ray. A declared support surface closes the 3D intersection.</p>
+            </div>
+          </article>
+
+          <article class="equation-card reveal">
+            <div class="equation-meta"><span>05</span><p>SIGNED TERMINAL AUDIT</p></div>
+            <div class="equation-body">
+              <h3>Preserve direction at the final radial discrepancy.</h3>
+              <math display="block" aria-label="Signed radial difference equation"><mrow><msub><mi>ΔR</mi><mrow><mi>s</mi><mi>j</mi></mrow></msub><mo>=</mo><msub><mover><mi>R</mi><mo>^</mo></mover><mrow><mi>b</mi><mo>,</mo><mi>s</mi></mrow></msub><mo>−</mo><msub><mover><mi>R</mi><mo>^</mo></mover><mrow><mi>ref</mi><mo>,</mo><mi>s</mi><mi>j</mi></mrow></msub></mrow></math>
+              <p>The sign is retained rather than collapsed into magnitude. Its physical interpretation follows the manuscript’s declared convention.</p>
+            </div>
+          </article>
+        </div>
+        <p class="equation-note">Public explanation only. Symbols and interpretation should be read with the final accepted manuscript when available.</p>
+      </div>
+    </section>
+
+    <section id="field" class="field-section paper-section" data-header-theme="light">
+      <div class="section-frame editorial-grid">
+        <div class="section-index"><span>03</span><p>FIELD REALIZATION</p></div>
+        <div>
+          <h2>The geometry existed before it became a figure.</h2>
+          <p class="lead-copy narrow">The installation combines a surveyed datum, a physical primitive, an exact generated boundary, camera stations and independent TS references.</p>
+        </div>
+      </div>
+      <figure class="field-layout-figure section-frame reveal">
+        <img src="assets/images/field-layout.webp" alt="Composite figure showing camera placements, boundary geometry, field markers and overhead views." />
+        <figcaption><span>FIELD CONFIGURATION</span><p>The diagram and photographs show the physical arrangement from both metric and visual viewpoints. The complete observation accounting remains in the manuscript and supporting package.</p></figcaption>
+      </figure>
+      <div class="field-reading section-frame">
+        <article><span>01</span><h3>Physical datum</h3><p>The origin and primitive are surveyed independently of the image.</p></article>
+        <article><span>02</span><h3>Multiple placements</h3><p>Central, lateral and depth-displaced arrangements test different viewing geometry.</p></article>
+        <article><span>03</span><h3>Multiple distances</h3><p>Increasing range changes projected observability and inverse sensitivity.</p></article>
+        <article><span>04</span><h3>Independent references</h3><p>Selected TS boundary points challenge the generated geometry in object space.</p></article>
+      </div>
+    </section>
+
+    <section id="evidence" class="evidence-section dark-section" data-header-theme="dark">
+      <div class="section-frame evidence-heading editorial-grid">
+        <div class="section-index section-index-light"><span>04</span><p>SELECTED EVIDENCE</p></div>
+        <div><p class="overline light">OBJECT-SPACE VALIDATION</p><h2>Three placements. Two views. One metric frame.</h2><p>The explorer below shows selected TS boundary checks only. It does not substitute for the full terminal image audit.</p></div>
+      </div>
+
+      <div class="section-frame evidence-explorer" data-evidence-explorer>
+        <div class="evidence-controls">
+          <div class="segmented" role="tablist" aria-label="Placement"><button class="active" data-placement="C3">C3 / CENTRAL</button><button data-placement="R3">R3 / LATERAL</button><button data-placement="D3">D3 / DEPTH</button></div>
+          <div class="segmented compact" role="tablist" aria-label="View"><button class="active" data-view="plan">PLAN</button><button data-view="3d">3D</button></div>
+        </div>
+        <div class="evidence-body">
+          <figure class="evidence-figure"><img id="evidence-image" src="assets/images/c3-plan.webp" alt="C3 plan-view TS boundary validation." /><button class="figure-expand" data-lightbox-target="evidence-image">VIEW FULL FIGURE</button></figure>
+          <aside class="evidence-panel">
+            <div><span>PLACEMENT</span><strong id="evidence-placement">C3</strong><p id="evidence-description">Central placement with the densest selected boundary support among the three examples.</p></div>
+            <dl>
+              <div><dt>RMSE</dt><dd id="metric-rmse">3.8 mm</dd></div>
+              <div><dt>Mean error</dt><dd id="metric-mean">−0.4 mm</dd></div>
+              <div><dt>Max |error|</dt><dd id="metric-max">6.6 mm</dd></div>
+              <div><dt>Boundary points</dt><dd id="metric-n">17</dd></div>
+            </dl>
+            <p class="evidence-caveat">These values describe selected TS boundary references in the GoPro-view-aligned metric frame. They are not the image-derived terminal result.</p>
+          </aside>
+        </div>
+        <div class="placement-comparison">
+          <article data-bar="3.8"><span>C3</span><div><i style="--value:27%"></i></div><strong>3.8 mm</strong><small>17 points</small></article>
+          <article data-bar="7.5"><span>R3</span><div><i style="--value:54%"></i></div><strong>7.5 mm</strong><small>16 points</small></article>
+          <article data-bar="14.0"><span>D3</span><div><i style="--value:100%"></i></div><strong>14.0 mm</strong><small>8 points</small></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="interpretation-section paper-section" data-header-theme="light">
+      <div class="section-frame editorial-grid">
+        <div class="section-index"><span>05</span><p>INTERPRETATION</p></div>
+        <div>
+          <h2>What the selected object-space checks do—and do not—establish.</h2>
+          <div class="interpretation-grid">
+            <article><span>SUPPORTED</span><h3>The generated boundary is physically testable.</h3><p>The selected TS references lie around the nominal boundary with millimetre-scale radial residuals in these examples.</p></article>
+            <article><span>VARIES BY GEOMETRY</span><h3>Placement changes support and fit.</h3><p>C3 is the densest and smallest-RMSE example; D3 contains fewer selected points and the largest RMSE.</p></article>
+            <article><span>NOT THE ENDPOINT</span><h3>Object-space validation is not the image audit.</h3><p>The images above verify the generated boundary, not the complete image response, back-projection and signed terminal discrepancy.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="claim" class="claim-section dark-section" data-header-theme="dark">
+      <div class="section-frame claim-grid">
+        <div>
+          <p class="overline light">CLAIM BOUNDARY</p>
+          <h2>A credible result includes the limits of what it can say.</h2>
+        </div>
+        <div class="claim-columns">
+          <article><span>SUPPORTED HERE</span><ul><li>The physical datum and surveyed primitive precede the image.</li><li>Exact metric scaling generates the design boundary.</li><li>Selected TS points independently check the object-space boundary.</li><li>Projection and back-projection are explicitly connected.</li><li>The terminal difference preserves sign.</li></ul></article>
+          <article><span>NOT CLAIMED HERE</span><ul><li>Identical performance for arbitrary cameras or sites.</li><li>A complete GUM uncertainty statement.</li><li>The full 27-condition image-audit result.</li><li>Public release of raw coordinates, calibration files or reviewer correspondence.</li><li>That an unverified case is equivalent to zero error.</li></ul></article>
+        </div>
+      </div>
+      <blockquote class="research-principle section-frame">Do not claim what the measurement chain cannot support.</blockquote>
+    </section>
+
+    <section class="release-section paper-section" data-header-theme="light">
+      <div class="section-frame release-grid">
+        <div><p class="overline dark">RELEASE LEDGER</p><h2>Public explanation now.<br />Complete evidence with the paper.</h2><p>The current site exposes the research question, selected theory, field realization and limited object-space checks. The full method, terminal results and reproducibility package remain tied to the manuscript’s release status.</p></div>
+        <div class="release-ledger"><div><span>Research question</span><strong class="released">RELEASED</strong></div><div><span>Core theoretical chain</span><strong class="released">RELEASED</strong></div><div><span>Selected object-space evidence</span><strong class="released">RELEASED</strong></div><div><span>Full terminal image audit</span><strong>WITHHELD</strong></div><div><span>Raw data and implementation</span><strong>WITHHELD</strong></div><div><span>Paper</span><strong class="review">UNDER REVIEW</strong></div></div>
+      </div>
+    </section>
   </main>
-  <footer class="site-footer dark-footer"><div><img src="assets/figures/joosatlas-mark.svg" alt="" /><span><strong>JoosAtlas</strong><small>CASE 001 / SPATIAL EVIDENCE</small></span></div><div><a href="https://github.com/daejinpipero-gaja/JoosAtlas">GitHub repository ↗</a><small>© 2026 Joo Yong-Hoe</small></div></footer>
+
+  <div class="lightbox" id="figure-lightbox" aria-hidden="true" role="dialog" aria-label="Expanded figure"><button class="lightbox-close" aria-label="Close expanded figure">CLOSE ×</button><img src="" alt="Expanded research figure" /></div>
+
+  <footer class="site-footer dark-footer"><div class="section-frame footer-grid"><div class="footer-brand"><img src="assets/figures/joosatlas-mark.svg" alt="" /><span><strong>JoosAtlas</strong><small>Measure · Verify · Explain</small></span></div><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About Joo</a><a href="https://github.com/daejinpipero-gaja/JoosAtlas">GitHub ↗</a></div><div class="footer-meta"><span>Case 001 · Paper under review</span><span>© 2026 Joo Yong-Hoe</span></div></div></footer>
+
   <script src="app.js"></script>
 </body>
 </html>

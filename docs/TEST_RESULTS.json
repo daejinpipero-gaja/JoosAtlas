@@ -1,33 +1,41 @@
 {
-  "pages": {
-    "home-desktop": {
-      "scrollWidth": 1600,
-      "clientWidth": 1600,
-      "scrollHeight": 5644,
-      "broken": []
-    },
-    "home-mobile": {
-      "scrollWidth": 390,
-      "clientWidth": 390,
-      "scrollHeight": 7034,
-      "broken": []
-    },
-    "case-desktop": {
-      "scrollWidth": 1600,
-      "clientWidth": 1600,
-      "scrollHeight": 9344,
-      "broken": []
-    },
-    "case-mobile": {
-      "scrollWidth": 390,
-      "clientWidth": 390,
-      "scrollHeight": 10968,
-      "broken": []
-    }
+  "index.html:desktop": {
+    "errors": [],
+    "broken_images": [],
+    "horizontal_overflow_px": 0
   },
-  "errors": [],
-  "interaction": {
-    "condition": "R3",
-    "srcPrefix": "assets/images/r3-3d.webp"
+  "index.html:mobile": {
+    "errors": [],
+    "broken_images": [],
+    "horizontal_overflow_px": 0
+  },
+  "case-001.html:desktop": {
+    "errors": [],
+    "broken_images": [],
+    "horizontal_overflow_px": 0
+  },
+  "case-001.html:mobile": {
+    "errors": [],
+    "broken_images": [],
+    "horizontal_overflow_px": 0
+  },
+  "about.html:desktop": {
+    "errors": [],
+    "broken_images": [],
+    "horizontal_overflow_px": 0
+  },
+  "about.html:mobile": {
+    "errors": [],
+    "broken_images": [],
+    "horizontal_overflow_px": 0
+  },
+  "interactions": {
+    "evidence_placement": "R3",
+    "evidence_rmse": "7.5 mm",
+    "lightbox_opened": true,
+    "lightbox_closed": true
+  },
+  "mobile_menu": {
+    "opened": true
   }
 }

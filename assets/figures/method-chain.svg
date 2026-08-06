@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 520" role="img" aria-labelledby="title desc">
+<title id="title">Object-space measurement chain</title>
+<desc id="desc">Five stages connect a surveyed primitive to a signed terminal audit.</desc>
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#b48946"/></marker>
+  <style>
+    .label{font:600 16px Arial,sans-serif;letter-spacing:2.5px;fill:#8a6b38}.title{font:700 25px Arial,sans-serif;fill:#10202d}.copy{font:400 16px Arial,sans-serif;fill:#65717a}.num{font:700 15px Arial,sans-serif;fill:#fff}.line{stroke:#b48946;stroke-width:3;fill:none;marker-end:url(#arrow)}
+  </style>
+</defs>
+<rect width="1600" height="520" rx="28" fill="#f4f0e6"/>
+<path d="M250 255H1355" stroke="#d7cdbb" stroke-width="2"/>
+<path class="line" d="M310 255H435"/><path class="line" d="M610 255H735"/><path class="line" d="M910 255H1035"/><path class="line" d="M1210 255H1335"/>
+
+<g transform="translate(95 80)">
+  <circle cx="120" cy="175" r="84" fill="#fff" stroke="#17384d" stroke-width="6"/>
+  <circle cx="120" cy="175" r="9" fill="#b48946"/>
+  <path d="M120 70V280M15 175H225" stroke="#b48946" stroke-width="2" opacity=".6"/>
+  <rect x="18" y="18" width="34" height="34" rx="17" fill="#17384d"/><text x="35" y="40" text-anchor="middle" class="num">01</text>
+  <text x="0" y="325" class="label">SURVEY</text><text x="0" y="360" class="title">Physical primitive</text><text x="0" y="388" class="copy">The field establishes the origin.</text>
+</g>
+
+<g transform="translate(395 80)">
+  <circle cx="120" cy="175" r="52" fill="none" stroke="#17384d" stroke-width="6"/>
+  <circle cx="120" cy="175" r="102" fill="none" stroke="#2b7e87" stroke-width="7"/>
+  <path d="M120 175H215" stroke="#b48946" stroke-width="4" marker-end="url(#arrow)"/>
+  <rect x="18" y="18" width="34" height="34" rx="17" fill="#17384d"/><text x="35" y="40" text-anchor="middle" class="num">02</text>
+  <text x="0" y="325" class="label">GENERATE</text><text x="0" y="360" class="title">Exact boundary</text><text x="0" y="388" class="copy">Scaling is metric, not visual.</text>
+</g>
+
+<g transform="translate(695 80)">
+  <rect x="15" y="112" width="74" height="48" rx="8" fill="#17384d"/>
+  <circle cx="76" cy="136" r="13" fill="#70b8b5"/>
+  <path d="M76 136L205 90M76 136L225 205" stroke="#b48946" stroke-width="3"/>
+  <ellipse cx="205" cy="190" rx="67" ry="28" fill="none" stroke="#9b4038" stroke-width="7"/>
+  <rect x="18" y="18" width="34" height="34" rx="17" fill="#17384d"/><text x="35" y="40" text-anchor="middle" class="num">03</text>
+  <text x="0" y="325" class="label">OBSERVE</text><text x="0" y="360" class="title">Image response</text><text x="0" y="388" class="copy">A response is observed, not certified.</text>
+</g>
+
+<g transform="translate(995 80)">
+  <rect x="15" y="112" width="74" height="48" rx="8" fill="#17384d"/>
+  <circle cx="76" cy="136" r="13" fill="#70b8b5"/>
+  <path d="M76 136L210 205" stroke="#b48946" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M135 245H245" stroke="#17384d" stroke-width="4"/>
+  <circle cx="210" cy="205" r="9" fill="#9b4038"/>
+  <rect x="18" y="18" width="34" height="34" rx="17" fill="#17384d"/><text x="35" y="40" text-anchor="middle" class="num">04</text>
+  <text x="0" y="325" class="label">RETURN</text><text x="0" y="360" class="title">Object-space ray</text><text x="0" y="388" class="copy">The selected pixel is intersected with support.</text>
+</g>
+
+<g transform="translate(1295 80)">
+  <circle cx="110" cy="175" r="83" fill="none" stroke="#17384d" stroke-width="6"/>
+  <circle cx="110" cy="175" r="68" fill="none" stroke="#9b4038" stroke-width="6" stroke-dasharray="12 10"/>
+  <path d="M110 175H188" stroke="#b48946" stroke-width="3"/>
+  <path d="M110 175V103" stroke="#2b7e87" stroke-width="3"/>
+  <rect x="18" y="18" width="34" height="34" rx="17" fill="#17384d"/><text x="35" y="40" text-anchor="middle" class="num">05</text>
+  <text x="0" y="325" class="label">AUDIT</text><text x="0" y="360" class="title">Signed difference</text><text x="0" y="388" class="copy">Direction is retained at the terminal quantity.</text>
+</g>
+</svg>

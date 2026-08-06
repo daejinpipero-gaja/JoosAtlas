@@ -1,38 +1,36 @@
 # JoosAtlas
 
-**Research that survives contact with the field.**
+> **Research that survives contact with the field.**
 
-JoosAtlas is Joo Yong-Hoe's independent research and development platform connecting surveying, photogrammetry, computer vision and industrial operations.
+[Open the public site](https://daejinpipero-gaja.github.io/JoosAtlas/)
 
-## Live site
+JoosAtlas is the independent research platform of **Joo Yong-Hoe (주용회)**. It connects spatial measurement, image geometry, industrial operation and public explanation.
 
-https://daejinpipero-gaja.github.io/JoosAtlas/
+## Joo Yong-Hoe
 
-## Selected work
+- **Research** — Ph.D. Candidate, School of Civil & Environmental Engineering, GIS Remote Sensing and Surveying Laboratory, Yonsei University
+- **Industry** — President, Daejin Pipe Co., Ltd.
+- **Community** — President, ACERS (Alumni of Civil, Environmental Resilience Safety, Yonsei Graduate School of Engineering)
 
-### Case 001 — When an image becomes evidence
+## Public pages
 
-A surveyed primitive generates a metric design boundary; a declared camera model carries that boundary into the image; the observed response is returned to object space and audited with its sign intact.
+- [`index.html`](https://daejinpipero-gaja.github.io/JoosAtlas/) — JoosAtlas home
+- [`case-001.html`](https://daejinpipero-gaja.github.io/JoosAtlas/case-001.html) — Case 001 research experience
+- [`about.html`](https://daejinpipero-gaja.github.io/JoosAtlas/about.html) — biographical and professional profile
 
-The public companion includes:
+## Case 001
 
-- field realization and observation-role diagram
-- theoretical equations for circle fitting, exact scaling, projection, inverse projection and signed audit
-- selected C3, R3 and D3 total-station boundary checks
-- explicit claim boundary and release status
+The public case explains how a surveyed physical primitive, exact boundary generation, camera projection, inverse projection and signed terminal audit form a traceable measurement chain.
 
-## About Joo Yong-Hoe
+The complete terminal results, raw data, implementation package and reviewer correspondence remain governed by the paper’s release status.
 
-Joo Yong-Hoe is a Ph.D. Candidate in the **School of Civil & Environmental Engineering at Yonsei University** and a researcher in the **GIS Remote Sensing and Surveying Laboratory**. He is also **President of Daejin Pipe Co., Ltd.** and **President of ACERS**.
+## Status
 
-JoosAtlas is an independent personal research platform. Affiliations are provided for biographical context and do not imply institutional endorsement.
+| Coordinate | Status |
+|---|---|
+| Case 001 — Spatial Evidence | Paper under review |
+| Case 002 — Fixed-Camera Metrology | In development |
+| Industrial Digital Twin | Exploratory |
+| Interactive Measurement Tools | Planned |
 
-## Repository structure
-
-- `index.html` — JoosAtlas home
-- `case-001.html` — interactive research companion
-- `styles.css` — shared design system
-- `app.js` — navigation, reveal behavior and evidence explorer
-- `assets/images` — optimized field records, plots and identity assets
-- `assets/figures` — JoosAtlas mark and method overview
-- `docs` — disclosure and deployment notes
+JoosAtlas is an independent personal research platform. Affiliations are provided for biographical context and do not imply that the site represents the official views of the affiliated organizations.

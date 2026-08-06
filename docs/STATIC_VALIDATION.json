@@ -1,0 +1,26 @@
+{
+  "index.html": {
+    "title": "JoosAtlas — Research, field systems and public evidence",
+    "missing": [],
+    "images": 9,
+    "links": 16
+  },
+  "about.html": {
+    "title": "About Joo Yong-Hoe — JoosAtlas",
+    "missing": [],
+    "images": 7,
+    "links": 10
+  },
+  "case-001.html": {
+    "title": "Case 001 — From a surveyed primitive to an auditable boundary",
+    "missing": [],
+    "images": 7,
+    "links": 11
+  },
+  "404.html": {
+    "title": "Page not found — JoosAtlas",
+    "missing": [],
+    "images": 0,
+    "links": 1
+  }
+}

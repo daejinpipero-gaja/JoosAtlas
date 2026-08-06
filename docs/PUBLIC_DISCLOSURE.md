@@ -1,22 +1,17 @@
-# Public disclosure note
+# Public disclosure boundary
 
-This site intentionally presents both a public profile and a research companion.
-
-## Included
-
-- biographical affiliations supplied by Joo Yong-Hoe
-- field photographs and identity assets supplied by the user
-- selected total-station boundary-verification outputs supplied by the user
-- general photogrammetric and metrological equations
+The site includes:
+- public biographical affiliations
+- selected theory and equations
+- field photographs and installation overview
+- selected TS object-space checks for C3, R3 and D3
 - qualitative interpretation and explicit claim limits
 
-## Not included
-
-- raw coordinate files
-- full calibration parameters
-- image-processing thresholds and implementation details
-- complete 27-condition terminal result tables
+The site does not include:
+- raw coordinates
+- full 27-condition terminal image-audit results
+- calibration files or full implementation code
 - reviewer correspondence
-- code and reproducibility package
+- a complete uncertainty statement
 
-The manuscript remains the authoritative source for notation, methods, results and uncertainty.
+The signed radial-difference convention must remain synchronized with the final accepted manuscript.
