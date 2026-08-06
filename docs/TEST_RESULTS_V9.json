@@ -1,0 +1,23 @@
+{
+  "version": "9.0.1",
+  "browser": "Chromium",
+  "desktop_viewport": "1483x900",
+  "mobile_viewport": "390x844",
+  "summary": {
+    "all_pass": true,
+    "tests": 23,
+    "javascript_errors": 0,
+    "horizontal_overflow_desktop_px": 0,
+    "horizontal_overflow_mobile_px": 0
+  },
+  "interaction_checks": {
+    "method_steps_1_to_5": "PASS — exactly one panel visible for each selected step",
+    "sensitivity_7m_2px": "PASS — 5.56 cm, ABOVE 5 CM, tolerance 1.798 px",
+    "sensitivity_9m_2px": "PASS — 8.22 cm, ABOVE 5 CM, tolerance 1.217 px",
+    "sensitivity_12m_2px": "PASS — 12.36 cm, ABOVE 5 CM, tolerance 0.809 px",
+    "safe_limit_7m": "PASS — 4.98 cm, WITHIN 5 CM",
+    "safe_limit_9m": "PASS — 4.97 cm, WITHIN 5 CM",
+    "safe_limit_12m": "PASS — 4.94 cm, WITHIN 5 CM",
+    "evidence_C3_R3_D3_plan_3d": "PASS — all six image switches resolve to the intended local files"
+  }
+}

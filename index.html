@@ -13,7 +13,7 @@
   <meta property="og:url" content="https://daejinpipero-gaja.github.io/JoosAtlas/" />
   <meta property="og:image" content="https://daejinpipero-gaja.github.io/JoosAtlas/assets/images/social-preview.jpg" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="joosatlas-v9.css?v=9.0.0" />
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -77,23 +77,11 @@
       </div>
     </section>
 
+    
     <section id="quick-lab" class="quick-lab-section dark-section" data-header-theme="dark">
       <div class="section-frame quick-lab-grid">
-        <div class="quick-lab-copy">
-          <p class="overline light">60-SECOND EXPERIMENT</p>
-          <h2>The image error stays at two pixels.<br />The ground consequence does not.</h2>
-          <p>Choose a viewing distance. The same two-pixel displacement is carried through a selected local inverse geometry to show why range matters.</p>
-          <a class="text-link light" href="case-001.html#pixel-lab">Open the full Pixel Consequence Lab <span>↗</span></a>
-        </div>
-        <div class="quick-lab" data-quick-lab>
-          <div class="quick-lab-controls" role="tablist" aria-label="Viewing distance"><button class="active" data-distance="7">7 m</button><button data-distance="9">9 m</button><button data-distance="12">12 m</button></div>
-          <div class="quick-lab-stage">
-            <div class="quick-image-plane"><span>IMAGE</span><div class="pixel-grid"></div><i class="quick-nominal-line"></i><i class="quick-observed-line"></i><b>2 px</b></div>
-            <div class="quick-transfer">→</div>
-            <div class="quick-ground-plane"><span>GROUND</span><div class="quick-circle nominal"></div><div class="quick-circle observed"></div></div>
-          </div>
-          <div class="quick-readout"><span>LOCAL GROUND EFFECT</span><strong id="quick-ground-effect">5.6 cm</strong><p id="quick-lab-caption">At 7 m, the selected local scale is approximately 27.8 mm/px.</p></div>
-        </div>
+        <div class="quick-lab-copy"><p class="overline light">60-SECOND EXPERIMENT</p><h2>Two pixels are not two centimetres.</h2><p>The same image displacement produces a different local ground consequence as viewing geometry changes. These three bars use the selected local scales disclosed in Case 001.</p><a class="text-link light" href="case-001.html#pixel-lab">Open the working sensitivity lab <span>↗</span></a></div>
+        <div class="quick-comparison" aria-label="Ground effect of a fixed two-pixel displacement"><header><span>FIXED IMAGE DISPLACEMENT</span><strong>2.0 px</strong></header><div class="quick-comparison-bars"><article><span>7 m</span><div><i style="--value:45%"></i></div><strong>5.56 cm</strong><small>27.815 mm/px</small></article><article><span>9 m</span><div><i style="--value:66%"></i></div><strong>8.22 cm</strong><small>41.079 mm/px</small></article><article><span>12 m</span><div><i style="--value:100%"></i></div><strong>12.36 cm</strong><small>61.782 mm/px</small></article></div><p>Local educational comparison only; not a complete-system accuracy claim.</p></div>
       </div>
     </section>
 
@@ -133,6 +121,6 @@
   </main>
 
   <footer class="site-footer dark-footer"><div class="section-frame footer-grid"><div class="footer-brand"><img src="assets/figures/joosatlas-mark.svg" alt="" /><span><strong>JoosAtlas</strong><small>Measure · Verify · Explain</small></span></div><div class="footer-links"><a href="case-001.html">Case 001</a><a href="about.html">About</a><a href="https://github.com/daejinpipero-gaja/JoosAtlas">GitHub ↗</a></div><div class="footer-meta"><span>Independent personal research platform</span><span>© 2026 Joo Yong-Hoe</span></div></div></footer>
-  <script src="app.js"></script>
+  <script src="joosatlas-v9.js?v=9.0.0"></script>
 </body>
 </html>
