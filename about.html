@@ -17,8 +17,8 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 <link rel="manifest" href="site.webmanifest" />
-<link rel="stylesheet" href="joosatlas-v10.css?v=10.1.0" />
-<script>(()=>{try{const t=localStorage.getItem('joosatlas-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<link rel="stylesheet" href="joosatlas-v10.css?v=11.0.0" />
+<script>(()=>{try{const t=localStorage.getItem('joosatlas-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);const l=localStorage.getItem('joosatlas-lang');if(l==='ko'||l==='en')document.documentElement.setAttribute('lang',l);}catch(e){}})();</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfilePage",
 "mainEntity":{"@type":"Person",
@@ -53,6 +53,9 @@
     <button class="icon-btn cmdk-open" type="button" aria-label="Open command palette">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
       <span class="kbd">⌘K</span>
+    </button>
+    <button class="icon-btn lang-btn" type="button" aria-label="Switch language / 언어 전환">
+      <span class="ic-to-ko">한국어</span><span class="ic-to-en">EN</span>
     </button>
     <button class="icon-btn theme-btn" type="button" aria-label="Toggle light or dark theme">
       <svg class="ic-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/></svg>
@@ -102,7 +105,7 @@
         </div>
         <div class="cols-2" style="margin-top:clamp(30px,3.6vw,46px);align-items:center">
           <figure class="feature-media rv">
-            <img src="assets/images/instrument-editorial.webp" alt="A total station set up above a marked field datum." loading="lazy" />
+            <img src="assets/images/instrument-editorial.webp" srcset="assets/images/instrument-editorial-800.webp 800w, assets/images/instrument-editorial.webp 1400w" sizes="(max-width:900px) 100vw, 700px" alt="A total station set up above a marked field datum." loading="lazy" />
             <figcaption class="media-tag"><span>Field datum</span><span>Instrument record</span></figcaption>
           </figure>
           <div class="rv rv-d1">
@@ -122,7 +125,7 @@
 
   <!-- ============ 02 WORKSHOP ============ -->
   <section id="operator" class="cinema cinema-right" data-tone="dark" style="--focus:32% 20%;--stack-ratio:16/11">
-    <div class="cinema-media" data-portrait="welding"><img src="assets/images/welding-wide.webp" alt="Yonghoe JOO welding in an industrial workshop." loading="lazy" /></div>
+    <div class="cinema-media" data-portrait="welding"><img src="assets/images/welding-wide.webp" srcset="assets/images/welding-wide-800.webp 800w, assets/images/welding-wide-1400.webp 1400w, assets/images/welding-wide.webp 1800w" sizes="100vw" alt="Yonghoe JOO welding in an industrial workshop." loading="lazy" /></div>
     <div class="cinema-veil"></div>
     <div class="frame cinema-body rv">
       <p class="eyebrow">02 / Workshop</p>
@@ -146,11 +149,11 @@
     <div class="frame">
       <div class="cols-2" style="margin-top:clamp(28px,3.4vw,46px)">
         <figure class="feature-media rv">
-          <img src="assets/images/daejin-front.webp" alt="Front view of Daejin Pipe Co., Ltd. and its operating yard." loading="lazy" />
+          <img src="assets/images/daejin-front.webp" srcset="assets/images/daejin-front-800.webp 800w, assets/images/daejin-front-1400.webp 1400w, assets/images/daejin-front.webp 2048w" sizes="(max-width:900px) 100vw, 700px" alt="Front view of Daejin Pipe Co., Ltd. and its operating yard." loading="lazy" />
           <figcaption class="media-tag"><span>Company front</span><span>Daejin Pipe Co., Ltd.</span></figcaption>
         </figure>
         <figure class="feature-media rv rv-d1">
-          <img src="assets/images/daejin-aerial.webp" alt="Aerial view of the Daejin Pipe site and surrounding infrastructure." loading="lazy" />
+          <img src="assets/images/daejin-aerial.webp" srcset="assets/images/daejin-aerial-800.webp 800w, assets/images/daejin-aerial-1400.webp 1400w, assets/images/daejin-aerial.webp 2048w" sizes="100vw" alt="Aerial view of the Daejin Pipe site and surrounding infrastructure." loading="lazy" />
           <figcaption class="media-tag"><span>Operating site</span><span>Inventory · access · logistics</span></figcaption>
         </figure>
       </div>
@@ -175,7 +178,7 @@
     </div>
     <div class="frame">
       <figure class="feature-media rv" style="margin-top:clamp(28px,3.4vw,44px)" data-portrait="acers-group">
-        <img src="assets/images/acers-group.webp" alt="ACERS alumni gathered at a Yonsei Graduate School of Engineering event." loading="lazy" style="aspect-ratio:2048/1110" />
+        <img src="assets/images/acers-group.webp" srcset="assets/images/acers-group-800.webp 800w, assets/images/acers-group-1400.webp 1400w, assets/images/acers-group.webp 2048w" sizes="(max-width:900px) 100vw, 1360px" alt="ACERS alumni gathered at a Yonsei Graduate School of Engineering event." loading="lazy" style="aspect-ratio:2048/1110" />
         <figcaption class="media-tag"><span>ACERS gathering</span><span>Yonsei Graduate School of Engineering</span></figcaption>
       </figure>
       <div class="fact-strip" style="margin-top:clamp(26px,3vw,40px)">
@@ -248,8 +251,8 @@
       </ul></div>
     </div>
     <div class="ftr-base">
-      <span>© <span data-year>2026</span> Yonghoe JOO · JoosAtlas v10.1</span>
-      <span>Press ⌘K or / to search · T to switch theme</span>
+      <span>© <span data-year>2026</span> Yonghoe JOO · JoosAtlas v11.0</span>
+      <span>Updated <time data-updated datetime="2026-08-07">7 August 2026</time> · v11.0</span>
     </div>
   </div>
 </footer>
@@ -259,14 +262,15 @@
   <div class="cmdk-box">
     <div class="cmdk-field">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input type="text" placeholder="Search sections, figures and actions…" aria-label="Search JoosAtlas" autocomplete="off" spellcheck="false" />
+      <input type="text" role="combobox" aria-expanded="true" aria-controls="cmdk-results" aria-autocomplete="list" placeholder="Search sections, figures and actions…" aria-label="Search JoosAtlas" autocomplete="off" spellcheck="false" />
       <span class="cmdk-esc">ESC</span>
     </div>
-    <div class="cmdk-list" role="listbox" aria-label="Results"></div>
-    <div class="cmdk-foot"><span>↑↓ navigate</span><span>↵ open</span><span>⌘K toggle</span><span>T theme</span></div>
+    <div class="cmdk-list" id="cmdk-results" role="listbox" aria-label="Results"></div>
+    <div class="cmdk-foot"><span>↑↓ navigate</span><span>↵ open</span><span>⌘K toggle</span><span>T theme</span><span>L 한국어 / EN</span></div>
   </div>
 </div>
 
-<script src="joosatlas-v10.js?v=10.1.0"></script>
+<script src="joosatlas-i18n.js?v=11.0.0"></script>
+<script src="joosatlas-v10.js?v=11.0.0"></script>
 </body>
 </html>

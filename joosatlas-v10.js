@@ -10,6 +10,93 @@ const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ------------------------------------------------------------
+   0. LANGUAGE  (English ⇄ Korean, persisted)
+   Every visible string is translated from joosatlas-i18n.js.
+   Strings the dictionary does not contain — numbers, units,
+   symbols, proper nouns — are shown identically in both.
+   ------------------------------------------------------------ */
+
+const LANG_KEY = 'joosatlas-lang';
+const DICT = (window.JOOS_I18N || { ko:{}, koAttr:{}, koRuntime:{} });
+const I18N_ATTRS = ['alt', 'placeholder', 'aria-label', 'title'];
+let LANG = 'en';
+
+function storedLang(){ try { return localStorage.getItem(LANG_KEY); } catch { return null; } }
+
+/* Translate a runtime string produced by the chart/lab code. */
+const t = s => (LANG === 'ko' && DICT.koRuntime[s]) ? DICT.koRuntime[s] : s;
+
+/* Cache the English original on first sight so switching back is lossless. */
+const textCache = new WeakMap();
+const attrCache = new WeakMap();
+
+function translateTree(root = document.body){
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+    acceptNode(n){
+      const p = n.parentNode;
+      if (!p) return NodeFilter.FILTER_REJECT;
+      const tag = p.nodeName;
+      if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'MATH' ||
+          p.closest?.('math, noscript, .no-i18n')) return NodeFilter.FILTER_REJECT;
+      return n.nodeValue.trim() ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+    }
+  });
+  const nodes = [];
+  for (let n = walker.nextNode(); n; n = walker.nextNode()) nodes.push(n);
+
+  nodes.forEach(n => {
+    if (!textCache.has(n)) textCache.set(n, n.nodeValue);
+    const en = textCache.get(n);
+    if (LANG === 'en'){ if (n.nodeValue !== en) n.nodeValue = en; return; }
+    const key = en.trim();
+    const ko = DICT.ko[key];
+    if (!ko) return;
+    const lead = en.match(/^\s*/)[0], tail = en.match(/\s*$/)[0];
+    n.nodeValue = lead + ko + tail;
+  });
+
+  const scope = root === document.body ? document : root;
+  scope.querySelectorAll('[alt],[placeholder],[aria-label],[title]').forEach(el => {
+    let store = attrCache.get(el);
+    if (!store){ store = {}; attrCache.set(el, store); }
+    I18N_ATTRS.forEach(a => {
+      if (!el.hasAttribute(a)) return;
+      if (!(a in store)) store[a] = el.getAttribute(a);
+      const en = store[a];
+      if (LANG === 'en'){ el.setAttribute(a, en); return; }
+      const ko = DICT.koAttr[en.trim()] || DICT.ko[en.trim()];
+      if (ko) el.setAttribute(a, ko);
+    });
+  });
+}
+
+let headCache = null;
+function applyLang(mode){
+  LANG = (mode === 'ko') ? 'ko' : 'en';
+  document.documentElement.setAttribute('lang', LANG);
+  if (!headCache){
+    const d = document.querySelector('meta[name="description"]');
+    const o = document.querySelector('meta[property="og:description"]');
+    const ot = document.querySelector('meta[property="og:title"]');
+    headCache = { title:document.title, desc:d?.content, ogd:o?.content, ogt:ot?.content, d, o, ot };
+  }
+  const pick = s => s == null ? s : (LANG === 'ko' ? (DICT.koAttr[s] || DICT.ko[s] || s) : s);
+  document.title = pick(headCache.title);
+  if (headCache.d) headCache.d.content = pick(headCache.desc);
+  if (headCache.o) headCache.o.content = pick(headCache.ogd);
+  if (headCache.ot) headCache.ot.content = pick(headCache.ogt);
+  translateTree();
+  document.dispatchEvent(new CustomEvent('joos:lang', { detail:{ lang:LANG } }));
+}
+function cycleLang(){
+  const next = LANG === 'ko' ? 'en' : 'ko';
+  try { localStorage.setItem(LANG_KEY, next); } catch {}
+  applyLang(next);
+  return next;
+}
+
+
+/* ------------------------------------------------------------
    DATA — mirrors assets/data/ts_summary.json and the disclosed
    local inverse-Jacobian scales of Case 001.
    ------------------------------------------------------------ */
@@ -79,6 +166,11 @@ function cycleTheme(){
   return next;
 }
 applyTheme(storedTheme() || 'auto');
+applyLang(storedLang() || ((navigator.language || '').toLowerCase().startsWith('ko') ? 'ko' : 'en'));
+$$('.lang-btn').forEach(b => b.addEventListener('click', () => {
+  const m = cycleLang();
+  toast(m === 'ko' ? '언어: 한국어' : 'Language: English');
+}));
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
   if (!storedTheme()) applyTheme('auto');
 });
@@ -205,13 +297,15 @@ const items = NAVIGATE.map(([title, sub, file, hash, keys]) => ({
 }));
 
 items.push(
+  { title:'Switch language — 한국어 / English', sub:'Every page, including the charts and the lab', keys:'korean hangul 한국어 language translate 번역 언어', kind:'Display', icon:'文',
+    run(){ const m = cycleLang(); toast(m === 'ko' ? '언어: 한국어' : 'Language: English'); } },
   { title:'Toggle light / dark theme', sub:'Switch the whole site between paper and field-night', keys:'dark light mode night theme colour color', kind:'Display', icon:'◐',
     run(){ const m = cycleTheme(); toast('Theme: ' + m); } },
   { title:'Copy link to this section', sub:'Share the exact place you are reading', keys:'share url copy permalink anchor', kind:'Action', icon:'⧉',
     run(){
       const active = $('.nav a.is-current');
       const url = location.origin + location.pathname + (active ? active.getAttribute('href') : location.hash);
-      navigator.clipboard?.writeText(url).then(() => toast('Link copied'), () => toast('Copy blocked by the browser'));
+      navigator.clipboard?.writeText(url).then(() => toast(t('Link copied')), () => toast(t('Copy blocked by the browser')));
     } },
   { title:'Print or save as PDF', sub:'A clean print stylesheet is built in', keys:'pdf print export paper', kind:'Action', icon:'⎙',
     run(){ window.print(); } },
@@ -270,6 +364,7 @@ let cRows = [], cIdx = 0, lastFocus = null;
 function renderCmdk(q){
   cList.textContent = '';
   cRows = [];
+  cInput.removeAttribute('aria-activedescendant');
   const scored = [];
   for (const it of items){
     const a = score(q, it.title);
@@ -303,12 +398,18 @@ function renderCmdk(q){
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'cmdk-item';
+    btn.setAttribute('role', 'option');
+    btn.setAttribute('aria-selected', 'false');
+    btn.id = 'cmdk-opt-' + cRows.length;
     btn.innerHTML = '<span class="cmdk-ico"></span><span class="cmdk-txt"><b></b><span></span></span><span class="cmdk-meta"></span>';
     btn.querySelector('.cmdk-ico').textContent = it.icon;
     const b = btn.querySelector('.cmdk-txt b');
-    if (onTitle && hits.length) b.appendChild(mark(it.title, hits));
+    const koT = LANG === 'ko' ? DICT.ko[it.title] : null;
+    if (koT) b.textContent = koT;
+    else if (onTitle && hits.length) b.appendChild(mark(it.title, hits));
     else b.textContent = it.title;
-    btn.querySelector('.cmdk-txt span').textContent = it.sub;
+    btn.querySelector('.cmdk-txt span').textContent =
+      (LANG === 'ko' && DICT.ko[it.sub]) ? DICT.ko[it.sub] : it.sub;
     btn.querySelector('.cmdk-meta').textContent = it.kind === 'Go to' ? 'Enter' : '';
     btn.addEventListener('click', () => { closeCmdk(); it.run(); });
     btn.addEventListener('mousemove', () => setActive(cRows.indexOf(btn)));
@@ -320,7 +421,12 @@ function renderCmdk(q){
 function setActive(i){
   if (!cRows.length) return;
   cIdx = (i + cRows.length) % cRows.length;
-  cRows.forEach((r, n) => r.classList.toggle('is-active', n === cIdx));
+  cRows.forEach((r, n) => {
+    const on = n === cIdx;
+    r.classList.toggle('is-active', on);
+    r.setAttribute('aria-selected', String(on));
+  });
+  cInput.setAttribute('aria-activedescendant', cRows[cIdx].id);
   cRows[cIdx].scrollIntoView({ block:'nearest' });
 }
 function openCmdk(){
@@ -359,6 +465,9 @@ document.addEventListener('keydown', e => {
     e.preventDefault(); openCmdk();
   } else if (e.key.toLowerCase() === 't' && !typing && !e.metaKey && !e.ctrlKey && !e.altKey){
     cycleTheme();
+  } else if (e.key.toLowerCase() === 'l' && !typing && !e.metaKey && !e.ctrlKey && !e.altKey){
+    const m = cycleLang();
+    toast(m === 'ko' ? '언어: 한국어' : 'Language: English');
   }
 });
 
@@ -451,18 +560,19 @@ if (lab){
     gndFill.style.setProperty('--v', Math.min(100, cm / CM_MAX * 100) + '%');
     gndLimit.style.setProperty('--l', (LIMIT_CM / CM_MAX * 100) + '%');
     scaleRead.textContent = fmt(range.scale, 3) + ' mm/px';
-    rangeRead.textContent = 'at ' + range.m + ' m';
+    rangeRead.textContent = t('at') + ' ' + range.m + ' m';
     rScale.textContent = fmt(range.scale, 3) + ' mm/px';
     rTol.textContent = fmt(tol, 3) + ' px';
     rEffect.textContent = fmt(cm) + ' cm';
     verdict.className = 'verdict ' + (ok ? 'pass' : 'fail');
-    verdict.querySelector('strong').textContent = ok ? '✓  WITHIN 5 CM' : '✕  OVER 5 CM';
+    verdict.querySelector('strong').textContent = ok ? '✓  ' + t('WITHIN 5 CM') : '✕  ' + t('OVER 5 CM');
     verdict.querySelector('p').textContent =
       fmt(px) + ' px × ' + fmt(range.scale, 3) + ' mm/px = ' + fmt(px * range.scale) + ' mm';
     rangeBtns.forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.range === range.m)));
     document.dispatchEvent(new CustomEvent('joos:lab', { detail:{ px, range } }));
   }
 
+  document.addEventListener('joos:lang', draw);
   slider.addEventListener('input', () => { labState.px = +slider.value; draw(); });
   rangeBtns.forEach(b => b.addEventListener('click', () => {
     labState.range = RANGES.find(r => r.m === +b.dataset.range);
@@ -470,7 +580,7 @@ if (lab){
   }));
   $('#lab-snap', lab)?.addEventListener('click', () => {
     labState.px = Math.floor(pxLimit(labState.range.scale) * 100) / 100;
-    draw(); toast('Set to the 5 cm limit');
+    draw(); toast(t('Set to the 5 cm limit'));
   });
   $('#lab-reset', lab)?.addEventListener('click', () => {
     labState = { range:RANGES[0], px:1.5 }; draw();
@@ -495,9 +605,9 @@ if (ev){
     const c = TS.find(t => t.id === pick);
     img.src = IMG[pick][view];
     img.alt = `${pick} ${view === 'plan' ? 'plan-view' : 'three-dimensional'} TS boundary validation.`;
-    $('#ev-name span', ev).textContent = `${c.id} · ${c.name}`;
+    $('#ev-name span', ev).textContent = `${c.id} · ${t(c.name)}`;
     $('#ev-name i', ev).style.background = `var(${c.tone})`;
-    $('#ev-note', ev).textContent = c.note;
+    $('#ev-note', ev).textContent = (LANG === 'ko' && DICT.ko[c.note]) ? DICT.ko[c.note] : c.note;
     $('#ev-rmse', ev).textContent = fmt(c.rmse, 1) + ' mm';
     $('#ev-mean', ev).textContent = (c.mean < 0 ? '−' : '') + fmt(Math.abs(c.mean), 1) + ' mm';
     $('#ev-max', ev).textContent  = fmt(c.max, 1) + ' mm';
@@ -506,6 +616,7 @@ if (ev){
     $$('[data-place]', ev).forEach(b => b.setAttribute('aria-pressed', String(b.dataset.place === pick)));
     $$('[data-view]', ev).forEach(b => b.setAttribute('aria-pressed', String(b.dataset.view === view)));
   };
+  document.addEventListener('joos:lang', draw);
   $$('[data-place]', ev).forEach(b => b.addEventListener('click', () => { pick = b.dataset.place; draw(); }));
   $$('[data-view]', ev).forEach(b => b.addEventListener('click', () => { view = b.dataset.view; draw(); }));
   draw();
@@ -539,6 +650,17 @@ if (box){
    ------------------------------------------------------------ */
 
 const NS = 'http://www.w3.org/2000/svg';
+/* Give a hit target a keyboard identity so its values are reachable
+   without a pointer — the table view is the fallback, not the only route. */
+function makeHit(node, label, show, hide){
+  node.setAttribute('tabindex', '0');
+  node.setAttribute('role', 'img');
+  node.setAttribute('aria-label', label);
+  node.addEventListener('focus', show);
+  node.addEventListener('blur', hide);
+  return node;
+}
+
 const el = (tag, attrs = {}) => {
   const n = document.createElementNS(NS, tag);
   for (const k in attrs) n.setAttribute(k, attrs[k]);
@@ -599,6 +721,7 @@ function responsive(host, render){
     }).observe(host);
   }
   document.addEventListener('joos:theme', () => setTimeout(run, 30));
+  document.addEventListener('joos:lang',  () => setTimeout(run, 30));
   return run;
 }
 
@@ -628,12 +751,12 @@ if (curveHost){
       svg.appendChild(txt(p, { class:'ax-txt', x:X(p), y:m.t + ih + 20, 'text-anchor':'middle' }));
     }
     svg.appendChild(el('line', { class:'ax-line', x1:m.l, x2:m.l + iw, y1:Y(0), y2:Y(0) }));
-    svg.appendChild(txt('IMAGE DISPLACEMENT (PX)', { class:'ax-title', x:m.l + iw / 2, y:H - 6, 'text-anchor':'middle' }));
-    svg.appendChild(txt('GROUND EFFECT (CM)', { class:'ax-title', x:m.l - 6, y:m.t - 6, 'text-anchor':'start' }));
+    svg.appendChild(txt(t('IMAGE DISPLACEMENT (PX)'), { class:'ax-title', x:m.l + iw / 2, y:H - 6, 'text-anchor':'middle' }));
+    svg.appendChild(txt(t('GROUND EFFECT (CM)'), { class:'ax-title', x:m.l - 6, y:m.t - 6, 'text-anchor':'start' }));
 
     /* 5 cm limit */
     svg.appendChild(el('line', { class:'mk-limit', x1:m.l, x2:m.l + iw, y1:Y(5), y2:Y(5) }));
-    svg.appendChild(txt('5 CM LIMIT', { class:'mk-limit-txt', x:m.l + iw - 2, y:Y(5) - 7, 'text-anchor':'end' }));
+    svg.appendChild(txt(t('5 CM LIMIT'), { class:'mk-limit-txt', x:m.l + iw - 2, y:Y(5) - 7, 'text-anchor':'end' }));
 
     RANGES.forEach(r => {
       const cmAt4 = groundCm(PX_MAX, r.scale);
@@ -664,7 +787,7 @@ if (curveHost){
       cross.setAttribute('x1', X(p)); cross.setAttribute('x2', X(p));
       cross.classList.add('on');
       const [tx, ty] = toHost(host, svg, X(p), Y(groundCm(p, RANGES[1].scale)) - 10);
-      tip.show(tx, ty, fmt(p) + ' px displacement',
+      tip.show(tx, ty, fmt(p) + ' ' + t('px displacement'),
         RANGES.map(r => ({ tone:r.tone, value:fmt(groundCm(p, r.scale)) + ' cm', label:r.m + ' m' })));
     };
     hit.addEventListener('pointermove', move);
@@ -685,7 +808,7 @@ if (curveHost){
       x1:X(px), x2:X(px), y1:Y(0), y2:Y(cm) }));
     live.appendChild(el('circle', { cx:X(px), cy:Y(cm), r:7, fill:'var(--accent-bright)',
       stroke:'var(--surface)', 'stroke-width':2.5 }));
-    live.appendChild(txt('LAB', { class:'mk-limit-txt', fill:'var(--accent)', x:X(px), y:Y(cm) - 14, 'text-anchor':'middle' }));
+    live.appendChild(txt(t('LAB'), { class:'mk-limit-txt', fill:'var(--accent)', x:X(px), y:Y(cm) - 14, 'text-anchor':'middle' }));
   }
   document.addEventListener('joos:lab', paintLive);
 }
@@ -712,7 +835,7 @@ if (resHost){
         { class:'ax-txt', x:X(v), y:m.t + rowH * TS.length + 20, 'text-anchor':'middle' }));
     }
     svg.appendChild(el('line', { class:'ax-line', 'stroke-width':1.4, x1:X(0), x2:X(0), y1:m.t - 8, y2:m.t + rowH * TS.length }));
-    svg.appendChild(txt('RADIAL RESIDUAL (MM)', { class:'ax-title', x:m.l + iw / 2, y:H - 8, 'text-anchor':'middle' }));
+    svg.appendChild(txt(t('RADIAL RESIDUAL (MM)'), { class:'ax-title', x:m.l + iw / 2, y:H - 8, 'text-anchor':'middle' }));
 
     TS.forEach((c, i) => {
       const y = m.t + rowH * i + rowH / 2 - 6;
@@ -732,24 +855,27 @@ if (resHost){
 
       if (W >= 560){
         g.appendChild(txt('RMSE ' + fmt(c.rmse, 1) + ' mm', { class:'mk-label', x:X(c.max) + 12, y:y - 1 }));
-        g.appendChild(txt(c.n + ' pts', { class:'ax-txt', x:X(c.max) + 12, y:y + 14 }));
+        g.appendChild(txt(c.n + ' ' + t('pts'), { class:'ax-txt', x:X(c.max) + 12, y:y + 14 }));
       } else {
         g.appendChild(txt(fmt(c.rmse, 1), { class:'mk-label', x:X(c.max) + 8, y:y + 4 }));
       }
 
       const hit = el('rect', { class:'mk-hit', x:m.l, y:y - rowH / 2, width:iw, height:rowH });
-      hit.addEventListener('pointerenter', e => {
+      const resShow = e => {
         const box = svg.getBoundingClientRect();
         const ux = (e.clientX - box.left) * (W / (box.width || W));
         const [tx, ty] = toHost(host, svg, ux, y - 16);
         tip.show(tx, ty, c.id + ' · ' + c.name, [
             { tone:c.tone, value:fmt(c.rmse, 2) + ' mm', label:'RMSE' },
-            { tone:c.tone, value:(c.mean < 0 ? '−' : '') + fmt(Math.abs(c.mean), 2) + ' mm', label:'mean' },
+            { tone:c.tone, value:(c.mean < 0 ? '−' : '') + fmt(Math.abs(c.mean), 2) + ' mm', label:t('mean') },
             { tone:c.tone, value:fmt(c.max, 2) + ' mm', label:'max |e|' },
-            { tone:c.tone, value:String(c.n), label:'points' }
+            { tone:c.tone, value:String(c.n), label:t('points') }
           ]);
-      });
+      };
+      hit.addEventListener('pointerenter', resShow);
       hit.addEventListener('pointerleave', () => tip.hide());
+      makeHit(hit, `${c.id} ${c.name}: RMSE ${fmt(c.rmse,2)} mm, mean ${fmt(c.mean,2)} mm, max ${fmt(c.max,2)} mm, ${c.n} points`,
+              () => resShow({ clientX: (svg.getBoundingClientRect().left + X(0)) }), () => tip.hide());
       g.appendChild(hit);
       svg.appendChild(g);
     });
@@ -793,8 +919,8 @@ if (geoHost){
     svg.appendChild(el('circle', { cx, cy, r:R_PRIMITIVE * k, fill:'none', stroke:'var(--ink-3)', 'stroke-width':1.6 }));
     svg.appendChild(el('path', { class:'dg-cross', d:`M${cx - 9} ${cy}H${cx + 9}M${cx} ${cy - 9}V${cy + 9}` }));
     if (W >= 420){
-      svg.appendChild(txt('5.5 m GENERATED BOUNDARY', { class:'ax-title', fill:'var(--accent)', x:cx, y:cy + R_BOUNDARY * k + 18, 'text-anchor':'middle' }));
-      svg.appendChild(txt('1.5 m PRIMITIVE', { class:'ax-txt', x:cx + R_PRIMITIVE * k + 8, y:cy - R_PRIMITIVE * k - 4 }));
+      svg.appendChild(txt(t('5.5 m GENERATED BOUNDARY'), { class:'ax-title', fill:'var(--accent)', x:cx, y:cy + R_BOUNDARY * k + 18, 'text-anchor':'middle' }));
+      svg.appendChild(txt(t('1.5 m PRIMITIVE'), { class:'ax-txt', x:cx + R_PRIMITIVE * k + 8, y:cy - R_PRIMITIVE * k - 4 }));
     }
 
     TS.forEach(c => {
@@ -819,16 +945,19 @@ if (geoHost){
         'text-anchor':c.camE < 0 ? 'end' : 'start' }));
 
       const hit = el('circle', { class:'mk-hit', cx:x, cy:y, r:22 });
-      hit.addEventListener('pointerenter', () => {
+      const geoShow = () => {
         const [tx, ty] = toHost(host, svg, x, y - 10);
-        tip.show(tx, ty, c.id + ' · ' + c.name + ' placement', [
-          { tone:c.tone, value:fmt(rng, 2) + ' m', label:'local camera vector' },
-          { tone:c.tone, value:fmt(az, 1) + '°', label:'azimuth from N' },
-          { tone:c.tone, value:fmt(c.rmse, 1) + ' mm', label:'TS boundary RMSE' },
-          { tone:c.tone, value:String(c.n), label:'boundary points' }
+        tip.show(tx, ty, c.id + ' · ' + c.name + ' ' + t('placement'), [
+          { tone:c.tone, value:fmt(rng, 2) + ' m', label:t('local camera vector') },
+          { tone:c.tone, value:fmt(az, 1) + '°', label:t('azimuth from N') },
+          { tone:c.tone, value:fmt(c.rmse, 1) + ' mm', label:t('TS boundary RMSE') },
+          { tone:c.tone, value:String(c.n), label:t('boundary points') }
         ]);
-      });
+      };
+      hit.addEventListener('pointerenter', geoShow);
       hit.addEventListener('pointerleave', () => tip.hide());
+      makeHit(hit, `${c.id} ${c.name}: ${fmt(rng,2)} m, ${fmt(az,1)}°, RMSE ${fmt(c.rmse,1)} mm, ${c.n} pts`,
+              geoShow, () => tip.hide());
       g.appendChild(hit);
       svg.appendChild(g);
     });
@@ -855,7 +984,7 @@ if (barHost){
     /* 5 cm limit reference */
     const yLim = m.t + ih - 5 / maxCm * ih;
     svg.appendChild(el('line', { class:'mk-limit', x1:m.l, x2:m.l + iw, y1:yLim, y2:yLim }));
-    svg.appendChild(txt('5 CM', { class:'mk-limit-txt', x:m.l + iw, y:yLim - 6, 'text-anchor':'end' }));
+    svg.appendChild(txt(t('5 CM'), { class:'mk-limit-txt', x:m.l + iw, y:yLim - 6, 'text-anchor':'end' }));
 
     RANGES.forEach((r, i) => {
       const cm = groundCm(2, r.scale);
@@ -869,15 +998,18 @@ if (barHost){
       svg.appendChild(txt(r.m + ' m', { class:'ax-txt', x:x + bw / 2, y:m.t + ih + 19, 'text-anchor':'middle' }));
 
       const hit = el('rect', { class:'mk-hit', x:m.l + slot * i, y:m.t, width:slot, height:ih });
-      hit.addEventListener('pointerenter', () => {
+      const barShow = () => {
         const [tx, ty] = toHost(host, svg, x + bw / 2, y - 22);
-        tip.show(tx, ty, r.m + ' m viewing range', [
-          { tone:r.tone, value:fmt(cm) + ' cm', label:'at 2.0 px' },
-          { tone:r.tone, value:fmt(r.scale, 3) + ' mm/px', label:'local scale' },
-          { tone:r.tone, value:fmt(pxLimit(r.scale), 3) + ' px', label:'5 cm limit' }
+        tip.show(tx, ty, r.m + ' ' + t('m viewing range'), [
+          { tone:r.tone, value:fmt(cm) + ' cm', label:t('at 2.0 px') },
+          { tone:r.tone, value:fmt(r.scale, 3) + ' mm/px', label:t('local scale') },
+          { tone:r.tone, value:fmt(pxLimit(r.scale), 3) + ' px', label:t('5 cm limit') }
         ]);
-      });
+      };
+      hit.addEventListener('pointerenter', barShow);
       hit.addEventListener('pointerleave', () => tip.hide());
+      makeHit(hit, `${r.m} m: ${fmt(cm)} cm at 2.0 px, ${fmt(r.scale,3)} mm/px, 5 cm limit ${fmt(pxLimit(r.scale),3)} px`,
+              barShow, () => tip.hide());
       svg.appendChild(hit);
     });
     host.appendChild(svg);
@@ -885,16 +1017,31 @@ if (barHost){
 }
 
 /* ------------------------------------------------------------
+   8e. TELEMETRY CLOCK — the strip stays alive without being loud
+   ------------------------------------------------------------ */
+
+const clock = $('[data-utc]');
+if (clock){
+  const tick = () => {
+    const d = new Date();
+    const p = n => String(n).padStart(2, '0');
+    clock.textContent = `UTC ${p(d.getUTCHours())}:${p(d.getUTCMinutes())}:${p(d.getUTCSeconds())}`;
+  };
+  tick();
+  setInterval(tick, 1000);
+}
+
+/* ------------------------------------------------------------
    9. TABLE VIEW TOGGLES
    ------------------------------------------------------------ */
 
 $$('[data-table-for]').forEach(btn => {
-  const t = $('#' + btn.dataset.tableFor);
-  if (!t) return;
+  const table = $('#' + btn.dataset.tableFor);
+  if (!table) return;
   btn.addEventListener('click', () => {
-    const show = t.hasAttribute('hidden');
-    t.toggleAttribute('hidden', !show);
-    btn.textContent = show ? 'Hide data table' : 'Show data table';
+    const show = table.hasAttribute('hidden');
+    table.toggleAttribute('hidden', !show);
+    btn.textContent = show ? t('Hide data table') : t('Show data table');
     btn.setAttribute('aria-expanded', String(show));
   });
 });

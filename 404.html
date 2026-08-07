@@ -8,8 +8,8 @@
 <meta name="robots" content="noindex" />
 <meta name="theme-color" content="#faf7ef" />
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-<link rel="stylesheet" href="joosatlas-v10.css?v=10.1.0" />
-<script>(()=>{try{const t=localStorage.getItem('joosatlas-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<link rel="stylesheet" href="joosatlas-v10.css?v=11.0.0" />
+<script>(()=>{try{const t=localStorage.getItem('joosatlas-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);const l=localStorage.getItem('joosatlas-lang');if(l==='ko'||l==='en')document.documentElement.setAttribute('lang',l);}catch(e){}})();</script>
 </head>
 <body>
 <div class="progress" aria-hidden="true"><i></i></div>
@@ -26,6 +26,9 @@
     <button class="icon-btn cmdk-open" type="button" aria-label="Open command palette">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
       <span class="kbd">⌘K</span>
+    </button>
+    <button class="icon-btn lang-btn" type="button" aria-label="Switch language / 언어 전환">
+      <span class="ic-to-ko">한국어</span><span class="ic-to-en">EN</span>
     </button>
     <button class="icon-btn theme-btn" type="button" aria-label="Toggle light or dark theme">
       <svg class="ic-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/></svg>
@@ -57,8 +60,8 @@
 <footer class="ftr" data-tone="light">
   <div class="frame">
     <div class="ftr-base" style="margin-top:0;border-top:0;padding-top:0">
-      <span>© <span data-year>2026</span> Yonghoe JOO · JoosAtlas v10.1</span>
-      <span>Press ⌘K or / to search · T to switch theme</span>
+      <span>© <span data-year>2026</span> Yonghoe JOO · JoosAtlas v11.0</span>
+      <span>Updated <time data-updated datetime="2026-08-07">7 August 2026</time> · v11.0</span>
     </div>
   </div>
 </footer>
@@ -68,14 +71,15 @@
   <div class="cmdk-box">
     <div class="cmdk-field">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input type="text" placeholder="Search sections, figures and actions…" aria-label="Search JoosAtlas" autocomplete="off" spellcheck="false" />
+      <input type="text" role="combobox" aria-expanded="true" aria-controls="cmdk-results" aria-autocomplete="list" placeholder="Search sections, figures and actions…" aria-label="Search JoosAtlas" autocomplete="off" spellcheck="false" />
       <span class="cmdk-esc">ESC</span>
     </div>
-    <div class="cmdk-list" role="listbox" aria-label="Results"></div>
-    <div class="cmdk-foot"><span>↑↓ navigate</span><span>↵ open</span><span>⌘K toggle</span><span>T theme</span></div>
+    <div class="cmdk-list" id="cmdk-results" role="listbox" aria-label="Results"></div>
+    <div class="cmdk-foot"><span>↑↓ navigate</span><span>↵ open</span><span>⌘K toggle</span><span>T theme</span><span>L 한국어 / EN</span></div>
   </div>
 </div>
 
-<script src="joosatlas-v10.js?v=10.1.0"></script>
+<script src="joosatlas-i18n.js?v=11.0.0"></script>
+<script src="joosatlas-v10.js?v=11.0.0"></script>
 </body>
 </html>

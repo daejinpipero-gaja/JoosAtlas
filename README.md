@@ -18,6 +18,7 @@ Public site: <https://daejinpipero-gaja.github.io/JoosAtlas/>
 | `404.html` | Off-the-atlas page with the same search and navigation |
 | `joosatlas-v10.css` | Single stylesheet — dual-theme token system, layout, components, print styles |
 | `joosatlas-v10.js` | Single script — theme, command palette, method explorer, sensitivity lab, evidence explorer, SVG charts. No dependencies. |
+| `joosatlas-i18n.js` | The Korean dictionary — one line per string, editable without touching any other file |
 | `tools/` | The visual audit: renders every page at four viewports and checks the rendered pixels for cropped faces and lost symbols. See `tools/README.md`. |
 
 Everything is static. There is no build step, no framework and no external network request: the site runs identically from GitHub Pages, from any static host, and from a local `file://` open.
@@ -26,11 +27,13 @@ Everything is static. There is no build step, no framework and no external netwo
 
 ## What is new in v10
 
+**Both languages, everywhere.** A KR/EN control sits in the header (or press `L`). Switching translates every visible string on the page — headings, body text, chart axes, tooltips, the sensitivity lab's readouts, the command palette and the `alt` text — from `joosatlas-i18n.js`, then updates `<html lang>` so screen readers and machine translation behave correctly. Korean gets its own type stack, tracking, line height and `word-break: keep-all`, and its own measure on display lines, because a `ch`-based measure collapses when the glyphs are full-width. The choice is remembered; a first-time visitor whose browser is set to Korean lands in Korean. Numbers, units, symbols and proper nouns are shown identically in both by design.
+
 **A dual-theme design system.** Every colour, rule and surface is a CSS custom property with a selected light ("paper") and dark ("field night") value. The theme follows the operating system by default, can be switched from the header or by pressing `T`, and is remembered between visits. Photographic sections stay dark-toned in both themes so the editorial imagery reads consistently.
 
 **A command palette.** `⌘K` / `Ctrl-K` — or simply `/` — opens a fuzzy-search palette over every section of every page plus site actions: switch theme, copy a link to the current section, print or save as PDF, jump to the repository and the disclosure document. Arrow keys navigate, Enter opens, Escape closes.
 
-**Three data visualizations built from the disclosed summary.** Each is drawn as inline SVG at real pixel dimensions, re-renders responsively and on theme change, carries a hover and keyboard-reachable tooltip, and ships an equivalent data table so no value is gated behind interaction:
+**Three data visualizations built from the disclosed summary.** Each is drawn as inline SVG at real pixel dimensions, re-renders responsively and on theme change, carries a tooltip on hover and on keyboard focus, and ships an equivalent data table so no value is gated behind interaction:
 
 - *Ground effect against image displacement* — one line per selected local inverse-Jacobian scale, the 5 cm limit as an explicit reference line, the crossing point marked on each line, and a gold marker that follows the sensitivity lab live.
 - *Camera placements in the local N–E frame* — a plan view drawn from the estimated origin, the nominal 1.5 m primitive and 5.5 m generated boundary, and each condition's disclosed local camera vector with its viewing axis.
@@ -68,11 +71,12 @@ Korean deployment guide: [`README_GITHUB_UPDATE_KR.md`](README_GITHUB_UPDATE_KR.
 
 ## Accessibility & performance notes
 
-- Every interactive control is a real `<button>` or `<input>` with an accessible name; the method explorer is a proper tab set with arrow-key navigation.
+- Every interactive control is a real `<button>` or `<input>` with an accessible name; the method explorer is a proper tab set with arrow-key navigation, and the command palette is a `combobox` + `listbox` with `role="option"` and `aria-activedescendant`.
+- Every chart mark is focusable and carries its values in an `aria-label`, so the data is reachable by keyboard as well as by pointer; each chart also ships an equivalent table.
 - `prefers-reduced-motion` disables reveals, parallax and smooth scrolling.
 - A print stylesheet drops the chrome, expands hidden content and prints link targets.
-- Images are lazy-loaded below the fold; the hero image is marked `fetchpriority="high"`.
-- One CSS file (51 KB raw, 11 KB gzipped) and one JS file (41 KB raw, 13 KB gzipped), with no web-font request and no third-party script.
+- Images are lazy-loaded below the fold, served through `srcset` at 800 / 1400 / full width, and the hero image is marked `fetchpriority="high"`.
+- One CSS file, one JS file and one dictionary — no web-font request, no third-party script, no build step.
 
 ## Contact
 
@@ -90,7 +94,7 @@ pages at 1440, 1180, 834 and 390 px, recomputes the browser's own
 `object-fit: cover` crop for every marked element, and fails if a protected region
 falls outside it. It then runs face detection and template matching on the
 rendered pixels to confirm, perceptually, that the subject has headroom and the
-symbol is still on screen. Current status: **108 checks passed, 0 failed**.
+symbol is still on screen. Current status: **108 checks passed, 0 failed**. A second harness, `lang_audit`, loads every page in Korean, exercises the interactive parts, and fails if any *visible* text node is still English: currently **418 strings checked, 0 still English**.
 
 Run it before publishing a layout change:
 

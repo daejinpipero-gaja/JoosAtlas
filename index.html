@@ -17,8 +17,8 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 <link rel="manifest" href="site.webmanifest" />
-<link rel="stylesheet" href="joosatlas-v10.css?v=10.1.0" />
-<script>(()=>{try{const t=localStorage.getItem('joosatlas-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<link rel="stylesheet" href="joosatlas-v10.css?v=11.0.0" />
+<script>(()=>{try{const t=localStorage.getItem('joosatlas-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);const l=localStorage.getItem('joosatlas-lang');if(l==='ko'||l==='en')document.documentElement.setAttribute('lang',l);}catch(e){}})();</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfilePage",
 "mainEntity":{"@type":"Person","name":"Yonghoe JOO","givenName":"Yonghoe","familyName":"Joo","alternateName":"주용회",
@@ -52,6 +52,9 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
       <span class="kbd">⌘K</span>
     </button>
+    <button class="icon-btn lang-btn" type="button" aria-label="Switch language / 언어 전환">
+      <span class="ic-to-ko">한국어</span><span class="ic-to-en">EN</span>
+    </button>
     <button class="icon-btn theme-btn" type="button" aria-label="Toggle light or dark theme">
       <svg class="ic-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/></svg>
       <svg class="ic-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
@@ -64,7 +67,7 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero" data-tone="dark">
-    <div class="hero-media"><img src="assets/images/home-hero.webp" alt="A total station installed over a surveyed circular primitive in an industrial field site." width="2400" height="1500" fetchpriority="high" /></div>
+    <div class="hero-media"><img src="assets/images/home-hero.webp" srcset="assets/images/home-hero-800.webp 800w, assets/images/home-hero-1400.webp 1400w, assets/images/home-hero.webp 2400w" sizes="100vw" alt="A total station installed over a surveyed circular primitive in an industrial field site." width="2400" height="1500" fetchpriority="high" /></div>
     <div class="hero-veil"></div>
     <div class="hud" aria-hidden="true">
       <svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice">
@@ -89,6 +92,12 @@
       </div>
     </div>
     <div class="frame">
+      <div class="telemetry">
+        <span>JoosAtlas · Field proof 001</span>
+        <span>Local frame N 97.4695 · E 75.4718 m</span>
+        <span>Scale factor λ = 11/3</span>
+        <span class="tel-clock" data-utc>UTC 00:00:00</span>
+      </div>
       <div class="ledger">
         <div><span>Field</span><strong>Physical datum first</strong></div>
         <div><span>Image</span><strong>Declared geometry</strong></div>
@@ -159,7 +168,7 @@
     </div>
     <div class="frame">
       <a class="case-link rv" href="case-001.html" aria-label="Open Case 001">
-        <img src="assets/images/field-layout.webp" alt="Composite figure showing field geometry, camera placements and overhead photographs." loading="lazy" />
+        <img src="assets/images/field-layout.webp" srcset="assets/images/field-layout-800.webp 800w, assets/images/field-layout-1400.webp 1400w, assets/images/field-layout.webp 1951w" sizes="(max-width:900px) 100vw, 1360px" alt="Composite figure showing field geometry, camera placements and overhead photographs." loading="lazy" />
         <div class="case-link-bar">
           <div><span>Field record</span><strong>One installation. Multiple observation roles.</strong></div>
           <b>Open Case 001 ↗</b>
@@ -210,15 +219,15 @@
     <div class="frame">
       <div class="worlds">
         <article class="world rv">
-          <figure><img src="assets/images/instrument-editorial.webp" alt="Close view of a Leica total station positioned above a marked field datum." loading="lazy" /></figure>
+          <figure><img src="assets/images/instrument-editorial.webp" srcset="assets/images/instrument-editorial-800.webp 800w, assets/images/instrument-editorial.webp 1400w" sizes="(max-width:900px) 100vw, 700px" alt="Close view of a Leica total station positioned above a marked field datum." loading="lazy" /></figure>
           <div class="world-body"><span>Research / 01</span><h3>Yonsei University</h3><p>Ph.D. Candidate<br />School of Civil &amp; Environmental Engineering<br />GIS Remote Sensing and Surveying Laboratory</p></div>
         </article>
         <article class="world rv rv-d1">
-          <figure><img src="assets/images/daejin-front.webp" alt="Front view of Daejin Pipe Co., Ltd. and its operating yard." loading="lazy" /></figure>
+          <figure><img src="assets/images/daejin-front.webp" srcset="assets/images/daejin-front-800.webp 800w, assets/images/daejin-front-1400.webp 1400w, assets/images/daejin-front.webp 2048w" sizes="(max-width:900px) 100vw, 700px" alt="Front view of Daejin Pipe Co., Ltd. and its operating yard." loading="lazy" /></figure>
           <div class="world-body"><span>Industry / 02</span><h3>Daejin Pipe Co., Ltd.</h3><p>President<br />Industrial operations, materials and field implementation.</p></div>
         </article>
         <article class="world rv rv-d2">
-          <figure><img src="assets/images/acers-group.webp" alt="ACERS alumni and professional community at a Yonsei Graduate School of Engineering event." loading="lazy" /></figure>
+          <figure><img src="assets/images/acers-group.webp" srcset="assets/images/acers-group-800.webp 800w, assets/images/acers-group-1400.webp 1400w, assets/images/acers-group.webp 2048w" sizes="(max-width:900px) 100vw, 1360px" alt="ACERS alumni and professional community at a Yonsei Graduate School of Engineering event." loading="lazy" /></figure>
           <div class="world-body"><span>Community / 03</span><h3>ACERS</h3><p>President<br />Alumni of Civil, Environmental Resilience Safety<br />Yonsei Graduate School of Engineering</p></div>
         </article>
       </div>
@@ -227,7 +236,7 @@
 
   <!-- ============ INDUSTRIAL PANORAMA ============ -->
   <section class="cinema" data-tone="dark" style="--focus:46% 22%;--stack-ratio:16/9;--v1:.96;--v2:.8;--v3:.4">
-    <div class="cinema-media" data-portrait="daejin-aerial"><img src="assets/images/daejin-aerial.webp" alt="Aerial view of Daejin Pipe Co., Ltd., pipe inventory and surrounding urban infrastructure." loading="lazy" /></div>
+    <div class="cinema-media" data-portrait="daejin-aerial"><img src="assets/images/daejin-aerial.webp" srcset="assets/images/daejin-aerial-800.webp 800w, assets/images/daejin-aerial-1400.webp 1400w, assets/images/daejin-aerial.webp 2048w" sizes="100vw" alt="Aerial view of Daejin Pipe Co., Ltd., pipe inventory and surrounding urban infrastructure." loading="lazy" /></div>
     <div class="cinema-veil"></div>
     <div class="frame cinema-body rv">
       <p class="eyebrow">Industrial reality</p>
@@ -239,7 +248,7 @@
 
   <!-- ============ OPERATOR ============ -->
   <section class="cinema cinema-right" data-tone="dark" style="--focus:32% 20%;--stack-ratio:16/11">
-    <div class="cinema-media" data-portrait="welding"><img src="assets/images/welding-wide.webp" alt="Yonghoe JOO welding in an industrial workshop." loading="lazy" /></div>
+    <div class="cinema-media" data-portrait="welding"><img src="assets/images/welding-wide.webp" srcset="assets/images/welding-wide-800.webp 800w, assets/images/welding-wide-1400.webp 1400w, assets/images/welding-wide.webp 1800w" sizes="100vw" alt="Yonghoe JOO welding in an industrial workshop." loading="lazy" /></div>
     <div class="cinema-veil"></div>
     <div class="frame cinema-body rv">
       <p class="eyebrow">Personal field record</p>
@@ -263,8 +272,16 @@
           <div><span>LAB</span><strong>Industrial Digital Twin</strong><em>Exploratory</em><b></b></div>
           <div><span>TOOLS</span><strong>Interactive Measurement</strong><em>Planned</em><b></b></div>
         </div>
-        <blockquote class="quote">Do not claim what the measurement chain cannot support.</blockquote>
       </div>
+    </div>
+  </section>
+
+  <!-- ============ STATEMENT ============ -->
+  <section class="statement plane" data-tone="light">
+    <div class="frame statement-inner rv">
+      <p class="eyebrow plain">Research principle</p>
+      <p class="statement-line">Do not claim what the measurement chain cannot support.</p>
+      <p class="statement-sub">Everything on this site is placed on one side of that sentence or the other.</p>
     </div>
   </section>
 
@@ -298,8 +315,8 @@
       </div>
     </div>
     <div class="ftr-base">
-      <span>© <span data-year>2026</span> Yonghoe JOO · JoosAtlas v10.1</span>
-      <span>Press ⌘K or / to search · T to switch theme</span>
+      <span>© <span data-year>2026</span> Yonghoe JOO · JoosAtlas v11.0</span>
+      <span>Updated <time data-updated datetime="2026-08-07">7 August 2026</time> · v11.0</span>
     </div>
   </div>
 </footer>
@@ -310,14 +327,15 @@
   <div class="cmdk-box">
     <div class="cmdk-field">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input type="text" placeholder="Search sections, figures and actions…" aria-label="Search JoosAtlas" autocomplete="off" spellcheck="false" />
+      <input type="text" role="combobox" aria-expanded="true" aria-controls="cmdk-results" aria-autocomplete="list" placeholder="Search sections, figures and actions…" aria-label="Search JoosAtlas" autocomplete="off" spellcheck="false" />
       <span class="cmdk-esc">ESC</span>
     </div>
-    <div class="cmdk-list" role="listbox" aria-label="Results"></div>
-    <div class="cmdk-foot"><span>↑↓ navigate</span><span>↵ open</span><span>⌘K toggle</span><span>T theme</span></div>
+    <div class="cmdk-list" id="cmdk-results" role="listbox" aria-label="Results"></div>
+    <div class="cmdk-foot"><span>↑↓ navigate</span><span>↵ open</span><span>⌘K toggle</span><span>T theme</span><span>L 한국어 / EN</span></div>
   </div>
 </div>
 
-<script src="joosatlas-v10.js?v=10.1.0"></script>
+<script src="joosatlas-i18n.js?v=11.0.0"></script>
+<script src="joosatlas-v10.js?v=11.0.0"></script>
 </body>
 </html>

@@ -46,3 +46,32 @@ perceptual check reports INFO and the geometric check governs.
    must survive.
 4. Re-run. Fix the layout until it passes; do not loosen the region to make the
    check green.
+
+---
+
+# Language audit
+
+```
+python3 -m http.server 8899
+node tools/lang_audit.mjs
+```
+
+Loads every page with Korean selected, clicks through the method explorer, the
+evidence explorer, the range selector and a data table so the JavaScript-generated
+text is included, then walks the rendered DOM and reports any *visible* text node
+still showing English. It also verifies that `<html lang>` is set and that
+switching back to English is lossless.
+
+Numbers, units, symbols, e-mail addresses and proper nouns are allowed through by
+the `ALLOWED` pattern and the `KEEP` set at the top of the file. Everything else
+must have a Korean counterpart in `joosatlas-i18n.js`.
+
+To rebuild the dictionary after adding new copy:
+
+```
+python3 tools/build_i18n.py
+```
+
+It extracts every translatable string from the four pages, checks the dictionary
+covers all of them, and exits non-zero — naming the missing strings — if it does
+not. Add the Korean for anything it reports, then run it again.

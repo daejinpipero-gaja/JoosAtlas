@@ -1,15 +1,22 @@
 {
-  "version": "10.1.0",
+  "version": "11.0.0",
   "codename": "Instrument",
-  "title": "Composition audit, first-person profile, international name order and contact",
+  "title": "Bilingual Korean/English, telemetry strip and statement moment",
   "css": "joosatlas-v10.css",
-  "js": "joosatlas-v10.js",
+  "js": [
+    "joosatlas-i18n.js",
+    "joosatlas-v10.js"
+  ],
   "pages": [
     "index.html",
     "case-001.html",
     "about.html",
     "404.html"
   ],
-  "supersedes": "10.0.0",
-  "built_utc": "2026-08-07T05:00:00Z"
+  "supersedes": "10.1.0",
+  "built_utc": "2026-08-07T07:30:00Z",
+  "languages": [
+    "en",
+    "ko"
+  ]
 }

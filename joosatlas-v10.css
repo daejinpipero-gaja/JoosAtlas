@@ -917,3 +917,85 @@ input[type=range]:active::-webkit-slider-thumb{transform:scale(1.16)}
   .rv{opacity:1;transform:none}
   a[href^="http"]::after{content:" (" attr(href) ")";font-size:8pt;color:#555}
 }
+
+/* ============================================================
+   22. LANGUAGE — Korean typography
+   The Latin faces have no Hangul; the stack below supplies it and
+   the metrics that Korean actually needs: looser tracking, taller
+   lines, and word-break:keep-all so a term never splits mid-word.
+   ============================================================ */
+
+.lang-btn{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;min-width:44px}
+.lang-btn .ic-to-en{display:none}
+html[lang="ko"] .lang-btn .ic-to-ko{display:none}
+html[lang="ko"] .lang-btn .ic-to-en{display:inline}
+
+html[lang="ko"]{
+  --display:"Apple SD Gothic Neo",Pretendard,"Malgun Gothic","맑은 고딕","Noto Sans KR","Noto Sans CJK KR","Source Han Sans KR",system-ui,sans-serif;
+  --sans:"Apple SD Gothic Neo",Pretendard,"Malgun Gothic","맑은 고딕","Noto Sans KR","Noto Sans CJK KR",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+html[lang="ko"] body{letter-spacing:-.005em;line-height:1.78;word-break:keep-all}
+html[lang="ko"] .d1{font-size:clamp(2.4rem,5.2vw,4.5rem);line-height:1.16;letter-spacing:-.032em;font-weight:600}
+html[lang="ko"] .d2{font-size:clamp(1.82rem,3.4vw,2.9rem);line-height:1.24;letter-spacing:-.028em;font-weight:600}
+html[lang="ko"] .d3{font-size:clamp(1.34rem,2.1vw,1.8rem);line-height:1.4;font-weight:600}
+html[lang="ko"] .d4{font-size:clamp(1.08rem,1.4vw,1.24rem);line-height:1.48;font-weight:600}
+html[lang="ko"] .lede{font-size:clamp(1.14rem,1.6vw,1.4rem);line-height:1.68;letter-spacing:-.014em;font-weight:500}
+html[lang="ko"] .quote,html[lang="ko"] .statement-line{line-height:1.4;letter-spacing:-.03em;font-weight:600}
+html[lang="ko"] .statement-line{max-width:12em}
+html[lang="ko"] .quote{max-width:15em}
+html[lang="ko"] .hero-h{max-width:14em}
+html[lang="ko"] .lede.narrow,html[lang="ko"] .statement-sub{max-width:34em}
+html[lang="ko"] .eyebrow,html[lang="ko"] .num-tag,html[lang="ko"] .card-num,
+html[lang="ko"] .ledger span,html[lang="ko"] .fact-strip span,html[lang="ko"] .rule-cards span{letter-spacing:.09em}
+html[lang="ko"] .rule-cards strong,html[lang="ko"] .fact-strip strong,
+html[lang="ko"] .index-list strong,html[lang="ko"] .contrast strong{letter-spacing:-.018em;line-height:1.44;font-weight:600}
+html[lang="ko"] .explorer-tabs strong{font-size:.86rem}
+html[lang="ko"] .btn,html[lang="ko"] .link-arrow,html[lang="ko"] .chip-btn{letter-spacing:.04em}
+html[lang="ko"] .glossary dd,html[lang="ko"] .small,html[lang="ko"] .chart-foot{line-height:1.7}
+@media (max-width:560px){
+  html[lang="ko"] .d1{font-size:2.05rem}
+  html[lang="ko"] .explorer-tabs strong{font-size:0}
+  html[lang="ko"] .explorer-tabs strong::first-letter{font-size:.8rem}
+}
+
+/* ============================================================
+   23. TELEMETRY & STATEMENT — the instrument strip and the one
+   quiet full-bleed sentence between chapters.
+   ============================================================ */
+
+.telemetry{
+  display:flex;flex-wrap:wrap;gap:6px 28px;align-items:baseline;
+  padding:0 0 14px;margin-bottom:2px;
+  font-family:var(--mono);font-size:.605rem;letter-spacing:.13em;text-transform:uppercase;
+  color:rgba(242,246,248,.5);
+}
+.telemetry span:first-child{color:var(--accent-bright)}
+.tel-clock{margin-left:auto;font-variant-numeric:tabular-nums;color:rgba(242,246,248,.72)}
+@media (max-width:700px){.telemetry{font-size:.56rem;gap:4px 16px}.tel-clock{margin-left:0}}
+
+.statement{
+  min-height:min(78vh,720px);display:grid;place-items:center;
+  padding-block:clamp(80px,10vw,150px);position:relative;overflow:hidden;
+}
+.statement::before,.statement::after{
+  content:"";position:absolute;left:50%;transform:translateX(-50%);
+  width:min(100% - var(--gutter)*2,var(--max));height:1px;background:var(--rule);
+}
+.statement::before{top:0}.statement::after{bottom:0}
+.statement-inner{text-align:center;max-width:none}
+.statement .eyebrow{justify-content:center;color:var(--accent)}
+.statement-line{
+  font-family:var(--display);font-size:clamp(2.1rem,5.2vw,4.4rem);
+  line-height:1.08;letter-spacing:-.038em;margin:0;
+  /* em, not ch — Hangul is full-width, so a ch-based measure collapses in Korean */
+  max-width:13.5em;margin-inline:auto;text-wrap:balance;
+}
+.statement-sub{
+  margin-top:clamp(26px,3vw,40px);font-size:.94rem;color:var(--ink-3);
+  max-width:46ch;margin-inline:auto;letter-spacing:0;
+}
+@media (max-width:700px){.statement-inner{max-width:none}}
+
+/* keyboard-reachable chart values */
+.chart-plot [tabindex]{outline:none}
+.chart-plot [tabindex]:focus-visible{outline:2px solid var(--accent-bright);outline-offset:2px}

@@ -17,8 +17,8 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 <link rel="manifest" href="site.webmanifest" />
-<link rel="stylesheet" href="joosatlas-v10.css?v=10.1.0" />
-<script>(()=>{try{const t=localStorage.getItem('joosatlas-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<link rel="stylesheet" href="joosatlas-v10.css?v=11.0.0" />
+<script>(()=>{try{const t=localStorage.getItem('joosatlas-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);const l=localStorage.getItem('joosatlas-lang');if(l==='ko'||l==='en')document.documentElement.setAttribute('lang',l);}catch(e){}})();</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -42,6 +42,9 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
       <span class="kbd">⌘K</span>
     </button>
+    <button class="icon-btn lang-btn" type="button" aria-label="Switch language / 언어 전환">
+      <span class="ic-to-ko">한국어</span><span class="ic-to-en">EN</span>
+    </button>
     <button class="icon-btn theme-btn" type="button" aria-label="Toggle light or dark theme">
       <svg class="ic-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/></svg>
       <svg class="ic-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
@@ -54,7 +57,7 @@
 
   <!-- ============ HERO ============ -->
   <section class="phero" data-tone="dark">
-    <div class="phero-media"><img src="assets/images/field-hero.webp" alt="A total station installed within the surveyed primitive at the field site." fetchpriority="high" /></div>
+    <div class="phero-media"><img src="assets/images/field-hero.webp" srcset="assets/images/field-hero-800.webp 800w, assets/images/field-hero-1400.webp 1400w, assets/images/field-hero.webp 1500w" sizes="100vw" alt="A total station installed within the surveyed primitive at the field site." fetchpriority="high" /></div>
     <div class="phero-veil"></div>
     <div class="frame phero-body">
       <p class="eyebrow">Case 001 · Paper under review</p>
@@ -339,7 +342,7 @@
     </div>
     <div class="frame">
       <figure class="feature-media rv" style="margin-top:clamp(28px,3.4vw,44px);border:1px solid var(--rule)">
-        <img src="assets/images/field-layout.webp" alt="Composite figure showing camera placements, boundary geometry, field markers and overhead views." loading="lazy" style="aspect-ratio:auto" />
+        <img src="assets/images/field-layout.webp" srcset="assets/images/field-layout-800.webp 800w, assets/images/field-layout-1400.webp 1400w, assets/images/field-layout.webp 1951w" sizes="(max-width:900px) 100vw, 1360px" alt="Composite figure showing camera placements, boundary geometry, field markers and overhead views." loading="lazy" style="aspect-ratio:auto" />
         <figcaption class="media-tag"><span>Field configuration</span><span>Metric and visual viewpoints</span></figcaption>
       </figure>
       <div class="cols-4" style="margin-top:clamp(26px,3vw,40px)">
@@ -679,8 +682,8 @@
       <div><h4>Contact</h4><ul><li><a href="mailto:daejinpipero@yonsei.ac.kr">daejinpipero@yonsei.ac.kr</a></li><li><a href="mailto:daejinpipero@gmail.com">daejinpipero@gmail.com</a></li><li><a href="https://github.com/daejinpipero-gaja/JoosAtlas">GitHub ↗</a></li></ul></div>
     </div>
     <div class="ftr-base">
-      <span>© <span data-year>2026</span> Yonghoe JOO · JoosAtlas v10.1</span>
-      <span>Press ⌘K or / to search · T to switch theme</span>
+      <span>© <span data-year>2026</span> Yonghoe JOO · JoosAtlas v11.0</span>
+      <span>Updated <time data-updated datetime="2026-08-07">7 August 2026</time> · v11.0</span>
     </div>
   </div>
 </footer>
@@ -695,14 +698,15 @@
   <div class="cmdk-box">
     <div class="cmdk-field">
       <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input type="text" placeholder="Search sections, figures and actions…" aria-label="Search JoosAtlas" autocomplete="off" spellcheck="false" />
+      <input type="text" role="combobox" aria-expanded="true" aria-controls="cmdk-results" aria-autocomplete="list" placeholder="Search sections, figures and actions…" aria-label="Search JoosAtlas" autocomplete="off" spellcheck="false" />
       <span class="cmdk-esc">ESC</span>
     </div>
-    <div class="cmdk-list" role="listbox" aria-label="Results"></div>
-    <div class="cmdk-foot"><span>↑↓ navigate</span><span>↵ open</span><span>⌘K toggle</span><span>T theme</span></div>
+    <div class="cmdk-list" id="cmdk-results" role="listbox" aria-label="Results"></div>
+    <div class="cmdk-foot"><span>↑↓ navigate</span><span>↵ open</span><span>⌘K toggle</span><span>T theme</span><span>L 한국어 / EN</span></div>
   </div>
 </div>
 
-<script src="joosatlas-v10.js?v=10.1.0"></script>
+<script src="joosatlas-i18n.js?v=11.0.0"></script>
+<script src="joosatlas-v10.js?v=11.0.0"></script>
 </body>
 </html>
