@@ -1,266 +1,708 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Case 001 — From a surveyed primitive to an auditable boundary</title>
-  <meta name="description" content="A public research experience explaining how surveyed object-space geometry, image projection and signed audit form a traceable measurement chain." />
-  <meta name="author" content="Joo Yong-Hoe" />
-  <meta name="theme-color" content="#102330" />
-  <meta property="og:title" content="Case 001 — JoosAtlas" />
-  <meta property="og:description" content="From a surveyed primitive to an auditable boundary." />
-  <meta property="og:image" content="https://daejinpipero-gaja.github.io/JoosAtlas/assets/images/social-preview.jpg" />
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="joosatlas-v9.css?v=9.0.0" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Case 001 — From a surveyed primitive to an auditable boundary | JoosAtlas</title>
+<meta name="description" content="A public research experience explaining how surveyed object-space geometry, image projection and signed audit form a traceable measurement chain." />
+<meta name="author" content="Yonghoe JOO" />
+<meta name="theme-color" content="#faf7ef" />
+<link rel="canonical" href="https://daejinpipero-gaja.github.io/JoosAtlas/case-001.html" />
+<meta property="og:site_name" content="JoosAtlas" />
+<meta property="og:title" content="Case 001 — From a surveyed primitive to an auditable boundary" />
+<meta property="og:description" content="Theory, field realization, an interactive sensitivity lab and selected object-space evidence." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://daejinpipero-gaja.github.io/JoosAtlas/case-001.html" />
+<meta property="og:image" content="https://daejinpipero-gaja.github.io/JoosAtlas/assets/images/social-preview.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="manifest" href="site.webmanifest" />
+<link rel="stylesheet" href="joosatlas-v10.css?v=10.1.0" />
+<script>(()=>{try{const t=localStorage.getItem('joosatlas-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 </head>
-<body class="case-page">
-  <a class="skip-link" href="#main">Skip to content</a>
-  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"><i></i></div>
 
-  <header class="site-header header-overlay">
-    <a class="site-brand" href="index.html"><img src="assets/figures/joosatlas-mark.svg" alt="" /><span><strong>JoosAtlas</strong><small>CASE 001 · SPATIAL EVIDENCE</small></span></a>
-    <button class="menu-button" aria-expanded="false" aria-controls="main-nav">INDEX</button>
-    <nav id="main-nav" class="main-nav" aria-label="Primary navigation">
-      <a href="#question">Question</a><a href="#theory">Theory</a><a href="#pixel-lab">Try it</a><a href="#field">Field</a><a href="#evidence">Evidence</a><a href="#claim">Claim boundary</a><a href="about.html">About Joo</a>
-    </nav>
-  </header>
+<header class="hdr on-dark">
+  <a class="brand" href="index.html" aria-label="JoosAtlas home">
+    <img src="assets/figures/joosatlas-mark.svg" alt="" width="34" height="34" />
+    <span><strong>JoosAtlas</strong><small>Case 001 · Spatial evidence</small></span>
+  </a>
+  <nav class="nav" id="site-nav" aria-label="Primary">
+    <a href="#question">Question</a>
+    <a href="#theory">Theory</a>
+    <a href="#pixel-lab">Lab</a>
+    <a href="#geometry">Geometry</a>
+    <a href="#evidence">Evidence</a>
+    <a href="#claim">Limits</a>
+  </nav>
+  <div class="chrome-tools">
+    <button class="icon-btn cmdk-open" type="button" aria-label="Open command palette">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <span class="kbd">⌘K</span>
+    </button>
+    <button class="icon-btn theme-btn" type="button" aria-label="Toggle light or dark theme">
+      <svg class="ic-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z"/></svg>
+      <svg class="ic-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.6 1.6M18.2 18.2l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.6-1.6M18.2 5.8l1.6-1.6"/></svg>
+    </button>
+    <button class="icon-btn menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">Index</button>
+  </div>
+</header>
 
-  <main id="main">
-    <section class="case-hero" data-header-theme="dark">
-      <div class="case-hero-image"><img src="assets/images/field-hero.webp" alt="A total station installed within the surveyed primitive at the field site." /></div>
-      <div class="case-hero-shade"></div>
-      <div class="case-hero-copy section-frame">
-        <p class="overline light">CASE 001 / PAPER UNDER REVIEW</p>
-        <h1>From a surveyed primitive<br />to an auditable boundary.</h1>
-        <p>Can a single oblique image test whether a field-generated design boundary has been preserved?</p>
-        <div class="case-hero-tags"><span>Object-space datum</span><span>Image geometry</span><span>Signed terminal audit</span></div>
-      </div>
-      <div class="case-hero-caption"><span>FIELD RECORD</span><span>Physical reference before image interpretation</span></div>
-    </section>
+<main id="main">
 
-    <section id="question" class="case-question paper-section" data-header-theme="light">
-      <div class="section-frame editorial-grid">
-        <div class="section-index"><span>01</span><p>QUESTION</p></div>
-        <div>
-          <h2>A projected boundary may look correct and still fail as a measurement.</h2>
-          <div class="question-columns">
-            <p class="lead-copy">Visual agreement answers a perceptual question. The paper asks a metric one.</p>
-            <div>
-              <p>The design boundary is first generated in object space from a surveyed primitive. The image is then used only as an observation channel. Its response is returned to object space and compared at the terminal quantity.</p>
-              <p>This separation prevents the image from defining the reference it is later asked to verify.</p>
-            </div>
+  <!-- ============ HERO ============ -->
+  <section class="phero" data-tone="dark">
+    <div class="phero-media"><img src="assets/images/field-hero.webp" alt="A total station installed within the surveyed primitive at the field site." fetchpriority="high" /></div>
+    <div class="phero-veil"></div>
+    <div class="frame phero-body">
+      <p class="eyebrow">Case 001 · Paper under review</p>
+      <h1 class="d1">From a surveyed primitive<br />to an auditable boundary.</h1>
+      <p class="phero-deck">Can a single oblique image test whether a field-generated design boundary has been preserved?</p>
+      <div class="tag-row"><span>Object-space datum</span><span>Image geometry</span><span>Signed terminal audit</span></div>
+    </div>
+  </section>
+
+  <!-- ============ 01 QUESTION ============ -->
+  <section id="question" class="sec plane" data-tone="light">
+    <div class="frame rail-grid">
+      <div class="rail-head"><p class="num-tag"><b>01</b> Question</p></div>
+      <div>
+        <h2 class="d2">A projected boundary may look correct and still fail as a measurement.</h2>
+        <div class="cols-2" style="margin-top:clamp(24px,3vw,40px)">
+          <p class="lede">Visual agreement answers a perceptual question. The paper asks a metric one.</p>
+          <div class="body-2">
+            <p>The design boundary is first generated in object space from a surveyed primitive. The image is then used only as an observation channel. Its response is returned to object space and compared at the terminal quantity.</p>
+            <p>This separation prevents the image from defining the reference it is later asked to verify.</p>
           </div>
-          <div class="question-contrast">
-            <article><span>IMAGE QUESTION</span><strong>Does the overlay look plausible?</strong><p>Useful for visualization, insufficient for certification.</p></article>
-            <div class="contrast-arrow">≠</div>
-            <article><span>MEASUREMENT QUESTION</span><strong>Does the observed response preserve the object-space boundary?</strong><p>Requires an independent datum, declared model and terminal comparison.</p></article>
-          </div>
+        </div>
+        <div class="contrast">
+          <article class="rv"><span>Image question</span><strong>Does the overlay look plausible?</strong><p>Useful for visualization, insufficient for certification.</p></article>
+          <div class="contrast-mark rv rv-d1" aria-hidden="true">≠</div>
+          <article class="rv rv-d2"><span>Measurement question</span><strong>Does the observed response preserve the object-space boundary?</strong><p>Requires an independent datum, a declared model and a terminal comparison.</p></article>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    
-    <section id="theory" class="theory-section dark-section" data-header-theme="dark">
-      <div class="section-frame">
-        <div class="theory-heading editorial-grid">
-          <div class="section-index section-index-light"><span>02</span><p>THEORY</p></div>
-          <div><p class="overline light">A TRACEABLE FIVE-STAGE CHAIN</p><h2>Each stage has one job. No stage is allowed to validate itself.</h2><p class="theory-intro">Use the numbered controls to inspect how the physical datum, image observation and terminal audit remain separate.</p></div>
+  <!-- ============ 02 THEORY / METHOD EXPLORER ============ -->
+  <section id="theory" class="sec plane-2" data-tone="light">
+    <div class="frame rail-grid">
+      <div class="rail-head"><p class="num-tag"><b>02</b> Theory</p></div>
+      <div>
+        <p class="eyebrow">A traceable five-stage chain</p>
+        <h2 class="d2">Each stage has one job.<br />No stage is allowed to validate itself.</h2>
+        <p class="body-2" style="margin-top:20px;max-width:64ch">Use the numbered controls to inspect how the physical datum, the image observation and the terminal audit remain separate. Arrow keys move between stages.</p>
+      </div>
+    </div>
+
+    <div class="frame">
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+        <marker id="arrowA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 9 5 0 9z" fill="var(--accent-bright)"/></marker>
+        <marker id="arrowB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 1 9 5 0 9z" fill="var(--s2)"/></marker>
+      </defs></svg>
+
+      <div class="explorer rv" data-explorer>
+        <div class="explorer-tabs" role="tablist" aria-label="Measurement-chain stages">
+          <button type="button" role="tab" aria-selected="true"  aria-controls="mp1" id="mt1" data-step="1"><span>01</span><strong>Survey</strong></button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="mp2" id="mt2" data-step="2"><span>02</span><strong>Generate</strong></button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="mp3" id="mt3" data-step="3"><span>03</span><strong>Project</strong></button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="mp4" id="mt4" data-step="4"><span>04</span><strong>Return</strong></button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="mp5" id="mt5" data-step="5"><span>05</span><strong>Audit</strong></button>
         </div>
 
-        <div class="method-explorer reveal" data-method-explorer>
-          <div class="method-tabs" role="tablist" aria-label="Measurement-chain stages">
-            <button type="button" class="active" role="tab" aria-selected="true" aria-controls="method-panel-1" data-method-step="1"><span>01</span><strong>Survey</strong></button>
-            <button type="button" role="tab" aria-selected="false" aria-controls="method-panel-2" data-method-step="2"><span>02</span><strong>Generate</strong></button>
-            <button type="button" role="tab" aria-selected="false" aria-controls="method-panel-3" data-method-step="3"><span>03</span><strong>Project</strong></button>
-            <button type="button" role="tab" aria-selected="false" aria-controls="method-panel-4" data-method-step="4"><span>04</span><strong>Return</strong></button>
-            <button type="button" role="tab" aria-selected="false" aria-controls="method-panel-5" data-method-step="5"><span>05</span><strong>Audit</strong></button>
+        <div class="explorer-panel" id="mp1" role="tabpanel" aria-labelledby="mt1" data-panel="1">
+          <div class="stage">
+            <svg viewBox="0 0 640 400" aria-hidden="true">
+              <g class="dg-grid"><path d="M60 100H580M60 200H580M60 300H580M160 40V360M280 40V360M400 40V360M520 40V360"/></g>
+              <circle class="dg-ring" cx="320" cy="200" r="118"/>
+              <g class="dg-pt"><circle cx="320" cy="82" r="6"/><circle cx="379" cy="98" r="6"/><circle cx="422" cy="141" r="6"/><circle cx="438" cy="200" r="6"/><circle cx="422" cy="259" r="6"/><circle cx="379" cy="302" r="6"/><circle cx="320" cy="318" r="6"/><circle cx="261" cy="302" r="6"/><circle cx="218" cy="259" r="6"/><circle cx="202" cy="200" r="6"/><circle cx="218" cy="141" r="6"/><circle cx="261" cy="98" r="6"/></g>
+              <path class="dg-cross" d="M292 200h56M320 172v56"/>
+              <text class="dg-txt" x="320" y="352" text-anchor="middle">TS OBSERVATIONS → CENTRE + RADIUS</text>
+            </svg>
           </div>
-
-          <div class="method-panel active" id="method-panel-1" role="tabpanel" data-method-panel="1">
-            <div class="method-diagram" aria-hidden="true">
-              <svg viewBox="0 0 720 420"><g class="diagram-grid"><path d="M60 80H660M60 160H660M60 240H660M60 320H660M120 40V380M240 40V380M360 40V380M480 40V380M600 40V380"/></g><circle class="diagram-ring" cx="360" cy="210" r="118"/><g class="diagram-points"><circle cx="360" cy="92" r="7"/><circle cx="419" cy="108" r="7"/><circle cx="462" cy="151" r="7"/><circle cx="478" cy="210" r="7"/><circle cx="462" cy="269" r="7"/><circle cx="419" cy="312" r="7"/><circle cx="360" cy="328" r="7"/><circle cx="301" cy="312" r="7"/><circle cx="258" cy="269" r="7"/><circle cx="242" cy="210" r="7"/><circle cx="258" cy="151" r="7"/><circle cx="301" cy="108" r="7"/></g><path class="diagram-cross" d="M332 210H388M360 182V238"/></svg>
-            </div>
-            <div class="method-explanation"><p class="overline light">01 / SURVEY</p><h3>Establish the primitive in object space.</h3><p>TS observations estimate a common centre and primitive radius. The camera has not yet contributed to either quantity.</p><div class="role-boundary"><span>CAN ESTABLISH</span><strong>Physical origin and metric scale</strong></div><div class="role-boundary denied"><span>CANNOT ESTABLISH</span><strong>Image response or terminal conformity</strong></div></div>
-          </div>
-
-          <div class="method-panel" id="method-panel-2" role="tabpanel" data-method-panel="2" hidden>
-            <div class="method-diagram" aria-hidden="true"><svg viewBox="0 0 720 420"><g class="diagram-grid"><path d="M60 80H660M60 160H660M60 240H660M60 320H660M120 40V380M240 40V380M360 40V380M480 40V380M600 40V380"/></g><circle class="diagram-ring" cx="360" cy="210" r="72"/><circle class="diagram-boundary" cx="360" cy="210" r="156"/><path class="diagram-cross" d="M332 210H388M360 182V238"/><path class="diagram-arrow" d="M360 210L516 210M500 195L516 210L500 225"/><path class="diagram-arrow secondary" d="M360 210L432 210"/></svg></div>
-            <div class="method-explanation"><p class="overline light">02 / GENERATE</p><h3>Create the design boundary by declared scaling.</h3><p>The boundary radius follows from the surveyed primitive and an explicit scale factor. It is not selected by looking at the image.</p><div class="role-boundary"><span>CAN ESTABLISH</span><strong>Design radius in the same metric frame</strong></div><div class="role-boundary denied"><span>CANNOT ESTABLISH</span><strong>Where an observed image response will fall</strong></div></div>
-          </div>
-
-          <div class="method-panel" id="method-panel-3" role="tabpanel" data-method-panel="3" hidden>
-            <div class="method-diagram" aria-hidden="true"><svg viewBox="0 0 720 420"><rect class="diagram-camera" x="88" y="154" width="104" height="72" rx="12"/><circle class="diagram-lens" cx="192" cy="190" r="22"/><path class="diagram-tripod" d="M136 226L92 336M136 226L180 336M136 226V344"/><line class="diagram-plane" x1="370" y1="76" x2="370" y2="344"/><circle class="diagram-object" cx="582" cy="280" r="11"/><path class="diagram-ray" d="M192 190L582 280M192 190L370 231"/><circle class="diagram-pixel" cx="370" cy="231" r="8"/></svg></div>
-            <div class="method-explanation"><p class="overline light">03 / PROJECT</p><h3>Predict an image address from known geometry.</h3><p>The camera model maps a known object-space point to an expected image location. That prediction guides observation; it is not the final measurement.</p><div class="role-boundary"><span>CAN ESTABLISH</span><strong>Predicted image location under the declared model</strong></div><div class="role-boundary denied"><span>CANNOT ESTABLISH</span><strong>The actual response selected in the image</strong></div></div>
-          </div>
-
-          <div class="method-panel" id="method-panel-4" role="tabpanel" data-method-panel="4" hidden>
-            <div class="method-diagram" aria-hidden="true"><svg viewBox="0 0 720 420"><rect class="diagram-camera" x="88" y="154" width="104" height="72" rx="12"/><circle class="diagram-lens" cx="192" cy="190" r="22"/><path class="diagram-tripod" d="M136 226L92 336M136 226L180 336M136 226V344"/><line class="diagram-plane" x1="340" y1="76" x2="340" y2="344"/><circle class="diagram-pixel observed" cx="340" cy="224" r="9"/><path class="diagram-ray observed" d="M192 190L624 288"/><line class="diagram-support" x1="390" y1="288" x2="650" y2="288"/><circle class="diagram-intersection" cx="624" cy="288" r="11"/></svg></div>
-            <div class="method-explanation"><p class="overline light">04 / RETURN</p><h3>Back-project the selected response into object space.</h3><p>The observed pixel defines a ray from the camera centre. Its intersection with a declared support surface gives the reconstructed object-space location.</p><div class="role-boundary"><span>CAN ESTABLISH</span><strong>A 3D point under the declared support model</strong></div><div class="role-boundary denied"><span>CANNOT ESTABLISH</span><strong>Conformity before terminal comparison</strong></div></div>
-          </div>
-
-          <div class="method-panel" id="method-panel-5" role="tabpanel" data-method-panel="5" hidden>
-            <div class="method-diagram" aria-hidden="true"><svg viewBox="0 0 720 420"><circle class="diagram-boundary" cx="360" cy="210" r="145"/><circle class="diagram-reference" cx="360" cy="210" r="118"/><path class="diagram-cross" d="M332 210H388M360 182V238"/><path class="diagram-arrow" d="M360 210L505 210"/><path class="diagram-arrow reference" d="M360 210L478 210"/><path class="diagram-delta" d="M478 176V244M505 176V244M478 190H505"/></svg></div>
-            <div class="method-explanation"><p class="overline light">05 / AUDIT</p><h3>Compare the two radii and retain direction.</h3><p>The final discrepancy is computed only after the generated boundary and reconstructed reference radius exist in the same object-space frame.</p><div class="role-boundary"><span>CAN ESTABLISH</span><strong>Signed terminal radial discrepancy</strong></div><div class="role-boundary denied"><span>CANNOT ESTABLISH</span><strong>More certainty than the preceding chain supports</strong></div></div>
+          <div class="explain">
+            <p class="eyebrow">01 / Survey</p>
+            <h3>Establish the primitive in object space.</h3>
+            <p>TS observations estimate a common centre and primitive radius. The camera has not yet contributed to either quantity.</p>
+            <div class="role"><i>✓</i><div><span>Can establish</span><strong>Physical origin and metric scale</strong></div></div>
+            <div class="role no"><i>✕</i><div><span>Cannot establish</span><strong>Image response or terminal conformity</strong></div></div>
           </div>
         </div>
 
-        <div class="equation-ledger">
-          <article class="equation-card reveal">
-            <div class="equation-meta"><span>01</span><p>SURVEYED PRIMITIVE</p></div>
-            <div class="equation-body"><h3>Fit the physical centre and primitive radius.</h3><math display="block" aria-label="Circle fit equation"><mrow><mo>(</mo><mover><mi>O</mi><mo>^</mo></mover><mo>,</mo><msub><mover><mi>r</mi><mo>^</mo></mover><mi>P</mi></msub><mo>)</mo><mo>=</mo><munder><mi>argmin</mi><mrow><mi>O</mi><mo>,</mo><mi>r</mi></mrow></munder><mspace width=".4em"/><munder><mo>∑</mo><mi>i</mi></munder><msup><mrow><mo>(</mo><mo>‖</mo><msub><mi>P</mi><mi>i</mi></msub><mo>−</mo><mi>O</mi><mo>‖</mo><mo>−</mo><mi>r</mi><mo>)</mo></mrow><mn>2</mn></msup></mrow></math><p>The measured primitive points define the datum before the camera enters the chain.</p><dl class="symbol-glossary"><div><dt><span class="symbol">P<sub>i</sub></span></dt><dd>the <em>i</em>th surveyed primitive point</dd></div><div><dt><span class="symbol">O</span></dt><dd>candidate primitive centre</dd></div><div><dt><span class="symbol">r</span></dt><dd>candidate primitive radius</dd></div><div><dt><span class="symbol">ˆ</span></dt><dd>estimated quantity obtained from the fit</dd></div><div><dt><span class="symbol">arg min</span></dt><dd>values of centre and radius that minimise the summed squared radial residuals</dd></div></dl></div>
-          </article>
+        <div class="explorer-panel" id="mp2" role="tabpanel" aria-labelledby="mt2" data-panel="2" hidden>
+          <div class="stage">
+            <svg viewBox="0 0 640 400" aria-hidden="true">
+              <g class="dg-grid"><path d="M60 100H580M60 200H580M60 300H580M160 40V360M280 40V360M400 40V360M520 40V360"/></g>
+              <circle class="dg-ring" cx="320" cy="200" r="44"/>
+              <circle class="dg-bound" cx="320" cy="200" r="161"/>
+              <path class="dg-cross" d="M292 200h56M320 172v56"/>
+              <path class="dg-arrow" d="M320 200H478"/>
+              <text class="dg-txt" x="392" y="188" text-anchor="middle">λ = 11/3</text>
+              <text class="dg-txt" x="320" y="378" text-anchor="middle">PRIMITIVE 1.5 m → BOUNDARY 5.5 m</text>
+            </svg>
+          </div>
+          <div class="explain">
+            <p class="eyebrow">02 / Generate</p>
+            <h3>Create the design boundary by declared scaling.</h3>
+            <p>The boundary radius follows from the surveyed primitive and an explicit scale factor. It is not selected by looking at the image.</p>
+            <div class="role"><i>✓</i><div><span>Can establish</span><strong>Design radius in the same metric frame</strong></div></div>
+            <div class="role no"><i>✕</i><div><span>Cannot establish</span><strong>Where an observed image response will fall</strong></div></div>
+          </div>
+        </div>
 
-          <article class="equation-card reveal">
-            <div class="equation-meta"><span>02</span><p>EXACT GENERATION</p></div>
-            <div class="equation-body"><h3>Generate the design boundary by declared metric scaling.</h3><math display="block" aria-label="Boundary scaling equation"><mrow><msub><mi>R</mi><mi>B</mi></msub><mo>=</mo><mi>λ</mi><msub><mover><mi>r</mi><mo>^</mo></mover><mi>P</mi></msub><mo>,</mo><mspace width="1em"/><mi>λ</mi><mo>=</mo><mfrac><mn>5.5</mn><mn>1.5</mn></mfrac><mo>=</mo><mfrac><mn>11</mn><mn>3</mn></mfrac></mrow></math><p>The design boundary is derived from the surveyed primitive, not selected in the image.</p><dl class="symbol-glossary"><div><dt><span class="symbol">R<sub>B</sub></span></dt><dd>generated design-boundary radius</dd></div><div><dt><span class="symbol">λ</span></dt><dd>declared scale factor from primitive to boundary</dd></div><div><dt><span class="symbol">r̂<sub>P</sub></span></dt><dd>estimated physical primitive radius</dd></div></dl></div>
-          </article>
+        <div class="explorer-panel" id="mp3" role="tabpanel" aria-labelledby="mt3" data-panel="3" hidden>
+          <div class="stage">
+            <svg viewBox="0 0 640 400" aria-hidden="true">
+              <rect class="dg-body" x="60" y="150" width="96" height="66" rx="11"/>
+              <circle class="dg-lens" cx="158" cy="183" r="20"/>
+              <path class="dg-leg" d="M104 216 66 320M104 216l38 104M104 216v112"/>
+              <line class="dg-plane" x1="330" y1="70" x2="330" y2="330"/>
+              <text class="dg-txt" x="330" y="58" text-anchor="middle">IMAGE PLANE</text>
+              <circle class="dg-obj" cx="546" cy="266" r="9"/>
+              <text class="dg-txt" x="546" y="292" text-anchor="middle">X̃</text>
+              <path class="dg-ray" d="M158 183 546 266"/>
+              <circle class="dg-px" cx="330" cy="220" r="7"/>
+              <text class="dg-txt" x="312" y="212" text-anchor="end">ũ</text>
+              <text class="dg-txt" x="320" y="378" text-anchor="middle">q ũ = K [R | t] X̃</text>
+            </svg>
+          </div>
+          <div class="explain">
+            <p class="eyebrow">03 / Project</p>
+            <h3>Predict an image address from known geometry.</h3>
+            <p>The camera model maps a known object-space point to an expected image location. That prediction guides observation; it is not the final measurement.</p>
+            <div class="role"><i>✓</i><div><span>Can establish</span><strong>Predicted image location under the declared model</strong></div></div>
+            <div class="role no"><i>✕</i><div><span>Cannot establish</span><strong>The actual response selected in the image</strong></div></div>
+          </div>
+        </div>
 
-          <article class="equation-card reveal">
-            <div class="equation-meta"><span>03</span><p>FORWARD PROJECTION</p></div>
-            <div class="equation-body"><h3>Carry a known object-space point into the image.</h3><math display="block" aria-label="Camera projection equation"><mrow><mi>q</mi><mover><mi>u</mi><mo>~</mo></mover><mo>=</mo><mi>K</mi><mo>[</mo><mi>R</mi><mo>|</mo><mi>t</mi><mo>]</mo><mover><mi>X</mi><mo>~</mo></mover></mrow></math><p>The projection predicts where known geometry should appear. The scalar <em>q</em> is used here to avoid confusing projective scale with the session index used later.</p><dl class="symbol-glossary"><div><dt><span class="symbol">X̃</span></dt><dd>object-space point in homogeneous coordinates</dd></div><div><dt><span class="symbol">ũ</span></dt><dd>predicted image point in homogeneous pixel coordinates</dd></div><div><dt><span class="symbol">K</span></dt><dd>camera intrinsic matrix</dd></div><div><dt><span class="symbol">R, t</span></dt><dd>camera rotation and translation</dd></div><div><dt><span class="symbol">q</span></dt><dd>non-zero projective scale</dd></div></dl></div>
-          </article>
+        <div class="explorer-panel" id="mp4" role="tabpanel" aria-labelledby="mt4" data-panel="4" hidden>
+          <div class="stage">
+            <svg viewBox="0 0 640 400" aria-hidden="true">
+              <rect class="dg-body" x="60" y="150" width="96" height="66" rx="11"/>
+              <circle class="dg-lens" cx="158" cy="183" r="20"/>
+              <path class="dg-leg" d="M104 216 66 320M104 216l38 104M104 216v112"/>
+              <line class="dg-plane" x1="306" y1="70" x2="306" y2="330"/>
+              <path class="dg-ray obs" d="M158 183 566 276"/>
+              <circle class="dg-px obs" cx="306" cy="217" r="8"/>
+              <text class="dg-txt" x="288" y="209" text-anchor="end">ũ obs</text>
+              <line class="dg-support" x1="360" y1="276" x2="600" y2="276"/>
+              <text class="dg-txt" x="600" y="298" text-anchor="end">SUPPORT SURFACE</text>
+              <circle class="dg-obj" cx="566" cy="276" r="9"/>
+              <text class="dg-txt" x="320" y="378" text-anchor="middle">X(μ) = C + μ Rᵀ K⁻¹ ũ</text>
+            </svg>
+          </div>
+          <div class="explain">
+            <p class="eyebrow">04 / Return</p>
+            <h3>Back-project the selected response into object space.</h3>
+            <p>The observed pixel defines a ray from the camera centre. Its intersection with a declared support surface gives the reconstructed object-space location.</p>
+            <div class="role"><i>✓</i><div><span>Can establish</span><strong>A 3D point under the declared support model</strong></div></div>
+            <div class="role no"><i>✕</i><div><span>Cannot establish</span><strong>Conformity before terminal comparison</strong></div></div>
+          </div>
+        </div>
 
-          <article class="equation-card reveal">
-            <div class="equation-meta"><span>04</span><p>INVERSE PROJECTION</p></div>
-            <div class="equation-body"><h3>Return the selected image response to object space.</h3><math display="block" aria-label="Back projection ray equation"><mrow><mi>X</mi><mo>(</mo><mi>μ</mi><mo>)</mo><mo>=</mo><mi>C</mi><mo>+</mo><mi>μ</mi><msup><mi>R</mi><mi>T</mi></msup><msup><mi>K</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mover><mi>u</mi><mo>~</mo></mover></mrow></math><p>The pixel becomes a ray. A support surface or point height is still required to select one 3D location on that ray.</p><dl class="symbol-glossary"><div><dt><span class="symbol">C</span></dt><dd>camera projection centre in object space</dd></div><div><dt><span class="symbol">μ</span></dt><dd>distance parameter along the ray</dd></div><div><dt><span class="symbol">R<sup>T</sup></span></dt><dd>transpose of the rotation matrix, mapping the ray back to object space</dd></div><div><dt><span class="symbol">K<sup>−1</sup></span></dt><dd>inverse intrinsic mapping from pixels to a camera-frame direction</dd></div><div><dt><span class="symbol">ũ</span></dt><dd>the selected observed image response, not merely the predicted address</dd></div></dl></div>
-          </article>
-
-          <article class="equation-card reveal">
-            <div class="equation-meta"><span>05</span><p>SIGNED TERMINAL AUDIT</p></div>
-            <div class="equation-body"><h3>Compare the generated and reconstructed radii.</h3><math display="block" aria-label="Signed radial difference equation"><mrow><msub><mi>ΔR</mi><mrow><mi>s</mi><mi>j</mi></mrow></msub><mo>=</mo><msub><mover><mi>R</mi><mo>^</mo></mover><mrow><mi>b</mi><mo>,</mo><mi>s</mi></mrow></msub><mo>−</mo><msub><mover><mi>R</mi><mo>^</mo></mover><mrow><mi>ref</mi><mo>,</mo><mi>s</mi><mi>j</mi></mrow></msub></mrow></math><p>This displayed definition retains direction rather than reporting only an absolute magnitude.</p><dl class="symbol-glossary"><div><dt><span class="symbol">ΔR<sub>sj</sub></span></dt><dd>signed radial discrepancy for session or condition <em>s</em> and boundary observation <em>j</em></dd></div><div><dt><span class="symbol">R̂<sub>b,s</sub></span></dt><dd>estimated generated-boundary radius for session <em>s</em></dd></div><div><dt><span class="symbol">R̂<sub>ref,sj</sub></span></dt><dd>radius recovered from the selected image response and its object-space support for observation <em>j</em></dd></div><div><dt><span class="symbol">b</span></dt><dd>generated boundary</dd></div><div><dt><span class="symbol">ref</span></dt><dd>reconstructed reference response</dd></div></dl>
-              <div class="sign-convention" aria-label="Sign convention"><h4>Algebraic sign of the displayed definition</h4><div class="sign-row positive"><strong>ΔR<sub>sj</sub> &gt; 0</strong><span>R̂<sub>b,s</sub> &gt; R̂<sub>ref,sj</sub></span><p>The reconstructed reference lies at a smaller radius than the generated boundary—radially inward, provided both use the same origin.</p></div><div class="sign-row zero"><strong>ΔR<sub>sj</sub> = 0</strong><span>R̂<sub>b,s</sub> = R̂<sub>ref,sj</sub></span><p>The two radii coincide.</p></div><div class="sign-row negative"><strong>ΔR<sub>sj</sub> &lt; 0</strong><span>R̂<sub>b,s</sub> &lt; R̂<sub>ref,sj</sub></span><p>The reconstructed reference lies at a larger radius than the generated boundary—radially outward.</p></div><p class="sign-note">This interpretation follows the equation shown above. If the final manuscript reverses the subtraction order, the sign labels must also reverse; the website must match the accepted manuscript exactly.</p></div>
-            </div>
-          </article>
+        <div class="explorer-panel" id="mp5" role="tabpanel" aria-labelledby="mt5" data-panel="5" hidden>
+          <div class="stage">
+            <svg viewBox="0 0 640 400" aria-hidden="true">
+              <circle class="dg-bound" cx="320" cy="200" r="148"/>
+              <circle class="dg-ref" cx="320" cy="200" r="118"/>
+              <path class="dg-cross" d="M292 200h56M320 172v56"/>
+              <path class="dg-arrow" d="M320 200H468"/>
+              <path class="dg-arrow b" d="M320 200H438"/>
+              <path class="dg-delta" d="M438 164v72M468 164v72M438 178h30"/>
+              <text class="dg-txt" x="453" y="152" text-anchor="middle">ΔR</text>
+              <text class="dg-txt" x="320" y="378" text-anchor="middle">ΔR = R̂ b,s − R̂ ref,sj   (SIGN RETAINED)</text>
+            </svg>
+          </div>
+          <div class="explain">
+            <p class="eyebrow">05 / Audit</p>
+            <h3>Compare the two radii and retain direction.</h3>
+            <p>The final discrepancy is computed only after the generated boundary and the reconstructed reference radius exist in the same object-space frame.</p>
+            <div class="role"><i>✓</i><div><span>Can establish</span><strong>Signed terminal radial discrepancy</strong></div></div>
+            <div class="role no"><i>✕</i><div><span>Cannot establish</span><strong>More certainty than the preceding chain supports</strong></div></div>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="field" class="field-section paper-section" data-header-theme="light">
-      <div class="section-frame editorial-grid">
-        <div class="section-index"><span>03</span><p>FIELD REALIZATION</p></div>
-        <div>
-          <h2>The geometry existed before it became a figure.</h2>
-          <p class="lead-copy narrow">The installation combines a surveyed datum, a physical primitive, an exact generated boundary, camera stations and independent TS references.</p>
-        </div>
+  <!-- ============ 03 EQUATIONS ============ -->
+  <section id="equations" class="sec plane" data-tone="light">
+    <div class="frame rail-grid">
+      <div class="rail-head"><p class="num-tag"><b>03</b> Equations</p></div>
+      <div>
+        <h2 class="d2">Every displayed relation carries its symbols.</h2>
+        <p class="lede narrow" style="margin-top:20px">Nothing below is stated without a definition for each term and, where direction matters, an explicit algebraic sign convention.</p>
       </div>
-      <figure class="field-layout-figure section-frame reveal">
-        <img src="assets/images/field-layout.webp" alt="Composite figure showing camera placements, boundary geometry, field markers and overhead views." />
-        <figcaption><span>FIELD CONFIGURATION</span><p>The diagram and photographs show the physical arrangement from both metric and visual viewpoints. The complete observation accounting remains in the manuscript and supporting package.</p></figcaption>
+    </div>
+
+    <div class="frame eq-wrap">
+
+      <article class="eq rv">
+        <div class="eq-meta"><b>01</b><p>Surveyed primitive</p></div>
+        <div class="eq-body">
+          <h3>Fit the physical centre and primitive radius.</h3>
+          <div class="eq-math"><math display="block" aria-label="Circle fit by least squares of radial residuals"><mrow><mo>(</mo><mover><mi>O</mi><mo>^</mo></mover><mo>,</mo><msub><mover><mi>r</mi><mo>^</mo></mover><mi>P</mi></msub><mo>)</mo><mo>=</mo><munder><mi>argmin</mi><mrow><mi>O</mi><mo>,</mo><mi>r</mi></mrow></munder><mspace width=".45em"/><munder><mo>∑</mo><mi>i</mi></munder><msup><mrow><mo>(</mo><mo>‖</mo><msub><mi>P</mi><mi>i</mi></msub><mo>−</mo><mi>O</mi><mo>‖</mo><mo>−</mo><mi>r</mi><mo>)</mo></mrow><mn>2</mn></msup></mrow></math></div>
+          <p>The measured primitive points define the datum before the camera enters the chain.</p>
+          <dl class="glossary">
+            <div><dt><span class="sym">P<sub>i</sub></span></dt><dd>the <em>i</em>th surveyed primitive point</dd></div>
+            <div><dt><span class="sym">O</span></dt><dd>candidate primitive centre</dd></div>
+            <div><dt><span class="sym">r</span></dt><dd>candidate primitive radius</dd></div>
+            <div><dt><span class="sym">ˆ</span></dt><dd>estimated quantity obtained from the fit</dd></div>
+            <div><dt><span class="sym">arg min</span></dt><dd>values of centre and radius that minimise the summed squared radial residuals</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="eq rv">
+        <div class="eq-meta"><b>02</b><p>Exact generation</p></div>
+        <div class="eq-body">
+          <h3>Generate the design boundary by declared metric scaling.</h3>
+          <div class="eq-math"><math display="block" aria-label="Boundary radius equals lambda times the estimated primitive radius"><mrow><msub><mi>R</mi><mi>B</mi></msub><mo>=</mo><mi>λ</mi><msub><mover><mi>r</mi><mo>^</mo></mover><mi>P</mi></msub><mo>,</mo><mspace width="1.1em"/><mi>λ</mi><mo>=</mo><mfrac><mn>5.5</mn><mn>1.5</mn></mfrac><mo>=</mo><mfrac><mn>11</mn><mn>3</mn></mfrac></mrow></math></div>
+          <p>The design boundary is derived from the surveyed primitive, not selected in the image.</p>
+          <dl class="glossary">
+            <div><dt><span class="sym">R<sub>B</sub></span></dt><dd>generated design-boundary radius</dd></div>
+            <div><dt><span class="sym">λ</span></dt><dd>declared scale factor from primitive to boundary</dd></div>
+            <div><dt><span class="sym">r̂<sub>P</sub></span></dt><dd>estimated physical primitive radius</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="eq rv">
+        <div class="eq-meta"><b>03</b><p>Forward projection</p></div>
+        <div class="eq-body">
+          <h3>Carry a known object-space point into the image.</h3>
+          <div class="eq-math"><math display="block" aria-label="Projective camera equation"><mrow><mi>q</mi><mover><mi>u</mi><mo>~</mo></mover><mo>=</mo><mi>K</mi><mo>[</mo><mi>R</mi><mo>|</mo><mi>t</mi><mo>]</mo><mover><mi>X</mi><mo>~</mo></mover></mrow></math></div>
+          <p>The projection predicts where known geometry should appear. The scalar <em>q</em> is used here to avoid confusing projective scale with the session index used later.</p>
+          <dl class="glossary">
+            <div><dt><span class="sym">X̃</span></dt><dd>object-space point in homogeneous coordinates</dd></div>
+            <div><dt><span class="sym">ũ</span></dt><dd>predicted image point in homogeneous pixel coordinates</dd></div>
+            <div><dt><span class="sym">K</span></dt><dd>camera intrinsic matrix</dd></div>
+            <div><dt><span class="sym">R, t</span></dt><dd>camera rotation and translation</dd></div>
+            <div><dt><span class="sym">q</span></dt><dd>non-zero projective scale</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="eq rv">
+        <div class="eq-meta"><b>04</b><p>Inverse projection</p></div>
+        <div class="eq-body">
+          <h3>Return the selected image response to object space.</h3>
+          <div class="eq-math"><math display="block" aria-label="Back projection ray equation"><mrow><mi>X</mi><mo>(</mo><mi>μ</mi><mo>)</mo><mo>=</mo><mi>C</mi><mo>+</mo><mi>μ</mi><msup><mi>R</mi><mi>T</mi></msup><msup><mi>K</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mover><mi>u</mi><mo>~</mo></mover></mrow></math></div>
+          <p>The pixel becomes a ray. A support surface or point height is still required to select one 3D location on that ray.</p>
+          <dl class="glossary">
+            <div><dt><span class="sym">C</span></dt><dd>camera projection centre in object space</dd></div>
+            <div><dt><span class="sym">μ</span></dt><dd>distance parameter along the ray</dd></div>
+            <div><dt><span class="sym">R<sup>T</sup></span></dt><dd>transpose of the rotation matrix, mapping the ray back to object space</dd></div>
+            <div><dt><span class="sym">K<sup>−1</sup></span></dt><dd>inverse intrinsic mapping from pixels to a camera-frame direction</dd></div>
+            <div><dt><span class="sym">ũ</span></dt><dd>the selected observed image response, not merely the predicted address</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="eq rv">
+        <div class="eq-meta"><b>05</b><p>Signed terminal audit</p></div>
+        <div class="eq-body">
+          <h3>Compare the generated and reconstructed radii.</h3>
+          <div class="eq-math"><math display="block" aria-label="Signed radial difference equation"><mrow><msub><mi>ΔR</mi><mrow><mi>s</mi><mi>j</mi></mrow></msub><mo>=</mo><msub><mover><mi>R</mi><mo>^</mo></mover><mrow><mi>b</mi><mo>,</mo><mi>s</mi></mrow></msub><mo>−</mo><msub><mover><mi>R</mi><mo>^</mo></mover><mrow><mi>ref</mi><mo>,</mo><mi>s</mi><mi>j</mi></mrow></msub></mrow></math></div>
+          <p>This displayed definition retains direction rather than reporting only an absolute magnitude.</p>
+          <dl class="glossary">
+            <div><dt><span class="sym">ΔR<sub>sj</sub></span></dt><dd>signed radial discrepancy for session or condition <em>s</em> and boundary observation <em>j</em></dd></div>
+            <div><dt><span class="sym">R̂<sub>b,s</sub></span></dt><dd>estimated generated-boundary radius for session <em>s</em></dd></div>
+            <div><dt><span class="sym">R̂<sub>ref,sj</sub></span></dt><dd>radius recovered from the selected image response and its object-space support for observation <em>j</em></dd></div>
+            <div><dt><span class="sym">b</span></dt><dd>generated boundary</dd></div>
+            <div><dt><span class="sym">ref</span></dt><dd>reconstructed reference response</dd></div>
+          </dl>
+
+          <div class="signs">
+            <h4>Algebraic sign of the displayed definition</h4>
+            <div class="sign-row pos"><strong>ΔR<sub>sj</sub> &gt; 0</strong><span>R̂<sub>b,s</sub> &gt; R̂<sub>ref,sj</sub></span><p>The reconstructed reference lies at a smaller radius than the generated boundary — radially inward, provided both use the same origin.</p></div>
+            <div class="sign-row zero"><strong>ΔR<sub>sj</sub> = 0</strong><span>R̂<sub>b,s</sub> = R̂<sub>ref,sj</sub></span><p>The two radii coincide.</p></div>
+            <div class="sign-row neg"><strong>ΔR<sub>sj</sub> &lt; 0</strong><span>R̂<sub>b,s</sub> &lt; R̂<sub>ref,sj</sub></span><p>The reconstructed reference lies at a larger radius than the generated boundary — radially outward.</p></div>
+            <p class="sign-note">This interpretation follows the equation shown above. If the final manuscript reverses the subtraction order, the sign labels must also reverse; the website must match the accepted manuscript exactly.</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ 04 FIELD REALIZATION ============ -->
+  <section id="field" class="sec plane-2" data-tone="light">
+    <div class="frame rail-grid">
+      <div class="rail-head"><p class="num-tag"><b>04</b> Field realization</p></div>
+      <div>
+        <h2 class="d2">The geometry existed before it became a figure.</h2>
+        <p class="lede narrow" style="margin-top:20px">The installation combines a surveyed datum, a physical primitive, an exact generated boundary, camera stations and independent TS references.</p>
+      </div>
+    </div>
+    <div class="frame">
+      <figure class="feature-media rv" style="margin-top:clamp(28px,3.4vw,44px);border:1px solid var(--rule)">
+        <img src="assets/images/field-layout.webp" alt="Composite figure showing camera placements, boundary geometry, field markers and overhead views." loading="lazy" style="aspect-ratio:auto" />
+        <figcaption class="media-tag"><span>Field configuration</span><span>Metric and visual viewpoints</span></figcaption>
       </figure>
-      <div class="field-reading section-frame">
-        <article><span>01</span><h3>Physical datum</h3><p>The origin and primitive are surveyed independently of the image.</p></article>
-        <article><span>02</span><h3>Multiple placements</h3><p>Central, lateral and depth-displaced arrangements test different viewing geometry.</p></article>
-        <article><span>03</span><h3>Multiple distances</h3><p>Increasing range changes projected observability and inverse sensitivity.</p></article>
-        <article><span>04</span><h3>Independent references</h3><p>Selected TS boundary points challenge the generated geometry in object space.</p></article>
+      <div class="cols-4" style="margin-top:clamp(26px,3vw,40px)">
+        <div class="card rv"><span class="card-num">01</span><h3 class="d4">Physical datum</h3><p class="small">The origin and primitive are surveyed independently of the image.</p></div>
+        <div class="card rv rv-d1"><span class="card-num">02</span><h3 class="d4">Multiple placements</h3><p class="small">Central, lateral and depth-displaced arrangements test different viewing geometry.</p></div>
+        <div class="card rv rv-d2"><span class="card-num">03</span><h3 class="d4">Multiple distances</h3><p class="small">Increasing range changes projected observability and inverse sensitivity.</p></div>
+        <div class="card rv rv-d3"><span class="card-num">04</span><h3 class="d4">Independent references</h3><p class="small">Selected TS boundary points challenge the generated geometry in object space.</p></div>
       </div>
-    </section>
+      <p class="small" style="margin-top:20px;color:var(--ink-3)">The complete observation accounting remains in the manuscript and its supporting package.</p>
+    </div>
+  </section>
 
-    
-    <section id="pixel-lab" class="sensitivity-section paper-section" data-header-theme="light">
-      <div class="section-frame editorial-grid sensitivity-heading">
-        <div class="section-index"><span>04</span><p>INTERACTIVE LAB</p></div>
-        <div><p class="overline dark">LOCAL SENSITIVITY—NOT GLOBAL ACCURACY</p><h2>Find the largest image displacement that keeps the selected local ground effect below 5 cm.</h2><p class="lead-copy narrow">Adjust the pixel displacement. The calculation and diagram use the same explicit relation, so the status cannot disagree with the displayed value.</p></div>
+  <!-- ============ 05 SENSITIVITY LAB ============ -->
+  <section id="pixel-lab" class="sec plane" data-tone="light">
+    <div class="frame rail-grid">
+      <div class="rail-head"><p class="num-tag"><b>05</b> Interactive lab</p></div>
+      <div>
+        <p class="eyebrow">Local sensitivity — not global accuracy</p>
+        <h2 class="d2">Find the largest image displacement that keeps the local ground effect below 5 cm.</h2>
+        <p class="body-2" style="margin-top:20px;max-width:64ch">Adjust the pixel displacement. The calculation, the rulers and the curve below all use the same explicit relation, so no readout can disagree with another.</p>
       </div>
+    </div>
 
-      <div class="section-frame sensitivity-lab" data-sensitivity-lab>
-        <div class="sensitivity-controls">
-          <fieldset class="range-options"><legend>Viewing range</legend><button type="button" class="active" data-sensitivity-distance="7">7 m</button><button type="button" data-sensitivity-distance="9">9 m</button><button type="button" data-sensitivity-distance="12">12 m</button></fieldset>
-          <label class="sensitivity-slider-label" for="sensitivity-pixels"><span>Image displacement</span><output id="sensitivity-pixel-output" for="sensitivity-pixels">1.50 px</output></label>
-          <input id="sensitivity-pixels" class="sensitivity-slider" type="range" min="0" max="4" value="1.50" step="0.01" />
-          <div class="sensitivity-actions"><button type="button" class="button button-dark" id="snap-threshold">Set safe limit below 5 cm</button><button type="button" class="text-button" id="reset-sensitivity">Reset</button></div>
-        </div>
+    <div class="frame">
+      <div class="lab rv" data-lab>
+        <div class="lab-top">
+          <div class="lab-controls">
+            <fieldset>
+              <legend>Viewing range</legend>
+              <div class="seg" role="group" aria-label="Viewing range">
+                <button type="button" data-range="7"  aria-pressed="true">7 m</button>
+                <button type="button" data-range="9"  aria-pressed="false">9 m</button>
+                <button type="button" data-range="12" aria-pressed="false">12 m</button>
+              </div>
+            </fieldset>
 
-        <div class="sensitivity-equation" aria-label="Local sensitivity equation"><span class="equation-expression"><i>g</i> = <i>p</i> × <i>m</i> ÷ 10</span><dl><div><dt>p</dt><dd>image displacement in pixels</dd></div><div><dt>m</dt><dd>selected local inverse-Jacobian scale in mm/px</dd></div><div><dt>g</dt><dd>estimated local ground effect in centimetres</dd></div></dl></div>
+            <div class="slider-head">
+              <span>Image displacement</span>
+              <output id="px-out" for="px-slider">1.50 px</output>
+            </div>
+            <input id="px-slider" type="range" min="0" max="4" value="1.5" step="0.01" aria-label="Image displacement in pixels" />
+            <div class="slider-scale"><span>0</span><span>1</span><span>2</span><span>3</span><span>4 px</span></div>
 
-        <div class="sensitivity-workbench">
-          <article class="ruler-panel image-ruler-panel"><header><span>IMAGE PLANE</span><strong id="image-readout">1.50 px</strong></header><div class="ruler-track image-track"><i class="ruler-threshold hidden"></i><b id="image-marker" style="--position:37.5%"></b><ol><li style="--p:0%">0</li><li style="--p:25%">1</li><li style="--p:50%">2</li><li style="--p:75%">3</li><li style="--p:100%">4 px</li></ol></div><p>The marker shows the selected displacement from the predicted image address.</p></article>
-          <article class="mapping-panel"><span>SELECTED LOCAL SCALE</span><strong id="scale-readout">27.815 mm/px</strong><b>×</b><p id="range-readout">at 7 m</p></article>
-          <article class="ruler-panel ground-ruler-panel"><header><span>LOCAL GROUND EFFECT</span><strong id="ground-readout">4.17 cm</strong></header><div class="ruler-track ground-track"><i class="ruler-threshold" title="5 cm threshold"></i><b id="ground-marker" style="--position:16.7%"></b><ol><li style="--p:0%">0</li><li style="--p:20%">5</li><li style="--p:40%">10</li><li style="--p:60%">15</li><li style="--p:80%">20</li><li style="--p:100%">25 cm</li></ol></div><p>The gold line is the 5 cm challenge threshold; the marker is the computed effect.</p></article>
-        </div>
+            <div class="lab-actions">
+              <button type="button" class="btn btn-solid" id="lab-snap">Set the 5 cm limit</button>
+              <button type="button" class="chip-btn" id="lab-reset">Reset</button>
+            </div>
 
-        <div class="sensitivity-results">
-          <div><span>LOCAL SCALE</span><strong id="result-scale">27.815 mm/px</strong></div><div><span>5 CM PIXEL LIMIT</span><strong id="result-tolerance">1.797 px</strong></div><div><span>COMPUTED EFFECT</span><strong id="result-effect">4.17 cm</strong></div><div id="sensitivity-status" class="sensitivity-status pass"><span>STATUS</span><strong>WITHIN 5 CM</strong><p>1.50 px × 27.815 mm/px = 41.72 mm.</p></div>
-        </div>
+            <div class="lab-eq">
+              <span class="expr">g <b>=</b> p × m <b>÷</b> 10</span>
+              <dl class="glossary" style="margin-top:0;border-top:0">
+                <div><dt><span class="sym">p</span></dt><dd>image displacement in pixels</dd></div>
+                <div><dt><span class="sym">m</span></dt><dd>selected local inverse-Jacobian scale in mm/px</dd></div>
+                <div><dt><span class="sym">g</span></dt><dd>estimated local ground effect in centimetres</dd></div>
+              </dl>
+            </div>
+          </div>
 
-        <div class="distance-comparison"><header><span>FIXED COMPARISON</span><strong>The same 2.0 px displacement across the three selected local scales</strong></header><div class="comparison-bars"><article><span>7 m</span><div><i style="--value:45%"></i><b>5.56 cm</b></div></article><article><span>9 m</span><div><i style="--value:66%"></i><b>8.22 cm</b></div></article><article><span>12 m</span><div><i style="--value:100%"></i><b>12.36 cm</b></div></article></div></div>
+          <div class="lab-readout">
+            <div class="gauge">
+              <div class="gauge-row">
+                <header><span>Image plane</span><strong id="img-read">1.50 px</strong></header>
+                <div class="track">
+                  <i class="fill" id="img-fill"></i>
+                  <ol><li style="--p:0%">0</li><li style="--p:25%">1</li><li style="--p:50%">2</li><li style="--p:75%">3</li><li style="--p:100%">4 px</li></ol>
+                </div>
+                <p>Selected displacement from the predicted image address.</p>
+              </div>
 
-        <p class="sensitivity-caveat"><strong>Scope.</strong> The three scales—27.815, 41.079 and 61.782 mm/px—are selected local inverse-Jacobian values for educational comparison. They are not a global accuracy specification for the complete measurement chain.</p>
-      </div>
-      <noscript><div class="section-frame no-script-note">JavaScript is disabled. The static default shows 7 m and 1.50 px: 1.50 × 27.815 / 10 = 4.17 cm, which is below 5 cm.</div></noscript>
-    </section>
+              <div class="gauge-mid">
+                <span>Selected local scale</span>
+                <strong id="scale-read">27.815 mm/px</strong>
+                <span id="range-read">at 7 m</span>
+              </div>
 
-    <section id="evidence" class="evidence-section dark-section" data-header-theme="dark">
-      <div class="section-frame evidence-heading editorial-grid">
-        <div class="section-index section-index-light"><span>05</span><p>SELECTED EVIDENCE</p></div>
-        <div><p class="overline light">OBJECT-SPACE VALIDATION</p><h2>Three placements. Two views. One metric frame.</h2><p>The explorer below shows selected TS boundary checks only. It does not substitute for the full terminal image audit.</p></div>
-      </div>
-
-      <div class="section-frame evidence-explorer" data-evidence-explorer>
-        <div class="evidence-controls">
-          <div class="segmented" role="tablist" aria-label="Placement"><button class="active" data-placement="C3">C3 / CENTRAL</button><button data-placement="R3">R3 / LATERAL</button><button data-placement="D3">D3 / DEPTH</button></div>
-          <div class="segmented compact" role="tablist" aria-label="View"><button class="active" data-view="plan">PLAN</button><button data-view="3d">3D</button></div>
-        </div>
-        <div class="evidence-body">
-          <figure class="evidence-figure"><img id="evidence-image" src="assets/images/c3-plan.webp" alt="C3 plan-view TS boundary validation." /><button class="figure-expand" data-lightbox-target="evidence-image">VIEW FULL FIGURE</button></figure>
-          <aside class="evidence-panel">
-            <div><span>PLACEMENT</span><strong id="evidence-placement">C3</strong><p id="evidence-description">Central placement with the densest selected boundary support among the three examples.</p></div>
-            <dl>
-              <div><dt>RMSE</dt><dd id="metric-rmse">3.8 mm</dd></div>
-              <div><dt>Mean error</dt><dd id="metric-mean">−0.4 mm</dd></div>
-              <div><dt>Max |error|</dt><dd id="metric-max">6.6 mm</dd></div>
-              <div><dt>Boundary points</dt><dd id="metric-n">17</dd></div>
-            </dl>
-            <p class="evidence-caveat">These values describe selected TS boundary references in the GoPro-view-aligned metric frame. They are not the image-derived terminal result.</p>
-          </aside>
-        </div>
-        <div class="placement-comparison">
-          <article data-bar="3.8"><span>C3</span><div><i style="--value:27%"></i></div><strong>3.8 mm</strong><small>17 points</small></article>
-          <article data-bar="7.5"><span>R3</span><div><i style="--value:54%"></i></div><strong>7.5 mm</strong><small>16 points</small></article>
-          <article data-bar="14.0"><span>D3</span><div><i style="--value:100%"></i></div><strong>14.0 mm</strong><small>8 points</small></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="interpretation-section paper-section" data-header-theme="light">
-      <div class="section-frame editorial-grid">
-        <div class="section-index"><span>06</span><p>INTERPRETATION</p></div>
-        <div>
-          <h2>What the selected object-space checks do—and do not—establish.</h2>
-          <div class="interpretation-grid">
-            <article><span>SUPPORTED</span><h3>The generated boundary is physically testable.</h3><p>The selected TS references lie around the nominal boundary with millimetre-scale radial residuals in these examples.</p></article>
-            <article><span>VARIES BY GEOMETRY</span><h3>Placement changes support and fit.</h3><p>C3 is the densest and smallest-RMSE example; D3 contains fewer selected points and the largest RMSE.</p></article>
-            <article><span>NOT THE ENDPOINT</span><h3>Object-space validation is not the image audit.</h3><p>The images above verify the generated boundary, not the complete image response, back-projection and signed terminal discrepancy.</p></article>
+              <div class="gauge-row">
+                <header><span>Local ground effect</span><strong id="gnd-read">4.17 cm</strong></header>
+                <div class="track">
+                  <i class="fill" id="gnd-fill"></i>
+                  <i class="limit" id="gnd-limit" data-label="5 CM"></i>
+                  <ol><li style="--p:0%">0</li><li style="--p:20%">5</li><li style="--p:40%">10</li><li style="--p:60%">15</li><li style="--p:80%">20</li><li style="--p:100%">25 cm</li></ol>
+                </div>
+                <p>The red line is the 5 cm challenge threshold; the fill is the computed effect.</p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section id="claim" class="claim-section dark-section" data-header-theme="dark">
-      <div class="section-frame claim-grid">
-        <div>
-          <p class="overline light">CLAIM BOUNDARY</p>
-          <h2>A credible result includes the limits of what it can say.</h2>
-        </div>
-        <div class="claim-columns">
-          <article><span>SUPPORTED HERE</span><ul><li>The physical datum and surveyed primitive precede the image.</li><li>Exact metric scaling generates the design boundary.</li><li>Selected TS points independently check the object-space boundary.</li><li>Projection and back-projection are explicitly connected.</li><li>The terminal difference preserves sign.</li></ul></article>
-          <article><span>NOT CLAIMED HERE</span><ul><li>Identical performance for arbitrary cameras or sites.</li><li>A complete GUM uncertainty statement.</li><li>The full 27-condition image-audit result.</li><li>Public release of raw coordinates, calibration files or reviewer correspondence.</li><li>That an unverified case is equivalent to zero error.</li></ul></article>
+        <div class="lab-results">
+          <div><span>Local scale</span><strong id="r-scale">27.815 mm/px</strong></div>
+          <div><span>5 cm pixel limit</span><strong id="r-tol">1.798 px</strong></div>
+          <div><span>Computed effect</span><strong id="r-effect">4.17 cm</strong></div>
+          <div class="verdict pass" id="verdict"><span>Status</span><strong>✓  WITHIN 5 CM</strong><p>1.50 px × 27.815 mm/px = 41.72 mm</p></div>
         </div>
       </div>
-      <blockquote class="research-principle section-frame">Do not claim what the measurement chain cannot support.</blockquote>
-    </section>
 
-    <section class="release-section paper-section" data-header-theme="light">
-      <div class="section-frame release-grid">
-        <div><p class="overline dark">RELEASE LEDGER</p><h2>Public explanation now.<br />Complete evidence with the paper.</h2><p>The current site exposes the research question, selected theory, field realization and limited object-space checks. The full method, terminal results and reproducibility package remain tied to the manuscript’s release status.</p></div>
-        <div class="release-ledger"><div><span>Research question</span><strong class="released">RELEASED</strong></div><div><span>Core theoretical chain</span><strong class="released">RELEASED</strong></div><div><span>Selected object-space evidence</span><strong class="released">RELEASED</strong></div><div><span>Full terminal image audit</span><strong>WITHHELD</strong></div><div><span>Raw data and implementation</span><strong>WITHHELD</strong></div><div><span>Paper</span><strong class="review">UNDER REVIEW</strong></div></div>
+      <noscript><p class="caveat"><strong>JavaScript is disabled</strong>The static default is 7 m and 1.50 px: 1.50 × 27.815 ÷ 10 = 4.17 cm, which is below 5 cm. The 5 cm pixel limits are 1.798 px at 7 m, 1.217 px at 9 m and 0.809 px at 12 m.</p></noscript>
+    </div>
+  </section>
+
+  <!-- ============ 06 CURVES ============ -->
+  <section id="curves" class="sec sec-tight plane" data-tone="light" style="padding-top:0">
+    <div class="frame">
+      <div class="chart-card rv">
+        <div class="chart-head">
+          <h3>Ground effect against image displacement</h3>
+          <p>Each line applies <em>g = p × m ÷ 10</em> at one selected local scale. The marked dot on each line is where that range crosses 5 cm; the gold marker follows the lab above.</p>
+        </div>
+        <div class="chart-legend">
+          <span><i style="background:var(--r1)"></i>7 m · 27.815 mm/px</span>
+          <span><i style="background:var(--r2)"></i>9 m · 41.079 mm/px</span>
+          <span><i style="background:var(--r3)"></i>12 m · 61.782 mm/px</span>
+          <span><i style="background:var(--limit)"></i>5 cm limit</span>
+        </div>
+        <div class="chart-plot" id="chart-curves"></div>
+        <div class="table-toggle"><button type="button" class="chip-btn" data-table-for="curve-table" aria-expanded="false">Show data table</button></div>
+        <table class="data-table" id="curve-table" hidden>
+          <caption>Local ground effect in centimetres by image displacement</caption>
+          <thead><tr><th scope="col">Viewing range</th><th scope="col">Local scale</th><th scope="col">1.0 px</th><th scope="col">2.0 px</th><th scope="col">4.0 px</th><th scope="col">5 cm limit</th></tr></thead>
+          <tbody>
+            <tr><td><b><i style="background:var(--r1)"></i>7 m</b></td><td>27.815 mm/px</td><td>2.78 cm</td><td>5.56 cm</td><td>11.13 cm</td><td>1.798 px</td></tr>
+            <tr><td><b><i style="background:var(--r2)"></i>9 m</b></td><td>41.079 mm/px</td><td>4.11 cm</td><td>8.22 cm</td><td>16.43 cm</td><td>1.217 px</td></tr>
+            <tr><td><b><i style="background:var(--r3)"></i>12 m</b></td><td>61.782 mm/px</td><td>6.18 cm</td><td>12.36 cm</td><td>24.71 cm</td><td>0.809 px</td></tr>
+          </tbody>
+        </table>
+        <p class="chart-foot"><strong>Scope.</strong> The three scales — 27.815, 41.079 and 61.782 mm/px — are selected local inverse-Jacobian values for educational comparison. They are not a global accuracy specification for the complete measurement chain.</p>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <div class="lightbox" id="figure-lightbox" aria-hidden="true" role="dialog" aria-label="Expanded figure"><button class="lightbox-close" aria-label="Close expanded figure">CLOSE ×</button><img src="" alt="Expanded research figure" /></div>
+  <!-- ============ 07 GEOMETRY ============ -->
+  <section id="geometry" class="sec plane-2" data-tone="light">
+    <div class="frame rail-grid">
+      <div class="rail-head"><p class="num-tag"><b>06</b> Observation geometry</p></div>
+      <div>
+        <p class="eyebrow">Plan view · local frame</p>
+        <h2 class="d2">Three placements around one surveyed origin.</h2>
+        <p class="body-2" style="margin-top:20px;max-width:62ch">The plot is drawn directly from the disclosed summary: the estimated origin, the nominal primitive and generated-boundary radii, and each condition’s local camera vector with its viewing axis. Hover a station for its range and azimuth.</p>
+      </div>
+    </div>
+    <div class="frame">
+      <div class="cols-2" style="margin-top:clamp(26px,3vw,40px);align-items:start">
+        <div class="chart-card rv">
+          <div class="chart-head">
+            <h3>Camera placements in the local N–E frame</h3>
+            <p>North up, East right. Rings mark 5 m and 10 m from the estimated origin.</p>
+          </div>
+          <div class="chart-legend">
+            <span><i class="sq" style="background:var(--s1)"></i>C3 · central</span>
+            <span><i class="sq" style="background:var(--s2)"></i>R3 · lateral</span>
+            <span><i class="sq" style="background:var(--s3)"></i>D3 · depth</span>
+            <span><i style="background:var(--accent-bright)"></i>5.5 m boundary</span>
+          </div>
+          <div class="chart-plot" id="chart-geometry"></div>
+          <p class="chart-foot"><strong>Reading.</strong> Each dashed line and shaded wedge shows the disclosed viewing axis pointing back to the estimated origin. This is the disclosed observation summary, not a complete site survey.</p>
+        </div>
 
-  <footer class="site-footer dark-footer"><div class="section-frame footer-grid"><div class="footer-brand"><img src="assets/figures/joosatlas-mark.svg" alt="" /><span><strong>JoosAtlas</strong><small>Measure · Verify · Explain</small></span></div><div class="footer-links"><a href="index.html">Home</a><a href="about.html">About Joo</a><a href="https://github.com/daejinpipero-gaja/JoosAtlas">GitHub ↗</a></div><div class="footer-meta"><span>Case 001 · Paper under review</span><span>© 2026 Joo Yong-Hoe</span></div></div></footer>
+        <div class="rv rv-d1">
+          <table class="data-table" style="border:1px solid var(--rule);border-radius:14px;background:var(--surface);overflow:hidden">
+            <caption style="padding-top:18px">Disclosed local geometry per condition</caption>
+            <thead><tr><th scope="col">Condition</th><th scope="col">N (m)</th><th scope="col">E (m)</th><th scope="col">Range (m)</th><th scope="col">Azimuth</th></tr></thead>
+            <tbody>
+              <tr><td><b><i style="background:var(--s1)"></i>C3</b></td><td>+8.197</td><td>−4.285</td><td>9.25</td><td>332.4°</td></tr>
+              <tr><td><b><i style="background:var(--s2)"></i>R3</b></td><td>+2.196</td><td>−8.335</td><td>8.62</td><td>284.8°</td></tr>
+              <tr><td><b><i style="background:var(--s3)"></i>D3</b></td><td>−1.280</td><td>−4.997</td><td>5.16</td><td>255.6°</td></tr>
+            </tbody>
+          </table>
+          <dl class="def-list" style="margin-top:26px">
+            <div><dt>Origin</dt><dd>Estimated at N 97.4695 m, E 75.4718 m in the working local frame (mean of the three conditions).</dd></div>
+            <div><dt>Primitive</dt><dd>1.5 m nominal radius, surveyed before the image enters the chain.</dd></div>
+            <div><dt>Boundary</dt><dd>5.5 m nominal radius, generated by the declared factor λ = 11/3.</dd></div>
+            <div><dt>Viewing axis</dt><dd>Each condition’s far axis points from the camera back toward the estimated origin.</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <script src="joosatlas-v9.js?v=9.0.0"></script>
+  <!-- ============ 08 EVIDENCE ============ -->
+  <section id="evidence" class="sec plane" data-tone="light">
+    <div class="frame rail-grid">
+      <div class="rail-head"><p class="num-tag"><b>07</b> Selected evidence</p></div>
+      <div>
+        <p class="eyebrow">Object-space validation</p>
+        <h2 class="d2">Three placements. Two views. One metric frame.</h2>
+        <p class="body-2" style="margin-top:20px;max-width:62ch">The explorer below shows selected TS boundary checks only. It does not substitute for the full terminal image audit.</p>
+      </div>
+    </div>
+
+    <div class="frame">
+      <div data-evidence>
+      <div class="ev-controls rv" style="margin-top:clamp(24px,3vw,38px)">
+        <div class="seg" role="group" aria-label="Placement" style="max-width:420px;flex:1">
+          <button type="button" data-place="C3" aria-pressed="true">C3 · Central</button>
+          <button type="button" data-place="R3" aria-pressed="false">R3 · Lateral</button>
+          <button type="button" data-place="D3" aria-pressed="false">D3 · Depth</button>
+        </div>
+        <div class="seg" role="group" aria-label="View" style="max-width:200px">
+          <button type="button" data-view="plan" aria-pressed="true">Plan</button>
+          <button type="button" data-view="3d" aria-pressed="false">3D</button>
+        </div>
+      </div>
+
+      <div class="evidence">
+        <figure class="ev-figure rv">
+          <img id="ev-img" src="assets/images/c3-plan.webp" alt="C3 plan-view TS boundary validation." loading="lazy" />
+          <button class="ev-expand" type="button" data-zoom="ev-img">View full figure</button>
+        </figure>
+        <aside class="ev-panel rv rv-d1">
+          <span>Placement</span>
+          <h3 id="ev-name"><i></i><span>C3 · Central</span></h3>
+          <p id="ev-note">Central placement with the densest selected boundary support among the three examples.</p>
+          <dl class="ev-metrics">
+            <div><dt>RMSE</dt><dd id="ev-rmse">3.8 mm</dd></div>
+            <div><dt>Mean error</dt><dd id="ev-mean">−0.4 mm</dd></div>
+            <div><dt>Max |error|</dt><dd id="ev-max">6.6 mm</dd></div>
+            <div><dt>Boundary points</dt><dd id="ev-n">17</dd></div>
+            <div><dt>Point range</dt><dd id="ev-pts" style="font-size:.82rem">TS0038–TS0054</dd></div>
+          </dl>
+          <p class="small" style="margin-top:16px;color:var(--ink-3)">These values describe selected TS boundary references in the GoPro-view-aligned metric frame. They are not the image-derived terminal result.</p>
+        </aside>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 09 RESIDUALS ============ -->
+  <section id="residuals" class="sec sec-tight plane" data-tone="light" style="padding-top:0">
+    <div class="frame">
+      <div class="chart-card rv">
+        <div class="chart-head">
+          <h3>Residual profile of the selected TS boundary checks</h3>
+          <p>For each condition: the dot is the mean error (bias), the band is ±RMSE (dispersion), and the whisker is the ±max |error| envelope containing every selected point.</p>
+        </div>
+        <div class="chart-legend">
+          <span><i class="sq" style="background:var(--s1)"></i>C3 · 17 points</span>
+          <span><i class="sq" style="background:var(--s2)"></i>R3 · 16 points</span>
+          <span><i class="sq" style="background:var(--s3)"></i>D3 · 8 points</span>
+        </div>
+        <div class="chart-plot" id="chart-residual"></div>
+        <div class="table-toggle"><button type="button" class="chip-btn" data-table-for="res-table" aria-expanded="false">Show data table</button></div>
+        <table class="data-table" id="res-table" hidden>
+          <caption>Selected TS boundary residuals, in millimetres</caption>
+          <thead><tr><th scope="col">Condition</th><th scope="col">RMSE</th><th scope="col">Mean error</th><th scope="col">Max |error|</th><th scope="col">Points</th><th scope="col">Point range</th></tr></thead>
+          <tbody>
+            <tr><td><b><i style="background:var(--s1)"></i>C3 · Central</b></td><td>3.76</td><td>−0.42</td><td>6.57</td><td>17</td><td>TS0038–TS0054</td></tr>
+            <tr><td><b><i style="background:var(--s2)"></i>R3 · Lateral</b></td><td>7.51</td><td>−0.36</td><td>17.03</td><td>16</td><td>TS0091–TS0106</td></tr>
+            <tr><td><b><i style="background:var(--s3)"></i>D3 · Depth</b></td><td>14.02</td><td>−2.83</td><td>19.79</td><td>8</td><td>TS0051–TS0058</td></tr>
+          </tbody>
+        </table>
+        <p class="chart-foot"><strong>Reading.</strong> All three means sit close to zero, so the disagreement is dispersion rather than a large systematic offset in these examples. Support density falls from 17 to 8 points as dispersion grows.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 10 INTERPRETATION ============ -->
+  <section id="interpretation" class="sec plane-2" data-tone="light">
+    <div class="frame rail-grid">
+      <div class="rail-head"><p class="num-tag"><b>08</b> Interpretation</p></div>
+      <div>
+        <h2 class="d2">What the selected object-space checks do — and do not — establish.</h2>
+        <div class="cols-3" style="margin-top:clamp(28px,3.4vw,44px)">
+          <article class="card rv"><span class="card-num">Supported</span><h3 class="d4">The generated boundary is physically testable.</h3><p class="small" style="margin-top:10px">The selected TS references lie around the nominal boundary with millimetre-scale radial residuals in these examples.</p></article>
+          <article class="card rv rv-d1"><span class="card-num">Varies by geometry</span><h3 class="d4">Placement changes support and fit.</h3><p class="small" style="margin-top:10px">C3 is the densest and smallest-RMSE example; D3 contains fewer selected points and the largest RMSE.</p></article>
+          <article class="card rv rv-d2"><span class="card-num">Not the endpoint</span><h3 class="d4">Object-space validation is not the image audit.</h3><p class="small" style="margin-top:10px">The figures verify the generated boundary, not the complete image response, back-projection and signed terminal discrepancy.</p></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 11 CLAIM BOUNDARY ============ -->
+  <section id="claim" class="sec plane" data-tone="light">
+    <div class="frame rail-grid">
+      <div class="rail-head"><p class="num-tag"><b>09</b> Claim boundary</p></div>
+      <div>
+        <h2 class="d2">A credible result includes the limits of what it can say.</h2>
+        <div class="claim">
+          <article class="rv">
+            <span>Supported here</span>
+            <ul>
+              <li>The physical datum and surveyed primitive precede the image.</li>
+              <li>Exact metric scaling generates the design boundary.</li>
+              <li>Selected TS points independently check the object-space boundary.</li>
+              <li>Projection and back-projection are explicitly connected.</li>
+              <li>The terminal difference preserves sign.</li>
+            </ul>
+          </article>
+          <article class="rv rv-d1">
+            <span>Not claimed here</span>
+            <ul>
+              <li>Identical performance for arbitrary cameras or sites.</li>
+              <li>A complete GUM uncertainty statement.</li>
+              <li>The full 27-condition image-audit result.</li>
+              <li>Public release of raw coordinates, calibration files or reviewer correspondence.</li>
+              <li>That an unverified case is equivalent to zero error.</li>
+            </ul>
+          </article>
+        </div>
+        <blockquote class="quote">Do not claim what the measurement chain cannot support.</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 12 RELEASE ============ -->
+  <section id="release" class="sec plane-2" data-tone="light">
+    <div class="frame rail-grid">
+      <div class="rail-head"><p class="num-tag"><b>10</b> Release ledger</p></div>
+      <div>
+        <h2 class="d2">Public explanation now.<br />Complete evidence with the paper.</h2>
+        <p class="body-2" style="margin-top:20px;max-width:62ch">The current site exposes the research question, selected theory, field realization and limited object-space checks. The full method, terminal results and reproducibility package remain tied to the manuscript’s release status.</p>
+        <div class="release" style="margin-top:clamp(26px,3vw,40px)">
+          <div><span>Research question</span><strong class="on">Released</strong></div>
+          <div><span>Core theoretical chain</span><strong class="on">Released</strong></div>
+          <div><span>Selected object-space evidence</span><strong class="on">Released</strong></div>
+          <div><span>Full terminal image audit</span><strong>Withheld</strong></div>
+          <div><span>Raw data and implementation</span><strong>Withheld</strong></div>
+          <div><span>Paper</span><strong class="rev">Under review</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ftr" data-tone="light">
+  <div class="frame">
+    <div class="ftr-grid">
+      <div>
+        <div class="ftr-brand">
+          <img src="assets/figures/joosatlas-mark.svg" alt="" width="36" height="36" />
+          <span><strong>JoosAtlas</strong><small>Measure · Verify · Explain</small></span>
+        </div>
+        <p class="ftr-note">Case 001 · Paper under review. Selected evidence only; raw data and the full audit remain withheld.</p>
+      </div>
+      <div><h4>Atlas</h4><ul><li><a href="index.html">Home</a></li><li><a href="case-001.html">Case 001</a></li><li><a href="about.html">About</a></li></ul></div>
+      <div><h4>This case</h4><ul><li><a href="#theory">Theory</a></li><li><a href="#pixel-lab">Sensitivity lab</a></li><li><a href="#geometry">Geometry</a></li><li><a href="#claim">Claim boundary</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="mailto:daejinpipero@yonsei.ac.kr">daejinpipero@yonsei.ac.kr</a></li><li><a href="mailto:daejinpipero@gmail.com">daejinpipero@gmail.com</a></li><li><a href="https://github.com/daejinpipero-gaja/JoosAtlas">GitHub ↗</a></li></ul></div>
+    </div>
+    <div class="ftr-base">
+      <span>© <span data-year>2026</span> Yonghoe JOO · JoosAtlas v10.1</span>
+      <span>Press ⌘K or / to search · T to switch theme</span>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Expanded figure">
+  <button class="lightbox-x" type="button">Close ×</button>
+  <img src="" alt="Expanded research figure" />
+</div>
+
+<div class="cmdk" role="dialog" aria-modal="true" aria-label="Command palette">
+  <div class="cmdk-veil"></div>
+  <div class="cmdk-box">
+    <div class="cmdk-field">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input type="text" placeholder="Search sections, figures and actions…" aria-label="Search JoosAtlas" autocomplete="off" spellcheck="false" />
+      <span class="cmdk-esc">ESC</span>
+    </div>
+    <div class="cmdk-list" role="listbox" aria-label="Results"></div>
+    <div class="cmdk-foot"><span>↑↓ navigate</span><span>↵ open</span><span>⌘K toggle</span><span>T theme</span></div>
+  </div>
+</div>
+
+<script src="joosatlas-v10.js?v=10.1.0"></script>
 </body>
 </html>

@@ -1,7 +1,15 @@
 {
-  "version": "9.0.1",
-  "title": "Method, symbol, sign and sensitivity correction",
-  "css": "joosatlas-v9.css",
-  "js": "joosatlas-v9.js",
-  "built_utc": "2026-08-06T03:57:26Z"
+  "version": "10.1.0",
+  "codename": "Instrument",
+  "title": "Composition audit, first-person profile, international name order and contact",
+  "css": "joosatlas-v10.css",
+  "js": "joosatlas-v10.js",
+  "pages": [
+    "index.html",
+    "case-001.html",
+    "about.html",
+    "404.html"
+  ],
+  "supersedes": "10.0.0",
+  "built_utc": "2026-08-07T05:00:00Z"
 }
