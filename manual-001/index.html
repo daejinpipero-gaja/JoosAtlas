@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>수계소화설비 도해 교재 — Field Manual 001 · JoosAtlas</title>
+<meta name="description" content="펌프실에서 스프링클러 헤드까지, 수계소화설비를 그림으로 읽는 교재. 부품을 누르면 용도, 작동, 고장, 조치, 원리가 열립니다.">
+<meta name="author" content="Yonghoe JOO">
+<meta name="theme-color" content="#0a1620">
+<link rel="canonical" href="https://daejinpipero-gaja.github.io/JoosAtlas/manual-001/">
+<meta property="og:site_name" content="JoosAtlas">
+<meta property="og:title" content="수계소화설비 도해 교재 — Field Manual 001">
+<meta property="og:description" content="펌프실에서 스프링클러 헤드까지, 수계소화설비를 그림으로 읽는 교재. 부품을 누르면 용도, 작동, 고장, 조치, 원리가 열립니다.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://daejinpipero-gaja.github.io/JoosAtlas/manual-001/">
+<meta property="og:image" content="https://daejinpipero-gaja.github.io/JoosAtlas/assets/images/manual-001-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/site.css?v=12.0.0">
+</head>
+<body>
+<header class="jx-mast">
+  <div class="jx-mast-in">
+    <a class="jx-brand" href="../index.html" aria-label="JoosAtlas 홈으로">
+      <img src="../assets/figures/joosatlas-mark.svg" alt="" width="30" height="30">
+      <span><strong>JoosAtlas</strong><small>Field Manual 001</small></span>
+    </a>
+    <nav class="jx-nav" aria-label="사이트">
+      <a href="../index.html">홈</a>
+      <a href="../library.html">자료실</a>
+      <a href="../film-001.html">영상 001</a>
+      <a href="../about.html">소개</a>
+    </nav>
+  </div>
+</header>
+<p class="jx-note" lang="en">This field manual is written in Korean. An English edition is not available yet.</p>
+<div class="wrap">
+<header class="top">
+  <div>
+    <p class="eyebrow">수계소화설비 도해 교재</p>
+    <h1 id="chapTitle">1장. 펌프실</h1>
+  </div>
+  <nav aria-label="장 목록"><ul class="chapters" id="chapNav"></ul></nav>
+</header>
+<main id="main"></main>
+<section class="sec" id="basis">
+  <h2>근거와 한계</h2>
+  <div class="basis">
+    <div class="card">
+      <h3>이렇게 만든 이유</h3>
+      <ol>
+        <li>고장은 정상과의 차이로 이해됩니다. 그래서 같은 그림에서 상태만 바꿔 물길의 차이를 보게 했습니다.</li>
+        <li>설명은 두 층입니다. 쉬운 설명이 먼저 보이고, 수식과 조항은 깊이 보기에 접혀 있습니다.</li>
+        <li>조치는 세 단계로 나눴습니다. 밸브와 스위치의 위치 확인은 직접 확인, 분해와 설정 변경은 점검 때 조치, 누설과 소음과 작동 불능은 A/S 호출입니다.</li>
+        <li>수식에는 숫자 예를 붙였습니다. 식만으로는 크기가 와닿지 않기 때문입니다.</li>
+        <li>같은 부품은 장이 달라도 같은 설명으로 이어집니다. 2장의 건물 단면에서 알람밸브를 누르면 3장의 설명이 열립니다.</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>가정과 한계</h3>
+      <ul>
+        <li>그림은 원리를 보이려고 새로 그린 도해입니다. 실제 제품의 치수와 형상이 아닙니다.</li>
+        <li>기준 건물은 가정입니다. 층수, 층고 4 m, 펌프 정격 0.8 MPa를 놓고 계산했습니다. 실제 현장은 배관 방식과 밸브 순서가 다릅니다.</li>
+        <li>압력 설정값과 층별 압력은 예시입니다. 실제 값은 설계도서와 현장 설정표를 따릅니다.</li>
+        <li>밸브 조작과 설정 변경은 소방시설관리업체나 제조사 A/S가 입회한 자리에서 합니다. 시험 뒤에는 밸브와 제어반을 원래 위치로 돌립니다.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>확인 상태 읽는 법</h3>
+      <ul>
+        <li><span class="st v">조문 확인</span> 이번에 조문이나 원자료를 조회해 내용을 확인했습니다.</li>
+        <li><span class="st c">대조 필요</span> 표준 조문이나 2차 자료를 기준으로 썼습니다. 조항 번호와 현행 원문은 대조가 필요합니다.</li>
+        <li><span class="st p">실무·계산</span> 기준 조문이 아닌 공학적 설명과 계산입니다.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="tablewrap" id="codeWrap"><table id="codeTable"><thead><tr><th>이 장의 근거</th><th>내용</th><th>부품</th><th>상태</th></tr></thead><tbody></tbody></table></div>
+  <div class="card src" style="margin-top:16px">
+    <h3 style="font-size:16px;margin-bottom:6px">참고한 자료</h3>
+    <ol id="srcList" style="margin:0;padding-left:20px"></ol>
+  </div>
+</section>
+</div>
+
+<footer class="jx-foot">
+  <div class="jx-foot-in">
+    <div>
+      <strong>JoosAtlas · Field Manual 001</strong>
+      <p>수계소화설비 도해 교재. 5장, 부품 53개, 증상 114개, 판단 흐름 8개.</p>
+      <p>도해와 본문은 AI(Claude)와 함께 작성했습니다. 조문과 수치의 확인 상태를 항목마다 표시했고, 대조가 끝나지 않은 항목은 ‘대조 필요’로 남겨 두었습니다.</p>
+    </div>
+    <nav aria-label="관련 자료">
+      <a href="../index.html">JoosAtlas 홈</a>
+      <a href="../library.html">자료실 전체</a>
+      <a href="../film-001.html">영상 001 · 불티</a>
+      <a href="mailto:daejinpipero@yonsei.ac.kr">오류 제보 · daejinpipero@yonsei.ac.kr</a>
+    </nav>
+  </div>
+  <p class="jx-base">© 2026 Yonghoe JOO · JoosAtlas v12.0 · 2026-11-26 공개</p>
+</footer>
+<script src="js/book.js?v=12.0.0"></script>
+<script src="js/scene.js?v=12.0.0"></script>
+<script src="js/figs.js?v=12.0.0"></script>
+<script src="js/data.js?v=12.0.0"></script>
+<script src="js/draw.js?v=12.0.0"></script>
+<script src="js/ch1.js?v=12.0.0"></script>
+<script src="js/ch2.js?v=12.0.0"></script>
+<script src="js/ch3.js?v=12.0.0"></script>
+<script src="js/ch4.js?v=12.0.0"></script>
+<script src="js/ch5.js?v=12.0.0"></script>
+<script src="js/app.js?v=12.0.0"></script>
+</body>
+</html>

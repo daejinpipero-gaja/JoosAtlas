@@ -15,7 +15,12 @@ Public site: <https://daejinpipero-gaja.github.io/JoosAtlas/>
 | `index.html` | Editorial home — premise, 60-second experiment, Case 001 entry, profile, three worlds, atlas index |
 | `case-001.html` | Public companion for Case 001 — question, five-stage method explorer, equation ledger with symbol glossaries and sign convention, field realization, sensitivity lab, three data visualizations, selected evidence, claim boundary, release ledger |
 | `about.html` | Yonghoe JOO — a first-person account of the research, the workshop, the company and the alumni community, ending with contact addresses |
+| `library.html` | The whole atlas on one shelf — every entry with its kind, language and status label, drawn from the registry |
+| `film-001.html` | Film F·001 — the player, a scene list that drives it, and a ledger setting each of the film's statements against a public source |
+| `manual-001/` | Field Manual M·001 — *Water-Based Fire Protection, Illustrated*; a self-contained illustrated manual (Korean) with the site's masthead and footer |
+| `media/` | Film files and their posters |
 | `404.html` | Off-the-atlas page with the same search and navigation |
+| `joosatlas-library.js` | The registry — one block per entry; the home index, the library shelf and the ⌘K palette are drawn from it. See `docs/CONTENT_GUIDE_KR.md`. |
 | `joosatlas-v10.css` | Single stylesheet — dual-theme token system, layout, components, print styles |
 | `joosatlas-v10.js` | Single script — theme, command palette, method explorer, sensitivity lab, evidence explorer, SVG charts. No dependencies. |
 | `joosatlas-i18n.js` | The Korean dictionary — one line per string, editable without touching any other file |
@@ -24,6 +29,18 @@ Public site: <https://daejinpipero-gaja.github.io/JoosAtlas/>
 Everything is static. There is no build step, no framework and no external network request: the site runs identically from GitHub Pages, from any static host, and from a local `file://` open.
 
 ---
+
+## What is new in v12
+
+**A registry.** `joosatlas-library.js` lists everything on the site once, in both languages. An entry without an address is shown as not yet open. Adding material means adding its files and one block to this file; the index, the shelf and the palette follow.
+
+**A library.** `library.html` is the shelf, with a legend that fixes what each status label is allowed to mean.
+
+**Field material.** Section 05 of the home page hangs two plates on a dark plane: Field Manual M·001 and Film F·001. The film is a real `<video>` with `preload="none"` — nothing is fetched until it is played — and its page sets every figure the film states against a public source, marking the ones that could not be matched.
+
+**Page copy carries its own Korean.** New pages write `<p data-ko="…">English</p>`; the dictionary keeps only the chrome shared by all pages.
+
+Design rationale and the verification record are in `docs/V12_LIBRARY_NOTES.md`.
 
 ## What is new in v10
 

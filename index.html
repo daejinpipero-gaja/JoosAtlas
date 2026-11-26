@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 <link rel="manifest" href="site.webmanifest" />
-<link rel="stylesheet" href="joosatlas-v10.css?v=11.0.0" />
+<link rel="stylesheet" href="joosatlas-v10.css?v=12.0.0" />
 <script>(()=>{try{const t=localStorage.getItem('joosatlas-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);const l=localStorage.getItem('joosatlas-lang');if(l==='ko'||l==='en')document.documentElement.setAttribute('lang',l);}catch(e){}})();</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfilePage",
@@ -45,6 +45,7 @@
     <a href="#quick-lab">Experiment</a>
     <a href="#work">Case 001</a>
     <a href="#person">Who</a>
+    <a href="#library">Library</a>
     <a href="#coordinates">Index</a>
   </nav>
   <div class="chrome-tools">
@@ -259,19 +260,49 @@
     <div class="cinema-cap"><span>Workshop record</span><span>Seoul</span></div>
   </section>
 
+  <!-- ============ 05 FIELD LIBRARY ============
+       The two plates are drawn from joosatlas-library.js (entries with home:true).
+       To hang something else here, edit that file — not this section. -->
+  <section id="library" class="sec vault tone-dark" data-tone="dark">
+    <div class="frame rail-grid">
+      <div class="rail-head"><p class="num-tag no-i18n"><b>05</b> <span data-ko="현장 자료">Field library</span></p></div>
+      <div class="no-i18n">
+        <p class="eyebrow" data-ko="연구실이 아니라 계산대에서 온 질문">From the counter, not the lab</p>
+        <h2 class="d2" data-ko="어떤 질문은 파이프 가게 계산대를 건너옵니다.">Some questions arrive across a pipe counter.</h2>
+        <p class="lede narrow" style="margin-top:22px" data-ko="한 손님이 소방 펌프실의 고장을 설명했는데, 설명만으로는 원인을 찾을 수 없었습니다. 그런 질문에 답하려고 현장 자료를 이곳에 모읍니다.">A customer once described a fault in a fire pump room, and the description alone was not enough to find it. I keep field material here for questions of that kind.</p>
+      </div>
+    </div>
+    <div class="frame">
+      <div class="plates no-i18n rv" data-lib="plates">
+        <noscript>
+          <p><a class="link-arrow" href="manual-001/">Field manual M·001 — Water-Based Fire Protection, Illustrated ↗</a></p>
+          <p><a class="link-arrow" href="film-001.html">Film F·001 — Sparks ↗</a></p>
+        </noscript>
+      </div>
+      <div class="plates-more no-i18n">
+        <p data-ko="항목마다 무엇인지, 어떤 언어인지, 어디까지 확인했는지를 적어 둡니다.">Each entry states what it is, what language it is in and how far it has been checked.</p>
+        <a class="link-arrow" href="library.html"><span data-ko="자료실 전체 보기">Open the whole library</span> <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ 06 COORDINATES ============ -->
   <section id="coordinates" class="sec plane" data-tone="light">
     <div class="frame rail-grid">
-      <div class="rail-head"><p class="num-tag"><b>05</b> Current coordinates</p></div>
+      <div class="rail-head"><p class="num-tag"><b>06</b> Current coordinates</p></div>
       <div>
         <h2 class="d2">A growing atlas, labeled by evidence and maturity.</h2>
         <p class="lede narrow" style="margin-top:20px">Nothing is presented as complete before its status can be stated precisely.</p>
-        <div class="index-list">
+        <!-- rows are drawn from joosatlas-library.js; the static rows below are the no-script fallback -->
+        <div class="index-list no-i18n" data-lib="index">
           <a href="case-001.html"><span>001</span><strong>Spatial Evidence</strong><em>Paper under review</em><b>↗</b></a>
+          <a href="manual-001/"><span>M·001</span><strong>Water-Based Fire Protection, Illustrated</strong><em>Open</em><b>↗</b></a>
+          <a href="film-001.html"><span>F·001</span><strong>Sparks — 3 mm, a few seconds, 1,600 °C</strong><em>Open</em><b>↗</b></a>
           <div><span>002</span><strong>Fixed-Camera Metrology</strong><em>In development</em><b></b></div>
           <div><span>LAB</span><strong>Industrial Digital Twin</strong><em>Exploratory</em><b></b></div>
           <div><span>TOOLS</span><strong>Interactive Measurement</strong><em>Planned</em><b></b></div>
         </div>
+        <p class="no-i18n" style="margin-top:26px"><a class="link-arrow" href="library.html"><span data-ko="같은 목록을 설명과 함께 보기">The same list, with descriptions</span> <span aria-hidden="true">↗</span></a></p>
       </div>
     </div>
   </section>
@@ -299,7 +330,7 @@
       </div>
       <div>
         <h4>Atlas</h4>
-        <ul><li><a href="index.html">Home</a></li><li><a href="case-001.html">Case 001</a></li><li><a href="about.html">About</a></li></ul>
+        <ul><li><a href="index.html">Home</a></li><li><a href="library.html">Library</a></li><li><a href="manual-001/">Field Manual 001</a></li><li><a href="film-001.html">Film 001</a></li><li><a href="about.html">About</a></li></ul>
       </div>
       <div>
         <h4>Case 001</h4>
@@ -315,8 +346,8 @@
       </div>
     </div>
     <div class="ftr-base">
-      <span>© <span data-year>2026</span> Yonghoe JOO · JoosAtlas v11.0</span>
-      <span>Updated <time data-updated datetime="2026-08-07">7 August 2026</time> · v11.0</span>
+      <span>© <span data-year>2026</span> Yonghoe JOO · JoosAtlas v12.0</span>
+      <span>Updated <time data-updated datetime="2026-11-26">26 November 2026</time> · v12.0</span>
     </div>
   </div>
 </footer>
@@ -335,7 +366,8 @@
   </div>
 </div>
 
-<script src="joosatlas-i18n.js?v=11.0.0"></script>
-<script src="joosatlas-v10.js?v=11.0.0"></script>
+<script src="joosatlas-i18n.js?v=12.0.0"></script>
+<script src="joosatlas-library.js?v=12.0.0"></script>
+<script src="joosatlas-v10.js?v=12.0.0"></script>
 </body>
 </html>

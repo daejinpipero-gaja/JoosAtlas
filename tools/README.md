@@ -75,3 +75,14 @@ python3 tools/build_i18n.py
 It extracts every translatable string from the four pages, checks the dictionary
 covers all of them, and exits non-zero — naming the missing strings — if it does
 not. Add the Korean for anything it reports, then run it again.
+
+---
+
+# Manifest
+
+```
+python3 tools/make_manifest.py        # from the site root
+```
+
+Rewrites `PACKAGE_MANIFEST.json`, `SHA256SUMS.txt` and `SHA256SUMS.json` from the files
+actually present. Run it after adding or changing anything (v12).

@@ -999,3 +999,196 @@ html[lang="ko"] .glossary dd,html[lang="ko"] .small,html[lang="ko"] .chart-foot{
 /* keyboard-reachable chart values */
 .chart-plot [tabindex]{outline:none}
 .chart-plot [tabindex]:focus-visible{outline:2px solid var(--accent-bright);outline-offset:2px}
+
+/* ============================================================
+   22. LIBRARY · PLATES · FILM   (v12 "Library")
+   A dark plane, two framed plates, and ruled ledgers. Fewer
+   elements, each given room: the manual and the film are hung
+   like plates in a matted frame rather than stacked as cards.
+   ============================================================ */
+
+.vault{background:#08111a;color:var(--ink);position:relative;isolation:isolate;overflow:hidden}
+.vault::before{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(120% 70% at 78% 0%,rgba(217,166,81,.10),transparent 60%),
+    repeating-linear-gradient(90deg,rgba(242,246,248,.04) 0 1px,transparent 1px 180px);
+}
+.vault::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(217,166,81,.5) 18%,rgba(217,166,81,.5) 82%,transparent)}
+.vault .eyebrow{color:var(--accent-bright)}
+.vault .lede{color:rgba(242,246,248,.92)}
+
+/* status label — one vocabulary across the index, the shelf and the plates */
+.st{
+  display:inline-block;font-style:normal;font-weight:400;font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;
+  text-transform:uppercase;white-space:nowrap;color:var(--ink-3);
+  border:1px solid var(--rule-2);border-radius:99px;padding:5px 11px;
+}
+.st-open,.index-list a em.st-open{color:var(--good);border-color:color-mix(in srgb,var(--good) 45%,transparent);background:color-mix(in srgb,var(--good) 9%,transparent)}
+.st-review{color:var(--accent);border-color:var(--accent-line);background:var(--accent-wash)}
+
+/* ---- plates (home) ---- */
+.plates{display:grid;grid-template-columns:minmax(0,2.9fr) minmax(0,1fr);column-gap:clamp(18px,2.2vw,30px);margin-top:clamp(40px,5vw,68px)}
+.plate{display:contents}
+.plate-mat{grid-row:1;grid-column:var(--c,auto);display:flex;padding:clamp(8px,.8vw,12px);border:1px solid var(--rule-2);background:var(--surface);border-radius:3px;box-shadow:var(--shadow-2)}
+.plate-cap{grid-row:2;grid-column:var(--c,auto);padding-top:clamp(18px,2vw,26px);min-width:0}
+.plate-media{flex:1;position:relative;display:block;overflow:hidden;background:#04080c;border-radius:1px;min-width:0}
+.plate-wide .plate-media{aspect-ratio:1892/1148}
+.plate-wide .plate-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:0 50%;transition:transform 1.1s cubic-bezier(.2,.8,.3,1)}
+.plate-wide a.plate-media:hover img{transform:scale(1.018)}
+.plate-tall .plate-media,.film-stage .plate-media{aspect-ratio:9/16}
+.plate-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#04080c}
+.plate-code{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center;margin:0 0 12px;font-family:var(--mono);font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3)}
+.plate-code b{color:var(--accent);font-weight:700;letter-spacing:.12em}
+.plate-code span+span::before{content:"·";margin-right:14px;opacity:.6}
+.plate-cap h3{font-family:var(--display);font-size:clamp(1.42rem,2.15vw,2rem);line-height:1.14;letter-spacing:-.027em;text-wrap:balance}
+.plate-tall .plate-cap h3{font-size:clamp(1.24rem,1.5vw,1.46rem);line-height:1.2}
+.plate-line{margin-top:12px;color:var(--ink-2);max-width:58ch;font-size:.95rem}
+.plate-meta{margin-top:12px;font-family:var(--mono);font-size:.66rem;letter-spacing:.07em;color:var(--ink-3)}
+.plate-foot{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;margin-top:20px}
+.plates-more{margin-top:clamp(34px,4vw,54px);padding-top:22px;border-top:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:12px 28px;align-items:baseline;justify-content:space-between}
+.plates-more p{margin:0;font-size:.9rem;color:var(--ink-3);max-width:60ch}
+
+/* play ring */
+.play{position:absolute;inset:0;display:grid;place-items:center;padding:0;border:0;cursor:pointer;color:#f2f6f8;background:linear-gradient(0deg,rgba(4,8,12,.62),rgba(4,8,12,0) 44%)}
+.play i{width:76px;height:76px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(242,246,248,.8);background:rgba(6,14,21,.38);backdrop-filter:blur(6px);transition:transform .32s cubic-bezier(.2,.8,.3,1),background-color .25s,border-color .25s,color .25s}
+.play i::before{content:"";border-left:17px solid currentColor;border-block:11px solid transparent;margin-left:5px}
+.play:hover i,.play:focus-visible i{transform:scale(1.06);background:var(--accent-bright);border-color:var(--accent-bright);color:#0a1620}
+.play:focus-visible{box-shadow:none}
+.play-time{position:absolute;left:12px;top:12px;font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;padding:5px 9px;border-radius:99px;border:1px solid rgba(242,246,248,.42);background:rgba(6,14,21,.55)}
+.is-playing .play{display:none}
+
+/* ---- library page ---- */
+.lib-hero{padding-block:calc(var(--header-h) + clamp(58px,7.4vw,118px)) 0}
+.lib-hero .d1{max-width:14ch}
+.lib-hero .hero-deck{max-width:58ch}
+.lib-hero .ledger{margin-top:clamp(44px,5.4vw,84px)}
+
+.shelf-tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:clamp(26px,3vw,40px)}
+.chip-n{margin-left:8px;opacity:.6}
+.shelf{border-top:1px solid var(--rule-2);margin-top:20px}
+.shelf-row{
+  display:grid;grid-template-columns:72px 190px minmax(0,1fr) auto;gap:clamp(16px,2.4vw,38px);align-items:center;
+  padding:clamp(20px,2.3vw,30px) 4px;border-bottom:1px solid var(--rule);color:inherit;
+  transition:background-color .3s,padding-inline .3s cubic-bezier(.2,.8,.3,1);
+}
+.shelf-row[hidden]{display:none}
+a.shelf-row:hover{background:var(--accent-wash);padding-inline:14px 10px}
+.shelf-code{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;color:var(--accent);font-weight:600}
+.shelf-thumb{position:relative;display:block;aspect-ratio:4/3;overflow:hidden;border-radius:2px;border:1px solid var(--rule);background:var(--surface-2)}
+.shelf-thumb img{width:100%;height:100%;object-fit:cover;object-position:0 50%;transition:transform .9s cubic-bezier(.2,.8,.3,1)}
+.shelf-thumb.is-film img{object-position:50% 50%}
+a.shelf-row:hover .shelf-thumb img{transform:scale(1.04)}
+.shelf-thumb.is-empty{background:repeating-linear-gradient(135deg,transparent 0 9px,var(--rule) 9px 10px)}
+.shelf-time{position:absolute;left:8px;bottom:8px;font-style:normal;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;color:#f2f6f8;background:rgba(6,14,21,.72);padding:4px 8px;border-radius:99px}
+.shelf-body{display:grid;gap:8px;min-width:0}
+.shelf-kind{display:flex;flex-wrap:wrap;gap:4px 14px;font-family:var(--mono);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3)}
+.shelf-kind span+span::before{content:"·";margin-right:14px;opacity:.6}
+.shelf-body strong{font-family:var(--display);font-weight:400;font-size:clamp(1.2rem,1.9vw,1.7rem);line-height:1.16;letter-spacing:-.026em}
+.shelf-line{color:var(--ink-2);font-size:.93rem;max-width:66ch}
+.shelf-meta{font-family:var(--mono);font-size:.64rem;letter-spacing:.07em;color:var(--ink-3)}
+.shelf-side{display:grid;gap:10px;justify-items:end;text-align:right}
+.shelf-date{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;color:var(--ink-3)}
+.shelf-side b{font-family:var(--mono);font-weight:400;color:var(--ink-3)}
+.shelf-row.is-closed{grid-template-columns:72px minmax(0,1fr) auto;padding-block:18px;opacity:.62}
+.shelf-row.is-closed .shelf-thumb{display:none}
+.shelf-row.is-closed .shelf-body strong{font-size:clamp(1.05rem,1.45vw,1.28rem)}
+
+.lib-legend{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--rule);margin-top:clamp(30px,3.6vw,48px)}
+.lib-legend>div{padding:24px 22px 4px;border-left:1px solid var(--rule)}
+.lib-legend>div:first-child{border-left:0;padding-left:0}
+.lib-legend p{margin-top:14px;font-size:.89rem;color:var(--ink-2)}
+
+/* ---- film page ---- */
+.film-hero{padding-block:calc(var(--header-h) + clamp(38px,4.6vw,70px)) clamp(50px,6vw,92px)}
+.film-grid{display:grid;grid-template-columns:minmax(0,1.28fr) minmax(0,.72fr);gap:clamp(30px,5vw,96px);align-items:center}
+.film-grid .d1{font-size:clamp(2.4rem,5vw,4.5rem)}
+.film-grid .d1 span{display:block}
+.film-grid .hero-deck{max-width:50ch}
+.film-stage{justify-self:end;width:100%;max-width:max(270px,calc((100vh - var(--header-h) - 150px)*.5625));border:1px solid var(--rule-2);background:var(--surface);padding:clamp(8px,.8vw,12px);border-radius:3px;box-shadow:var(--shadow-2)}
+.film-facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:0;margin-top:clamp(30px,3.6vw,46px);border-top:1px solid rgba(242,246,248,.2)}
+.film-facts div{padding:16px 26px 0 0;margin-right:26px;border-right:1px solid rgba(242,246,248,.14)}
+.film-facts div:last-child{border-right:0;margin-right:0}
+.film-facts span{display:block;font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-bright);margin-bottom:6px}
+.film-facts strong{font-weight:400;font-size:.95rem}
+
+.scene-list{border-top:1px solid var(--rule-2);margin-top:clamp(26px,3vw,40px)}
+.scene-list button{
+  display:grid;grid-template-columns:70px minmax(0,1fr) auto;gap:clamp(12px,2vw,28px);align-items:baseline;width:100%;
+  padding:18px 4px;border:0;border-bottom:1px solid var(--rule);background:none;text-align:left;cursor:pointer;
+  transition:background-color .3s,padding-inline .3s cubic-bezier(.2,.8,.3,1);
+}
+.scene-list button:hover,.scene-list button.is-now{background:var(--accent-wash);padding-inline:14px 10px}
+.scene-list time{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;color:var(--accent);font-weight:600}
+.scene-list strong{display:block;font-family:var(--display);font-weight:400;font-size:clamp(1.08rem,1.5vw,1.3rem);letter-spacing:-.022em;line-height:1.3}
+.scene-list small{display:block;margin-top:5px;font-size:.89rem;color:var(--ink-2);letter-spacing:0}
+.scene-list b{font-family:var(--mono);font-weight:400;font-size:.7rem;color:var(--ink-3)}
+.scene-list button.is-now b{color:var(--accent)}
+
+.claims{border-top:1px solid var(--rule-2);margin-top:clamp(28px,3.4vw,44px)}
+.claims>div{display:grid;grid-template-columns:minmax(0,1fr) 186px minmax(0,1.2fr);gap:clamp(16px,2.6vw,42px);align-items:start;padding:24px 4px;border-bottom:1px solid var(--rule)}
+.claims h3{font-family:var(--display);font-size:clamp(1.06rem,1.4vw,1.24rem);line-height:1.36;letter-spacing:-.02em}
+.claims h3 small{display:block;margin-top:8px;font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;color:var(--ink-3)}
+.claims p{font-size:.91rem;color:var(--ink-2);margin:0 0 .7em}
+.claims p:last-child{margin-bottom:0}
+.claims a{color:var(--ink);border-bottom:1px solid var(--accent-line)}
+.claims a:hover{color:var(--accent)}
+.cl{display:inline-block;font-family:var(--mono);font-size:.6rem;letter-spacing:.11em;text-transform:uppercase;line-height:1.5;padding:6px 11px;border:1px solid var(--rule-2);border-radius:4px;color:var(--ink-3)}
+.cl-ok{color:var(--good);border-color:color-mix(in srgb,var(--good) 45%,transparent);background:color-mix(in srgb,var(--good) 9%,transparent)}
+.cl-part{color:var(--accent);border-color:var(--accent-line);background:var(--accent-wash)}
+.claims-key{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:22px;font-size:.86rem;color:var(--ink-3)}
+.claims-key span{display:inline-flex;gap:10px;align-items:center}
+
+.next-plate{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,4vw,64px);align-items:center}
+.next-plate .plate-mat{grid-row:auto;grid-column:auto;box-shadow:var(--shadow-1)}
+
+/* Korean display rhythm */
+html[lang="ko"] .plate-cap h3,html[lang="ko"] .shelf-body strong,html[lang="ko"] .scene-list strong,html[lang="ko"] .claims h3{letter-spacing:-.018em;line-height:1.42;font-weight:600}
+html[lang="ko"] .st,html[lang="ko"] .cl,html[lang="ko"] .plate-code,html[lang="ko"] .shelf-kind,html[lang="ko"] .film-facts span{letter-spacing:.06em}
+html[lang="ko"] .film-grid .d1{font-size:clamp(2.2rem,4.6vw,4rem)}
+html[lang="ko"] .lib-hero .d1{max-width:11em}
+
+@media (max-width:1080px){
+  .claims>div{grid-template-columns:minmax(0,1fr) 170px}
+  .claims>div>:last-child{grid-column:1/-1}
+}
+@media (max-width:900px){
+  .plates{display:block}
+  .plate{display:block}
+  .plate+.plate{margin-top:clamp(40px,8vw,60px)}
+  .plate-tall .plate-mat{max-width:400px}
+  .shelf-row{grid-template-columns:112px minmax(0,1fr);row-gap:12px;align-items:start}
+  .shelf-code{grid-column:1/-1}
+  .shelf-side{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-items:start;text-align:left}
+  .shelf-side b{display:none}
+  .shelf-row.is-closed{grid-template-columns:minmax(0,1fr)}
+  .lib-legend{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .lib-legend>div{border-left:0;padding-left:0;padding-right:18px}
+  .film-grid,.next-plate{grid-template-columns:1fr}
+  .film-stage{justify-self:start;max-width:min(100%,420px)}
+  .film-facts{grid-template-columns:1fr 1fr}
+  .film-facts div{border-right:0;margin-right:0}
+  .scene-list button{grid-template-columns:54px minmax(0,1fr)}
+  .scene-list b{display:none}
+  .claims>div{grid-template-columns:1fr}
+  .plates-more{display:block}
+  .plates-more p{margin-bottom:16px}
+}
+@media (max-width:900px){
+  /* v11 defect, fixed here: a bare 1fr track cannot shrink below its content, so a chart
+     card on Case 001 ran 39 px past a phone screen in English. minmax(0,1fr) lets it wrap. */
+  .cols-2,.cols-3,.cols-4,.feature,.feature-portrait,.worlds,.claim,.contrast,.split-hero-grid{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+  /* same family of v11 defect: a data table wider than a phone screen now scrolls inside its own box */
+  .data-table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .lib-legend{grid-template-columns:1fr}
+  .shelf-row{grid-template-columns:92px minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){
+  .plate-media img,.shelf-thumb img,.play i{transition:none}
+}
+@media print{
+  .vault{background:#fff;color:#000}
+  .vault::before,.vault::after,.play,.shelf-tools{display:none}
+}

@@ -1,20 +1,24 @@
 {
-  "version": "11.0.0",
-  "codename": "Instrument",
-  "title": "Bilingual Korean/English, telemetry strip and statement moment",
+  "version": "12.0.0",
+  "codename": "Library",
+  "title": "Library registry, Field Manual 001 and Film 001",
   "css": "joosatlas-v10.css",
   "js": [
     "joosatlas-i18n.js",
+    "joosatlas-library.js",
     "joosatlas-v10.js"
   ],
   "pages": [
     "index.html",
+    "library.html",
     "case-001.html",
+    "film-001.html",
+    "manual-001/index.html",
     "about.html",
     "404.html"
   ],
-  "supersedes": "10.1.0",
-  "built_utc": "2026-08-07T07:30:00Z",
+  "supersedes": "11.0.0",
+  "built_utc": "2026-11-26T05:00:00Z",
   "languages": [
     "en",
     "ko"

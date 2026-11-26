@@ -488,6 +488,41 @@ add({
  "A plain account of the work":"일에 대한 담담한 기록",
 })
 
+# ── v12 Library: chrome and palette (page copy carries data-ko in the HTML) ──
+add({
+ "Library":"자료실",
+ "Field Manual 001":"현장 교재 001",
+ "Film 001":"영상 001",
+ "Shelf":"목록",
+ "Labels":"이름표",
+ "Film":"영상",
+ "Scenes":"장면",
+ "Claims":"주장",
+ "Credits":"출처",
+ "26 November 2026":"2026년 11월 26일",
+ "Research · manuals · films":"연구 · 교재 · 영상",
+ "Field library":"현장 자료",
+ "Some questions arrive across a pipe counter":"어떤 질문은 파이프 가게 계산대를 건너옵니다",
+ "Library — the whole shelf":"자료실 — 선반 전체",
+ "Research, field manuals and films, each with its status":"연구, 현장 교재, 영상과 각각의 상태",
+ "How entries are labeled":"이름표 읽는 법",
+ "Open · under review · in development · planned":"공개 · 심사 중 · 개발 중 · 계획",
+ "Film 001 — scenes":"영상 001 — 장면",
+ "Choose a scene and the film starts there":"장면을 누르면 그 지점부터 재생합니다",
+ "Film 001 — claims and sources":"영상 001 — 주장과 근거",
+ "What the film states, set against public sources":"영상이 말하는 것을 공개 근거 옆에",
+ "Film 001 — credits":"영상 001 — 출처",
+ "Format, production and where the file came from":"형식, 제작 방식, 파일의 출처",
+ "Go to":"이동",
+ "Display":"표시",
+ "Action":"동작",
+ "External":"외부",
+ "Library — JoosAtlas":"자료실 — JoosAtlas",
+ "Film 001 — Sparks · JoosAtlas":"영상 001 — 불티 · JoosAtlas",
+ "Research cases, field manuals and films on JoosAtlas, each labeled by what it is, what language it is in and how far it has been checked.":"JoosAtlas의 연구 사례, 현장 교재, 영상. 항목마다 무엇인지, 어떤 언어인지, 어디까지 확인했는지를 적었습니다.",
+ "A two-minute film on how hot-work sparks become construction-site fires, with each of its statements set against a public source.":"화기작업의 불티가 공사장 화재가 되는 과정을 담은 2분 영상. 영상의 주장마다 공개 근거를 나란히 놓았습니다.",
+})
+
 # ── Attributes ───────────────────────────────────────────────────────────────
 ATTR = {
  "JoosAtlas home":"JoosAtlas 홈",

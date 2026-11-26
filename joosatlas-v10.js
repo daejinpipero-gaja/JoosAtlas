@@ -270,7 +270,13 @@ const NAVIGATE = [
   ['Case 001 — overview',         'From a surveyed primitive to an auditable boundary','index.html','#work',      'selected work case study'],
   ['Who is writing this',         'Yonghoe JOO — a short introduction',            'index.html',    '#person',     'about joo 주용회 profile person bio name'],
   ['Three worlds',                'Yonsei · Daejin Pipe · ACERS',                  'index.html',    '#worlds',     'research industry community affiliation'],
+  ['Field library',               'Some questions arrive across a pipe counter',   'index.html',    '#library',    'manual film field fire pump video 자료 교재 영상 현장'],
   ['Current coordinates',         'The atlas index and its maturity labels',       'index.html',    '#coordinates','index roadmap status planned'],
+  ['Library — the whole shelf',   'Research, field manuals and films, each with its status','library.html','',     'library shelf catalogue catalog list all 자료실 목록 전체'],
+  ['How entries are labeled',     'Open · under review · in development · planned','library.html',  '#labels',     'status label legend maturity 상태 이름표'],
+  ['Film 001 — scenes',           'Choose a scene and the film starts there',      'film-001.html', '#scenes',     'video chapters timeline 영상 장면 목차'],
+  ['Film 001 — claims and sources','What the film states, set against public sources','film-001.html','#claims',  'sources evidence statistics kosha fire agency 근거 출처 통계'],
+  ['Film 001 — credits',          'Format, production and where the file came from','film-001.html','#credits',    'credit provenance ai generated 제작 출처'],
   ['Case 001 — the question',     'A projected boundary may look correct and still fail','case-001.html','#question','visual agreement metric'],
   ['Case 001 — theory',           'The traceable five-stage chain',                'case-001.html', '#theory',     'survey generate project return audit equations method'],
   ['Case 001 — equations',        'Symbols, definitions and sign convention',      'case-001.html', '#equations',  'math glossary argmin projection back-projection delta'],
@@ -294,6 +300,12 @@ const NAVIGATE = [
 const items = NAVIGATE.map(([title, sub, file, hash, keys]) => ({
   title, sub, keys, kind:'Go to', icon:'→',
   run(){ location.href = P(file, hash); }
+}));
+
+/* every open entry of the library registry (joosatlas-library.js) is searchable */
+(window.JOOS_LIBRARY?.paletteItems?.() || []).forEach(e => items.push({
+  title:e.title, sub:e.sub, ko:e.ko, keys:e.keys, kind:'Library', icon:'▤',
+  run(){ location.href = e.href; }
 }));
 
 items.push(
@@ -369,7 +381,7 @@ function renderCmdk(q){
   for (const it of items){
     const a = score(q, it.title);
     const b = score(q, it.sub);
-    const c = score(q, it.keys);
+    const c = score(q, it.ko ? it.keys + ' ' + it.ko.title : it.keys);
     if (!a && !b && !c) continue;
     const best = a ? { s:a.s + 70, hits:a.hits, onTitle:true }
       : { s:Math.max(b ? b.s : -1e9, c ? c.s + 24 : -1e9), hits:[], onTitle:false };
@@ -392,7 +404,7 @@ function renderCmdk(q){
       group = it.kind;
       const g = document.createElement('div');
       g.className = 'cmdk-group';
-      g.textContent = group;
+      g.textContent = (LANG === 'ko' && DICT.ko[group]) || group;
       cList.appendChild(g);
     }
     const btn = document.createElement('button');
@@ -404,13 +416,13 @@ function renderCmdk(q){
     btn.innerHTML = '<span class="cmdk-ico"></span><span class="cmdk-txt"><b></b><span></span></span><span class="cmdk-meta"></span>';
     btn.querySelector('.cmdk-ico').textContent = it.icon;
     const b = btn.querySelector('.cmdk-txt b');
-    const koT = LANG === 'ko' ? DICT.ko[it.title] : null;
+    const koT = LANG === 'ko' ? (it.ko?.title || DICT.ko[it.title]) : null;
     if (koT) b.textContent = koT;
     else if (onTitle && hits.length) b.appendChild(mark(it.title, hits));
     else b.textContent = it.title;
     btn.querySelector('.cmdk-txt span').textContent =
-      (LANG === 'ko' && DICT.ko[it.sub]) ? DICT.ko[it.sub] : it.sub;
-    btn.querySelector('.cmdk-meta').textContent = it.kind === 'Go to' ? 'Enter' : '';
+      LANG === 'ko' ? (it.ko?.sub || DICT.ko[it.sub] || it.sub) : it.sub;
+    btn.querySelector('.cmdk-meta').textContent = (it.kind === 'Go to' || it.kind === 'Library') ? 'Enter' : '';
     btn.addEventListener('click', () => { closeCmdk(); it.run(); });
     btn.addEventListener('mousemove', () => setActive(cRows.indexOf(btn)));
     cList.appendChild(btn);
