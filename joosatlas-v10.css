@@ -1288,3 +1288,16 @@ html[lang="ko"] .cinema-plate figcaption{letter-spacing:.04em}
 /* a scrolling table or formula must not widen the page: let grid children shrink below their content */
 .rail-grid>*{min-width:0}
 .chart-card{min-width:0}
+
+/* ---- thesis figures (v12.1.1) ---- */
+.t-fig{margin:clamp(28px,3.4vw,46px) 0 0;max-width:820px}
+.t-fig.is-wide{max-width:none}
+.t-fig .plate-mat{display:block;grid-row:auto;grid-column:auto;padding:clamp(6px,.7vw,10px);background:#fff;box-shadow:var(--shadow-1);transition:border-color .25s}
+.t-fig a.plate-mat:hover{border-color:var(--accent)}
+.t-fig img{display:block;width:100%;height:auto}
+.t-fig figcaption{margin-top:12px;font-size:.86rem;line-height:1.62;color:var(--ink-2);max-width:66ch}
+.t-fig figcaption b{font-family:var(--mono);font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-right:10px;white-space:nowrap}
+.fig-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,2.6vw,40px);align-items:start}
+.fig-pair .t-fig{max-width:none}
+html[lang="ko"] .t-fig figcaption b{letter-spacing:.06em}
+@media (max-width:900px){.fig-pair{grid-template-columns:minmax(0,1fr)}}

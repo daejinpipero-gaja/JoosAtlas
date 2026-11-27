@@ -1,7 +1,7 @@
 {
-  "version": "12.1.0",
+  "version": "12.1.1",
   "codename": "Library",
-  "title": "Master's thesis page; film moved into the welding scene",
+  "title": "Thesis figures added to the thesis page",
   "css": "joosatlas-v10.css",
   "js": [
     "joosatlas-i18n.js",
@@ -18,8 +18,8 @@
     "404.html",
     "film-001.html (forwards to thesis-2023.html#film)"
   ],
-  "supersedes": "12.0.0",
-  "built_utc": "2026-11-26T09:00:00Z",
+  "supersedes": "12.1.0",
+  "built_utc": "2026-11-27T12:00:00Z",
   "languages": [
     "en",
     "ko"

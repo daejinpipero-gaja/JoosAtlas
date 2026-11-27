@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 <link rel="manifest" href="site.webmanifest" />
-<link rel="stylesheet" href="joosatlas-v10.css?v=12.1.0" />
+<link rel="stylesheet" href="joosatlas-v10.css?v=12.1.1" />
 <script>(()=>{try{const t=localStorage.getItem('joosatlas-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);const l=localStorage.getItem('joosatlas-lang');if(l==='ko'||l==='en')document.documentElement.setAttribute('lang',l);}catch(e){}})();</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Thesis","name":"Detection of Fire Hazard Factors on Construction Sites using YOLOv5",
@@ -130,12 +130,14 @@
           <article><span>Welding</span><strong data-ko="불티가 시작되는 중심">The core where the scatter begins</strong><p data-ko="불티가 흩어지는 전체가 아닙니다. 이 구분이 왜 결과를 갈랐는지는 03에서 설명합니다.">Not the whole shower of sparks. Section 03 explains why that distinction decided the result.</p></article>
           <article><span>Engineer</span><strong data-ko="사람">A person</strong><p data-ko="머리나 상체가 보이면 사람으로 셉니다. 대개 팔다리가 함께 보입니다. 다리 두 개만, 또는 팔다리 하나만 보이면 세지 않습니다. 카메라가 아래에서 위로 보지 않는다는 조건을 두었습니다.">Counted when the head or upper body is visible, usually with arms or legs. A pair of legs alone, or a single limb, is not. The camera is assumed not to look up from below.</p></article>
         </div>
+        <figure class="t-fig "><a class="plate-mat" href="assets/images/thesis/fig-3-4.webp"><img src="assets/images/thesis/fig-3-4.webp" width="1162" height="867" loading="lazy" decoding="async" alt="Diagram of YOLOv5: backbone, neck and head, ending in boxes drawn on a welding scene." data-alt-ko="YOLOv5 구조도. Backbone, Neck, Head를 거쳐 용접 장면에 상자가 그려집니다." /></a><figcaption><b><span data-ko="그림 3.4">Fig. 3.4</span></b><span data-ko="YOLOv5가 한 장면을 읽는 순서. Backbone이 이미지를 줄여 특징 맵을 뽑고, Neck이 그것을 합치고, Head가 상자와 클래스, 점수를 예측합니다.">How YOLOv5 reads a frame. The backbone shrinks the image into feature maps, the neck combines them, and the head predicts each box with its class and score.</span></figcaption></figure>
         <p class="sub-h" data-ko="계산하지 않고 사진으로 배우게 한 이유">Why learn from pictures instead of calculating</p>
         <div class="prose">
           <p data-ko="아크 용접은 아크에서 약 5,⁠000 ℃의 열을 내고, 지름 0.3~3 mm, 1,⁠600 ℃가 넘는 스패터(spatter)를 튀깁니다. 한국과 미국의 기준은 모두 작업 지점에서 11 m(35 ft) 안에 가연물을 두지 않도록 합니다.">Arc welding produces heat of roughly 5,⁠000 °C at the arc, and throws spatter 0.3 to 3 mm across at more than 1,⁠600 °C. Korean and United States guidance both keep ignitable material 11 m (35 ft) from the work.</p>
           <p data-ko="영하 3 ℃, 풍속 1 m/s의 노출 콘크리트 바닥에서 용접을 초당 약 60프레임으로 찍고, 화면 속의 손을 기준으로 스패터를 쟀습니다. 튀어나가는 속도는 1.76~5 m/s였습니다. 방향, 속도, 거리 사이에서 일정한 관계를 세울 수 없었습니다.">I filmed welding outdoors on bare concrete at −3 °C in a 1 m/s wind, at about 60 frames a second, and measured the spatter against a hand in the frame. Ejection speeds ran from 1.76 to 5 m/s. I could not establish a stable relation between direction, speed and distance.</p>
           <p data-ko="화염과 불티에는 정해진 형태도, 예측에 쓸 정량적 요소도 없습니다. 그래서 생김새를 학습하는 탐지기를 택했습니다.">A flame or a spark has no fixed shape and no quantity that predicts it. That is the reason for a detector that learns what they look like.</p>
         </div>
+        <figure class="t-fig is-wide"><a class="plate-mat" href="assets/images/thesis/fig-3-1.webp"><img src="assets/images/thesis/fig-3-1.webp" width="1278" height="869" loading="lazy" decoding="async" alt="Ten frames of arc welding at night with spatter paths and speeds marked." data-alt-ko="밤에 찍은 아크 용접의 연속 프레임 열 장. 스패터의 경로와 속도가 표시되어 있습니다." /></a><figcaption><b><span data-ko="그림 3.1">Fig. 3.1</span></b><span data-ko="0.02초 간격으로 찍은 용접 장면. 파란 표시는 흩어져 꺼지는 스패터, 빨간 표시는 떨어진 자리에서 계속 타는 스패터입니다. 속도는 10 cm 크기의 손을 기준으로 읽었습니다.">Welding filmed at 0.02-second intervals. Blue marks spatter that scatters and dies; red marks spatter that stays alight where it lands. Speeds are read against a 10 cm hand.</span></figcaption></figure>
 
       </div>
     </div>
@@ -150,8 +152,12 @@
           <p data-ko="클래스마다 약 2,⁠000장씩 모두 6,⁠000장을 건설현장, 화재 현장, 실험, 방송과 온라인 영상에서 모았고, 증강으로 세 배인 18,⁠000장을 만들었습니다. 70%로 학습하고, 20%로 검증하고, 10%로 시험했습니다.">I collected about 2,⁠000 images for each class, 6,⁠000 in all, from construction sites, fire scenes, experiments and broadcast or online video, then tripled them by augmentation to 18,⁠000. Seventy per cent trained the model, twenty validated it, ten tested it.</p>
           <p class="lede" data-ko="처음에는 불티가 흩어지는 전체를 중심과 함께 상자 하나로 묶었습니다. 그 상자의 대부분은 배경이었고, 모델은 상자를 배웠습니다.">At first I drew one box around the whole shower of sparks, core and scatter together. Most of that box was background, and the model learned the box.</p>
         </div>
+        <div class="fig-pair">
+          <figure class="t-fig "><a class="plate-mat" href="assets/images/thesis/fig-4-3.webp"><img src="assets/images/thesis/fig-4-3.webp" width="875" height="713" loading="lazy" decoding="async" alt="Four welding photographs with labelling boxes that include large areas of background." data-alt-ko="배경이 크게 들어간 라벨 상자가 그려진 용접 사진 네 장." /></a><figcaption><b><span data-ko="그림 4.3">Fig. 4.3</span></b><span data-ko="모델을 헷갈리게 한 이미지들. (a) 상자 안에 들어간 배경, (b) 아크의 섬광, (c) 흩어진 스패터를 묶은 상자, (d) 촘촘한 상자와 다각형.">Images that misled the model: (a) background caught inside the box, (b) flicker from the arc, (c) one box around scattered spatter, (d) dense boxes or polygons.</span></figcaption></figure>
+          <figure class="t-fig "><a class="plate-mat" href="assets/images/thesis/fig-4-4.webp"><img src="assets/images/thesis/fig-4-4.webp" width="897" height="899" loading="lazy" decoding="async" alt="Confusion matrix: Engineer 0.89, Fire 0.70, Welding 0.43 on the diagonal." data-alt-ko="혼동행렬. 대각선 값은 Engineer 0.89, Fire 0.70, Welding 0.43." /></a><figcaption><b><span data-ko="그림 4.4">Fig. 4.4</span></b><span data-ko="처음 라벨로 학습한 모델의 혼동행렬. Welding 열을 내려 읽으면 0.43은 찾았고 0.57은 배경으로 놓쳤습니다. background 열은 오탐의 구성으로, 0.69가 Welding이었습니다.">Confusion matrix with the first labels. Down the Welding column: 0.43 found, 0.57 lost to background. Down the background column: of the false detections, 0.69 were called Welding.</span></figcaption></figure>
+        </div>
         <div id="labels" class="stat-row">
-          <div><b>69<small>%</small></b><span data-ko="배경을 Welding으로 본 비율">of background was called Welding</span></div>
+          <div><b>69<small>%</small></b><span data-ko="배경에서 난 오탐 가운데 Welding으로 분류된 비율">of false detections on background were called Welding</span></div>
           <div><b>57<small>%</small></b><span data-ko="Welding을 배경으로 놓친 비율">of Welding was missed as background</span></div>
           <div><b>43<small>%</small></b><span data-ko="Welding을 바르게 탐지한 비율">of Welding was detected correctly</span></div>
         </div>
@@ -173,6 +179,10 @@
             </ul>
           </div>
         </div>
+        <div class="fig-pair">
+          <figure class="t-fig "><a class="plate-mat" href="assets/images/thesis/fig-4-7.webp"><img src="assets/images/thesis/fig-4-7.webp" width="880" height="671" loading="lazy" decoding="async" alt="Welding sparks boxed two ways: a large box around the whole shower, and a small box on the bright core." data-alt-ko="용접 불티에 상자를 그린 두 방식. 전체를 감싼 큰 상자와, 밝은 중심에만 그린 작은 상자." /></a><figcaption><b><span data-ko="그림 4.7">Fig. 4.7</span></b><span data-ko="고친 방법. (a) 처음의 상자는 불티 전체와 배경을 함께 담았습니다. (b) 고친 상자는 중심만 담습니다.">The repair. (a) The first box took in the whole shower and its background. (b) The corrected box holds only the core.</span></figcaption></figure>
+          <figure class="t-fig "><a class="plate-mat" href="assets/images/thesis/fig-3-3.webp"><img src="assets/images/thesis/fig-3-3.webp" width="780" height="829" loading="lazy" decoding="async" alt="Flow chart: preparing custom dataset, data processing and augmentation, deep learning model training, performance evaluation, with a return arrow labelled modification and improvement." data-alt-ko="흐름도. 데이터셋 준비, 가공과 증강, 모델 학습, 성능 평가, 그리고 수정과 개선으로 되돌아가는 화살표." /></a><figcaption><b><span data-ko="그림 3.3">Fig. 3.3</span></b><span data-ko="연구가 돈 순환. 데이터셋을 만들고, 가공하고 증강하고, 학습하고, 평가한 뒤, 다시 돌아가 고칩니다.">The loop the work followed: build the dataset, process and augment it, train, evaluate, then go back and repair.</span></figcaption></figure>
+        </div>
         <p class="sub-h" data-ko="Focal Loss와 그 효과의 크기">Focal Loss, and how much it helped</p>
         <div class="prose">
           <p data-ko="1단계 탐지기는 대상보다 배경을 훨씬 많이 봅니다. 그래서 쉬운 배경 예제가 손실을 지배합니다. Focal Loss는 그 가중을 낮춰 학습이 어려운 예제에 집중하게 합니다.">A one-stage detector sees far more background than object, so easy background examples dominate the loss. Focal Loss turns their weight down so that training attends to the hard cases.</p>
@@ -180,6 +190,7 @@
           <p data-ko="α는 0.1~0.5, γ는 1.0~5.0 범위에서 시험했습니다. 가장 좋았던 값은 α = 0.25, γ = 2.0입니다. 효과는 작았습니다. 바른 탐지가 0.02 늘고, 배경으로 놓치는 비율이 0.02 줄었으며, 평균 F1은 0.78 그대로였습니다.">I tested α from 0.1 to 0.5 and γ from 1.0 to 5.0. The best pair was α = 0.25, γ = 2.0. The effect was small: correct detections rose by 0.02, misses to background fell by 0.02, and the mean F1 stayed at 0.78.</p>
           <p data-ko="처음에 데이터를 세 배로 늘렸던 증강은 이후 실험에서 이 데이터의 인식률을 오히려 낮췄고, 원본 이미지를 주 데이터로 삼게 되었습니다. 일반화를 위해 Dropout과 Early Stopping을 썼습니다.">Augmentation, which had tripled the set, lowered recognition on this data in later runs, and the original images became the primary set. Dropout and early stopping were used to keep the model general.</p>
         </div>
+        <figure class="t-fig "><a class="plate-mat" href="assets/images/thesis/fig-4-10.webp"><img src="assets/images/thesis/fig-4-10.webp" width="848" height="605" loading="lazy" decoding="async" alt="F1-confidence curves for Engineer, Fire, Welding and all classes, before and after." data-alt-ko="Engineer, Fire, Welding과 전체 클래스의 F1-신뢰도 곡선, 적용 전과 후." /></a><figcaption><b><span data-ko="그림 4.10">Fig. 4.10</span></b><span data-ko="Focal Loss 적용 전후의 F1-신뢰도 곡선. 두 곡선은 거의 겹칩니다. 적용 전은 임계값 0.301에서 0.78, 적용 후는 0.304에서 0.78입니다.">F1 against confidence, before and after Focal Loss. The curves almost coincide: 0.78 at a threshold of 0.301 before, 0.78 at 0.304 after.</span></figcaption></figure>
         <blockquote class="pull" data-ko="탐지율을 가장 크게 올린 것은 원본 데이터를 고치는 일이었습니다. 그 뒤에 얹은 어떤 옵션이나 조정보다 값졌습니다.">What raised the detection rate most was better original data. It was worth more than any option or adjustment applied afterwards.</blockquote>
 
       </div>
@@ -193,6 +204,16 @@
         <h2 class="d2" data-ko="모델 여덟 개, 결론 하나.">Eight models, one finding.</h2>
         <div class="prose" style="margin-top:22px">
           <p class="lede" data-ko="데이터셋을 고친 뒤 YOLOv5의 크기 여덟 종을 각각 500 에폭 학습했습니다. 대상을 찾는 능력은 거의 같습니다. 큰 모델이 더 주는 것은 더 정확한 상자이고, 그 값은 몇 배의 학습 시간입니다.">After the dataset was repaired I trained eight sizes of YOLOv5 for 500 epochs each. They find the objects about equally well. What a larger model buys is a tighter box, and it costs many times the training.</p>
+        </div>
+        <p class="sub-h" data-ko="데이터를 고친 결과">What the repair did</p>
+        <div class="stat-row" style="margin-top:0">
+          <div><b>98<small>% · was 43%</small></b><span data-ko="Welding을 바르게 탐지한 비율 (이전 43%)">of Welding detected correctly</span></div>
+          <div><b>2<small>% · was 57%</small></b><span data-ko="Welding을 배경으로 놓친 비율 (이전 57%)">of Welding missed as background</span></div>
+          <div><b>20<small>% · was 69%</small></b><span data-ko="배경 오탐 가운데 Welding의 비율 (이전 69%)">of false detections on background called Welding</span></div>
+        </div>
+        <div class="fig-pair">
+          <figure class="t-fig "><a class="plate-mat" href="assets/images/thesis/fig-5-2.webp"><img src="assets/images/thesis/fig-5-2.webp" width="799" height="608" loading="lazy" decoding="async" alt="Confusion matrix after the repairs: Engineer 0.96, Fire 0.91, Welding 0.98." data-alt-ko="데이터를 고친 뒤의 혼동행렬. Engineer 0.96, Fire 0.91, Welding 0.98." /></a><figcaption><b><span data-ko="그림 5.2">Fig. 5.2</span></b><span data-ko="데이터를 고친 뒤의 가장 좋은 혼동행렬(YOLOv5m6). 대각선 값은 Welding 0.98, Fire 0.91, Engineer 0.96입니다. 배경 오탐에서 가장 큰 몫은 이제 Engineer입니다.">The best matrix after the repairs, from YOLOv5m6: Welding 0.98, Fire 0.91, Engineer 0.96 on the diagonal. Of the false detections on background, the largest share is now Engineer.</span></figcaption></figure>
+          <figure class="t-fig "><a class="plate-mat" href="assets/images/thesis/fig-5-3.webp"><img src="assets/images/thesis/fig-5-3.webp" width="627" height="492" loading="lazy" decoding="async" alt="Three validation scenes shown twice: with ground-truth boxes and with predicted boxes and scores." data-alt-ko="검증 장면 세 개를 두 번씩 보여 줍니다. 정답 상자와, 점수가 붙은 예측 상자." /></a><figcaption><b><span data-ko="그림 5.3">Fig. 5.3</span></b><span data-ko="검증 이미지에서 왼쪽은 정답 라벨, 오른쪽은 YOLOv5s의 예측입니다.">Labels on the left, predictions on the right, for validation images with YOLOv5s.</span></figcaption></figure>
         </div>
         <div class="chart-card" style="margin-top:clamp(28px,3.4vw,44px)">
           <div class="chart-head"><h3 data-ko="모델별 결과">Result by model</h3><p data-ko="막대는 0에서 1까지의 눈금입니다. 강조한 두 줄은 가장 가벼운 모델과, 초록에 실린 수치를 낸 모델입니다.">Bars run from 0 to 1. The two highlighted rows are the lightest model and the one whose figures the abstract reports.</p></div>
@@ -212,6 +233,10 @@
           <p data-ko="입력 크기는 예비 실험으로 정했습니다. 256픽셀에서는 작은 대상을 놓쳤고, 1,⁠920에서는 정밀도가 떨어졌습니다. 640, 800, 1,⁠024는 비슷했고 640이 가장 안정적이었습니다.">Input size was settled in a preliminary run. At 256 pixels small objects were lost; at 1,⁠920 precision fell; 640, 800 and 1,⁠024 behaved alike, and 640 was the steadiest.</p>
           <p data-ko="당시 새로 나온 YOLOv8과 같은 데이터, 같은 설정으로 100 에폭을 비교했습니다. mAP50 최고값은 YOLOv5가 0.795, YOLOv8이 0.799였습니다.">Against YOLOv8, newly released at the time, on the same data and settings for 100 epochs: peak mAP50 0.795 for YOLOv5 and 0.799 for YOLOv8.</p>
           <p data-ko="학습에 쓰지 않은 뉴스 영상과 소방 활동 영상에서도 용접, 사람, 화염을 찾았습니다. 다만 신뢰도는 떼어 둔 자체 이미지에서보다 낮았습니다.">On video the model had never seen, a news broadcast and firefighting footage, it found welding, people and flame, at lower confidence than on its own held-out images.</p>
+        </div>
+        <div class="fig-pair">
+          <figure class="t-fig "><a class="plate-mat" href="assets/images/thesis/fig-5-1.webp"><img src="assets/images/thesis/fig-5-1.webp" width="977" height="524" loading="lazy" decoding="async" alt="Line chart of mAP50 by epoch for input sizes 256, 640, 800, 1024 and 1920." data-alt-ko="입력 크기 256, 640, 800, 1024, 1920의 에폭별 mAP50 꺾은선 그래프." /></a><figcaption><b><span data-ko="그림 5.1">Fig. 5.1</span></b><span data-ko="입력 크기 다섯 가지의 100 에폭 mAP50. 256은 크게 낮고 1,⁠920은 뒤처지며, 640, 800, 1,⁠024는 함께 갑니다.">mAP50 over 100 epochs for five input sizes. 256 stays far below the rest and 1,⁠920 lags; 640, 800 and 1,⁠024 run together.</span></figcaption></figure>
+          <figure class="t-fig "><a class="plate-mat" href="assets/images/thesis/fig-5-6.webp"><img src="assets/images/thesis/fig-5-6.webp" width="872" height="419" loading="lazy" decoding="async" alt="Two line charts of mAP50 by epoch, YOLOv5 and YOLOv8, both rising to about 0.8." data-alt-ko="YOLOv5와 YOLOv8의 에폭별 mAP50 그래프 두 개. 둘 다 약 0.8까지 오릅니다." /></a><figcaption><b><span data-ko="그림 5.6">Fig. 5.6</span></b><span data-ko="같은 데이터, 같은 설정으로 100 에폭 학습한 mAP50. 왼쪽이 YOLOv5, 오른쪽이 YOLOv8입니다.">mAP50 over 100 epochs, YOLOv5 on the left and YOLOv8 on the right, with the same data and settings.</span></figcaption></figure>
         </div>
 
       </div>
@@ -311,7 +336,7 @@
           <div><dt data-ko="핵심어">Keywords</dt><dd data-ko="YOLOv5, 화재, 비산불꽃, 딥 러닝, Object Detection, 컴퓨터비전">YOLOv5, Flame, Welding spark, Deep learning, Object Detection, Computer Vision</dd></div>
           <div><dt data-ko="용어">Terms used here</dt><dd data-ko="mAP50은 예측 상자가 정답 상자와 절반 이상 겹치면 맞은 것으로 치는 평균 정밀도입니다. mAP50-95는 겹침 기준을 50%에서 95%까지 올려 가며 낸 평균이라, 상자가 정확할수록 높습니다.">mAP50 is mean average precision counting a prediction as correct when its box overlaps the true box by at least half. mAP50-95 averages that over overlap thresholds from 50% to 95%, so it rewards tighter boxes.</dd></div>
           <div><dt data-ko="영상">The film</dt><dd data-ko="세로 9:16, 2분 3초, 한국어 내레이션과 화면 자막. AI 제작 영상이며 첫 화면에 그렇게 표기되어 있습니다. 마지막 화면의 표기는 고용노동부 · 한국산업안전보건공단과 함께 제작입니다. 자르거나 고치지 않고 실었습니다.">Vertical 9:16, 2 min 03 s, Korean narration with captions in the picture. AI-generated and labelled as such in its opening frames; credited on its end card as made with the Ministry of Employment and Labor and the Korea Occupational Safety and Health Agency. Shown uncut.</dd></div>
-          <div><dt data-ko="이 페이지">This page</dt><dd data-ko="논문의 본문과 표에서 옮긴 요약입니다. 논문에 없는 결과는 더하지 않았습니다. 2026년 11월 26일 작성.">A summary drawn from the text and tables of the thesis. No result has been added that the thesis does not contain. Written 26 November 2026.</dd></div>
+          <div><dt data-ko="이 페이지">This page</dt><dd data-ko="논문의 본문, 표, 그림에서 옮긴 요약입니다. 논문에 없는 결과는 더하지 않았습니다. 그림은 논문에서 그대로 가져왔고, 다른 문헌이나 보도 영상에서 인용한 그림과 다른 사람이 나오는 그림은 싣지 않았습니다. 2026년 11월 26일 작성, 27일 그림 추가.">A summary drawn from the text, tables and figures of the thesis. No result has been added that the thesis does not contain. Figures are reproduced from the thesis; those it quotes from other publications or news footage, and those showing other people, are left out. Written 26 November 2026; figures added on the 27th.</dd></div>
         </dl>
 
       </div>
@@ -387,8 +412,8 @@
 </div>
 
 
-<script src="joosatlas-i18n.js?v=12.1.0"></script>
-<script src="joosatlas-library.js?v=12.1.0"></script>
-<script src="joosatlas-v10.js?v=12.1.0"></script>
+<script src="joosatlas-i18n.js?v=12.1.1"></script>
+<script src="joosatlas-library.js?v=12.1.1"></script>
+<script src="joosatlas-v10.js?v=12.1.1"></script>
 </body>
 </html>

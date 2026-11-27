@@ -1,9 +1,9 @@
 {
   "package": "JoosAtlas_v12_GitHub_Deploy",
-  "version": "12.1.0",
+  "version": "12.1.1",
   "codename": "Library",
-  "generated_utc": "2026-11-26T08:24:27Z",
-  "supersedes": "12.0.0",
+  "generated_utc": "2026-11-27T11:48:53Z",
+  "supersedes": "12.1.0",
   "deploy_target": "https://daejinpipero-gaja.github.io/JoosAtlas/",
   "languages": [
     "en",
@@ -32,14 +32,15 @@
       "ko"
     ],
     "thesis_figures": "transcribed from the thesis (Table 1.1, Figure 4.4 text, Table 5.1, section 5.3); not re-measured",
-    "v11_audits_not_rerun": "tools/lang_audit.mjs and tools/visual_audit.mjs are not in the repository"
+    "v11_audits_not_rerun": "tools/lang_audit.mjs and tools/visual_audit.mjs are not in the repository",
+    "v12_1_1": "thesis page with 11 figures: all images load in Chrome and WebKit, no horizontal overflow at 1440 px or iPhone 13; 301 local references, 0 broken; 67 interaction assertions passed"
   },
   "contact": {
     "academic": "daejinpipero@yonsei.ac.kr",
     "general": "daejinpipero@gmail.com"
   },
-  "file_count": 172,
-  "total_bytes": 35013887,
+  "file_count": 183,
+  "total_bytes": 35449521,
   "files": [
     {
       "path": "404.html",
@@ -63,8 +64,8 @@
     },
     {
       "path": "VERSION.json",
-      "bytes": 567,
-      "sha256": "316aa5b94460b4a986f0c6eac297332da5472620a8ad635503f53fa1e1d32bfb"
+      "bytes": 551,
+      "sha256": "9fc1fe572f40834db7a7f2f4a06c8e17a1c07e6a740a9145b768f5ef0d988dbb"
     },
     {
       "path": "about.html",
@@ -342,6 +343,61 @@
       "sha256": "e7e0efcf5f1d774a7aa873e2443a16d4a10fa8dbb56088e75faa1e631ab90e39"
     },
     {
+      "path": "assets/images/thesis/fig-3-1.webp",
+      "bytes": 90034,
+      "sha256": "2a19a9c963cf22bf477a101f9a900d8ac6600a70cbece1b69915a23d434cf970"
+    },
+    {
+      "path": "assets/images/thesis/fig-3-3.webp",
+      "bytes": 30640,
+      "sha256": "9deb0dd3aa6decd0258b8a5bd94ad4995e99776a57c4324642906960680e03a9"
+    },
+    {
+      "path": "assets/images/thesis/fig-3-4.webp",
+      "bytes": 64748,
+      "sha256": "dc556e3dfce7dc7b8f3d5f073878c961a6b5903d16dc94f075b5ceb1a9fbbe7b"
+    },
+    {
+      "path": "assets/images/thesis/fig-4-10.webp",
+      "bytes": 19394,
+      "sha256": "f45eca73b84ffc28f8821fcb114335b5dc413f46ed73d5bf42c128a3498f2bb2"
+    },
+    {
+      "path": "assets/images/thesis/fig-4-3.webp",
+      "bytes": 52470,
+      "sha256": "568e6a1d8d92c25252377197dcf53a5383ff071cde794922335582a319d4c8eb"
+    },
+    {
+      "path": "assets/images/thesis/fig-4-4.webp",
+      "bytes": 12970,
+      "sha256": "afc886d9cf85361102c17f043feb295e20478a1f28eecbdcef91583c365e5899"
+    },
+    {
+      "path": "assets/images/thesis/fig-4-7.webp",
+      "bytes": 45134,
+      "sha256": "f0baa47f3dcd4b25b88c55a7bb269ef005f4643d63012a437618b61dd9170109"
+    },
+    {
+      "path": "assets/images/thesis/fig-5-1.webp",
+      "bytes": 36054,
+      "sha256": "30c53931f1c9032bbffb99dc6d3a55fb93a9ca95482a4f592365b084b07545be"
+    },
+    {
+      "path": "assets/images/thesis/fig-5-2.webp",
+      "bytes": 10200,
+      "sha256": "bd3cf99300c2ce3f44feb6f55326ca0e7044ea9b62c1fdd303a121fa0ee9bdb9"
+    },
+    {
+      "path": "assets/images/thesis/fig-5-3.webp",
+      "bytes": 46720,
+      "sha256": "f7542d23645be3600ce4d8ad97ecbea2a4883ad2e4a3754c44c94d4c8732c8d8"
+    },
+    {
+      "path": "assets/images/thesis/fig-5-6.webp",
+      "bytes": 14626,
+      "sha256": "f888134e675740c54a7391a1bd819ec7c99533fbfdd081cb94641f53ba931ad0"
+    },
+    {
       "path": "assets/images/welding-wide-1400.webp",
       "bytes": 32382,
       "sha256": "312a09ae19f971250618b1323bf8511b26370c3fd11bc29bcf2bffb92fb60cbf"
@@ -478,8 +534,8 @@
     },
     {
       "path": "docs/V12_LIBRARY_NOTES.md",
-      "bytes": 8512,
-      "sha256": "5b5d97c9529e7159249cc36e2c42dbeb60fca0bc440623c6cf6547e0cf43c965"
+      "bytes": 9935,
+      "sha256": "c9c0c0d6cf2fd1657ae1c693d02462a533fd2f29956cddc44f2de026d04a950f"
     },
     {
       "path": "docs/V8_UPDATE_NOTES.md",
@@ -523,8 +579,8 @@
     },
     {
       "path": "joosatlas-v10.css",
-      "bytes": 81068,
-      "sha256": "8cd261252fd758eeae9392fe5835e9871b50b28d107e0816ac9f7f641783f020"
+      "bytes": 82029,
+      "sha256": "adf2409cb716c4d6d2f7e020482eaa9b458e2ee3c25d10f91860e1c5051a058c"
     },
     {
       "path": "joosatlas-v10.js",
@@ -863,8 +919,8 @@
     },
     {
       "path": "thesis-2023.html",
-      "bytes": 49773,
-      "sha256": "b4b76cf1aa81346932af24e989b66b3ea089a556697a7131769a09e2ed45cf42"
+      "bytes": 60049,
+      "sha256": "a4428ecdd6108f1ea6f6f9dc622c162687065312d64a4e56a63b2e2cd5f20a41"
     },
     {
       "path": "tools/README.md",

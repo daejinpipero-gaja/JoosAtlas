@@ -139,3 +139,31 @@ Run on 26 November 2026 against a local static server.
 
 - The Korean name of the department and of the supervisor are not printed in the
   thesis, so the record gives them in English only.
+
+
+---
+
+# v12.1.1 — figures from the thesis
+
+The thesis page now carries eleven figures reproduced from the thesis, each placed
+where the argument needs it and captioned in both languages:
+
+| Section | Figures |
+|---|---|
+| 02 Idea | 3.4 (how YOLOv5 reads a frame), 3.1 (welding filmed at 0.02 s intervals) |
+| 03 Data | 4.3 (images that misled the model), 4.4 (confusion matrix with the first labels), 4.7 (the repaired box), 3.3 (research loop), 4.10 (F1 before and after Focal Loss) |
+| 04 Findings | 5.2 (best confusion matrix after the repairs), 5.3 (labels against predictions), 5.1 (input size), 5.6 (YOLOv5 against YOLOv8) |
+
+Files are in `assets/images/thesis/`, cut from the PDF at the resolution of the
+embedded originals. Left out: figures the thesis quotes from other publications or
+from news and online footage (1.1, 1.2, 2.1–2.8, 3.2, 4.1, 4.2, 4.6, 4.8, 5.4, 5.5) and
+the figure showing children (4.5).
+
+Reading Figures 4.4 and 5.2 side by side gave the page a before-and-after it did not
+have: Welding found correctly rose from 0.43 to 0.98. The page also now words the
+background column of a YOLOv5 confusion matrix for what it is — the make-up of the
+false detections by class — rather than as a rate.
+
+Checked: all eleven images load in Chrome and WebKit, no horizontal overflow at
+1440 px or on an iPhone 13; 301 local references, 0 broken; the 67-assertion
+interaction suite passes unchanged.
