@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 <link rel="manifest" href="site.webmanifest" />
-<link rel="stylesheet" href="joosatlas-v10.css?v=12.1.0" />
+<link rel="stylesheet" href="joosatlas-v10.css?v=12.2.0" />
 <script>(()=>{try{const t=localStorage.getItem('joosatlas-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);const l=localStorage.getItem('joosatlas-lang');if(l==='ko'||l==='en')document.documentElement.setAttribute('lang',l);}catch(e){}})();</script>
 </head>
 <body>
@@ -30,6 +30,7 @@
     <span><strong>JoosAtlas</strong><small>Case 001 · Spatial evidence</small></span>
   </a>
   <nav class="nav" id="site-nav" aria-label="Primary">
+    <a href="#frame">Frame</a>
     <a href="#question">Question</a>
     <a href="#theory">Theory</a>
     <a href="#pixel-lab">Lab</a>
@@ -68,6 +69,55 @@
   </section>
 
   <!-- ============ 01 QUESTION ============ -->
+  <!-- ============ 00 REVISED FRAME (v12.2) ============
+       Terms and frame of the revised manuscript only. No result of the manuscript is stated here;
+       the release ledger at the foot of the page still governs what is public. -->
+  <section id="frame" class="sec plane-2 no-i18n" data-tone="light">
+    <div class="frame rail-grid">
+      <div class="rail-head"><p class="num-tag"><b>00</b> <span data-ko="개정된 틀">Revised frame</span></p></div>
+      <div>
+        <p class="eyebrow" data-ko="2026년 11월 27일 갱신 · 틀과 용어만">Updated 27 November 2026 · frame and terms only</p>
+        <h2 class="d2" data-ko="같은 사슬을, 이제 화재감시선의 문제로 적습니다.">The same chain, now stated as a fire-watch line.</h2>
+        <div class="prose" style="margin-top:22px">
+          <p class="lede" data-ko="고정된 경사 카메라 한 대의 화면에 그은 선은 선 위의 모든 점에 지상 거리를 부여합니다. 그 거리가 맞는지는 영상만으로는 알 수 없습니다. 개정 원고는 물음을 이렇게 적습니다. 이 페이지의 다섯 단계 사슬은 그대로입니다.">A line drawn on the screen of one fixed, oblique camera gives every point on it a distance on the ground. The picture cannot show whether that distance is right. The revised manuscript asks the question in those terms. The five-stage chain on this page is unchanged.</p>
+          <p data-ko="경계는 1/2 축척으로 만듭니다. 한국에서 화기작업에 쓰는 작업반경은 11 m입니다. 측량한 지름 3 m 링을 11/3배로 확대하면 5.5 m의 선이 됩니다.">The boundary is built at half scale. The working radius used for hot work in Korea is 11 m; a surveyed ring 3 m across, enlarged by 11/3, gives a line at 5.5 m.</p>
+        </div>
+
+        <p class="sub-h" data-ko="바뀐 용어">The words have changed</p>
+        <div class="terms">
+          <div class="terms-head"><span data-ko="이 페이지의 기존 표현">On this page until now</span><span data-ko="개정 원고의 용어">In the revised manuscript</span><span data-ko="무엇인가">What it is</span></div>
+          <div><span class="t-old">Surveyed primitive</span><strong data-ko="생성 링">Generator ring</strong><p data-ko="지름 3 m의 아크릴 링. 영상이 사슬에 들어오기 전에 토털스테이션(total station)으로 측량합니다.">An acrylic ring 3 m across, surveyed by total station before any image enters the chain.</p></div>
+          <div><span class="t-old">Design boundary</span><strong data-ko="생성된 경계 — 화재감시선">Generated boundary — the fire-watch line</strong><p data-ko="링의 측량된 바깥 반경에 11/3을 곱한 반경, 공칭 5.5 m. 바닥의 표시가 아니라 가상의 선입니다.">The ring’s surveyed outer radius multiplied by 11/3, nominally 5.5 m. A virtual line, not a mark on the floor.</p></div>
+          <div><span class="t-old">Reference response</span><strong data-ko="확인 표적">Check target</strong><p data-ko="경계 위에 붙이고 측량한 고리 모양 인쇄 표적. 어떤 보정에도, 어떤 표정에도 쓰지 않습니다.">A printed ring target taped on the boundary and surveyed. It takes no part in any calibration or orientation.</p></div>
+          <div><span class="t-old">—</span><strong data-ko="기준점장">Control field</strong><p data-ko="둘레의 벽에 고정하고 측량한 보드. 측량 데이텀을 세션에서 세션으로 전달하고, 링에서 구한 표정과 견줄 기준 표정을 줍니다.">Surveyed boards on the surrounding walls. They carry the survey datum from one session to the next and give a reference orientation to compare against the ring.</p></div>
+          <div><span class="t-old">Support surface</span><strong data-ko="지지면 — 측량한 바닥">Support surface — the surveyed floor</strong><p data-ko="표적 아래의 바닥 높이. 따로 한 바닥 측량에서 보간합니다.">The floor height under each target, interpolated from a separate floor survey.</p></div>
+          <div><span class="t-old">R̂<sub>ref</sub></span><strong>R<sub>rec</sub> · <span data-ko="복원 반경">reconstructed radius</span></strong><p data-ko="표적의 영상 광선이 지지면과 만나는 곳의, 링 중심으로부터의 반경.">Where the target’s image ray meets the support surface, measured from the ring centre.</p></div>
+          <div><span class="t-old">—</span><strong>R<sub>survey</sub> · <span data-ko="측량 반경">surveyed radius</span></strong><p data-ko="같은 표적을 토털스테이션으로 직접 잰 반경.">The same target’s radius measured directly by total station.</p></div>
+        </div>
+
+        <p class="sub-h" data-ko="하나의 양을 둘로">One quantity, split in two</p>
+        <div class="prose">
+          <p data-ko="확인 표적마다 세 반경을 견줍니다. 생성 반경, 측량 반경, 복원 반경입니다. 선을 쓰는 사람이 마주치는 불일치는 첫째에서 셋째를 뺀 값이고, 이 값은 표적을 붙인 위치가 정하는 부분과 영상 사슬이 만드는 부분으로 정확히 나뉩니다.">Three radii are compared at each check target: the generated radius, the surveyed radius and the reconstructed radius. The discrepancy a user of the line would meet is the first minus the third, and it separates exactly into a part set by where the target was taped and a part made by the image chain.</p>
+          <p class="formula" aria-label="Delta R equals R b minus R rec, which equals d obj plus d img">Δ<i>R</i> = <i>R</i><sub>b</sub> − <i>R</i><sub>rec</sub> = <i>d</i><sub>obj</sub> + <i>d</i><sub>img</sub></p>
+          <p class="formula" style="margin-top:10px;font-size:clamp(1rem,1.4vw,1.16rem)" aria-label="d obj equals R b minus R survey; d img equals R survey minus R rec"><i>d</i><sub>obj</sub> = <i>R</i><sub>b</sub> − <i>R</i><sub>survey</sub> &nbsp;·&nbsp; <i>d</i><sub>img</sub> = <i>R</i><sub>survey</sub> − <i>R</i><sub>rec</sub></p>
+          <p data-ko="부호 규약은 아래 「수식」에 이미 적은 것과 같습니다. 값이 음이면 표적이 생성 반경 바깥으로 복원되었다는 뜻입니다.">The sign rule is the one already shown under Equations: a negative value means the target is reconstructed outside the generated radius.</p>
+        </div>
+
+        <p class="sub-h" data-ko="실험의 짜임">How the experiment is laid out</p>
+        <div class="rule-cards" style="margin-top:0">
+          <article><span data-ko="3 × 3 × 3">3 × 3 × 3</span><strong data-ko="스테이션, 배치, 띠 폭">Station, placement, band width</strong><p data-ko="카메라 스테이션 7, 9, 12 m. 링 배치 C, R, D. 링의 띠 폭 3, 5, 8 cm. 조건은 27개이고 반복 세션이 하나 있습니다. 촬영은 스테이션–배치–띠 폭으로 적어서, 12R8은 12 m 스테이션, 배치 R, 8 cm 띠입니다.">Camera stations at 7, 9 and 12 m; three ring placements, C, R and D; ring bands 3, 5 and 8 cm wide. Twenty-seven conditions and a repeat session. A capture is coded station–placement–band, so 12R8 is the 12 m station, placement R, the 8 cm band.</p></article>
+          <article><span data-ko="따로 둔 것">Kept apart</span><strong data-ko="표적은 맞춤에 쓰지 않습니다">The targets are never used to fit</strong><p data-ko="확인 표적은 측량한 뒤 모든 보정과 표정에서 뺍니다. 그래서 표적마다 선에 못 미치는지, 선 위인지, 선을 넘는지를 읽을 수 있습니다.">Check targets are surveyed and then left out of every calibration and orientation, so each one can be read as short of the line, on it, or past it.</p></article>
+          <article><span data-ko="먼저 적은 것">Written first</span><strong data-ko="가설이 결과보다 먼저입니다">Hypotheses before results</strong><p data-ko="가설은 첫 결과보다 먼저 적었습니다. 모든 검출은 두 판독자가 확인했고, 명시한 입력 불확도는 몬테카를로(Monte Carlo)로 전파했습니다.">The hypotheses were written down before the first result. Every detection was confirmed by two readers, and the stated input uncertainties were propagated by Monte Carlo.</p></article>
+        </div>
+
+        <p class="sub-h" data-ko="이번 갱신에 넣지 않은 것">What this update does not add</p>
+        <div class="prose">
+          <p data-ko="개정 원고의 결과는 이 페이지에 적지 않았습니다. 영상 쪽 결과, 원고가 지금 보고하는 대상 쪽 수치, 불확도 진술은 논문이 나올 때까지 보류합니다. 06과 07에는 2026년 8월에 공개한 선별 대상공간 점검이 그대로 있습니다. 개정 원고는 그와 다른 확인 표적 집합을 씁니다.">No result of the revised manuscript is stated on this page. The image-side findings, the object-side figures as the manuscript now reports them, and the uncertainty statement remain withheld until the paper is out. Sections 06 and 07 still show the selected object-space checks released in August 2026; the manuscript uses a different set of check targets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="question" class="sec plane" data-tone="light">
     <div class="frame rail-grid">
       <div class="rail-head"><p class="num-tag"><b>01</b> Question</p></div>
@@ -479,6 +529,7 @@
       <div class="rail-head"><p class="num-tag"><b>06</b> Observation geometry</p></div>
       <div>
         <p class="eyebrow">Plan view · local frame</p>
+        <p class="stamp no-i18n" data-ko="2026년 8월 공개분입니다. 개정 원고의 용어는 맨 위 「개정된 틀」에 있습니다.">Released August 2026. For the revised manuscript’s terms, see Revised frame at the top.</p>
         <h2 class="d2">Three placements around one surveyed origin.</h2>
         <p class="body-2" style="margin-top:20px;max-width:62ch">The plot is drawn directly from the disclosed summary: the estimated origin, the nominal primitive and generated-boundary radii, and each condition’s local camera vector with its viewing axis. Hover a station for its range and azimuth.</p>
       </div>
@@ -527,6 +578,7 @@
       <div class="rail-head"><p class="num-tag"><b>07</b> Selected evidence</p></div>
       <div>
         <p class="eyebrow">Object-space validation</p>
+        <p class="stamp no-i18n" data-ko="2026년 8월 공개분입니다. 개정 원고는 다른 확인 표적 집합을 쓰며, 그 수치는 논문과 함께 공개합니다.">Released August 2026. The revised manuscript uses a different set of check targets; its figures stay with the paper.</p>
         <h2 class="d2">Three placements. Two views. One metric frame.</h2>
         <p class="body-2" style="margin-top:20px;max-width:62ch">The explorer below shows selected TS boundary checks only. It does not substitute for the full terminal image audit.</p>
       </div>
@@ -656,6 +708,7 @@
         <div class="release" style="margin-top:clamp(26px,3vw,40px)">
           <div><span>Research question</span><strong class="on">Released</strong></div>
           <div><span>Core theoretical chain</span><strong class="on">Released</strong></div>
+          <div class="no-i18n"><span data-ko="개정 원고의 틀과 용어 (2026년 11월)">Frame and terms of the revised manuscript (November 2026)</span><strong class="on" data-ko="공개">Released</strong></div>
           <div><span>Selected object-space evidence</span><strong class="on">Released</strong></div>
           <div><span>Full terminal image audit</span><strong>Withheld</strong></div>
           <div><span>Raw data and implementation</span><strong>Withheld</strong></div>
@@ -682,8 +735,8 @@
       <div><h4>Contact</h4><ul><li><a href="mailto:daejinpipero@yonsei.ac.kr">daejinpipero@yonsei.ac.kr</a></li><li><a href="mailto:daejinpipero@gmail.com">daejinpipero@gmail.com</a></li><li><a href="https://github.com/daejinpipero-gaja/JoosAtlas">GitHub ↗</a></li></ul></div>
     </div>
     <div class="ftr-base">
-      <span>© <span data-year>2026</span> Yonghoe JOO · JoosAtlas v12.1</span>
-      <span>Updated <time data-updated datetime="2026-08-07">7 August 2026</time> · v11.0</span>
+      <span>© <span data-year>2026</span> Yonghoe JOO · JoosAtlas v12.2</span>
+      <span>Updated <time data-updated datetime="2026-11-27">27 November 2026</time> · v12.2</span>
     </div>
   </div>
 </footer>
@@ -706,8 +759,8 @@
   </div>
 </div>
 
-<script src="joosatlas-i18n.js?v=12.1.0"></script>
-<script src="joosatlas-library.js?v=12.1.0"></script>
-<script src="joosatlas-v10.js?v=12.1.0"></script>
+<script src="joosatlas-i18n.js?v=12.2.0"></script>
+<script src="joosatlas-library.js?v=12.2.0"></script>
+<script src="joosatlas-v10.js?v=12.2.0"></script>
 </body>
 </html>

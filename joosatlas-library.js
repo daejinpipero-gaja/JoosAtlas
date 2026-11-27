@@ -50,14 +50,14 @@ const LIB = window.JOOS_LIBRARY = {
       id:'case-001', kind:'research', code:'001', href:'case-001.html',
       state:'review', date:'2026-08-07',
       title:  { en:'Spatial Evidence', ko:'공간 증거' },
-      line:   { en:'From a surveyed primitive to an auditable boundary. Can a single oblique image test whether a field-generated design boundary has been preserved?',
-                ko:'측량한 기본 도형에서 감사할 수 있는 경계까지. 비스듬히 찍은 사진 한 장으로, 현장에서 만든 설계 경계가 지켜졌는지 시험할 수 있는가.' },
+      line:   { en:'Can one fixed, oblique camera hold a fire-watch line where the ground says it is? A surveyed ring, a boundary generated from it, and check targets that take no part in the fit.',
+                ko:'고정된 경사 카메라 한 대가 그은 화재감시선은 지상의 그 자리에 있는가. 측량한 링, 거기서 생성한 경계, 그리고 맞춤에 쓰지 않은 확인 표적.' },
       status: { en:'Paper under review', ko:'논문 심사 중' },
       meta:   { en:'Theory · sensitivity lab · selected evidence · claim boundary', ko:'이론 · 감도 실험실 · 선별 증거 · 주장 경계' },
       content:{ en:'English · Korean', ko:'영어 · 한국어' },
       thumb:'assets/images/field-layout-800.webp',
       alt:    { en:'Field geometry, camera placements and overhead photographs of Case 001.', ko:'Case 001의 현장 기하, 카메라 배치, 상공 사진.' },
-      keys:'case study survey photogrammetry boundary audit 공간 증거 연구 논문'
+      keys:'case study survey photogrammetry boundary audit fire-watch line hot work check target 공간 증거 연구 논문 화재감시선 확인 표적'
     },
     {
       id:'thesis-2023', kind:'research', code:'MSc', href:'thesis-2023.html',

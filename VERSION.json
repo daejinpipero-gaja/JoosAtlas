@@ -1,7 +1,7 @@
 {
-  "version": "12.1.1",
+  "version": "12.2.0",
   "codename": "Library",
-  "title": "Thesis figures added to the thesis page",
+  "title": "Case 001 aligned with the revised manuscript's frame and terms (no results added)",
   "css": "joosatlas-v10.css",
   "js": [
     "joosatlas-i18n.js",
@@ -18,8 +18,8 @@
     "404.html",
     "film-001.html (forwards to thesis-2023.html#film)"
   ],
-  "supersedes": "12.1.0",
-  "built_utc": "2026-11-27T12:00:00Z",
+  "supersedes": "12.1.1",
+  "built_utc": "2026-11-27T12:30:00Z",
   "languages": [
     "en",
     "ko"

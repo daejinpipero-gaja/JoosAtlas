@@ -1301,3 +1301,20 @@ html[lang="ko"] .cinema-plate figcaption{letter-spacing:.04em}
 .fig-pair .t-fig{max-width:none}
 html[lang="ko"] .t-fig figcaption b{letter-spacing:.06em}
 @media (max-width:900px){.fig-pair{grid-template-columns:minmax(0,1fr)}}
+
+
+/* ---- Case 001: revised frame (v12.2) ---- */
+.terms{border-top:1px solid var(--rule-2)}
+.terms>div{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1fr) minmax(0,1.5fr);gap:clamp(14px,2.4vw,38px);align-items:baseline;padding:18px 4px;border-bottom:1px solid var(--rule)}
+.terms .terms-head{padding-block:12px;font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.terms .t-old{font-family:var(--mono);font-size:.74rem;color:var(--ink-3)}
+.terms strong{font-family:var(--display);font-weight:400;font-size:clamp(1.04rem,1.4vw,1.22rem);line-height:1.32;letter-spacing:-.02em}
+.terms p{margin:0;font-size:.91rem;color:var(--ink-2)}
+.stamp{margin:10px 0 0;font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;line-height:1.7;color:var(--ink-3);max-width:70ch}
+html[lang="ko"] .terms strong{letter-spacing:-.018em;line-height:1.46;font-weight:600}
+html[lang="ko"] .terms .terms-head,html[lang="ko"] .stamp{letter-spacing:.04em}
+@media (max-width:900px){
+  .terms>div{grid-template-columns:minmax(0,1fr);gap:6px}
+  .terms .terms-head{display:none}
+  .terms .t-old::before{content:"← ";opacity:.7}
+}

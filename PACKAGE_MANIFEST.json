@@ -1,9 +1,9 @@
 {
   "package": "JoosAtlas_v12_GitHub_Deploy",
-  "version": "12.1.1",
+  "version": "12.2.0",
   "codename": "Library",
-  "generated_utc": "2026-11-27T11:48:53Z",
-  "supersedes": "12.1.0",
+  "generated_utc": "2026-11-27T12:05:53Z",
+  "supersedes": "12.1.1",
   "deploy_target": "https://daejinpipero-gaja.github.io/JoosAtlas/",
   "languages": [
     "en",
@@ -33,19 +33,20 @@
     ],
     "thesis_figures": "transcribed from the thesis (Table 1.1, Figure 4.4 text, Table 5.1, section 5.3); not re-measured",
     "v11_audits_not_rerun": "tools/lang_audit.mjs and tools/visual_audit.mjs are not in the repository",
-    "v12_1_1": "thesis page with 11 figures: all images load in Chrome and WebKit, no horizontal overflow at 1440 px or iPhone 13; 301 local references, 0 broken; 67 interaction assertions passed"
+    "v12_1_1": "thesis page with 11 figures: all images load in Chrome and WebKit, no horizontal overflow at 1440 px or iPhone 13; 301 local references, 0 broken; 67 interaction assertions passed",
+    "v12_2": "Case 001 revised frame: 302 local references, 0 broken; 56 page loads (7 pages x Chrome 1440 and WebKit iPhone 13 x 2 languages x 2 themes) with no script errors, failed requests, broken images or horizontal overflow; 67 interaction assertions passed; no result of the revised manuscript appears on the site"
   },
   "contact": {
     "academic": "daejinpipero@yonsei.ac.kr",
     "general": "daejinpipero@gmail.com"
   },
   "file_count": 183,
-  "total_bytes": 35449521,
+  "total_bytes": 35463453,
   "files": [
     {
       "path": "404.html",
       "bytes": 5172,
-      "sha256": "5d38b0ab6696dba12e8558e395987632e33feb56aa363bc3d317bfd552dfea24"
+      "sha256": "776a39c880ea42d1ed110b8c469c5759ea92f95521574b9b3581dfb1f15be078"
     },
     {
       "path": "LICENSE.txt",
@@ -59,18 +60,18 @@
     },
     {
       "path": "README_GITHUB_UPDATE_KR.md",
-      "bytes": 9823,
-      "sha256": "7a9f53f19a1cf4c0316c2e61276790e0a82a11cc8c16d0f9bb8705184b38b30d"
+      "bytes": 10627,
+      "sha256": "514b1c6801d2e0f2ce621b38e1618451696297d6c2038346111aab57e6f35540"
     },
     {
       "path": "VERSION.json",
-      "bytes": 551,
-      "sha256": "9fc1fe572f40834db7a7f2f4a06c8e17a1c07e6a740a9145b768f5ef0d988dbb"
+      "bytes": 593,
+      "sha256": "60271150378d3f6f02c1eb82c116c6cc4e8859a5ac314a6c7ac87cc6b3b7c16c"
     },
     {
       "path": "about.html",
       "bytes": 18646,
-      "sha256": "d053c56743007011fdc69e16a1eed3f0eac0e3956c821e6e5eed94e2095c12d3"
+      "sha256": "e8c20812f6f01fe73589d229bf281e6a64793fb6eac46fefc3d62bdf33f08c2f"
     },
     {
       "path": "app.js",
@@ -434,8 +435,8 @@
     },
     {
       "path": "case-001.html",
-      "bytes": 48805,
-      "sha256": "0d72646b4f87d5719dfc0b41aa6adf13e6e1ff51a648c0835b516cac9b77e700"
+      "bytes": 58844,
+      "sha256": "19e8910a3c67d51024d5f8c175b9e402a4a8c518e9c14e2dc37673ebe674f031"
     },
     {
       "path": "docs/CONCEPT_RATIONALE.md",
@@ -489,8 +490,8 @@
     },
     {
       "path": "docs/PUBLIC_DISCLOSURE.md",
-      "bytes": 575,
-      "sha256": "1b3ff30807c3aff180f7820f3e54a55f588a44a900aa60b73122e56309da6041"
+      "bytes": 949,
+      "sha256": "87dabeb7e2cee843d0002b69b6c6e3d368fa11114f256a80c58d73531a2bd12a"
     },
     {
       "path": "docs/STATIC_VALIDATION.json",
@@ -534,8 +535,8 @@
     },
     {
       "path": "docs/V12_LIBRARY_NOTES.md",
-      "bytes": 9935,
-      "sha256": "c9c0c0d6cf2fd1657ae1c693d02462a533fd2f29956cddc44f2de026d04a950f"
+      "bytes": 11098,
+      "sha256": "5f8316067cb714736341e1b037689dbe1cc57e0fc38d282eca7713648d6a201a"
     },
     {
       "path": "docs/V8_UPDATE_NOTES.md",
@@ -565,22 +566,22 @@
     {
       "path": "index.html",
       "bytes": 26195,
-      "sha256": "6dda5d347b7c3f005918b5be35e59a6b48607cc9561cc976222fbbff287f7d1b"
+      "sha256": "823c4bbbcb40feead3bdb7541f954293256d39759a18e9a49e4211f8d82a4077"
     },
     {
       "path": "joosatlas-i18n.js",
-      "bytes": 58632,
-      "sha256": "090798c082efc0c02906da5a90da9adad76b35a8a911381d067d7019e3b529d8"
+      "bytes": 58752,
+      "sha256": "9dbc42f620f1a283bd3d3f1557f652a076a0fcd1ef75e626b2502228a07cf49f"
     },
     {
       "path": "joosatlas-library.js",
-      "bytes": 20070,
-      "sha256": "264eaa5b23cd8002533f187ae5c6b7d07364d9a6195f1e6279999c37d6bdb6fb"
+      "bytes": 20175,
+      "sha256": "511d128514d26efa186bfae78775870007295547764ea854ad842733638408e8"
     },
     {
       "path": "joosatlas-v10.css",
-      "bytes": 82029,
-      "sha256": "adf2409cb716c4d6d2f7e020482eaa9b458e2ee3c25d10f91860e1c5051a058c"
+      "bytes": 83200,
+      "sha256": "57661002b2f9f32ec6beb7c8b9f08bc362402cd9b9da8258815888ab8f75243a"
     },
     {
       "path": "joosatlas-v10.js",
@@ -600,7 +601,7 @@
     {
       "path": "library.html",
       "bytes": 10855,
-      "sha256": "a0d6e42d8f7deb4c3882dbb29643580555f3019cff224507f8178a0c92fb6b84"
+      "sha256": "fe7f686f59281ad13bac321d00363d726375796db0b126170b79d697dd4b010b"
     },
     {
       "path": "manual-001/css/site.css",
@@ -610,7 +611,7 @@
     {
       "path": "manual-001/index.html",
       "bytes": 6386,
-      "sha256": "2a9e726e7a80852fb55171c80711767afd09cb78748be079828f5b2cbe518446"
+      "sha256": "652645e7d816fe1c18f206be591fec078efff1312cf784181c9bdf93b5afc169"
     },
     {
       "path": "manual-001/js/app.js",
@@ -920,7 +921,7 @@
     {
       "path": "thesis-2023.html",
       "bytes": 60049,
-      "sha256": "a4428ecdd6108f1ea6f6f9dc622c162687065312d64a4e56a63b2e2cd5f20a41"
+      "sha256": "dce927eb09f6a1d37e2c0a2b9ea915d4d3a58c4eec7da4d72f590d9990ea9b40"
     },
     {
       "path": "tools/README.md",
@@ -929,8 +930,8 @@
     },
     {
       "path": "tools/build_i18n.py",
-      "bytes": 63083,
-      "sha256": "f191c038af76ac449e72f8feb9313add504e0bb1f0cc08ccf549be6307ed6c5a"
+      "bytes": 63197,
+      "sha256": "fb773b73f0bbce8453273a7871d3a545c9b4e3b16ef7fa54690b468e6cd7e396"
     },
     {
       "path": "tools/detect_audit.py",

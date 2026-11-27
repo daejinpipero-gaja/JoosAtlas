@@ -546,6 +546,12 @@ add({
  "Yonghoe JOO's master's thesis read in plain language: a YOLOv5 detector that tells welding sparks from fire on construction sites, what went wrong with the first labels, and what the results do and do not show.":"주용회의 석사논문을 풀어서 읽습니다. 건설현장에서 용접 불꽃과 화재를 구분하는 YOLOv5 탐지기, 처음 라벨에서 틀렸던 것, 그리고 결과가 말하는 것과 말하지 않는 것.",
 })
 
+# ── v12.2 Case 001 revised frame ──
+add({
+ "Frame":"틀",
+ "27 November 2026":"2026년 11월 27일",
+})
+
 # ── Attributes ───────────────────────────────────────────────────────────────
 ATTR = {
  "JoosAtlas home":"JoosAtlas 홈",

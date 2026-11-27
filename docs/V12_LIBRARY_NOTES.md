@@ -167,3 +167,26 @@ false detections by class — rather than as a rate.
 Checked: all eleven images load in Chrome and WebKit, no horizontal overflow at
 1440 px or on an iPhone 13; 301 local references, 0 broken; the 67-assertion
 interaction suite passes unchanged.
+
+
+---
+
+# v12.2 — Case 001 brought into line with the revised manuscript
+
+The manuscript behind Case 001 has been revised. Its results stay withheld; this
+release only brings the page's frame and vocabulary into line with it.
+
+- `case-001.html` gains section 00, "Revised frame": the question restated as a
+  fire-watch line, a table mapping the page's earlier words to the manuscript's
+  (generator ring, generated boundary, check target, control field, support surface,
+  R_rec, R_survey), the identity ΔR = d_obj + d_img with its sign rule, and the
+  3 × 3 × 3 layout.
+- Sections 06 and 07 are stamped "Released August 2026"; their figures are unchanged.
+- The release ledger gains one "Released" row for the frame and terms. Every
+  "Withheld" row is as it was.
+- `docs/PUBLIC_DISCLOSURE.md` records the widened and the still-closed parts.
+- The registry line for Case 001 now states the question in the manuscript's terms.
+- Site version label and cache-bust are 12.2 on every page.
+
+The page's existing sign convention was checked against the manuscript and already
+agrees: ΔR is negative when the target is reconstructed outside the generated radius.
