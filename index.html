@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 <link rel="manifest" href="site.webmanifest" />
-<link rel="stylesheet" href="joosatlas-v10.css?v=12.0.0" />
+<link rel="stylesheet" href="joosatlas-v10.css?v=12.1.0" />
 <script>(()=>{try{const t=localStorage.getItem('joosatlas-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);const l=localStorage.getItem('joosatlas-lang');if(l==='ko'||l==='en')document.documentElement.setAttribute('lang',l);}catch(e){}})();</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ProfilePage",
@@ -248,20 +248,35 @@
   </section>
 
   <!-- ============ OPERATOR ============ -->
-  <section class="cinema cinema-right" data-tone="dark" style="--focus:32% 20%;--stack-ratio:16/11">
+  <section id="sparks" class="cinema cinema-right cinema-film" data-tone="dark" style="--focus:26% 20%;--stack-ratio:16/11">
     <div class="cinema-media" data-portrait="welding"><img src="assets/images/welding-wide.webp" srcset="assets/images/welding-wide-800.webp 800w, assets/images/welding-wide-1400.webp 1400w, assets/images/welding-wide.webp 1800w" sizes="100vw" alt="Yonghoe JOO welding in an industrial workshop." loading="lazy" /></div>
     <div class="cinema-veil"></div>
     <div class="frame cinema-body rv">
+     <div class="cinema-text">
       <p class="eyebrow">Personal field record</p>
       <h2 class="d2">I am also the person doing the work.</h2>
       <p style="margin-top:20px">That is me, in the workshop I also manage. I include it because it explains something about the work: handling the material changes which constraints I notice. JoosAtlas grows from that double position — measurement on one side, operational consequence on the other.</p>
-      <p style="margin-top:26px"><a class="btn btn-line" href="about.html#operator">About the operating practice</a></p>
+      <p class="no-i18n" style="margin-top:16px" data-ko="이 사진 속의 불티는 제 석사논문의 주제이기도 합니다. 카메라가 용접과 화재를 구분할 수 있는가를 물었습니다.">The sparks in this photograph are also the subject of my master's thesis, which asks whether a camera can tell welding from fire.</p>
+      <p class="hero-cta no-i18n" style="margin-top:26px">
+        <a class="btn btn-solid" href="thesis-2023.html"><span data-ko="석사논문, 풀어서 읽기">The thesis, read plainly</span></a>
+        <a class="btn btn-line" href="about.html#operator"><span data-ko="현장 실무에 대하여">About the operating practice</span></a>
+      </p>
+     </div>
+     <!-- the film sits in the welding scene; nothing is fetched until it is played -->
+     <figure class="cinema-plate no-i18n" data-film="film-001">
+       <div class="plate-mat"><div class="plate-media">
+         <video controls playsinline preload="none" poster="media/film-001/poster.jpg" data-duration="2:03" aria-label="Sparks — film, 2 min 03 s" data-label-ko="불티 — 영상, 2분 3초">
+           <source src="media/film-001/film-001.mp4" type="video/mp4" />
+         </video>
+       </div></div>
+       <figcaption><b>F·001</b> <span data-ko="불티가 왜 화재가 되는가 · 2분">Why a spark becomes a fire · 2 min</span></figcaption>
+     </figure>
     </div>
     <div class="cinema-cap"><span>Workshop record</span><span>Seoul</span></div>
   </section>
 
   <!-- ============ 05 FIELD LIBRARY ============
-       The two plates are drawn from joosatlas-library.js (entries with home:true).
+       The plate is drawn from joosatlas-library.js (entries with home:true).
        To hang something else here, edit that file — not this section. -->
   <section id="library" class="sec vault tone-dark" data-tone="dark">
     <div class="frame rail-grid">
@@ -276,7 +291,6 @@
       <div class="plates no-i18n rv" data-lib="plates">
         <noscript>
           <p><a class="link-arrow" href="manual-001/">Field manual M·001 — Water-Based Fire Protection, Illustrated ↗</a></p>
-          <p><a class="link-arrow" href="film-001.html">Film F·001 — Sparks ↗</a></p>
         </noscript>
       </div>
       <div class="plates-more no-i18n">
@@ -296,8 +310,9 @@
         <!-- rows are drawn from joosatlas-library.js; the static rows below are the no-script fallback -->
         <div class="index-list no-i18n" data-lib="index">
           <a href="case-001.html"><span>001</span><strong>Spatial Evidence</strong><em>Paper under review</em><b>↗</b></a>
+          <a href="thesis-2023.html"><span>MSc</span><strong>Detection of Fire Hazard Factors on Construction Sites using YOLOv5</strong><em>Master's thesis · 2023</em><b>↗</b></a>
           <a href="manual-001/"><span>M·001</span><strong>Water-Based Fire Protection, Illustrated</strong><em>Open</em><b>↗</b></a>
-          <a href="film-001.html"><span>F·001</span><strong>Sparks — 3 mm, a few seconds, 1,600 °C</strong><em>Open</em><b>↗</b></a>
+          <a href="thesis-2023.html#film"><span>F·001</span><strong>Sparks — 3 mm, a few seconds, 1,600 °C</strong><em>Open</em><b>↗</b></a>
           <div><span>002</span><strong>Fixed-Camera Metrology</strong><em>In development</em><b></b></div>
           <div><span>LAB</span><strong>Industrial Digital Twin</strong><em>Exploratory</em><b></b></div>
           <div><span>TOOLS</span><strong>Interactive Measurement</strong><em>Planned</em><b></b></div>
@@ -330,7 +345,7 @@
       </div>
       <div>
         <h4>Atlas</h4>
-        <ul><li><a href="index.html">Home</a></li><li><a href="library.html">Library</a></li><li><a href="manual-001/">Field Manual 001</a></li><li><a href="film-001.html">Film 001</a></li><li><a href="about.html">About</a></li></ul>
+        <ul><li><a href="index.html">Home</a></li><li><a href="library.html">Library</a></li><li><a href="thesis-2023.html">Master's thesis</a></li><li><a href="manual-001/">Field Manual 001</a></li><li><a href="about.html">About</a></li></ul>
       </div>
       <div>
         <h4>Case 001</h4>
@@ -346,8 +361,8 @@
       </div>
     </div>
     <div class="ftr-base">
-      <span>© <span data-year>2026</span> Yonghoe JOO · JoosAtlas v12.0</span>
-      <span>Updated <time data-updated datetime="2026-11-26">26 November 2026</time> · v12.0</span>
+      <span>© <span data-year>2026</span> Yonghoe JOO · JoosAtlas v12.1</span>
+      <span>Updated <time data-updated datetime="2026-11-26">26 November 2026</time> · v12.1</span>
     </div>
   </div>
 </footer>
@@ -366,8 +381,8 @@
   </div>
 </div>
 
-<script src="joosatlas-i18n.js?v=12.0.0"></script>
-<script src="joosatlas-library.js?v=12.0.0"></script>
-<script src="joosatlas-v10.js?v=12.0.0"></script>
+<script src="joosatlas-i18n.js?v=12.1.0"></script>
+<script src="joosatlas-library.js?v=12.1.0"></script>
+<script src="joosatlas-v10.js?v=12.1.0"></script>
 </body>
 </html>

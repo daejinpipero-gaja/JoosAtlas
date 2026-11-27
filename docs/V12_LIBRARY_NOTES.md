@@ -78,3 +78,64 @@ Run on 26 November 2026 against a local static server.
 - KOSHA GUIDE A-G-14-2026 was not opened; the guideline was read in its 2016 reprint.
 - `tools/build_i18n.py` received the new strings for parity, but it still needs
   the `strings.json` extraction that is not in the repository.
+
+
+---
+
+# v12.1 — the thesis, and the film where it belongs
+
+v12.0 hung the film beside the fire-protection manual. That was the wrong wall: the
+film is about welding sparks, which is the subject of the author's master's thesis and
+of the welding photograph already on the home page. v12.1 moves it there and gives the
+thesis its own page.
+
+## What changed
+
+| | |
+|---|---|
+| `thesis-2023.html` | New. *Detection of Fire Hazard Factors on Construction Sites using YOLOv5* (Yonsei University, 2023), read in plain language: problem, idea, data and labels, findings, limits, the film's scenes and sources, bibliographic record. |
+| `index.html` | The welding scene (`#sparks`) now carries the film as a 9:16 plate and a link to the thesis. Section 05 hangs the manual alone. Index gains the thesis row. |
+| `film-001.html` | Now a forwarding stub to `thesis-2023.html#film`, so the v12.0 address keeps working. Its scene list and source ledger moved to the thesis page unchanged. |
+| `joosatlas-library.js` | Thesis entry added (`MSc`); the film entry points at the thesis page and is no longer hung on the home page. A single home plate is laid out drawing-left, caption-right. |
+| `joosatlas-v10.css` | Section 23 appended. Also: buttons on photograph sections are now light-on-dark (the line button there had no visible rule), and grid children may shrink so a scrolling table cannot widen a phone page. |
+| `manual-001/index.html` | Masthead and footer link to the thesis instead of the old film page. |
+
+## Why the thesis page is built this way
+
+**It follows the thesis, not the film.** The page is ordered as an argument: why the
+usual detector fails on a site, why three classes instead of one alarm, what went wrong
+with the first labels, what eight models showed, what none of it proves.
+
+**The failure is given the most room.** The first dataset boxed the whole shower of
+sparks; 69% of background was called welding and only 43% of welding was found. That
+finding, and the plain fix (box the core, keep boxes tight, drop hidden objects), is
+the part of the thesis most useful to someone else, so it has its own section.
+
+**Every figure is from the thesis.** Table 1.1 (fires per year), the confusion-matrix
+percentages, Table 5.1 (eight models) and the YOLOv8 comparison are transcribed, not
+re-measured. The results table is drawn with bars on a 0–1 scale so that near-equal
+mAP50 values look near-equal. No result was added that the thesis does not contain.
+
+**Limits are stated as limits.** The thesis detects; it does not alarm. It was scored
+on held-out images and recorded video, not on a site. The page says so in its own
+section rather than in a footnote.
+
+**The full text is not hosted.** The page gives the bibliographic record instead.
+
+## Verification (v12.1)
+
+Run on 26 November 2026 against a local static server.
+
+- 279 local references (links, images, anchors, registry and palette targets): 0 broken.
+- 112 page loads — 7 pages × 4 viewport/engine combinations (Chrome at 1440, 1024 and
+  834 px; WebKit at iPhone 13) × 2 languages × 2 themes: no script errors, no failed
+  requests, no broken images, no horizontal overflow.
+- 67 interaction assertions in Chrome and WebKit: film plays inside the welding scene
+  and is not fetched before that, language switch during playback, thesis page scene
+  seek, eight result rows and five yearly bars present, palette finds the thesis in
+  both languages, the old film address forwards with and without script.
+
+## Known limits
+
+- The Korean name of the department and of the supervisor are not printed in the
+  thesis, so the record gives them in English only.

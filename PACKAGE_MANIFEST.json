@@ -1,26 +1,25 @@
 {
   "package": "JoosAtlas_v12_GitHub_Deploy",
-  "version": "12.0.0",
+  "version": "12.1.0",
   "codename": "Library",
-  "generated_utc": "2026-11-26T05:08:38Z",
-  "supersedes": "11.0.0",
+  "generated_utc": "2026-11-26T08:24:27Z",
+  "supersedes": "12.0.0",
   "deploy_target": "https://daejinpipero-gaja.github.io/JoosAtlas/",
   "languages": [
     "en",
     "ko"
   ],
   "verification": {
-    "reference_check": "285 local links, images and anchors checked, 0 broken",
-    "page_sweep": "140 page loads (7 pages x 5 viewport/engine combinations x 2 languages x 2 themes): no script errors, no failed requests, no broken images, no horizontal overflow",
-    "interaction_suite": "59 assertions passed in Chrome and WebKit, 0 failed",
+    "reference_check": "279 local links, images and anchors checked, 0 broken",
+    "page_sweep": "112 page loads (7 pages x 4 viewport/engine combinations x 2 languages x 2 themes): no script errors, no failed requests, no broken images, no horizontal overflow",
+    "interaction_suite": "67 assertions passed in Chrome and WebKit, 0 failed",
     "engines": [
       "Chrome",
-      "WebKit (iPhone 13 emulation and desktop)"
+      "WebKit (iPhone 13 emulation)"
     ],
     "viewports": [
       1440,
-      1280,
-      1180,
+      1024,
       834,
       390
     ],
@@ -32,19 +31,20 @@
       "en",
       "ko"
     ],
-    "v11_audits_not_rerun": "tools/lang_audit.mjs and tools/visual_audit.mjs are not in the repository; the v11 figures (418 strings, 108 visual checks) were not re-measured for v12"
+    "thesis_figures": "transcribed from the thesis (Table 1.1, Figure 4.4 text, Table 5.1, section 5.3); not re-measured",
+    "v11_audits_not_rerun": "tools/lang_audit.mjs and tools/visual_audit.mjs are not in the repository"
   },
   "contact": {
     "academic": "daejinpipero@yonsei.ac.kr",
     "general": "daejinpipero@gmail.com"
   },
-  "file_count": 167,
-  "total_bytes": 34549677,
+  "file_count": 172,
+  "total_bytes": 35013887,
   "files": [
     {
       "path": "404.html",
       "bytes": 5172,
-      "sha256": "eee401ac57c70bb9e986dee517656b97a680d5c75230a7abdad91c70a571fc3c"
+      "sha256": "5d38b0ab6696dba12e8558e395987632e33feb56aa363bc3d317bfd552dfea24"
     },
     {
       "path": "LICENSE.txt",
@@ -53,23 +53,23 @@
     },
     {
       "path": "README.md",
-      "bytes": 9637,
-      "sha256": "e970b5688b5a0dae0bb719ce83fb16ed7b201acd7e6307943d5b51d6b0a5038a"
+      "bytes": 9838,
+      "sha256": "43ddece72772a691a0aa3836cbf952281af6489bc433394f98280d68ced39f83"
     },
     {
       "path": "README_GITHUB_UPDATE_KR.md",
-      "bytes": 10549,
-      "sha256": "c9290e55002ca2128f5214f84b1a1128dd55dc7ebe2459fb171bc41d0c00ecc5"
+      "bytes": 9823,
+      "sha256": "7a9f53f19a1cf4c0316c2e61276790e0a82a11cc8c16d0f9bb8705184b38b30d"
     },
     {
       "path": "VERSION.json",
-      "bytes": 499,
-      "sha256": "fb7f86bbc97c023dd3a28f18c33d9a98abc4ae4df16352abe0467835c025bc34"
+      "bytes": 567,
+      "sha256": "316aa5b94460b4a986f0c6eac297332da5472620a8ad635503f53fa1e1d32bfb"
     },
     {
       "path": "about.html",
-      "bytes": 18591,
-      "sha256": "9e12f1e9c09a192c9232cea606bb09ae863791526907eb27b47693528be1fa74"
+      "bytes": 18646,
+      "sha256": "d053c56743007011fdc69e16a1eed3f0eac0e3956c821e6e5eed94e2095c12d3"
     },
     {
       "path": "app.js",
@@ -378,8 +378,8 @@
     },
     {
       "path": "case-001.html",
-      "bytes": 48750,
-      "sha256": "7a0c2a22dc05f27d1b3c2ced68717d9946f5ff29a2f0c97525181a3013beafac"
+      "bytes": 48805,
+      "sha256": "0d72646b4f87d5719dfc0b41aa6adf13e6e1ff51a648c0835b516cac9b77e700"
     },
     {
       "path": "docs/CONCEPT_RATIONALE.md",
@@ -388,8 +388,8 @@
     },
     {
       "path": "docs/CONTENT_GUIDE_KR.md",
-      "bytes": 5940,
-      "sha256": "898ce7f189d0bdd0dcad10dd9b4cd198a8f780ba8ecdb64e4f813d86f0a60367"
+      "bytes": 6228,
+      "sha256": "21ae3fe386423447275132779225f936989c62c3ae333dea0cdcb216b895019d"
     },
     {
       "path": "docs/DEPLOYMENT.md",
@@ -478,8 +478,8 @@
     },
     {
       "path": "docs/V12_LIBRARY_NOTES.md",
-      "bytes": 4873,
-      "sha256": "25e1f084547a863994064e333fb591bd7ea2e8b3b4f16da7703cca27e35f7ba8"
+      "bytes": 8512,
+      "sha256": "5b5d97c9529e7159249cc36e2c42dbeb60fca0bc440623c6cf6547e0cf43c965"
     },
     {
       "path": "docs/V8_UPDATE_NOTES.md",
@@ -503,33 +503,33 @@
     },
     {
       "path": "film-001.html",
-      "bytes": 24716,
-      "sha256": "e7f93b2c31892604bf0f8444d1d6fc62d20f6cf17aea98a53632f5d97ecf01b6"
+      "bytes": 824,
+      "sha256": "452aa7d8f14b35eeb4b2eda8d8cd66e78a442b586df30c93a3e81ab65cabb218"
     },
     {
       "path": "index.html",
-      "bytes": 24771,
-      "sha256": "8ad009b0fac5b0eb0fce6dd689b6c45744c2bbde9d06931e52ccca3ec5a178dc"
+      "bytes": 26195,
+      "sha256": "6dda5d347b7c3f005918b5be35e59a6b48607cc9561cc976222fbbff287f7d1b"
     },
     {
       "path": "joosatlas-i18n.js",
-      "bytes": 57261,
-      "sha256": "0cf1affb0a1000b08157476d84c2145a635557cff420179974d44aa7837a1db1"
+      "bytes": 58632,
+      "sha256": "090798c082efc0c02906da5a90da9adad76b35a8a911381d067d7019e3b529d8"
     },
     {
       "path": "joosatlas-library.js",
-      "bytes": 18576,
-      "sha256": "df2577c2b737417640ac8b61d90318f8a2d4b6ff8d2fea92d39a78478b36c265"
+      "bytes": 20070,
+      "sha256": "264eaa5b23cd8002533f187ae5c6b7d07364d9a6195f1e6279999c37d6bdb6fb"
     },
     {
       "path": "joosatlas-v10.css",
-      "bytes": 73629,
-      "sha256": "4283413c56eba16d856b3219bb5745e277d64882fec13bd3e2eac875e86009ad"
+      "bytes": 81068,
+      "sha256": "8cd261252fd758eeae9392fe5835e9871b50b28d107e0816ac9f7f641783f020"
     },
     {
       "path": "joosatlas-v10.js",
-      "bytes": 50465,
-      "sha256": "6c98f724edab86fe57a73cae001cf3e756f1b4b67fad3aa23ba8b692d94e7294"
+      "bytes": 48293,
+      "sha256": "518d630500e66dda1ee4696f0e7baba5b2b565530e7d315ee2ff329f430f0e53"
     },
     {
       "path": "joosatlas-v9.css",
@@ -543,8 +543,8 @@
     },
     {
       "path": "library.html",
-      "bytes": 10777,
-      "sha256": "b584e05e2a47a91ac1b8b38f1cb090ed21a1d40f5b0c10c4388f12fd3cf64e8e"
+      "bytes": 10855,
+      "sha256": "a0d6e42d8f7deb4c3882dbb29643580555f3019cff224507f8178a0c92fb6b84"
     },
     {
       "path": "manual-001/css/site.css",
@@ -553,8 +553,8 @@
     },
     {
       "path": "manual-001/index.html",
-      "bytes": 6349,
-      "sha256": "197631efae1ab7719e1ac0c0953b864fd12f7eae9abf50b3602c801dbe753f0a"
+      "bytes": 6386,
+      "sha256": "2a9e726e7a80852fb55171c80711767afd09cb78748be079828f5b2cbe518446"
     },
     {
       "path": "manual-001/js/app.js",
@@ -807,6 +807,26 @@
       "sha256": "6176e14608ce8a8cf2cf17343f13a59bcb9b0999c2630ecd14522d6a998c57bf"
     },
     {
+      "path": "previews/v12.1-home-welding-film-korean.jpg",
+      "bytes": 101399,
+      "sha256": "fd7dd04b950781f583aae2d9c09987c8c05da130c7789cd5259b1f1268ced498"
+    },
+    {
+      "path": "previews/v12.1-thesis-findings-korean.jpg",
+      "bytes": 112927,
+      "sha256": "f45a47e25e77c5650b045d694b0e8f0ca5cb65fb0e010028897691aa3c55776e"
+    },
+    {
+      "path": "previews/v12.1-thesis-korean.jpg",
+      "bytes": 86565,
+      "sha256": "c10f0c4ba7b3bc5ba8c162ef956b9fa1b5a1d1abf6371adb74600fe6686f167f"
+    },
+    {
+      "path": "previews/v12.1-thesis-labels.jpg",
+      "bytes": 122654,
+      "sha256": "86c604218b5c55d38110cd08fb8084099a75afec8c941b631cce9523ae58ed85"
+    },
+    {
       "path": "previews/v9-correction-board.jpg",
       "bytes": 595392,
       "sha256": "8ed2e0d988503ffcd2aa362aaba07138b1469caa4e86736b5a70ed8fe0cf37f3"
@@ -833,13 +853,18 @@
     },
     {
       "path": "sitemap.xml",
-      "bytes": 1105,
-      "sha256": "0bfe9de144e7a9eba395b5290457ebab207b7ac574bd26265cc4170fe873aef4"
+      "bytes": 1108,
+      "sha256": "3905bbb1ed4c91ddb0470b91b0b36750146b3d2c086c52210273191d01fadc40"
     },
     {
       "path": "styles.css",
       "bytes": 47655,
       "sha256": "a3ace92dc91b567a1608de41dd11ea9e1882f8c023707c7c16fbaaac8c421f8c"
+    },
+    {
+      "path": "thesis-2023.html",
+      "bytes": 49773,
+      "sha256": "b4b76cf1aa81346932af24e989b66b3ea089a556697a7131769a09e2ed45cf42"
     },
     {
       "path": "tools/README.md",
@@ -848,8 +873,8 @@
     },
     {
       "path": "tools/build_i18n.py",
-      "bytes": 61553,
-      "sha256": "3c8147acfa0487375aa307137d1a7c9ec13af793cd9a98a6f3e7f90098203587"
+      "bytes": 63083,
+      "sha256": "f191c038af76ac449e72f8feb9313add504e0bb1f0cc08ccf549be6307ed6c5a"
     },
     {
       "path": "tools/detect_audit.py",

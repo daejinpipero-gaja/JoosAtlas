@@ -16,7 +16,8 @@ Public site: <https://daejinpipero-gaja.github.io/JoosAtlas/>
 | `case-001.html` | Public companion for Case 001 — question, five-stage method explorer, equation ledger with symbol glossaries and sign convention, field realization, sensitivity lab, three data visualizations, selected evidence, claim boundary, release ledger |
 | `about.html` | Yonghoe JOO — a first-person account of the research, the workshop, the company and the alumni community, ending with contact addresses |
 | `library.html` | The whole atlas on one shelf — every entry with its kind, language and status label, drawn from the registry |
-| `film-001.html` | Film F·001 — the player, a scene list that drives it, and a ledger setting each of the film's statements against a public source |
+| `thesis-2023.html` | The author's master's thesis read in plain language — *Detection of Fire Hazard Factors on Construction Sites using YOLOv5* — opened by Film F·001, with the film's scene list and a ledger setting each of its figures against a public source |
+| `film-001.html` | Forwards to `thesis-2023.html#film` (the film's v12.0 address) |
 | `manual-001/` | Field Manual M·001 — *Water-Based Fire Protection, Illustrated*; a self-contained illustrated manual (Korean) with the site's masthead and footer |
 | `media/` | Film files and their posters |
 | `404.html` | Off-the-atlas page with the same search and navigation |

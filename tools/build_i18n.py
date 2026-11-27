@@ -523,6 +523,29 @@ add({
  "A two-minute film on how hot-work sparks become construction-site fires, with each of its statements set against a public source.":"화기작업의 불티가 공사장 화재가 되는 과정을 담은 2분 영상. 영상의 주장마다 공개 근거를 나란히 놓았습니다.",
 })
 
+# ── v12.1 Thesis: chrome and palette ──
+add({
+ "Master's thesis":"석사논문",
+ "Problem":"문제",
+ "Idea":"착상",
+ "Data":"데이터",
+ "Findings":"결과",
+ "Limits":"한계",
+ "Master's thesis — the problem":"석사논문 — 문제",
+ "Why welding sparks start construction-site fires":"용접 불티가 왜 공사장 화재가 되는가",
+ "Master's thesis — the idea":"석사논문 — 착상",
+ "Three classes: Fire, Welding, Engineer":"클래스 세 개: Fire, Welding, Engineer",
+ "Master's thesis — the labels":"석사논문 — 라벨",
+ "What went wrong first, and what fixed it":"처음에 틀렸던 것과, 그것을 고친 것",
+ "Master's thesis — results":"석사논문 — 결과",
+ "Eight models, one finding":"모델 여덟 개, 결론 하나",
+ "Master's thesis — limits":"석사논문 — 한계",
+ "What the thesis does not show":"이 논문이 보여 주지 않는 것",
+ "Film 001 — figures and sources":"영상 001 — 수치와 근거",
+ "Master's thesis, read plainly — JoosAtlas":"석사논문, 풀어서 읽기 — JoosAtlas",
+ "Yonghoe JOO's master's thesis read in plain language: a YOLOv5 detector that tells welding sparks from fire on construction sites, what went wrong with the first labels, and what the results do and do not show.":"주용회의 석사논문을 풀어서 읽습니다. 건설현장에서 용접 불꽃과 화재를 구분하는 YOLOv5 탐지기, 처음 라벨에서 틀렸던 것, 그리고 결과가 말하는 것과 말하지 않는 것.",
+})
+
 # ── Attributes ───────────────────────────────────────────────────────────────
 ATTR = {
  "JoosAtlas home":"JoosAtlas 홈",

@@ -1192,3 +1192,99 @@ html[lang="ko"] .lib-hero .d1{max-width:11em}
   .vault{background:#fff;color:#000}
   .vault::before,.vault::after,.play,.shelf-tools{display:none}
 }
+
+/* ============================================================
+   23. THESIS · FILM IN THE WELDING SCENE   (v12.1)
+   ============================================================ */
+
+/* the film hangs inside the welding photograph: photo | text | 9:16 plate */
+.cinema-film .cinema-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,54ch) clamp(190px,17vw,248px);gap:clamp(22px,3vw,46px);align-items:center;max-width:none;padding-left:0}
+.cinema-film .cinema-text{grid-column:2;min-width:0}
+.cinema-plate{grid-column:3;margin:0}
+.cinema-plate .plate-mat{display:block;padding:8px;background:rgba(6,14,21,.62);border-color:rgba(242,246,248,.3);backdrop-filter:blur(6px)}
+.cinema-plate .plate-media{aspect-ratio:9/16}
+.cinema-plate .play i{width:58px;height:58px}
+.cinema-plate .play i::before{border-left-width:13px;border-block-width:9px;margin-left:4px}
+.cinema-plate figcaption{margin-top:12px;font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(242,246,248,.8);line-height:1.6}
+.cinema-plate figcaption b{color:var(--accent-bright);margin-right:8px}
+.cinema-text .hero-cta{gap:12px 14px}
+
+/* one plate alone: drawing left, caption right */
+.plates.is-single{grid-template-columns:minmax(0,1.62fr) minmax(0,1fr);column-gap:clamp(26px,4vw,64px);align-items:center}
+.plates.is-single .plate-mat{grid-row:1;grid-column:1}
+.plates.is-single .plate-cap{grid-row:1;grid-column:2;padding-top:0}
+
+/* thesis page */
+.thesis-hero .d1{font-size:clamp(2.5rem,5.2vw,4.6rem);max-width:15ch}
+.prose{max-width:68ch}
+.prose p{margin-top:1.05em;color:var(--ink-2)}
+.prose p:first-child{margin-top:0}
+.prose p.lede{color:var(--ink)}
+.sub-h{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:clamp(34px,4vw,52px) 0 14px}
+.stat-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--rule-2);border-bottom:1px solid var(--rule);margin-top:clamp(26px,3vw,40px)}
+.stat-row>div{padding:24px 24px 26px;border-left:1px solid var(--rule)}
+.stat-row>div:first-child{border-left:0;padding-left:0}
+.stat-row b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(2.5rem,4.8vw,4rem);line-height:1;letter-spacing:-.04em}
+.stat-row b small{font-size:.4em;letter-spacing:0;margin-left:.12em;color:var(--ink-3)}
+.stat-row span{display:block;margin-top:12px;font-size:.9rem;color:var(--ink-2);max-width:30ch}
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(22px,3.4vw,54px);margin-top:clamp(26px,3vw,40px)}
+.mark-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.mark-list li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:8px;padding:12px 0;border-bottom:1px solid var(--rule);font-size:.93rem;color:var(--ink-2)}
+.mark-list li::before{content:"×";font-family:var(--mono);color:var(--ink-3)}
+.mark-list.is-yes li::before{content:"✓";color:var(--good)}
+.formula{margin:22px 0 0;padding:20px 24px;border:1px solid var(--rule);border-radius:4px;background:var(--surface);font-family:var(--display);font-size:clamp(1.12rem,1.7vw,1.42rem);letter-spacing:-.01em;overflow-x:auto;white-space:nowrap}
+.formula i{font-style:italic}
+.pull{margin:clamp(30px,3.6vw,48px) 0 0;padding:4px 0 4px 24px;border-left:2px solid var(--accent-bright);font-family:var(--display);font-size:clamp(1.22rem,1.9vw,1.6rem);line-height:1.4;letter-spacing:-.02em;max-width:34em}
+.year-chart{width:100%;height:auto;display:block;max-width:620px}
+.year-chart .yc-bar{fill:var(--accent-bright)}
+.year-chart .yc-val{fill:var(--ink);font:500 15px var(--sans);font-variant-numeric:tabular-nums}
+.year-chart .yc-lab{fill:var(--ink-3);font:11px var(--mono);letter-spacing:.08em}
+.year-chart .yc-axis{stroke:var(--rule-2);stroke-width:1}
+.chart-pad{padding:14px clamp(18px,2vw,26px) 22px}
+.chart-src{padding:12px clamp(18px,2vw,26px) 16px;border-top:1px solid var(--rule);font-size:.8rem;color:var(--ink-3)}
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.model-table{width:100%;min-width:640px;border-collapse:collapse;font-size:.86rem}
+.model-table th,.model-table td{padding:11px clamp(12px,1.6vw,22px);border-top:1px solid var(--rule);text-align:left;vertical-align:middle;font-variant-numeric:tabular-nums}
+.model-table thead th{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);font-weight:600;border-top:0}
+.model-table td.num,.model-table th.num{text-align:right;white-space:nowrap}
+.model-table td:first-child{font-weight:600;white-space:nowrap}
+.model-table tr.is-key td{background:var(--accent-wash)}
+.mbar{display:grid;grid-template-columns:minmax(70px,1fr) 3.4em;gap:10px;align-items:center}
+.mbar u{display:block;height:8px;background:var(--rule);border-radius:0 4px 4px 0;text-decoration:none}
+.mbar u i{display:block;height:8px;border-radius:0 4px 4px 0;background:var(--accent-bright);width:calc(var(--v)*100%)}
+.limits{list-style:none;margin:clamp(26px,3vw,40px) 0 0;padding:0;border-top:1px solid var(--rule-2);counter-reset:lim}
+.limits li{display:grid;grid-template-columns:54px minmax(0,.9fr) minmax(0,1.3fr);gap:clamp(14px,2.4vw,38px);padding:22px 4px;border-bottom:1px solid var(--rule);counter-increment:lim;align-items:start}
+.limits li::before{content:counter(lim,decimal-leading-zero);font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--accent);padding-top:5px}
+.limits strong{font-family:var(--display);font-weight:400;font-size:clamp(1.08rem,1.45vw,1.26rem);line-height:1.34;letter-spacing:-.02em}
+.limits span{font-size:.92rem;color:var(--ink-2)}
+.cite-box{margin-top:clamp(26px,3vw,40px);padding:22px 26px;border:1px solid var(--rule-2);border-radius:4px;background:var(--surface);font-size:.95rem;max-width:74ch}
+.cite-box cite{font-style:italic}
+html[lang="ko"] .limits strong,html[lang="ko"] .pull{letter-spacing:-.018em;line-height:1.5;font-weight:600}
+html[lang="ko"] .pull{font-weight:500}
+html[lang="ko"] .thesis-hero .d1{font-size:clamp(2.1rem,4.3vw,3.7rem);max-width:10.5em}
+html[lang="ko"] .cinema-plate figcaption{letter-spacing:.04em}
+
+@media (max-width:1180px){
+  .cinema-film .cinema-body{grid-template-columns:minmax(0,.5fr) minmax(0,54ch) clamp(170px,19vw,220px)}
+}
+@media (max-width:900px){
+  .cinema-film .cinema-body{display:block}
+  .cinema-plate{margin-top:30px;max-width:260px}
+  .plates.is-single{display:block}
+  .plates.is-single .plate-cap{padding-top:clamp(18px,2vw,26px)}
+  .stat-row{grid-template-columns:1fr}
+  .stat-row>div{border-left:0;border-top:1px solid var(--rule);padding-left:0}
+  .stat-row>div:first-child{border-top:0}
+  .pair{grid-template-columns:1fr}
+  .limits li{grid-template-columns:40px minmax(0,1fr)}
+  .limits li span{grid-column:2}
+}
+@media (prefers-reduced-motion:reduce){.cinema-plate .play i{transition:none}}
+/* buttons on a photograph read light-on-dark whatever the theme (the old line button had no visible rule here) */
+.cinema .btn-solid{background:#f2f6f8;color:#0a1620;border-color:#f2f6f8}
+.cinema .btn-solid:hover{background:var(--accent-bright);border-color:var(--accent-bright)}
+.cinema .btn-line{border-color:rgba(242,246,248,.42);color:#f2f6f8}
+.cinema .btn-line:hover{background:rgba(242,246,248,.1);border-color:#f2f6f8}
+/* a scrolling table or formula must not widen the page: let grid children shrink below their content */
+.rail-grid>*{min-width:0}
+.chart-card{min-width:0}

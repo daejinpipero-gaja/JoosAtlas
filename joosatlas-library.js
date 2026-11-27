@@ -60,6 +60,19 @@ const LIB = window.JOOS_LIBRARY = {
       keys:'case study survey photogrammetry boundary audit 공간 증거 연구 논문'
     },
     {
+      id:'thesis-2023', kind:'research', code:'MSc', href:'thesis-2023.html',
+      state:'open', date:'2026-11-26',
+      title:  { en:'Detection of Fire Hazard Factors on Construction Sites using YOLOv5', ko:'YOLOv5를 활용한 건설현장 화재위험요소의 탐지에 대한 연구' },
+      line:   { en:'My master\'s thesis, read in plain language: a camera that tells a welding spark from a fire, what went wrong with the first labels, and what the numbers do and do not show.',
+                ko:'석사논문을 풀어서 읽습니다. 용접 불꽃과 화재를 구분하는 카메라, 처음 라벨에서 틀렸던 것, 그리고 숫자가 말하는 것과 말하지 않는 것.' },
+      status: { en:'Master\'s thesis · 2023', ko:'석사학위논문 · 2023' },
+      meta:   { en:'Yonsei University · three classes · 18,\u2060000 training images · eight models compared', ko:'연세대학교 · 클래스 3개 · 학습 이미지 18,\u2060000장 · 모델 8종 비교' },
+      content:{ en:'English · Korean', ko:'영어 · 한국어' },
+      thumb:'assets/images/welding-wide-800.webp',
+      alt:    { en:'Yonghoe JOO welding in an industrial workshop.', ko:'작업장에서 용접하는 주용회.' },
+      keys:'thesis master yolo yolov5 fire welding spark detection construction deep learning focal loss mAP 석사 논문 학위논문 화재 탐지 용접 불꽃 건설현장 딥러닝'
+    },
+    {
       id:'manual-001', kind:'manual', code:'M·001', href:'manual-001/',
       state:'open', date:'2026-11-26', home:true,
       title:  { en:'Water-Based Fire Protection, Illustrated', ko:'수계소화설비 도해 교재' },
@@ -75,12 +88,12 @@ const LIB = window.JOOS_LIBRARY = {
       keys:'fire pump sprinkler hydrant alarm valve preaction textbook manual 소방 펌프실 스프링클러 소화전 알람밸브 준비작동식 교재 도해 수계소화설비'
     },
     {
-      id:'film-001', kind:'film', code:'F·001', href:'film-001.html',
-      state:'open', date:'2026-11-26', home:true,
+      id:'film-001', kind:'film', code:'F·001', href:'thesis-2023.html#film',
+      state:'open', date:'2026-11-26',
       title:  { en:'Sparks — 3 mm, a few seconds, 1,\u2060600 °C', ko:'불티 — 3 mm, 몇 초, 1,\u2060600 ℃' },
-      line:   { en:'A two-minute film on how hot-work sparks become construction-site fires, and the three rules that follow.',
-                ko:'화기작업의 불티가 공사장 화재가 되는 과정과, 거기서 나오는 규칙 세 가지를 담은 2분 영상.' },
-      status: { en:'Open · claims set against sources', ko:'공개 · 주장별 근거 대조' },
+      line:   { en:'The two-minute film that opens the thesis page: how hot-work sparks become construction-site fires, and the three rules that follow.',
+                ko:'석사논문 페이지를 여는 2분 영상. 화기작업의 불티가 공사장 화재가 되는 과정과, 거기서 나오는 규칙 세 가지.' },
+      status: { en:'Open · figures set against sources', ko:'공개 · 수치별 근거 대조' },
       meta:   { en:'2 min 03 s · vertical 9:16 · AI-generated', ko:'2분 3초 · 세로 9:16 · AI 제작' },
       content:{ en:'Korean, captioned', ko:'한국어 · 자막' },
       thumb:'media/film-001/thumb.webp',
@@ -88,7 +101,6 @@ const LIB = window.JOOS_LIBRARY = {
       video:'media/film-001/film-001.mp4',
       duration:'2:03',
       alt:    { en:'Close view of a glowing spark with its size marked as 0.3 to 3 mm.', ko:'달아오른 불티의 근접 화면. 크기 0.3~3 mm 표시.' },
-      cta:    { en:'Claims and sources', ko:'주장과 근거 보기' },
       keys:'video film spark welding hot work urethane foam cyanide fire watch 불티 용접 화기작업 우레탄 시안화수소 화재감시자 영상'
     },
     {
@@ -208,7 +220,9 @@ function renderPlates(host){
   host.textContent = '';
   const hung = LIB.items.filter(it => it.home && it.href);
   /* a wide plate and a 9:16 plate reach the same height at about 2.9 : 1 */
-  host.style.gridTemplateColumns = hung.map(it => it.kind === 'film' ? 'minmax(0,1fr)' : 'minmax(0,2.9fr)').join(' ');
+  host.classList.toggle('is-single', hung.length === 1);
+  host.style.gridTemplateColumns = hung.length === 1 ? '' :
+    hung.map(it => it.kind === 'film' ? 'minmax(0,1fr)' : 'minmax(0,2.9fr)').join(' ');
   hung.forEach((it, n) => {
     const tall = it.kind === 'film';
     const plate = el('article', 'plate ' + (tall ? 'plate-tall' : 'plate-wide'));
